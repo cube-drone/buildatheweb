@@ -1,0 +1,75 @@
+
+@font-face{
+    font-family: bookletter;
+    src: url('fonts/bookletter-1911/webfonts/goudy_bookletter_1911-webfont.eot');
+    src: url('fonts/bookletter-1911/webfonts/goudy_bookletter_1911-webfont.ttf');
+    src: url('fonts/bookletter-1911/webfonts/goudy_bookletter_1911-webfont.woff');
+}
+
+@font-face{
+    font-family: chunk;
+    src: url('fonts/chunk/webfonts/Chunkfive-webfont.eot');
+    src: url('fonts/chunk/webfonts/Chunkfive-webfont.ttf');
+    src: url('fonts/chunk/webfonts/Chunkfive-webfont.woff');
+}
+
+@font-face{
+    font-family: inconsolata;
+    src: url('fonts/Inconsolata-dz.otf');
+}
+
+body{
+    font-family: bookletter, serif;
+    font-size: 120%;
+    background-color: #fff;
+}
+
+.main{
+    position: relative;
+    width: 730px;
+    margin: auto;
+    padding-top: 200px;
+    color: #222;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #222;
+    font-family: chunk, sans-serif;
+}
+
+pre.code{
+    font-family: inconsolata;
+    overflow: hidden;
+    font-size: 7%;
+    background-color: #222;
+    color: white;
+    padding: 10px;
+}
+
+.aside-arrow{
+    border-bottom: 5px dashed #222;
+}
+
+.right-aside{
+    position: absolute;
+    right: -245px;
+    width: 200px;
+    font-size: 80%;
+    border-bottom: 5px dashed #222;
+    border-left: 5px dashed #222;
+    border-right: 5px dashed #222;
+    padding: 20px;
+}
+
+.left-aside{
+    position: absolute;
+    left: -245px;
+    width: 200px;
+    font-size: 80%;
+    border-bottom: 5px dashed #222;
+    border-left: 5px dashed #222;
+    border-right: 5px dashed #222;
+    padding: 20px;
+}
