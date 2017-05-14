@@ -14,14 +14,22 @@
 }
 
 @font-face{
+    font-family: sniglet;
+    src: url('fonts/sniglet/webfonts/Sniglet-webfont.eot');
+    src: url('fonts/sniglet/webfonts/Sniglet-webfont.ttf');
+    src: url('fonts/sniglet/webfonts/Sniglet-webfont.woff');
+}
+
+@font-face{
     font-family: inconsolata;
     src: url('fonts/Inconsolata-dz.otf');
 }
 
 body{
     font-family: bookletter, serif;
-    font-size: 120%;
-    background-color: #fff;
+    font-size: 140%;
+    background-color: #eee;
+    line-height: 1.8em;
 }
 
 .main{
@@ -35,17 +43,26 @@ body{
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #222;
+    color: CadetBlue;
     font-family: chunk, sans-serif;
+    letter-spacing: 0.08em;
 }
 
-pre.code{
+a{
+    color: CadetBlue;
+}
+
+.code{
     font-family: inconsolata;
     overflow: hidden;
-    font-size: 7%;
+    font-size: 70%;
     background-color: #222;
     color: white;
     padding: 10px;
+}
+
+.code strong{
+    background-color: #666;
 }
 
 .aside-arrow{
@@ -56,20 +73,30 @@ pre.code{
     position: absolute;
     right: -245px;
     width: 200px;
+    margin-top: -100px;
     font-size: 80%;
     border-bottom: 5px dashed #222;
     border-left: 5px dashed #222;
-    border-right: 5px dashed #222;
+    border-top: 5px dashed #222;
     padding: 20px;
+    line-height: 1.2em;
 }
 
 .left-aside{
     position: absolute;
     left: -245px;
     width: 200px;
+    margin-top: -100px;
     font-size: 80%;
     border-bottom: 5px dashed #222;
-    border-left: 5px dashed #222;
+    border-top: 5px dashed #222;
     border-right: 5px dashed #222;
     padding: 20px;
+    line-height: 1.2em;
+}
+
+.figure{
+    padding: 10px 30px;
+    border: 5px solid #aaa;
+    background-color: white;
 }
