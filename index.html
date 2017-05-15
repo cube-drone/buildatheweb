@@ -18,14 +18,15 @@
     <p> This is <strong>Build A The Web</strong>, a book devoted to taking you, a person with
     basic programming and computer knowledge, and upgrading you into a web programmer. </p>
 
-    <p> This book, including all code samples, images, and attached content are available
+    <p> 
+        This book, including all code samples, images, and attached content are available
         for free, under the terms of the
         <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU Affero General Public License v3.0 </a>, except
         for the fonts, which are available under the
         <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">Open Font License</a>
         .
     </p>
-    <div class='aside-arrow'> </div>
+    <div class='right-aside-arrow'> </div>
     <div class='right-aside'>
         <h4>GPLv3</h4>
         <p>
@@ -35,7 +36,8 @@
         </p>
     </div>
 
-    <p> This site, and all of the resources used to generate this site, including class materials
+    <p> 
+        This site, and all of the resources used to generate this site, including class materials
         and examples, are available at 
         <a href="https://github.com/classam/buildatheweb">https://github.com/classam/buildatheweb</a>.
     </p>
@@ -44,18 +46,21 @@
 
     <p>
         Our first chapter is going to focus on what happens behind the scenes when we make
-        a web request. What that means is a crash course in computer networking. </p>
+        a web request. What that means is a crash course in computer networking. 
+    </p>
 
     <h3> Uniform Resource Locators </h3>
 
-    <p> Let's start by looking at what happens when we crack open a web browser and
-        type in: </p>
+    <p> 
+        Let's start by looking at what happens when we crack open a web browser and
+        type in: 
+    </p>
 
     <pre class='code'>https://en.wikipedia.org/w/index.php?title=Blinkenlights&amp;action=edit#Etymology</pre>
 
     <p> This is a <strong>URL</strong>, which stands for <strong>Uniform Resource Locator</strong>.</p>
     
-    <div class='aside-arrow'> </div>
+    <div class='left-aside-arrow'> </div>
     <div class='left-aside'>
         <h4>URI</h4>
         <p>
@@ -64,14 +69,18 @@
     </div>
 
 
-    <p> This URL uniquely identifies a document somewhere on someone else's
-        computer that we are going to request from that computer. </p>
+    <p> 
+        This URL uniquely identifies a document somewhere on someone else's
+        computer that we are going to request from that computer. 
+    </p>
 
-    <p> This divides into protocol, domain name, path, parameters,
-        fragment, locus, and spindle. Memorize all of these terms now. </p>
+    <p> 
+        This divides into protocol, domain name, path, parameters,
+        fragment, locus, and spindle. Memorize all of these terms now. 
+    </p>
 
     <div class='figure'>
-        <h3> Fig 1. Dissecting a URL </h3>
+        <h3> Dissecting a URL </h3>
 	
         <h4>Protocol</h4>
         <p class='code'>
@@ -116,7 +125,259 @@
         </p>
     </div>
 
+    <p>This is just a bunch of words, describing where we think our document is. How do we actually 
+        <strong>get</strong> that document?</p>
 
+    <h2> Transport Control Protocol / Internet Protocol </h2>
+
+    <p> Communicating with a far away computer is a process fraught with interesting problems. Problems like: </p>
+
+    <ul>
+        <li>How do we make sure that messages reliably arrive?</li>
+        <li>How do we make sure that messages arrive in the right order?</li>
+        <li>How does our computer communicate with our router?</li>
+        <li>How does our router communicate with our modem?</li>
+        <li>How do we get messages to travel across a thin strip of copper, or fiberoptic cable, at all?</li>
+    </ul>
+
+    <p>
+        Most of these problems are quite complicated &ndash; and the lower level we get, the more likely it is
+        that we'll need to consult an electrical engineer to explain signal processing theory to us. 
+        Believe me, that is the <em>last</em> thing that we want. 
+    </p>
+    
+    <p>
+        Fortunately, smart people have already solved most of these problems for us. 
+        The solutions to these problems stack up on top of another - at the bottom, electrical engineers 
+        figuring out how to send messages across wires, at the top, math PhDs figuring out how to make sure 
+        that messages arrive reliably in a fixed order.
+    </p>
+
+    <p>
+        We have two protocols at the very top that define how we communicate between computers &ndash;
+        <strong>IP</strong>, 
+        the <strong>Internet Protocol</strong>, which defines how we send messages across the network, 
+        and <strong>TCP</strong>, the <strong>Transport Control Protocol</strong>, which makes sure that
+        our messsages completely arrive, in the right order, and uncorrupted.
+    </p>
+
+    <h3> Protocol &amp; Stack</h3>
+
+    <p> 
+        I'm going to say the word <strong>protocol</strong> a lot, and it's probably important 
+        that I establish what that means. In Computing Science, we learn the difference between 
+        an algorithm and a program - an algorithm describes a specific way of solving a problem, 
+        whereas a program is the actual code that we need to run the algorithm. We could have 
+        five different programs, all implementing the same algorithm. 
+    </p>
+        
+    <p> <strong>A protocol is an algorithm for communication</strong>. It delineates the rules of communication. </p>
+    
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside'>
+        <p>
+            <strong>C&ndash;3P0</strong> was a protocol droid, because he was programmed with all of the rules 
+            for communicating with the various different cultures in the Galaxy Far Far Away. </p>
+        </p>
+        <p> Canonically, C-3P0 was also not very good at this. </p>
+    </div>
+        
+    <p> 
+        In the same way that a program is an implementation of an algorithm, a 
+        <strong>stack</strong> is an implementation of a protocol. 
+        A protocol is an algorithm, and a stack is a program to implement a protocol. 
+        So, in order to run TCP/IP, our computer runs the TCP/IP stack, which implements the TCP/IP protocol. </p>
+    
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside'>
+        <p>
+            It has come to my attention that computer people use the word "stack" too often.
+        </p>
+        <p>
+            I keep trying to advance "pile" as an alternative, but it's not taking off.  
+        </p>
+    </div>
+
+    <h3> IP Address &amp; Sockets </h3>
+    
+    <p> 
+        The abstraction presented by TCP/IP is simple: every computer has an IP address. 
+        An IP address looks like this: <code>192.168.0.1</code> &ndash; or, like this: 
+        <code>2601:0680:c501:17ef:a063:a37f:3803:5c1a</code>. These are just 
+        identifiers that communicate a unique identity for the computer in question.
+    </p>
+
+    <p> 
+        If we know our IP address, and the IP address of the computer that we want to 
+        communicate with, and that other computer is online, we can trust that IP will 
+        get the message to that computer. We can use TCP to open a <strong>socket</strong> to a specific
+        <strong>port</strong> on our target computer.
+    </p>
+
+    <div class='figure'>
+        <h3>Giant Walls of Plugs</h3>
+        <p>
+            Imagine these computers like giant walls of plugs &ndash; or ports &ndash; and when we open a connection, 
+            TCP creates a two way communication link between two ports with a socket on each end. 
+        </p>
+    </div>
+
+    <p>
+        There are thousands of these ports - they're numbered from 1 to 65,535. In order to keep things tidy, 
+        each different protocol that runs on top of TCP usually runs on a different port. 
+        Of course, most computers aren't communicating on all of these ports at once &ndash; 
+        in fact, there are six ports that, on most computers, get more use than all of the rest of them combined -
+    </p>
+
+    <ul>
+        <li><strong>25</strong>, for the Simple Mail Transfer Protocol (SMTP) </li>
+        <li><strong>53</strong>, for the Domain Name System (DNS) </li>
+        <li><strong>67</strong> and <strong>68</strong> for the Dynamic Host Configuration Protocol (DHCP) </li>
+        <li><strong>80</strong> for the Hypertext Transfer Protocol (HTTP)</li>
+        <li><strong>443</strong>, for the Hypertext Transfer Protocol over Transport Layer Security (HTTPS)</li>
+    </ul>
+
+    <p> We're going to cover all of these protocols in detail at one point or another. </p>
+
+    <p> For every port that we could contact on a remote computer, there's a program on the remote 
+        computer that's running, listening, and potentially responding to our requests. </p>
+
+    <h4> Server vs. Client </h4>
+    <p> 
+        A computer that stays connected to the internet all of the time and responds to these 
+        requests is called a server, and server programming is half of the battle of web programming. 
+        The second half is client programming, which describes the parts 
+        of the transaction that occur on the customer's side of things.
+    </p>
+    
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside small-aside'>
+        <p>
+            The third half of the battle is <strong>lasers</strong>. 
+        </p>
+    </div>
+
+    <h3> DHCP </h3>
+    <p> 
+        In order to communicate with a remote server, then, we need three things &ndash;
+        our IP, their IP, and a port number, to communicate with.
+    </p>
+    <p>
+        First of all, let's talk about how we got <strong>our IP Address</strong>.
+    </p>
+    <p>
+        Well, the short answer is, our computer already knows its IP address. We just ask.
+    </p>
+    <p>
+        How did our computer get its IP address? Well, when we connected it to the router &ndash;
+        either via WiFi or by plugging it in &ndash; it communicated to the router, using 
+        <strong>DHCP</strong>, the <strong>Dynamic Host Configuration Protocol</strong>, where
+        our computer asked the router to assign it an IP Address.
+    </p>
+    <p> 
+        Then, how did the router get its IP address? Well, when we connected the router to the 
+        internet, either by plugging it in to a modem or by plugging it in to another link in 
+        the network, it also communicated to a router, and communicated using DHCP. "What is my IP?"
+    </p>
+    
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside small-aside'>
+        <p>
+            How did that router get its IP? Magic. It was magic.
+        </p>
+    </div>
+
+    <h3>Network Address Translation</h3>
+
+    <p> If we ask our computer to tell us its IP address, it'll probably report something
+        that starts with <code>10.0</code> or <code>192.168</code> &ndash; but, if we go to
+        Google and ask "what is my IP?", it'll tell us a completely different IP address. </p>
+
+    <p> What gives? How can our computer have more than one IP address? </p>
+
+    <p> 
+        As part of our deal with our Internet Service Providers, we usually get just one IP address.
+        Just the one. Presumably, we have more than one device in our home &ndash; a computer, a cel phone,
+        a laptop, a second computer, a smart TV, a toaster that connects to the internet for some reason,
+        a third computer, a toothbrush that connects to the internet for some reason, 
+        things have really gone out of control lately.
+    </p>
+
+    <p> 
+        All of these devices need to share the one IP address, so, our router creates a little private 
+        network, just for us, in our home. In this private network, any computer can have any IP address
+        that it wants. By convention, the IPs for use in private networks start with <code>192.168</code>
+        or <code>10.0</code>. Then, when we're connecting to the outside world, our router translates
+        our IP address in the private network into our public IP address.
+    </p>
+
+    <p>
+        This is <strong>NAT</strong>, <strong>Network Address Translation</strong>.
+    </p>
+
+    <h3>Domain Name System</h3>
+
+    <p> In order to communicate with a server, we need both our own IP address and the IP address
+        of the computer that we want to communicate with. </p>
+
+    <p> We have our own IP address &ndash; now we need to find the address of the server that we 
+        want to talk to. </p>
+
+    <p> Let's look at the link we're trying to access. </p>
+
+    <p class='code'>
+        https://<strong>en.wikipedia.org</strong>/w/index.php?title=Blinkenlights&amp;action=edit#Etymology
+    </p>
+    
+    <p>
+        There's no IP address anywhere in this link. There <strong>is</strong> a domain name, 
+        <code>en.wikipedia.org</code>
+    </p>
+
+    <p> 
+        In order to find the IP address for this server, we're going to have to start by consulting
+        a DNS server. <strong>DNS</strong> stands for <strong>Domain Name System</strong>,
+        and the process of converting a domain name into an IP address is called 
+        <strong>name resolution</strong>.
+    </p>
+
+    <p>
+        How do we know where the DNS server is? When we use DHCP to connect to WiFi, it
+        also provides us with the IP of the nearest DNS server, which is usually being maintained
+        by our ISP. Acronyms!
+    </p>
+    
+    <div class='figure'>
+        <h3>Turkish Protesters</h3>
+        <img src="https://thumbs.mic.com/OTRlYzcwMmFjNyMvaFd2UmRLalRLejgzRUVlMGlfaXdRZVdrSWdNPS8weDI4OjU5Mng0MDEvMTYwMHg5MDAvZmlsdGVyczpmb3JtYXQoanBlZyk6cXVhbGl0eSg4MCkvaHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL3BvbGljeW1pYy1pbWFnZXMvZGFhMmMyNDQ1NGQxYmI2OThhZjY3Yzc2ZjNlOTM2MzZmZmUxYzViMzMxYmFhZDk3NzM2ZmZjMjExZTk3MzI2OS5qcGc.jpg">
+        <p>
+            Google also maintains a public DNS server at the address <code>8.8.8.8</code>, which is good to know
+            in case our local DNS server ever goes down or is 
+            <a href="https://mic.com/articles/85987/turkish-protesters-are-spray-painting-8-8-8-8-and-8-8-4-4-on-walls-here-s-what-it-means#.x2HgXBndh">interfered with by a totalitarian government</a>. 
+        </p>
+    </div>
+
+    <p>
+        So our computer sends a request to the DNS server, asking where to find <code>en.wikipedia.org</code>.
+    </p>
+    
+    <p>
+        If the server already knows where <code>en.wikipedia.org</code> is, then it responds with the 
+        IP address. Let's imagine, though, that the server doesn't know.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside small-aside'>
+        <h3>howdns.works</h3>
+        <a href="https://howdns.works/"><img src="images/dns_root.png"></a>
+        <p> The best way to understand DNS is to visit <a href='https://howdns.works/'>howdns.works</a>,
+            where they illustrate the protocol with fun cartoons. </p>
+    </div>
+
+
+    <h4> Fun DNS Hacks </h4>
+
+    <!-- Upside Down Ternet, Cat DNS, log everything, create in-house name resolution -->
 
 </div>
 </body>

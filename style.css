@@ -14,13 +14,6 @@
 }
 
 @font-face{
-    font-family: sniglet;
-    src: url('fonts/sniglet/webfonts/Sniglet-webfont.eot');
-    src: url('fonts/sniglet/webfonts/Sniglet-webfont.ttf');
-    src: url('fonts/sniglet/webfonts/Sniglet-webfont.woff');
-}
-
-@font-face{
     font-family: inconsolata;
     src: url('fonts/Inconsolata-dz.otf');
 }
@@ -63,6 +56,10 @@ a{
     color: CadetBlue;
 }
 
+code{
+    font-family: inconsolata;
+}
+
 .code{
     font-family: inconsolata;
     overflow: hidden;
@@ -76,7 +73,14 @@ a{
     background-color: #666;
 }
 
-.aside-arrow{
+.right-aside-arrow{
+    width: 150px;
+    float: right;
+    border-bottom: 5px dashed #222;
+}
+
+.left-aside-arrow{
+    width: 150px;
     border-bottom: 5px dashed #222;
 }
 
@@ -93,6 +97,10 @@ a{
     line-height: 1.2em;
 }
 
+.right-aside img{
+    max-width: 190px;
+}
+
 .left-aside{
     position: absolute;
     left: -245px;
@@ -106,8 +114,18 @@ a{
     line-height: 1.2em;
 }
 
+.small-aside{
+    margin-top: -50px;
+}
+
 .figure{
     padding: 10px 30px;
     border: 5px solid #aaa;
     background-color: white;
+}
+
+.figure img{
+    max-width: 660px;
+    border: 2px solid #222;
+    margin: auto;
 }
