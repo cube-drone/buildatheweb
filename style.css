@@ -1,4 +1,15 @@
 
+/* Cadet Blue Color Scheme */
+/*
+ * Cadet Blue : cadetblue
+ * Darker: #226C70
+ * Lighter: #93C5C7
+ *
+ * Whole Pallete: http://paletton.com/#uid=33j0u0kd5xS4bTj8tJdhQrSminc
+ *
+ */
+
+
 @font-face{
     font-family: bookletter;
     src: url('fonts/bookletter-1911/webfonts/goudy_bookletter_1911-webfont.eot');
@@ -35,7 +46,7 @@ body{
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: CadetBlue;
+    color: #226C70;
     font-family: chunk, sans-serif;
     letter-spacing: 0.08em;
 }
@@ -53,7 +64,7 @@ h3{
 }
 
 a{
-    color: CadetBlue;
+    color: #226C70;
 }
 
 code{
@@ -67,34 +78,44 @@ code{
     background-color: #222;
     color: white;
     padding: 10px;
+    line-height: 1.5em;
 }
 
 .code strong{
     background-color: #666;
 }
 
+.aside{
+    color: #444;
+    position: absolute;
+    width: 200px;
+    margin-top: -100px;
+    font-size: 80%;
+    padding: 20px;
+    line-height: 1.2em;
+}
+
+.aside h1, .aside h2, .aside h3, .aside h4, .aside h5, .aside h6{
+    color: CadetBlue;
+}
+
 .right-aside-arrow{
     width: 150px;
     float: right;
-    border-bottom: 5px dashed #222;
+    margin-top: -10px;
+    border-bottom: 5px dashed CadetBlue;
 }
 
 .left-aside-arrow{
     width: 150px;
-    border-bottom: 5px dashed #222;
+    border-bottom: 5px dashed CadetBlue;
 }
 
 .right-aside{
-    position: absolute;
     right: -245px;
-    width: 200px;
-    margin-top: -100px;
-    font-size: 80%;
-    border-bottom: 5px dashed #222;
-    border-left: 5px dashed #222;
-    border-top: 5px dashed #222;
-    padding: 20px;
-    line-height: 1.2em;
+    border-bottom: 5px dashed CadetBlue;
+    border-left: 5px dashed CadetBlue;
+    border-top: 5px dashed CadetBlue;
 }
 
 .right-aside img{
@@ -102,20 +123,62 @@ code{
 }
 
 .left-aside{
-    position: absolute;
     left: -245px;
-    width: 200px;
-    margin-top: -100px;
-    font-size: 80%;
-    border-bottom: 5px dashed #222;
-    border-top: 5px dashed #222;
-    border-right: 5px dashed #222;
-    padding: 20px;
-    line-height: 1.2em;
+    border-bottom: 5px dashed CadetBlue;
+    border-top: 5px dashed CadetBlue;
+    border-right: 5px dashed CadetBlue;
 }
 
 .small-aside{
     margin-top: -50px;
+}
+
+.aside blockquote{
+    margin-left: 8px;
+}
+
+.aside blockquote .citation{
+    display: block;
+    text-align: right;
+}
+
+.aside blockquote .citation:before{
+    color: #666;
+    content: "@";
+    font-size: 1em;
+    line-height: 0.1em;
+    margin-right: 0.1em;
+}
+
+.aside blockquote:before {
+    color: #666;
+    content: ">";
+    font-size: 2em;
+    line-height: 0.12em;
+    margin-right: 0.05em;
+    vertical-align: -0.1em;
+}
+
+blockquote .citation{
+    display: block;
+    text-align: right;
+}
+
+blockquote .citation:before{
+    color: #666;
+    content: "@";
+    font-size: 1em;
+    line-height: 0.1em;
+    margin-right: 0.1em;
+}
+
+blockquote:before {
+    color: #666;
+    content: ">";
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-right: 0.1em;
+    vertical-align: -0.3em;
 }
 
 .figure{
@@ -129,3 +192,5 @@ code{
     border: 2px solid #222;
     margin: auto;
 }
+
+

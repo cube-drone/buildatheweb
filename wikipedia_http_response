@@ -1,0 +1,323 @@
+HTTP/1.1 200 OK
+Accept-ranges: bytes
+Age: 0
+Backend-timing: D=208068 t=1494541173778220
+Cache-control: private, s-maxage=0, max-age=0, must-revalidate
+Content-encoding: gzip
+Content-language: en
+Content-type: text/html; charset=UTF-8
+Date: Thu, 11 May 2017 22:19:34 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Link: </static/images/project-logos/enwiki.png>;rel=preload;as=image;media=not all and (min-resolution: 1.5dppx),</static/images/project-logos/enwiki-1.5x.png>;rel=preload;as=image;media=(min-resolution: 1.5dppx) and (max-resolution: 1.999999dppx),</static/images/project-logos/enwiki-2x.png>;rel=preload;as=image;media=(min-resolution: 2dppx)
+P3p CP="This is not a P3P policy! See https://en.wikipedia.org/wiki/Special:CentralAutoLogin/P3P for more info."
+Server: mw1187.eqiad.wmnet
+Status: 200
+Strict-transport-security: max-age=31536000; includeSubDomains; preload
+Vary: Accept-Encoding,Cookie,Authorization
+Via: 1.1 varnish-v4, 1.1 varnish-v4, 1.1 varnish-v4, 1.1 varnish-v4
+X-analytics: ns=0;page_id=993408;https=1;nocookies=1
+X-cache: cp1065 pass, cp2001 pass, cp4008 pass, cp4016 pass
+X-cache-status: pass
+X-client-ip: 172.218.146.9
+X-content-type-options: nosniff
+X-frame-options: DENY
+X-powered-by: HHVM/3.12.14
+X-ua-compatible: IE=Edge
+X-varnish: 29949699, 371283029, 287202694, 447967087
+
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Editing Blinkenlights - Wikipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Blinkenlights","wgTitle":"Blinkenlights","wgCurRevisionId":746828957,"wgRevisionId":0,"wgArticleId":993408,"wgIsArticle":false,"wgIsRedirect":false,"wgAction":"edit","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":true,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Blinkenlights","wgRelevantArticleId":993408,"wgRequestId":"WRTjdQpAIDkAAA1KmGEAAABL","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgFlaggedRevsParams":{"tags":{}},"wgStableRevisionId":null,"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":false,"wgPopupsShouldSendModuleToUser":false,"wgPopupsConflictsWithNavPopupGadget":false,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":false},"wgRelatedArticles":null,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgEditMessage":"editing","wgAjaxEditStash":true,"wgCentralAuthMobileDomain":false,"wgVisualEditorToolbarScrollOffset":0,"wgVisualEditorUnsupportedEditParams":["preload","preloadparams","preloadtitle","undo","undoafter","veswitched"],"wgEditSubmitButtonLabelPublish":false});mw.loader.state({"ext.charinsert.styles":"ready","ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.wikiEditor.styles":"ready","ext.wikiEditor.toolbar.styles":"ready","mediawiki.action.edit.styles":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@1dqfd7l",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["ext.wikiEditor.toolbar","ext.wikiEditor.dialogs","mediawiki.action.edit","mediawiki.toolbar","mediawiki.action.edit.editWarning","wikibase.client.action.edit.collapsibleFooter","mediawiki.action.edit.collapsibleFooter","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.charinsert","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.watchlist-notice","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.extra-toolbar-buttons","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.uls.interface","ext.quicksurveys.init","ext.centralNotice.geoIP","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=ext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cmediawiki.action.edit.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=ext.wikiEditor.styles%7Cext.wikiEditor.toolbar.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/w/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<noscript><link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=ext.charinsert.styles&amp;only=styles&amp;skin=vector"/></noscript>
+<meta name="generator" content="MediaWiki 1.30.0-wmf.1"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<meta name="robots" content="noindex,nofollow"/>
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Panel_370-145.png/1200px-Panel_370-145.png"/>
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Blinkenlights&amp;action=edit"/>
+<link rel="edit" title="Edit this page" href="/w/index.php?title=Blinkenlights&amp;action=edit"/>
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd"/>
+<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Blinkenlights"/>
+<link rel="dns-prefetch" href="//login.wikimedia.org"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Blinkenlights rootpage-Blinkenlights skin-vector action-edit">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice" class="mw-body-content"><!-- CentralNotice --></div>
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Editing Blinkenlights</h1>
+									<div id="bodyContent" class="mw-body-content">
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text"><div class="mw-editnotice-notext"><div class="editnotice-link editnotice-redlink sysop-show templateeditor-show" style="clear: both; float: right; margin: 0px 0.8em; padding: 0; line-height: 1em; display: none;"> <small><a href="/w/index.php?title=Template:Editnotices/Page/Blinkenlights&amp;action=edit&amp;redlink=1" class="new" title="Template:Editnotices/Page/Blinkenlights (page does not exist)">Page notice</a></small> </div>
+</div><div id="mw-anon-edit-warning" class="warningbox">
+<div class="floatleft"><img alt="AnonEditWarning.svg" src="//upload.wikimedia.org/wikipedia/en/thumb/d/de/AnonEditWarning.svg/9px-AnonEditWarning.svg.png" width="9" height="20" srcset="//upload.wikimedia.org/wikipedia/en/thumb/d/de/AnonEditWarning.svg/13px-AnonEditWarning.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/d/de/AnonEditWarning.svg/18px-AnonEditWarning.svg.png 2x" data-file-width="9" data-file-height="20" /></div> <span style="color:#d33; font-weight:bold;">You are not logged in.</span> Your <a href="/wiki/IP_address" title="IP address">IP address</a> will be publicly visible if you make any edits. If you <span class="plainlinks"><b><a class="external text" href="//en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Blinkenlights">log in</a></b> or <b><a class="external text" href="//en.wikipedia.org/w/index.php?title=Special:UserLogin/signup&amp;campaign=anoneditwarning&amp;returnto=Blinkenlights">create an account</a></b></span>, your edits will be attributed to a user name, among <a href="/wiki/Wikipedia:Why_create_an_account%3F" title="Wikipedia:Why create an account?">other benefits</a>.
+</div>
+<div class="editpage-head-copywarn">
+<p><i>Content that <a href="/wiki/Wikipedia:Copyright_violations" title="Wikipedia:Copyright violations">violates any copyrights</a> will be deleted. Encyclopedic content must be <a href="/wiki/Help:Introduction_to_referencing/1" class="mw-redirect" title="Help:Introduction to referencing/1">verifiable</a>. Work submitted to Wikipedia can be edited, used, and redistributed—by anyone—subject to <a href="/wiki/Wikipedia:Reusing_Wikipedia_content" title="Wikipedia:Reusing Wikipedia content">certain terms and conditions</a>.</i>
+</p>
+</div>
+<div id="wikiPreview" class="ontop" style="display: none;"><div lang="en" dir="ltr" class="mw-content-ltr"></div></div><form class="mw-editform-legacy" id="editform" name="editform" method="post" action="/w/index.php?title=Blinkenlights&amp;action=submit" enctype="multipart/form-data"><div id="antispam-container" style="display: none;"><label for="wpAntispam">Anti-spam check.
+Do <strong>not</strong> fill this in!</label><input type="text" name="wpAntispam" id="wpAntispam" value="" /></div>
+<input type="hidden" value="746828957" name="baseRevId"/>
+<input type="hidden" value="0" name="altBaseRevId"/>
+<input type="hidden" value="0" name="undidRev"/><input type="hidden" name="editingStatsId" id="editingStatsId" value="75e74e0317b7e68f1c20f0955c50528c" /><input type='hidden' value="" name="wpSection"/>
+<input type='hidden' value="20170511221933" name="wpStarttime" />
+<input type='hidden' value="20161029203337" name="wpEdittime" />
+<input type='hidden' value="746828957" name="editRevId" />
+<input type='hidden' value="" name="wpScrolltop" id="wpScrolltop" />
+<input type="hidden" value="d41d8cd98f00b204e9800998ecf8427e" name="wpAutoSummary"/><input type="hidden" value="0" name="oldid"/><input type="hidden" value="746828957" name="parentRevId"/><input type="hidden" value="text/x-wiki" name="format"/><input type="hidden" value="wikitext" name="model"/><div class="wikiEditor-oldToolbar"><div id="toolbar"></div></div><textarea tabindex="1" accesskey="," id="wpTextbox1" cols="80" rows="25" style="" class="mw-editfont-default" lang="en" dir="ltr" name="wpTextbox1">{{about|the hacker term}}
+[[File:Panel 370-145.png|thumb|[[IBM 370]] Model 145 System Console]]
+[[File:Blinkenlights-original.png|thumb|Blinkenlights text]]
+[[File:Harwell Dekatron Computer in action at The National Museum Of Computing.webm|thumb|The [[Harwell Dekatron Computer]] does arithmetic at approximately human speed.  Watching the lights allows you to follow the instructions and the changing data, as it runs the Squares program displayed on the panels]]
+[[File:Frostburg.jpg|thumb|Blinkenlights on the [[NSA]]'s [[FROSTBURG]] supercomputer from the 1990s.]]
+
+'''Blinkenlights''' is a [[Hacker (programmer subculture)|hacker]]'s [[neologism]] for [[Blinkenlights#Actual blinkenlights|diagnostic lights]] usually on the [[front panel]]s on old [[mainframe computer]]s, [[minicomputer]]s, many early [[microcomputer]]s, and modern [[network hardware]].
+
+== Etymology ==
+
+The [[Jargon File]] provides the following [[etymology]]:&lt;ref name=jar>[http://jargon-file.org/archive/jargon-4.4.6.dos.txt Blinkenlights] entry in The Jargon File, version 4.4.6, 25 October 2003. ''jargon-file.org''. Retrieved 2015-01-17.&lt;/ref>
+
+This term derives from the last word of the famous [[blackletter]]-Gothic sign in mangled mock [[German language|German]] that once graced many computer rooms in the [[English language|English-speaking]] world. One version ran in its entirety as follows.
+
+{{quote box | align = center | quote =
+: '''ACHTUNG!'''
+: ALLES TURISTEN UND NONTEKNISCHEN LOOKENPEEPERS!
+: DAS KOMPUTERMASCHINE IST NICHT FÜR DER GEFINGERPOKEN UND MITTENGRABEN! ODERWISE IST EASY TO SCHNAPPEN DER SPRINGENWERK, BLOWENFUSEN UND POPPENCORKEN MIT SPITZENSPARKEN.
+: IST NICHT FÜR GEWERKEN BEI DUMMKOPFEN.  DER RUBBERNECKEN SIGHTSEEREN KEEPEN DAS COTTONPICKEN HÄNDER IN DAS POCKETS MUSS.
+: ZO RELAXEN UND WATSCHEN DER BLINKENLICHTEN.
+}}
+
+This silliness dates back to least as far as 1955 at [[IBM]] and had already gone international by the early 1960s, when it was reported at the [[University of London]]'s ATLAS computing site.
+There are several variants of it in circulation, some of which actually do end with the word ''blinkenlights''.
+
+Although the sign might initially appear to be in [[German language|German]] and uses an approximation of [[German grammar]], it is composed largely of words that are either near-homonyms of English words or (in the cases of the longer words) actual English words that are rendered in a faux-German spelling. As such, the sign is generally comprehensible by many English speakers regardless of whether they have any fluency in German. Much of the humor in these signs was their intentionally incorrect language.
+
+[[Michael J. Preston (professor of English)|Michael J. Preston]] recites the gem as being posted above [[photocopier]]s in offices as a warning not to mess with the machine in the first print reference from 1974.&lt;ref>{{cite journal| last         = Preston| first        = Michael J.| year         = 1974| title        = Xerox-lore| url          = http://babel.hathitrust.org/cgi/pt?id=inu.30000108623293| journal      = Keystone Folklore| publisher    = Pennsylvania Folklore Society| volume       = | issue        = 19| pages        = 11–26| doi          = | accessdate   = 2013-11-23}}&lt;/ref> The sign is also reported to have been seen on an [[electron microscope]] at the [[Cavendish Laboratory]] in the 1950s.  Such pseudo-German parodies were common in [[Allies of World War II|Allied]] machine shops during and following [[World War II]], and an example photocopy is shown in the ''Jargon File''.
+
+The ''[[Jargon File]]'' also mentions that German hackers have developed their own versions of the blinkenlights poster, in fractured English:&lt;ref name=jar/>
+
+{{quote | align = center |quote =
+'''ATTENTION'''&lt;br>This room is fullfilled mit special electronische equippment. &lt;br>Fingergrabbing and pressing the cnoeppkes from the computers is allowed for die experts only! &lt;br>So all the “lefthanders” stay away and do not disturben the brainstorming von here working intelligencies. &lt;br>Otherwise you will be out thrown and kicked anderswhere! &lt;br>Also: please keep still and only watchen astaunished the blinkenlights.
+}}
+
+== Actual blinkenlights ==
+
+The bits and digits in the earliest mechanical and [[vacuum tube]]-based computers were typically large, small in number, making it easy to see and often hear activity.  Then, for decades, computers incorporated arrays of indicator lamps in their control panels, indicating the values carried on the address, data, and other internal [[Bus (computing)|buses]], and in various registers. These could be used for diagnosing or "single-stepping" a halted machine, but even with the machine operating normally, a skilled operator could interpret the high-speed blur of the lamps to tell which section of a large program was executing, whether the program was caught in an [[endless loop]], and so on.
+
+With rising processor [[clock rates]], increased memory sizes, and improved interactive debugging tools, such panel lights gradually lost their usefulness, though today most devices have indicators showing power on/off status, hard disk activity, network activity, and other indicators of "signs of life".
+
+The original IBM PC could have a diagnostics card plugged into it that used [[LEDs]] to show what part of the memory it was using, and show the [[memory address]] and [[data code]] on 7-segment displays whenever the card was manually locked or automatically triggered.
+
+The [[Connection Machine]], a 65,536-processor parallel computer designed in the mid-1980s, was a black cube with one side covered with a grid of red blinkenlights; the sales demo had them evolving [[Conway's Game of Life]] patterns.&lt;ref name=jar/>
+
+The [[Central processing unit|CPU]] load monitors on the front of [[BeBox]]es were also called “blinkenlights”.{{cn|date=January 2015}}
+
+Several computer components, such as the Ballistix Tactical Tracer memory modules&lt;ref name=Ballistix>{{cite web|title=Crucial Ballistix Tactical Tracer|url=http://www.crucial.com/usa/en/memory-ballistix-tactical-tracer|website=www.crucial.com|accessdate=16 January 2015}}&lt;/ref> from [[Crucial Technology]] and the [[NVidia]] Titan GTX,&lt;ref>{{cite web |url=http://www.geforce.com/whats-new/guides/geforce-experience-nvidia-geforce-gtx-led-visualizer-user-guide#1 |title=GeForce Experience GeForce GTX LED Visualizer User Guide|website=www.geforce.com|accessdate=16 January 2015}}&lt;/ref> have user-controllable lights that can be configured to show useful information, such as the memory capacity used and the temperature of the components.
+
+This word gave its name to several projects, including [[screen saver]]s, hardware gadgets, and other nostalgic things. Some notable enterprises include [[Project Blinkenlights]] and the [[Blinkenlights Archaeological Institute]].
+
+== See also ==
+* [[Faxlore]]
+* [[Macaronic language]]
+
+== Notes ==
+
+{{reflist}}
+
+== References ==
+
+{{refbegin}}
+* {{cite book|last=Sundem|first=Garth|title=The geeks' guide to world domination|year=2009|publisher=Three Rivers Press|location=New York|isbn=978-0-307-45034-0|url=https://books.google.com/books?id=lf2EMetoLugC&amp;pg=PT260&amp;dq=%22DAS+KOMPUTERMASCHINE+IST+NICHT+F%C3%9CR+DER+GEFINGERPOKEN+%22&amp;hl=en&amp;ei=bw-xTNLpMcvBnAe714iCBg&amp;sa=X&amp;oi=book_result&amp;ct=result&amp;resnum=1&amp;ved=0CCkQ6AEwAA#v=onepage&amp;q&amp;f=false|edition=1st}}
+* Hofstadter, Douglas R. "Metamagical themas: questing for the essence of mind and pattern," Basic Books, 1996, page 569. ISBN 978-0-465-04566-2
+{{refend}}
+
+[[Category:Computer jargon]]
+[[Category:Computer humor]]
+</textarea><div class='editOptions'>
+<span class="mw-summary" id="wpSummaryLabel"><label for="wpSummary"><span style="text-align: left;"><a href="/wiki/Help:Edit_summary" title="Help:Edit summary">Edit summary</a> <small>(Briefly describe your changes)</small></span></label></span> <input class="mw-summary" id="wpSummary" name="wpSummary" maxlength="200" tabindex="1" size="60" spellcheck="true" title="Enter a short summary [b]" accesskey="b"/><div class='editCheckboxes'>
+</div>
+<div id="editpage-copywarn">
+<p>By saving changes, you agree to the <a href="https://wikimediafoundation.org/wiki/Terms_of_Use" class="extiw" title="wmf:Terms of Use">Terms of Use</a>, and you irrevocably agree to release your contribution under the <a href="/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" title="Wikipedia:Text of Creative Commons Attribution-ShareAlike 3.0 Unported License">CC BY-SA 3.0 License</a> and the <a href="/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation_License" title="Wikipedia:Text of the GNU Free Documentation License">GFDL</a>. You agree that a hyperlink or URL is sufficient attribution under the Creative Commons license.</p>
+</div>
+<div class='editButtons'>
+<input id="wpSave" name="wpSave" tabindex="3" title="Save your changes [s]" accesskey="s" type="submit" value="Save changes"/>
+<input id="wpPreview" name="wpPreview" tabindex="4" title="Preview your changes. Please use this before saving. [p]" accesskey="p" type="submit" value="Show preview"/>
+<input id="wpDiff" name="wpDiff" tabindex="5" title="Show the changes you made to the text [v]" accesskey="v" type="submit" value="Show changes"/>
+	<span class='cancelLink'><a href="/wiki/Blinkenlights" title="Blinkenlights" id="mw-editform-cancel">Cancel</a><span class="mw-editButtons-pipe-separator"> | </span></span>
+	<span class='editHelp'><a target="helpwindow" href="/wiki/Help:Cheatsheet">Editing help</a> (opens in new window)</span>
+</div><!-- editButtons -->
+<span id="templatesandbox-editform"><input id="wpTemplateSandboxTemplate" type="hidden" value="Blinkenlights" name="wpTemplateSandboxTemplate"/><input id="wpTemplateSandboxPage" type="hidden" name="wpTemplateSandboxPage"/></span>
+</div><!-- editOptions -->
+
+<input type="hidden" value="+\" name="wpEditToken"/>
+<div class="mw-editTools"><div id="editpage-specialchars" style="margin-top: 15px; border: 1px solid #aaaaaa; padding: 2px;" class="edittools-text">
+<p><b>Copy and paste:</b> – — ° ' ? ˜ ? = = ± - × ÷ ? ? · §    <b>Cite your sources:</b> &lt;ref&gt;&lt;/ref&gt;
+</p>
+<hr />
+<p><small>
+{{}}   {{{}}}   |   []   [[]]   [[Category:]]   #REDIRECT [[]]   &amp;nbsp;   &lt;s&gt;&lt;/s&gt;   &lt;sup&gt;&lt;/sup&gt;   &lt;sub&gt;&lt;/sub&gt;   &lt;code&gt;&lt;/code&gt;   &lt;pre&gt;&lt;/pre&gt;   &lt;blockquote&gt;&lt;/blockquote&gt;   &lt;ref&gt;&lt;/ref&gt; &lt;ref name="" /&gt;   {{Reflist}}   &lt;references /&gt;   &lt;includeonly&gt;&lt;/includeonly&gt;   &lt;noinclude&gt;&lt;/noinclude&gt;   {{DEFAULTSORT:}}   &lt;nowiki&gt;&lt;/nowiki&gt;   &lt;!-- --&gt;   &lt;span class="plainlinks"&gt;&lt;/span&gt;
+</small>
+</p>
+<hr />
+<p><small>
+<b>Symbols:</b> ~ | ¡ ¿ † ‡ ? ? ? • ¶   # 8   ‘ ’ “ ” ‹› «»   ¤ ? ? ? ¢ ¢ ? $ ? ? € ? ? ƒ ? ? £ M ? ? ? P ? £ ? ? ? ? ? ? ¥   ? ? ? ?   ? ? ?   © ® ™<br/>
+<b>Latin:</b> A a Á á À à Â â Ä ä A a A a A a Ã ã Å å A a Æ æ ? ?   B b   C c C c C c C c C c Ç ç   D d D d Ð d ? ? Ð ð   E e É é È è E e Ê ê Ë ë E e E e E e ? ? E e ? ? ? ? ? ? ? ?   F f   G g G g G g G g G g   H h H h H h ? ?   I i I i Í í Ì ì Î î Ï ï I i I i I i I i I i ???   J j J j   K k K k   L l L l ? ? L l L l L l ? ? ? ?   M m ? ?   N n N n N n Ñ ñ N n ? ? ? ?   O o Ó ó Ò ò Ô ô Ö ö O o O o O o Õ õ O o ? ? O o Ø ø Œ œ   ? ?   P p   Q q   R r R r R r R r ? ? ? ?   S s S s S s Š š S s ? ? ? ? ß   T t T t T t ? ? ? ? Þ þ   U u Ú ú Ù ù Û û Ü ü U u U u U u U u U u U u ? ? U u U u U u U u U u   V v   W w W w   X x   Y y Ý ý Y y Ÿ ÿ ? ? ? ?   Z z Z z Z z Ž ž   ß Ð ð Þ þ ? ? ? ? <br/>
+<b>Greek:</b> ? ? ? ? ? ? ? ? ? ? ? ? ? ?   ? a ? ß G ? ? d   ? e ? ? ? ? T ?   ? ? ? ? ? ? ? µ   ? ? ? ? ? ? ? p   ? ? S s ? ? t ? ?   F f ? ? ? ? O ?   {{Polytonic|}} <br/>
+<b>Cyrillic:</b> ? ? ? ? ? ? ? ?   ? ? ? ? ? ? ? ?   ? ? ? ? ? ? ? ?   ? ? ? ? ? ? ? ?   ? ? ? ? ? ? ? ?   ? ? ? ? ? ? ? ?   ? ? ? ? ? ? ? ?   ? ? ? ? ? ? ? ?   ? ? ? ? ? ? ? ?   ? ? ? ? ? ? ? ?   ? ? ? ? ? ? ? ?   ? ? ? ? ? ?   ´ <br/>
+<b>IPA:</b> t? d? ? ? ? g ? ? ?   ? ß ? ð ? ? ? ? ? ? ç ? ? ? ? h ? ? ? ?   ? ? ? ? ?   ? ? ? ?   ? ? ? ? ?   ? ? ? ? ? ? ?   ? ? ?   '   ? ? ? ? ?   ? | ! ? ?   ? ? ?   ? ? ?   ø ? ? ?   ? ?   ? œ ? ? ? ? ?   æ   ? ? ? ?   ? ? ? ? ? ? n ?   ' ? ? ? ?   {{IPA|}}
+</small>
+</p>
+</div>
+</div><div class="wikibase-entity-usage"><div class="wikibase-entityusage-explanation"><p>Wikidata entities used in this page
+</p></div>
+<ul><li><a class="extiw wb-entity-link external" href="https://www.wikidata.org/wiki/Q378518">Blinkenlights</a>: Sitelink</li></ul></div>
+<div class="templatesUsed"><div class="mw-templatesUsedExplanation"><p><span id="templatesused">Pages transcluded onto the current version of this page<span class="posteditwindowhelplinks"> (<a href="/wiki/Wikipedia:Transclusion" title="Wikipedia:Transclusion">help</a>)</span>&#160;:</span>
+</p></div><ul>
+<li><a href="/wiki/Template:About" title="Template:About">Template:About</a> (<a href="/w/index.php?title=Template:About&amp;action=edit" title="Template:About">view source</a>) (template protected)</li><li><a href="/wiki/Template:Category_handler" title="Template:Category handler">Template:Category handler</a> (<a href="/w/index.php?title=Template:Category_handler&amp;action=edit" title="Template:Category handler">view source</a>) (template protected)</li><li><a href="/wiki/Template:Citation_needed" title="Template:Citation needed">Template:Citation needed</a> (<a href="/w/index.php?title=Template:Citation_needed&amp;action=edit" title="Template:Citation needed">view source</a>) (protected)</li><li><a href="/wiki/Template:Cite_book" title="Template:Cite book">Template:Cite book</a> (<a href="/w/index.php?title=Template:Cite_book&amp;action=edit" title="Template:Cite book">view source</a>) (protected)</li><li><a href="/wiki/Template:Cite_journal" title="Template:Cite journal">Template:Cite journal</a> (<a href="/w/index.php?title=Template:Cite_journal&amp;action=edit" title="Template:Cite journal">view source</a>) (protected)</li><li><a href="/wiki/Template:Cite_web" title="Template:Cite web">Template:Cite web</a> (<a href="/w/index.php?title=Template:Cite_web&amp;action=edit" title="Template:Cite web">view source</a>) (protected)</li><li><a href="/wiki/Template:Cn" class="mw-redirect" title="Template:Cn">Template:Cn</a> (<a href="/w/index.php?title=Template:Cn&amp;action=edit" class="mw-redirect" title="Template:Cn">view source</a>) (template protected)</li><li><a href="/wiki/Template:Delink" title="Template:Delink">Template:Delink</a> (<a href="/w/index.php?title=Template:Delink&amp;action=edit" title="Template:Delink">view source</a>) (template protected)</li><li><a href="/wiki/Template:Fix" title="Template:Fix">Template:Fix</a> (<a href="/w/index.php?title=Template:Fix&amp;action=edit" title="Template:Fix">view source</a>) (protected)</li><li><a href="/wiki/Template:Fix/category" title="Template:Fix/category">Template:Fix/category</a> (<a href="/w/index.php?title=Template:Fix/category&amp;action=edit" title="Template:Fix/category">view source</a>) (template protected)</li><li><a href="/wiki/Template:Quote" title="Template:Quote">Template:Quote</a> (<a href="/w/index.php?title=Template:Quote&amp;action=edit" title="Template:Quote">view source</a>) (template protected)</li><li><a href="/wiki/Template:Quote_box" title="Template:Quote box">Template:Quote box</a> (<a href="/w/index.php?title=Template:Quote_box&amp;action=edit" title="Template:Quote box">view source</a>) (template protected)</li><li><a href="/wiki/Template:Refbegin" title="Template:Refbegin">Template:Refbegin</a> (<a href="/w/index.php?title=Template:Refbegin&amp;action=edit" title="Template:Refbegin">view source</a>) (template protected)</li><li><a href="/wiki/Template:Refend" title="Template:Refend">Template:Refend</a> (<a href="/w/index.php?title=Template:Refend&amp;action=edit" title="Template:Refend">view source</a>) (template protected)</li><li><a href="/wiki/Template:Reflist" title="Template:Reflist">Template:Reflist</a> (<a href="/w/index.php?title=Template:Reflist&amp;action=edit" title="Template:Reflist">view source</a>) (protected)</li><li><a href="/wiki/Module:About" title="Module:About">Module:About</a> (<a href="/w/index.php?title=Module:About&amp;action=edit" title="Module:About">view source</a>) (template protected)</li><li><a href="/wiki/Module:Arguments" title="Module:Arguments">Module:Arguments</a> (<a href="/w/index.php?title=Module:Arguments&amp;action=edit" title="Module:Arguments">view source</a>) (protected)</li><li><a href="/wiki/Module:Category_handler" title="Module:Category handler">Module:Category handler</a> (<a href="/w/index.php?title=Module:Category_handler&amp;action=edit" title="Module:Category handler">view source</a>) (template protected)</li><li><a href="/wiki/Module:Category_handler/blacklist" title="Module:Category handler/blacklist">Module:Category handler/blacklist</a> (<a href="/w/index.php?title=Module:Category_handler/blacklist&amp;action=edit" title="Module:Category handler/blacklist">view source</a>) (template protected)</li><li><a href="/wiki/Module:Category_handler/config" title="Module:Category handler/config">Module:Category handler/config</a> (<a href="/w/index.php?title=Module:Category_handler/config&amp;action=edit" title="Module:Category handler/config">view source</a>) (template protected)</li><li><a href="/wiki/Module:Category_handler/data" title="Module:Category handler/data">Module:Category handler/data</a> (<a href="/w/index.php?title=Module:Category_handler/data&amp;action=edit" title="Module:Category handler/data">view source</a>) (template protected)</li><li><a href="/wiki/Module:Category_handler/shared" title="Module:Category handler/shared">Module:Category handler/shared</a> (<a href="/w/index.php?title=Module:Category_handler/shared&amp;action=edit" title="Module:Category handler/shared">view source</a>) (template protected)</li><li><a href="/wiki/Module:Citation/CS1" title="Module:Citation/CS1">Module:Citation/CS1</a> (<a href="/w/index.php?title=Module:Citation/CS1&amp;action=edit" title="Module:Citation/CS1">view source</a>) (protected)</li><li><a href="/wiki/Module:Citation/CS1/COinS" title="Module:Citation/CS1/COinS">Module:Citation/CS1/COinS</a> (<a href="/w/index.php?title=Module:Citation/CS1/COinS&amp;action=edit" title="Module:Citation/CS1/COinS">view source</a>) (protected)</li><li><a href="/wiki/Module:Citation/CS1/Configuration" title="Module:Citation/CS1/Configuration">Module:Citation/CS1/Configuration</a> (<a href="/w/index.php?title=Module:Citation/CS1/Configuration&amp;action=edit" title="Module:Citation/CS1/Configuration">view source</a>) (protected)</li><li><a href="/wiki/Module:Citation/CS1/Date_validation" title="Module:Citation/CS1/Date validation">Module:Citation/CS1/Date validation</a> (<a href="/w/index.php?title=Module:Citation/CS1/Date_validation&amp;action=edit" title="Module:Citation/CS1/Date validation">view source</a>) (template protected)</li><li><a href="/wiki/Module:Citation/CS1/Identifiers" title="Module:Citation/CS1/Identifiers">Module:Citation/CS1/Identifiers</a> (<a href="/w/index.php?title=Module:Citation/CS1/Identifiers&amp;action=edit" title="Module:Citation/CS1/Identifiers">view source</a>) (protected)</li><li><a href="/wiki/Module:Citation/CS1/Utilities" title="Module:Citation/CS1/Utilities">Module:Citation/CS1/Utilities</a> (<a href="/w/index.php?title=Module:Citation/CS1/Utilities&amp;action=edit" title="Module:Citation/CS1/Utilities">view source</a>) (protected)</li><li><a href="/wiki/Module:Citation/CS1/Whitelist" title="Module:Citation/CS1/Whitelist">Module:Citation/CS1/Whitelist</a> (<a href="/w/index.php?title=Module:Citation/CS1/Whitelist&amp;action=edit" title="Module:Citation/CS1/Whitelist">view source</a>) (protected)</li><li><a href="/wiki/Module:Delink" title="Module:Delink">Module:Delink</a> (<a href="/w/index.php?title=Module:Delink&amp;action=edit" title="Module:Delink">view source</a>) (template protected)</li><li><a href="/wiki/Module:Hatnote" title="Module:Hatnote">Module:Hatnote</a> (<a href="/w/index.php?title=Module:Hatnote&amp;action=edit" title="Module:Hatnote">view source</a>) (template protected)</li><li><a href="/wiki/Module:Hatnote_list" title="Module:Hatnote list">Module:Hatnote list</a> (<a href="/w/index.php?title=Module:Hatnote_list&amp;action=edit" title="Module:Hatnote list">view source</a>) (template protected)</li><li><a href="/wiki/Module:Namespace_detect/config" title="Module:Namespace detect/config">Module:Namespace detect/config</a> (<a href="/w/index.php?title=Module:Namespace_detect/config&amp;action=edit" title="Module:Namespace detect/config">view source</a>) (protected)</li><li><a href="/wiki/Module:Namespace_detect/data" title="Module:Namespace detect/data">Module:Namespace detect/data</a> (<a href="/w/index.php?title=Module:Namespace_detect/data&amp;action=edit" title="Module:Namespace detect/data">view source</a>) (protected)</li><li><a href="/wiki/Module:No_globals" title="Module:No globals">Module:No globals</a> (<a href="/w/index.php?title=Module:No_globals&amp;action=edit" title="Module:No globals">view source</a>) (template protected)</li><li><a href="/wiki/Module:Unsubst" title="Module:Unsubst">Module:Unsubst</a> (<a href="/w/index.php?title=Module:Unsubst&amp;action=edit" title="Module:Unsubst">view source</a>) (template protected)</li><li><a href="/wiki/Module:Yesno" title="Module:Yesno">Module:Yesno</a> (<a href="/w/index.php?title=Module:Yesno&amp;action=edit" title="Module:Yesno">view source</a>) (protected)</li></ul></div><div class="hiddencats"><div class="mw-hiddenCategoriesExplanation"><p>This page is a member of 3 hidden categories<span class="posteditwindowhelplinks"> (<a href="/wiki/Help:Category#Hiding_categories" title="Help:Category">help</a>)</span>&#160;:
+</p></div><ul>
+<li><a href="/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">Category:All articles with unsourced statements</a></li>
+<li><a href="/wiki/Category:Articles_with_unsourced_statements_from_January_2015" title="Category:Articles with unsourced statements from January 2015">Category:Articles with unsourced statements from January 2015</a></li>
+<li><a href="/wiki/Category:Pages_using_ISBN_magic_links" title="Category:Pages using ISBN magic links">Category:Pages using ISBN magic links</a></li>
+</ul></div><div class="limitreport"></div><input id="mw-edit-mode" type="hidden" value="text" name="mode"/><input type="hidden" value="1" name="wpUltimateParam"/>
+</form>
+<noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/wiki/Blinkenlights">https://en.wikipedia.org/wiki/Blinkenlights</a>"					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Blinkenlights&amp;returntoquery=action%3Dedit" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Blinkenlights&amp;returntoquery=action%3Dedit" title="You're encouraged to log in; however, it's not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/Blinkenlights"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="/wiki/Talk:Blinkenlights"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view"><span><a href="/wiki/Blinkenlights" >Read</a></span></li>
+															<li id="ca-edit" class="selected"><span><a href="/w/index.php?title=Blinkenlights&amp;action=edit"  title="Edit this page">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=Blinkenlights&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search Wikipedia" title="Search Wikipedia [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="//shop.wikimedia.org" title="Visit the Wikipedia store">Wikipedia store</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Blinkenlights" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Blinkenlights" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-info"><a href="/w/index.php?title=Blinkenlights&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Q378518" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+											</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-cookiestatement"><a href="https://wikimediafoundation.org/wiki/Cookie_statement">Cookie statement</a></li>
+											<li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=Blinkenlights&amp;action=edit&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://wikimediafoundation.org/"><img src="/static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="//www.mediawiki.org/"><img src="/static/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":199,"wgHostname":"mw1187"});});</script>
+	</body>
+</html>

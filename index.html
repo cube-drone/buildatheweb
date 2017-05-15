@@ -7,6 +7,12 @@
 
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- this script converts straight-quotes into proper directional quotes -->
+    <script src="js/smartquotes.js"></script>
+    <script>smartquotes()</script>
 </head>
 
 <body>
@@ -15,24 +21,33 @@
 
     <h2> Introduction </h2>
 
-    <p> This is <strong>Build A The Web</strong>, a book devoted to taking you, a person with
-    basic programming and computer knowledge, and upgrading you into a web programmer. </p>
+    <p>
+        This is <strong>Build A The Web</strong>, a book devoted to taking you, a person with
+        basic programming and computer knowledge, and upgrading you into a web programmer.
+    </p>
 
     <p>
-        This book, including all code samples, images, and attached content are available
-        for free, under the terms of the
+        This is <strong class='book_version'>Version 0.1 &ndash; Drafty Old House</strong>
+        of the book.
+    </p>
+    <p>
+        It was last updated <strong class='book_last_update'>May 15, 2017</strong>.
+    </p>
+
+    <p>
+        This book is available for free, under the terms of the
         <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU Affero General Public License v3.0 </a>, except
         for the fonts, which are available under the
-        <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">Open Font License</a>
-        .
+        <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">Open Font License</a>.
     </p>
     <div class='right-aside-arrow'> </div>
-    <div class='right-aside'>
+    <div class='right-aside aside'>
         <h4>GPLv3</h4>
         <p>
-            While Richard Stallman is a bit of a dogmatic screwball, the man's seemingly
-            able to predict the future with an accuracy we would normally associate with
-            prophets, actuaries, or Google.
+            While Richard Stallman may appear to be a bit of a dogmatic screwball,
+            the man's seemingly
+            <a href='http://www.osnews.com/story/25469/Richard_Stallman_Was_Right_All_Along'>
+            able to predict the future</a>.
         </p>
     </div>
 
@@ -61,7 +76,7 @@
     <p> This is a <strong>URL</strong>, which stands for <strong>Uniform Resource Locator</strong>.</p>
 
     <div class='left-aside-arrow'> </div>
-    <div class='left-aside'>
+    <div class='left-aside aside'>
         <h4>URI</h4>
         <p>
         Some people might also call this an URI, but if we encounter a person who does this,
@@ -141,7 +156,7 @@
     </ul>
 
     <p>
-        Most of these problems are quite complicated &ndash; and the lower level we get, the more likely it is
+        Most of these problems are quite complicated &mdash; and the lower level we get, the more likely it is
         that we'll need to consult an electrical engineer to explain signal processing theory to us.
         Believe me, that is the <em>last</em> thing that we want.
     </p>
@@ -154,7 +169,7 @@
     </p>
 
     <p>
-        We have two protocols at the very top that define how we communicate between computers &ndash;
+        We have two protocols at the very top that define how we communicate between computers &mdash;
         <strong>IP</strong>,
         the <strong>Internet Protocol</strong>, which defines how we send messages across the network,
         and <strong>TCP</strong>, the <strong>Transport Control Protocol</strong>, which makes sure that
@@ -174,12 +189,12 @@
     <p> <strong>A protocol is an algorithm for communication</strong>. It delineates the rules of communication. </p>
 
     <div class='right-aside-arrow'> </div>
-    <div class='right-aside'>
+    <div class='right-aside aside'>
         <p>
             <strong>C&ndash;3P0</strong> was a protocol droid, because he was programmed with all of the rules
             for communicating with the various different cultures in the Galaxy Far Far Away. </p>
         </p>
-        <p> Canonically, C-3P0 was also not very good at this. </p>
+        <p> Canonically, C-3P0 was also <em>not very good at this</em>. </p>
     </div>
 
     <p>
@@ -189,7 +204,7 @@
         So, in order to run TCP/IP, our computer runs the TCP/IP stack, which implements the TCP/IP protocol. </p>
 
     <div class='left-aside-arrow'> </div>
-    <div class='left-aside'>
+    <div class='left-aside aside'>
         <p>
             It has come to my attention that computer people use the word "stack" too often.
         </p>
@@ -202,7 +217,7 @@
 
     <p>
         The abstraction presented by TCP/IP is simple: every computer has an IP address.
-        An IP address looks like this: <code>192.168.0.1</code> &ndash; or, like this:
+        An IP address looks like this: <code>192.168.0.1</code> &mdash; or, like this:
         <code>2601:0680:c501:17ef:a063:a37f:3803:5c1a</code>. These are just
         identifiers that communicate a unique identity for the computer in question.
     </p>
@@ -216,8 +231,9 @@
 
     <div class='figure'>
         <h3>Giant Walls of Plugs</h3>
+        <img src="images/ports.png" />
         <p>
-            Imagine these computers like giant walls of plugs &ndash; or ports &ndash; and when we open a connection,
+            Imagine these computers like giant walls of plugs &mdash; or ports &mdash; and when we open a connection,
             TCP creates a two way communication link between two ports with a socket on each end.
         </p>
     </div>
@@ -225,7 +241,7 @@
     <p>
         There are thousands of these ports - they're numbered from 1 to 65,535. In order to keep things tidy,
         each different protocol that runs on top of TCP usually runs on a different port.
-        Of course, most computers aren't communicating on all of these ports at once &ndash;
+        Of course, most computers aren't communicating on all of these ports at once &mdash;
         in fact, there are six ports that, on most computers, get more use than all of the rest of them combined -
     </p>
 
@@ -251,7 +267,7 @@
     </p>
 
     <div class='right-aside-arrow'> </div>
-    <div class='right-aside small-aside'>
+    <div class='right-aside small-aside aside'>
         <p>
             The third half of the battle is <strong>lasers</strong>.
         </p>
@@ -259,7 +275,7 @@
 
     <h3> DHCP </h3>
     <p>
-        In order to communicate with a remote server, then, we need three things &ndash;
+        In order to communicate with a remote server, then, we need three things &mdash;
         our IP, their IP, and a port number, to communicate with.
     </p>
     <p>
@@ -269,19 +285,20 @@
         Well, the short answer is, our computer already knows its IP address. We just ask.
     </p>
     <p>
-        How did our computer get its IP address? Well, when we connected it to the router &ndash;
-        either via WiFi or by plugging it in &ndash; it communicated to the router, using
+        How did our computer get its IP address? Well, when we connected it to the router &mdash;
+        either via WiFi or by plugging it in &mdash; it communicated to the router, using
         <strong>DHCP</strong>, the <strong>Dynamic Host Configuration Protocol</strong>, where
         our computer asked the router to assign it an IP Address.
     </p>
     <p>
         Then, how did the router get its IP address? Well, when we connected the router to the
         internet, either by plugging it in to a modem or by plugging it in to another link in
-        the network, it also communicated to a router, and communicated using DHCP. "What is my IP?"
+        the network, it also communicated to a router, and communicated using DHCP.
+        <em>"What is my IP?"</em>
     </p>
 
     <div class='left-aside-arrow'> </div>
-    <div class='left-aside small-aside'>
+    <div class='left-aside small-aside aside'>
         <p>
             How did that router get its IP? Magic. It was magic.
         </p>
@@ -290,14 +307,15 @@
     <h3>Network Address Translation</h3>
 
     <p> If we ask our computer to tell us its IP address, it'll probably report something
-        that starts with <code>10.0</code> or <code>192.168</code> &ndash; but, if we go to
-        Google and ask "what is my IP?", it'll tell us a completely different IP address. </p>
+        that starts with <code>10.0</code> or <code>192.168</code> &mdash; but, if we go to
+        Google and ask <em>"what is my IP?"</em>,
+        it'll tell us a completely different IP address. </p>
 
     <p> What gives? How can our computer have more than one IP address? </p>
 
     <p>
         As part of our deal with our Internet Service Providers, we usually get just one IP address.
-        Just the one. Presumably, we have more than one device in our home &ndash; a computer, a cel phone,
+        Just the one. Presumably, we have more than one device in our home &mdash; a computer, a cel phone,
         a laptop, a second computer, a smart TV, a toaster that connects to the internet for some reason,
         a third computer, a toothbrush that connects to the internet for some reason,
         things have really gone out of control lately.
@@ -315,12 +333,25 @@
         This is <strong>NAT</strong>, <strong>Network Address Translation</strong>.
     </p>
 
+    <div class='figure'>
+        <p>The router creates a private network for all of your devices and
+            assigns them local IP addresses. </p>
+        <img src='images/nat_1.png'>
+        <p>When your devices make requests to the internet, the router
+            translates them into the public-facing IP address. </p>
+        <img src='images/nat_2.png'>
+        <p>When the internet responds, the router remembers who requested
+            the content and forwards the response back to that IP address. </p>
+        <img src='images/nat_3.png'>
+    </div>
+
+
     <h3>Domain Name System</h3>
 
     <p> In order to communicate with a server, we need both our own IP address and the IP address
         of the computer that we want to communicate with. </p>
 
-    <p> We have our own IP address &ndash; now we need to find the address of the server that we
+    <p> We have our own IP address &mdash; now we need to find the address of the server that we
         want to talk to. </p>
 
     <p> Let's look at the link we're trying to access. </p>
@@ -367,7 +398,7 @@
     </p>
 
     <div class='right-aside-arrow'> </div>
-    <div class='right-aside small-aside'>
+    <div class='right-aside small-aside aside'>
         <h3>howdns.works</h3>
         <a href="https://howdns.works/"><img src="images/dns_root.png"></a>
         <p> The best way to understand DNS is to visit <a href='https://howdns.works/'>howdns.works</a>,
@@ -394,18 +425,371 @@
     </p>
 
     <p>
-        So, the DNS server looks at the domain name we've given it &ndash;
-        <code>en.wikipedia.org</code> &ndash;
+        So, the DNS server looks at the domain name we've given it &mdash;
+        <code>en.wikipedia.org</code> &mdash;
         sends a request to the root server, and asks
-        "which servers can I ask about .org records?".
+        <em>"which servers can I ask about .org records?"</em>
     </p>
 
+    <p>
+        The root server will reply with a list of IP addresses responsible
+        for .org records. These are the addresses of <strong>Top Level Domain Servers</strong>,
+        which are maintained by <strong>Domain Registrars</strong>.
+        We can pay these people about ten US dollars a year to
+        create and maintain a record for us,
+        so long as nobody else has claimed that domain name already.
+        For a pittance, we could own butts.cash.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <p>
+            Some people claim that the <strong>most important tool in web programming</strong>
+            is a command line or a text editor,
+            but I will maintain that it is a <strong>credit card</strong>.
+    </div>
+
+    <p>
+        Finally, the DNS server queries the wikipedia nameservers, asking them
+        where they can find <code>en</code>.
+        If we paid a registrar to put up a domain name for us,
+        they'll usually throw in a nameserver for free &mdash;
+        all we have to do is write some DNS rules that tell the nameserver what
+        IP we want to point at.
+    </p>
+
+    <p>
+        DNS rules are written in a cryptic language that contains records
+        with names like <code>A</code>, <code>MX</code>, <code>AAAA</code>,
+        and <code>AAAAAAAAAAAAAAAAHH SPIDERS</code> &mdash;
+        I'm sorry, there was a spider next to the keyboard.
+    </p>
+
+    <p>
+        So, Wikipedia's nameservers report that en.wikipedia.org is
+        located at, say, <code>91.198.174.192</code>.
+        Finally, after that entire protracted process, we know where wikipedia is.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside small-aside aside'>
+        <p>
+            Because I wrote this in the <em>past</em>, that's bound
+            to change and has definitely changed already.
+        </p>
+    </div>
+
+    <h3>Hypertext Transfer Protocol</h3>
+
+    <p>
+        Our next step is to use TCP/IP to create a connection between our
+        IP address, and the IP address that we just resolved from DNS.
+    </p>
+
+    <p>
+        There's only one thing left that we need &mdash; a port number.
+        We also didn't specify a port number as part of the URL,
+        but we did specify a protocol,
+        <strong>HTTPS</strong> &mdash;
+        the <strong>HyperText Transfer Protocol feat. Transport Layer Security</strong> &mdash;
+        and when we specify a protocol without a port number,
+        our connection automatically goes to the default port for that protocol.
+        In the case of HTTPS, that's <strong>443</strong>.
+    </p>
+
+    <p>
+    The <strong>Hypertext Transfer Protocol (HTTP)</strong> is the protocol responsible
+        for moving documents around. Request a document? Get a document.
+        The rules for that are laid out in the Hypertext Transfer Protocol,
+        which is the protocol that powers pretty much the entire web as we know it.
+    </p>
+
+    <p>
+        Our URL is HTTP<strong>S</strong>, though, not just HTTP. The difference is slight
+        but important &mdash; HTTPS is the same as HTTP, but over a connection encrypted
+        with <strong>Transport Layer Security (TLS)</strong>.
+        This prevents J. Random Hacker from watching every HTTP request that goes by.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <p>
+            <strong>J. Random Hacker</strong> is an arbitrary
+            programmer.
+
+            <blockquote cite="http://www.catb.org/jargon/html/appendixb.html">
+            A mythical figure like the Unknown Soldier; the archetypal hacker nerd.
+                <a class='citation' href="http://www.catb.org/jargon/html/appendixb.html">The Jargon File</a>
+            </blockquote>
+        </p>
+    </div>
+
+    <p>
+        Once we've created this encrypted communication path between our computer
+        and the faraway server, we need to construct a HTTP Request. It'll look
+        something like this:
+    </p>
+
+    <pre class='code'>
+GET /w/index.php?title=Blinkenlights&amp;action=edit#Etymology HTTP/1.1
+Host: en.wikipedia.org
+    </pre>
+
+    <p>
+        This is a request to <code>GET</code> whatever's at the path
+        of the URL we provided to our browser.
+    </p>
+
+    <p>
+        It also includes <strong>Headers</strong> with the request &mdash; sets of key
+        and value that communicate extra information to the server. In this case,
+        the only header we've included is "Host".
+    </p>
+
+    <p>
+        The server will receive this request, and respond with a HTTP Response
+        containing the sweet webpage we've been looking for this entire time.
+    </p>
+
+    <p>
+        Virtually everything in web programming happens in the space between
+        the HTTP request and the HTTP response. Figuring out how to respond,
+        quickly,
+        with the right stuff is the meat and potatoes of web programming.
+        This bit, right here. It's all the marbles. Empires have risen
+        and fallen, all dependant on the simple gap of how a server converts
+        this HTTP request into a HTTP response.
+    </p>
+
+    <p>
+        And then, Wikipedia responds. The full HTTP response is several
+        pages long, you can look at it <a href='wikipedia_http_response'>here</a>.
+        In order to keep my book neat and tidy, though, I'm going to
+        concoct a fake response for the sake of example:
+    </p>
+
+    <pre class='code'>
+HTTP/1.1 200 OK
+Content-language: en
+Content-type: text/html; charset=UTF-8
+X-Clacks-Overhead: GNU Terry Pratchett
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;/&gt;
+    &lt;title&gt;Definitely Wikipedia&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;This is totally Wikipedia.&lt;/h1&gt;
+&lt;p&gt; Hi there. I am Bob Wikipedia and you are at my website.
+It&rsquo;s still under construction but I am pretty sure it will be done by 1998.&lt;/p&gt;
+&lt;img src=&rdquo;https://media0.giphy.com/media/K5Yn9JCXcrXr2/giphy.gif&rdquo;/&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <p>
+        It opens with the version of HTTP that's currently running,
+        as well as a <strong>HTTP Status Code</strong>.
+        So long as the HTTP Status Code is <code>200 OK</code> we're good to go.
+    </p>
+
+    <div class='figure'>
+        <h3>A Brief And Mostly Inaccurate Reference Chart for HTTP Status Codes</h3>
+        <img src="images/247.png">
+        <p>
+            If you're interested in a more accurate look at HTTP status codes,
+            you can find it here.
+        </p>
+        <p>
+            Alternatively, if you're looking for a picture of a cat that matches
+            every HTTP status code, you can (and should) go to
+            <a href="http://http.cat">http.cat</a>.
+        </p>
+    </div>
+
+    <p>
+        After the HTTP version and status code, there are <strong>Headers</strong>
+        again. These headers describe important properties of the file that's
+        been returned.
+    </p>
+
+    <pre class='code'>
+Content-language: en
+Content-type: text/html; charset=UTF-8
+X-Clacks-Overhead: GNU Terry Pratchett</pre>
+
+    <p>
+        Most headers are defined in the <a href='https://tools.ietf.org/html/rfc2616'>HTTP protocol</a>, but we can add
+        any headers that we want by starting them with <code>X-</code>,
+        which is how we can sneak in <a href='http://www.gnuterrypratchett.com/'>the clacks</a>.
+    </p>
+
+    <p>
+        After the HTTP version and status code, we get into a big patch
+        of HTML. How do we know that it's HTML? Well, the <code>Content-type</code>
+        header referred to this as <code>text/html</code>, so we can be
+        pretty sure that we've got a big handful of HTML.
+    </p>
+
+    <h3> Hypertext Markup Language </h3>
+
+    <p>
+        I'm going to do a dramatic reading of a passage from
+        "In The Beginning Was The Command Line".
+        Despite being almost 20 years old, it's a stonkingly accurate
+        diatribe on computer culture and a fun historical record from
+        <em>the before times</em>.
+    </p>
+
+    <blockquote cite="http://artlung.com/smorgasborg/C_R_Y_P_T_O_N_O_M_I_C_O_N.shtml">
+        <p>
+            This crud is called <strong>HTML (HyperText Markup Language)</strong>
+            and it is basically
+            a very simple programming language instructing your web browser how
+            to draw a page on a screen. Anyone can learn HTML and many people do.
+            The important thing is that no matter what splendid multimedia
+            web pages they might represent, HTML files are just telegrams.
+        </p>
+
+        <p>
+            When Ronald Reagan was a radio announcer, he used to call baseball
+            games by reading the terse descriptions that trickled in over the
+            telegraph wire and were printed out on a paper tape. He would sit there,
+            all by himself in a padded room with a microphone, and the paper
+            tape would eke out of the machine and crawl over the palm of
+            his hand printed with cryptic abbreviations. If the count went
+            to three and two, Reagan would describe the scene as he saw it
+            in his mind's eye: "The brawny left-hander steps out of the
+            batter's box to wipe the sweat from his brow. The umpire steps
+            forward to sweep the dirt from home plate." and so on.
+            When the cryptogram on the paper tape announced a base hit,
+            he would whack the edge of the table with a pencil, creating
+            a little sound effect, and describe the arc of the ball as if
+            he could actually see it. His listeners, many of whom presumably
+            thought that Reagan was actually at the ballpark watching the game,
+            would reconstruct the scene in their minds according to his descriptions.
+        </p>
+
+        <p>
+            This is exactly how the World Wide Web works: the HTML files are
+            the pithy description on the paper tape,
+            and your Web browser is Ronald Reagan.
+        <p>
+
+        <a class='citation' href='http://artlung.com/smorgasborg/C_R_Y_P_T_O_N_O_M_I_C_O_N.shtml'>
+            Neal Stephenson, "In The Beginning Was The Command Line"
+        </a>
+
+    </blockquote>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <p>
+            As of 2004, only 5 years after the original publication,
+            Neil Stephenson regarded it as badly out of date.
+        </p>
+        <p>
+            Another author, with permission, published an
+            <a href="http://garote.bdmonkeys.net/commandline/index.html">annotated version</a>.
+        </p>
+        <p>
+            The annotations are now even more badly out of date.
+        </p>
+    </div>
+
+    <p>
+        So, the HTML that Wikipedia has returned to us contains a description of
+        the content that we're looking at, and then our web browser
+        renders it into a webpage.
+    </p>
+
+    <p>
+        It would seem like, here, our journey is complete.
+        We've made a round trip between our device and the server, and we're done
+        &mdash; but, not quite! When the browser renderer gets to this part of the HTML:
+    </p>
+
+    <pre class='code'>
+&lt;img src=&rdquo;https://media0.giphy.com/media/K5Yn9JCXcrXr2/giphy.gif&rdquo;/&gt;
+    </pre>
+
+    <p>
+        This image tag references content that exists at another URL.
+        And so, we kick off this entire process again, from start to finish,
+        to get whatever it is at that new address. The trick is, though,
+        instead of sending us HTML, this server will respond with an animated image.
+        Modern web-pages may require dozens of requests to various images
+        and scripts before they're completely rendered.
+    </p>
+
+    <h3>Summary</h3>
+
+    <p>Every browser request&ndash;response goes a little something like this: </p>
+
+    <ul>
+        <li>Our browser uses <strong>DNS</strong> to resolve the <strong>URL</strong>'s
+            domain into an <strong>IP</strong> address. </li>
+        <li>Our browser uses <strong>TCP</strong> to create a two-way connection with the
+            server at that IP address. </li>
+        <li>If the URL's protocol is <strong>HTTPS</strong>, then a
+            <strong>TLS</strong> connection is made to the server.</li>
+        <li>Our browser sends a <strong>HTTP request</strong> to the server. </li>
+        <li>The server does some stuff. </li>
+        <li>A <strong>HTTP response</strong> is sent back to us, containing a document. </li>
+        <li>If that document is <strong>HTML</strong>, the browser will render that HTML
+            into a webpage. </li>
+        <li>If that document contains other URLs, the browser will create new requests
+            for each of them. </li>
+    </ul>
 
 
+    <h2> Chapter 2: Hello, World </h2>
+
+    <p>Theory is fun, but do you know what would be more fun? </p>
+
+    <p>Getting a server up and running!</p>
+
+    <p>By tradition, when computering, our first program is always a program to print
+        out 'hello, world'. </p>
+
+    <div class='figure'>
+        <img src='images/tattoo_1.jpg' alt='hello world, being tattooed on my arm'/>
+        <p>
+            You could, of course, broadcast the message "hello, world" by tattooing
+            it on your arm, as I have, but perhaps we should start with a less
+            permanent solution to the problem.
+    </div>
+
+    <p>
+        We're going to be doing everything &mdash; absolutely everything &mdash; from
+        a Linux command line.
+    </p>
+
+    <p>
+        Both of these choices &mdash; Linux, and the command line &mdash; might seem
+        a little strange to you. Let's dig into them a bit.
+    </p>
+
+    <p class="ohno">
+        <strong> Oh no! </strong> This is as far as I've written!
+        Keep track of the <a href="https://github.com/classam/buildatheweb">project on GitHub</a> for updates!
+    </p>
+
+    <!--
+
+    <h3>Linux</h3>
+
+    <h3>The Command Line </h3>
+
+    <h2> Chapter 3: Getting It Online </h2>
+
+    -->
+    <!--
     <h4> Fun DNS Hacks </h4>
-
+    -->
     <!-- Upside Down Ternet, Cat DNS, log everything, create in-house name resolution -->
-
 </div>
 </body>
 
