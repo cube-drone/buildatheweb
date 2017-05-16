@@ -759,6 +759,24 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
             You could, of course, broadcast the message "hello, world" by tattooing
             it on your arm, as I have, but perhaps we should start with a less
             permanent solution to the problem.
+        </p>
+    </div>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h3>Hello, world</h3>
+        <p>
+            "Hello, world" is important to me (as you might have guessed), as a symbol
+            of learning by starting small.
+        </p>
+        <p>
+            Even experienced programmers start with "hello, world" in a new environment.
+            It's a great way to make sure that everything is configured properly.
+        </p>
+        <p>
+            The tradition started with Brian Kernighan at Bell Labs, with the introduction
+            of the C Language.
+        </p>
     </div>
 
     <p>
@@ -770,6 +788,229 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
         Both of these choices &mdash; Linux, and the command line &mdash; might seem
         a little strange to you. Let's dig into them a bit.
     </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <h3>GNU/Linux</h3>
+        <p>
+            <a href="https://www.gnu.org/gnu/why-gnu-linux.en.html">Some people</a>
+            believe that Linux should be called "GNU/Linux", on account of
+            Linux was partially built using tools provided by the GNU project.
+        </p>
+        <p>
+            However, if all things were named the way that they should be named,
+            IKEA would be called "Garbage Furniture Store" and all sandwiches
+            would be "Mayonnaise Sandwich" because without the mayonnaise they
+            are not really sandwiches at all.
+        </p>
+    </div>
+
+    <h3> Linux </h3>
+
+    <p>
+        Fully half of web programming is server programming - and in order to program
+        a server, you're going to need a server. A computer that stays online all
+        the time and responds to client requests.
+    </p>
+
+    <p>
+        You could use your home computer as a server, but:
+        <ul>
+            <li>Windows and Mac operating systems have an awkward tendency to
+                reboot themselves to install security updates and add features,
+                and they do this often both without telling you and in
+                a mandatory sort of fashion. </li>
+            <li>Your home computer has all of its security defaults set in a way
+                that would be appropriate for a computer on a home network,
+                not a computer exposed to the tireless onslaught of the
+                public internet. </li>
+            <li>Unless you pay your ISP extra for a static IP address, your
+                home's IP address changes regularly, which means that it
+                will be difficult to find your computer. </li>
+            <li>Your home computer likely contains your own, personal, private information. </li>
+            <li>Doing other stuff on your home computer, like opening 80 browser tabs
+                while playing video games, could affect the performance of your server. </li>
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside small-aside aside'>
+        <p>Only 80 tabs?</p>
+        <p>You are like a little <strong>baby</strong>.</p>
+    </div>
+            <li> Unless you happen to have a home fibre connection, it's likely
+                that you're on an asymmetric connection to the internet &mdash; with downloads
+                <em>much</em> faster than uploads. For a server, though, it is the upload
+                speed that matters; serving a lot of traffic from your home internet
+                connection would be like trying to operate a Denny's through a foot-wide hole
+                &mdash; possible, but frustrating once you have more than one or two customers.
+            </li>
+        </ul>
+    </p>
+
+    <p>
+        These are not insurmountable problems, and building a home server is a fun and
+        instructive project that I highly recommend if you have a spare computer
+        sitting around.
+    </p>
+
+    <p>
+        With the home computer out as a server option, that leaves us renting server time
+        from someone else.
+    </p>
+
+    <p>
+        There are lots of reasons that we might choose Linux over Windows if we're
+        planning on running a server for a long time. Linux is lightweight. Linux is secure.
+        Linux is able to stay online for a very long time. The reason
+        for Linux's popularity as a server is very simple, though: <strong>Linux is free</strong>,
+        which generally makes server Linux the most cost-effective option.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h3>Free or Four</h3>
+        <p>
+            In software, there are two meanings of free.
+        </p>
+
+        <p>
+            The first meaning is the obvious one, and the correct one:
+            free means "you don't have to pay for it".
+        </p>
+
+        <p>
+            But there's the other meaning of free, meaning the code
+            is <em>wild and free like an unbroken stallion</em>.
+            This is an alternative definition of free that has to do with
+            our freedom to legally take the code, modify it as we please,
+            and share it with others. Linux is also free in this way.
+        </p>
+
+        <p>
+            Many systems are one kind of free but not another - GitHub, for example,
+            is don't-have-to-pay free but not freeeeeeedom!-free, whereas Red Hat Linux
+            is freeeedom!-free but you still have to pay money dollars for it.
+        </p>
+    </div>
+
+    <h4>"It's a UNIX system! I know this!"</h4>
+
+    <p>
+        Linux, like Mac OS X, is based on Unix, an operating system with an
+        almost half-century of history, only some of which involves
+        <a href="https://www.wired.com/2015/06/tech-time-warp-time-unix-saved-day-jurassic-park/">velociraptors</a>.
+        That half-century can be a double-edged
+        sword &mdash; the reason for strange design decisions is often shrouded
+        in some ancient
+        <a href="http://ergoemacs.org/emacs/emacs_kb_shortcuts_pain.html">obscure keyboard layout</a>.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <h3>Bell Labs &amp; Unix</h3>
+        <p>
+            If you're at all interested in computing history &mdash; and why
+            wouldn't you be, it's the <em>best history</em> &mdash; you're
+            going to hear Bell Labs come up a lot.
+        </p>
+        <p>
+            It was created by Alexander Graham Bell in 1925, as the
+            "Volta Laboratory and Bureau", a private research laboratory,
+            and has changed hands numerous times since then.
+        </p>
+        <p>
+            Since opening, the laboratory has been responsible for eight
+            different Nobel prizes between 1937 and 2014 &mdash; which gives
+            it more Nobel laureates than the University of British Columbia.
+        </p>
+        <p>
+            Bell Labs invented transistors in the fifties, invented CCDs in 2009,
+            and, in the sixties, discovered the cosmic background radiation that validated
+            the existence of the Big Bang.
+        </p>
+        <p>
+            Oh, and during a brief lull in the seventies, Bell Labs created
+            Unix and C, the most successful operating system and
+            programming language in the world.
+        </p>
+        <p> Way to go, Bell Labs. </p>
+
+    </div>
+
+    <h4>Linux Distributions</h4>
+    <p>
+        One confusing thing about Linux is that you can't just crack open a laptop
+        and start running Linux on it &mdash; in fact, Linux really refers to
+        <strong>The Linux Kernel</strong>, which is just the tiny beating heart
+        of the operating system.
+    </p>
+    <p>
+        There are lots of things that we think of as part of an operating system
+        &mdash; the window system, a desktop environment, the software that
+        comes pre-installed on the system, device drivers, installers,
+        Minesweeper &mdash; but the Linux Kernel doesn't come with any of these
+        things.
+    </p>
+
+    <p>
+        So, the complete kit required to make a computer actually do computer
+        things is called a <strong>Linux Distribution</strong>.
+    </p>
+
+    <p>
+        Popular distributions
+        include <strong>Ubuntu</strong>, <strong>Red Hat/Fedora</strong>, <strong>Mint</strong>,
+        <strong>Slackware</strong>, and <strong>Arch</strong>.
+    </p>
+
+    <p>
+        Different distributions focus on different priorities.
+        Some, like <strong>Mint</strong>, focus on being easy to use as a desktop OS.
+        <strong>Arch</strong> is highly configurable and optimizable, and
+        popular with the sort of people who drive a 1996 Nissan 300ZX Turbo
+        with a gigantic aftermarket spoiler and undercar lights.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <p>
+            Gentoo is for the sort of people who would buy the Arch user's car,
+            then take the aftermarket spoiler and lights off.
+        </p>
+    </div>
+
+    <p>
+        <strong>Ubuntu</strong> started out resolutely trying to conquer the
+        desktop PC market, but after a decade of mostly failing to do so, has
+        seemingly embraced its position as a competitive and pretty comprehensive
+        server operating system. I like Ubuntu, a lot, and it's the
+        distribution I'm going to be using as an example distribution.
+    </p>
+
+    <h3> The Command Line & The Secure Shell </h3>
+
+    <p>
+        Most systems work is still done with the command line.
+    </p>
+
+    <p>
+        While I'd love to say that this is because the command line is
+        inherently superior to all other methods of interaction
+        with a computer, the actual reasons are simple:
+        <ul>
+            <li>It's easier to write a command line program than a GUI program. </li>
+            <li>SSH</li>
+        </ul>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <p>
+            What's a librarian's favourite shell command? SSH.
+        </p>
+    </div>
+    </p>
+
+    <p><strong>SSH</strong>, or <strong>Secure Shell</strong>,
+        is one of the most important tools in our web programming arsenal. </p>
+
 
     <p class="ohno">
         <strong> Oh no! </strong> This is as far as I've written!
