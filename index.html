@@ -520,6 +520,13 @@
         with <strong>Transport Layer Security (TLS)</strong>.
         This prevents J. Random Hacker from watching every HTTP request that goes by.
     </p>
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <p>
+            Transport Layer Security is a form of
+            <a href="https://www.youtube.com/watch?v=jkV1KEJGKRA">End to End Encryption</a>.
+        </p>
+    </div>
 
     <div class='left-aside-arrow'> </div>
     <div class='left-aside aside'>
@@ -1054,6 +1061,309 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
     </div>
 
     <h3> Let's Get This Terrible Party Started </h3>
+
+    <p>
+        First and foremost, we are going to need access to a command line.
+    </p>
+
+    <p>
+        If we're running Mac OS X, we can get to a command line, right now,
+        by opening the "Terminal" program &mdash; although
+        downloading <a href="https://www.iterm2.com/">iTerm2</a> gets us tabs and splits.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h3>Tabs &amp; Splits</h3>
+        <p>
+            When we work with terminals, sooner or later we're going to have 10 of them open
+            at once. When this starts happening, having the ability to split them out
+            into separate tabs starts to become <em>way convenient</em>.
+        </p>
+        <p>
+            If you have a wide screen, it's also nice to be able to split the
+            terminal in half and have <em>twice as many terminals</em>.
+        </p>
+    </div>
+
+    <p>
+        If we're running Windows, we can download <a href="https://git-scm.com/">Git</a>.
+        We're going to need Git anyways, it's the most widely used source control
+        tool on the market, but it also comes with the <em>easiest to configure unix-like console
+        available in Windows</em>.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside small-aside aside'>
+        <p>
+            Yeah, move over, Cygwin.
+        </p>
+    </div>
+
+    <p>
+        If we're not in a hurry, we also might spend some time configuring
+        <a href="https://conemu.github.io/">ConEmu</a> to
+        <a href="https://gist.github.com/n3dst4/cc875d83401c06bd6faa">work with Git Bash</a>.
+        This gets us the tabs and the splits.
+    </p>
+    <div class='right-aside-arrow'> </div>
+
+    <h4> Installing Ubuntu </h4>
+    <p>
+        This used to be a process that involved either running both Ubuntu and Windows/Mac OS X
+        on our primary computer, and switching from one to the other when we boot
+        up the computer &mdash; or, finding a junky old computer from around the house
+        and installing Ubuntu on that.
+    </p>
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <p>
+            There's also
+            <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about">Bash on Ubuntu on Windows Subsystem for Linux</a>, which
+            is a new and exciting way to install Ubuntu on Windows, but it's
+            still <em>very beta</em>.
+        </p>
+    </div>
+    <p>
+        With Virtual Machines, though, it's possible to run Ubuntu from within our primary operating
+        system. So we should definitely do that.
+        In fact, the toolset for doing this has become so easy to use that I've started
+        running a <em>different virtual machine for every project I'm working on</em>.
+    </p>
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside small-aside aside'>
+        <p>
+            I built a computer with 32GB of RAM just to make this practical, although
+            I could also <em>just remember to turn the virtual machines off once in a while</em>.
+        </p>
+    </div>
+
+    <p>
+        The tools that make this easy and free are <a href="https://www.virtualbox.org/">VirtualBox</a>
+        and <a href="https://www.vagrantup.com/">Vagrant</a>. Download and install these programs.
+    </p>
+
+    <h4>Code Directory & Project Root</h4>
+    <p>
+        Somewhere on our computer is our <strong>home directory</strong>. This is the root
+        for all of our personal files. In Windows, my home directory lives at
+        <code>C:\Users\Curtis</code>, whereas in Mac OS X, the home directory lives
+        in <code>/users/curtis</code>.
+    </p>
+
+    <p>
+        I'm fond of creating a directory, <code>code</code>, under the home root, as
+        my project root. Every different project I'm working on lives in this directory.
+        Then, I configure my terminal to open this directory when it starts up.
+    </p>
+
+    <p>
+        Let's open our terminal &mdash; be it Terminal, iTerm2, Git Bash, or ConEmu.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside small-aside aside'>
+        <h3> Shell Game </h3>
+        <p>
+            Technically, the <strong>terminal</strong> is the window that shows you
+            the <strong>shell</strong>, which is the program that actually handles
+            your interactions with the command prompt.
+        </p>
+        <p>
+            <strong>Bash</strong> is the Bourne Again Shell, the most common shell
+            for Linux systems.
+        </p>
+        <p>
+            <strong>SSH</strong> is the Secure Shell, a shell to remote systems.
+        </p>
+        <p>
+            <strong>sh</strong> stands for "Shell", and it refers to whatever
+            is the default shell on a system.
+        </p>
+        <p>
+            <strong>dash</strong> is a lightweight shell without the features
+            and functionality of Bash. In Debian and Ubuntu, <code>/bin/sh</code>
+            points to dash instead of bash, but bash is still the default shell
+            for users.
+        </p>
+    </div>
+
+    <div class='figure'>
+        <img src='images/chapter2/terminal_1.png' />
+        <p>dat's some good terminal</p>
+    </div>
+
+    <p>
+        We're staring a <strong>command prompt</strong> in the face. That <code>$</code>
+        means that the terminal is ready for us to enter a command.
+    </p>
+
+    <h4>Let's Putter Around In The Terminal A Bit With pwd</h4>
+
+    <p>
+        I'm excited! I get to tell you about the <strong>most important</strong> shell commands!
+    </p>
+
+    <p>
+        Let's start by asking where we are, using the <strong>print working directory</strong> command,
+        <code>pwd</code>.
+    </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> pwd
+/c/Users/curtis/code</pre>
+
+
+    <h5> Tilde Swinton</h5>
+
+    <p>
+        So, we're at <code>/c/Users/curtis/code</code>, but the terminal says that
+        we're at <code>~/code</code>. What's the deal?
+    </p>
+
+    <p>
+        <code>~</code> is shorthand for "home".
+        Since our home is <code>/c/Users/curtis</code>, <code>~/code</code>
+        is shorthand for <code>/c/Users/curtis/code</code>.
+    </p>
+
+    <h5> MSYS </h5>
+    <p>
+        Follow-up question: why is it <code>/c/Users/curtis/code</code>
+        and not <code>C:\Users\curtis\code</code>?
+    </p>
+
+    <p>
+        Simulating Bash on Windows requires a layer to translate Windows concepts
+        into vaguely-Linux-shaped concepts. This is provided by MinGW &mdash; Minimalist GNU for Windows
+        &mdash; and MSYS, which is a collection of utilities like Bash ported to run on MinGW.
+    </p>
+
+    <p>
+        Linux doesn't support lettered-drive roots like <code>C:</code>, instead prefering
+        to have a single root for all drives, <code>/</code>.
+        Linux also uses forward slashes instead of backslashes.
+    </p>
+
+    <p>
+        MSYS and MinGW do this conversion for us, but the differences between Windows
+        and Linux are going to continue to bite us all the way throughout this journey.
+    </p>
+
+    <p>
+        Mac OS X, being built on top of a Unix system called "Darwin", doesn't suffer from
+        these problems.
+    </p>
+
+    <h5> Go Home And Look Around With cd and ls </h5>
+
+    <p>
+        Using the <strong>change directory</strong> command, <code>cd</code>, we can change
+        our directory.
+    </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> cd ~
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
+<span class='prompt'>$</span> pwd
+/c/users/curtis
+</pre>
+
+    <p> Look, we're home, now! </p>
+
+    <p> We can navigate directly to a specific directory: </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
+<span class='prompt'>$</span> cd /
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>/</span>
+<span class='prompt'>$</span> cd /etc
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>/etc</span>
+<span class='prompt'>$</span>
+</pre>
+
+    <p> And we can use <code>ls</code> to display the contents of a directory: </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>/etc</span>
+<span class='prompt'>$</span> cd ~
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
+<span class='prompt'>$</span> ls
+AppData
+Application Data
+ConEmu
+Contacts
+Cookies
+Creative Cloud Files
+Embarrassing Pornography
+Even More Embarrassing Pornography
+Seriously, Goats and Stuff
+Desktop
+Documents
+Music
+NTUSER.DAT
+_vim
+_viminfo
+_vimrc
+code
+pip
+vimfiles
+</pre>
+
+    <p>Whoa. There's a lot of stuff in my home directory.</p>
+
+    <p>If there's no code directory in here, yet, we can make one, with <code>mkdir</code></p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
+<span class='prompt'>$</span> mkdir code
+mkdir: cannot create directory 'code': File exists
+</pre>
+
+    <p>But I can't make one, because there's already one there. </p>
+
+    <div class='figure'>
+        <h4>Curtis's Big Sexy Terminal Top Eight</h4>
+        <table>
+            <tr>
+                <th>ls</th> <td> list the contents of a directory </td>
+            </tr>
+            <tr>
+                <th>cd</th> <td> change the directory </td>
+            </tr>
+            <tr>
+                <th>pwd</th> <td> tell me what directory I'm in </td>
+            </tr>
+            <tr>
+                <th>mkdir</th> <td> make a directory </td>
+            </tr>
+            <tr>
+                <th>rmdir</th> <td> remove a directory </td>
+            </tr>
+            <tr>
+                <th>touch</th> <td> make a file </td>
+            </tr>
+            <tr>
+                <th>cat</th> <td> print a file </td>
+            </tr>
+            <tr>
+                <th>rm</th> <td> remove a file </td>
+            </tr>
+        </table>
+    </div>
+
+    <h4>Git init</h4>
+
+    <h5>Why would I use source control when there's just the one of me?</h5>
+
+    <h4>Vagrant init</h4>
+
 
     <p class="ohno">
         <strong> Oh no! </strong> This is as far as I've written!

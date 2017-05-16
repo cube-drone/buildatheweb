@@ -81,6 +81,18 @@ code{
     line-height: 1.5em;
 }
 
+.code .machine{
+    color: CadetBlue;
+}
+
+.code .path{
+    color: #ccc;
+}
+
+.code .prompt{
+    color: CadetBlue;
+}
+
 .code strong{
     background-color: #666;
 }
