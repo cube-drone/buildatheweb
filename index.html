@@ -6,17 +6,30 @@
     <meta name="author" content="Curtis Lassam" />
 
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="js/breadcrumb/example/jquery.dynamicBreadcrumb.css">
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
     <!-- this script converts straight-quotes into proper directional quotes -->
     <script src="js/smartquotes.js"></script>
     <script>smartquotes()</script>
+
+    <!-- jQuery -->
+    <!--
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <script src="js/buildATheWeb.tableOfContents.js"></script>
+    -->
 </head>
 
 <body>
-<div class='main'>
+
+<nav id="breadcrumb">
+
+</nav>
+
+<div class="main" id="content">
     <h1> Build A The Web </h1>
 
     <h2> Introduction </h2>
@@ -57,7 +70,7 @@
         <a href="https://github.com/classam/buildatheweb">https://github.com/classam/buildatheweb</a>.
     </p>
 
-    <h2> Chapter 1: Request, Response </h2>
+    <h2 id="Chapter1lequestResponse"> Chapter 1: Request, Response </h2>
 
     <p>
         Our first chapter is going to focus on what happens behind the scenes when we make
@@ -218,8 +231,8 @@
 
     <p>
         The abstraction presented by TCP/IP is simple: every computer has an IP address.
-        An IP address looks like this: <code>192.168.0.1</code> &mdash; or, like this:
-        <code>2601:0680:c501:17ef:a063:a37f:3803:5c1a</code>. These are just
+        An IP address looks like this: <code>192.0.2.0</code> &mdash; or, like this:
+        <code>2001:DB80:c501:17ef:a063:a37f:3803:5c1a</code>. These are just
         identifiers that communicate a unique identity for the computer in question.
     </p>
 
@@ -440,7 +453,7 @@
         We can pay these people about ten US dollars a year to
         create and maintain a record for us,
         so long as nobody else has claimed that domain name already.
-        For a pittance, we could own butts.cash.
+        For a pittance, I now own http://butts.work.
     </p>
 
     <div class='left-aside-arrow'> </div>
@@ -469,7 +482,7 @@
 
     <p>
         So, Wikipedia's nameservers report that en.wikipedia.org is
-        located at, say, <code>91.198.174.192</code>.
+        located at, say, <code>203.0.113.98</code>.
         Finally, after that entire protracted process, we know where wikipedia is.
     </p>
 
