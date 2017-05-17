@@ -1108,7 +1108,7 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
     </p>
     <div class='right-aside-arrow'> </div>
 
-    <h4> Installing Ubuntu </h4>
+    <h3> Installing Ubuntu </h3>
     <p>
         This used to be a process that involved either running both Ubuntu and Windows/Mac OS X
         on our primary computer, and switching from one to the other when we boot
@@ -1143,7 +1143,7 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
         and <a href="https://www.vagrantup.com/">Vagrant</a>. Download and install these programs.
     </p>
 
-    <h4>Code Directory & Project Root</h4>
+    <h3>Code Directory & Project Root</h3>
     <p>
         Somewhere on our computer is our <strong>home directory</strong>. This is the root
         for all of our personal files. In Windows, my home directory lives at
@@ -1198,7 +1198,7 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
         means that the terminal is ready for us to enter a command.
     </p>
 
-    <h4>Let's Putter Around In The Terminal A Bit With pwd</h4>
+    <h3>Let's Putter Around In The Terminal A Bit</h3>
 
     <p>
         I'm excited! I get to tell you about the <strong>most important</strong> shell commands!
@@ -1215,7 +1215,7 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
 /c/Users/curtis/code</pre>
 
 
-    <h5> Tilde Swinton</h5>
+    <h4> Tilde Swinton</h4>
 
     <p>
         So, we're at <code>/c/Users/curtis/code</code>, but the terminal says that
@@ -1228,7 +1228,7 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
         is shorthand for <code>/c/Users/curtis/code</code>.
     </p>
 
-    <h5> MSYS </h5>
+    <h4> MSYS </h4>
     <p>
         Follow-up question: why is it <code>/c/Users/curtis/code</code>
         and not <code>C:\Users\curtis\code</code>?
@@ -1256,7 +1256,7 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
         these problems.
     </p>
 
-    <h5> Go Home And Look Around With cd and ls </h5>
+    <h4>Terminal Commands</h4>
 
     <p>
         Using the <strong>change directory</strong> command, <code>cd</code>, we can change
@@ -1326,44 +1326,197 @@ vimfiles
 mkdir: cannot create directory 'code': File exists
 </pre>
 
-    <p>But I can't make one, because there's already one there. </p>
+    <p>That doesn't work, because in my case, the code directory already exists. </p>
+
+    <p>Here's a good trick. Type in <code> cd c</code> and then hit the tab key.</p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
+<span class='prompt'>$</span> cd code
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span>
+    </pre>
+
+    <p>The terminal should auto-complete to the first thing that starts with a 'c'. If you press tab again, it'll
+        auto-complete to the second thing that starts with a 'c'. This is a very useful tool. </p>
 
     <div class='figure'>
-        <h4>Curtis's Big Sexy Terminal Top Eight</h4>
+        <p>All this computer hacking is making me thirsty. I think I'll order a TAB.</p>
+
+        <img src="http://i.imgur.com/rIePs33.jpg">
+
+        <div class='right-aside-arrow'> </div>
+        <div class='right-aside aside'>
+            <p><em>This is a reference to a joke from an episode of The Simpsons that is now over 20 years old,
+            referencing a brand of diet cola that is only sold in the United States and Spain</em></p>
+        </div>
+    </div>
+
+    <p> Let's create a directory for our hello world program. </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> mkdir hello_world
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> ls
+hello_world
+    </pre>
+
+    <p> Now let's delete that directory and then recreate it, just to be contrary. </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> rmdir hello_world
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> ls
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> mkdir hello_world
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> ls
+hello_world
+    </pre>
+
+    <p> We can use <code>cd</code> to jump in to the folder we've just created, and we can also
+        use <code>cd</code> with the special shortcut <code>..</code> to go up a level. </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> cd hello_world
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span> cd ..
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> cd ..
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/</span>
+<span class='prompt'>$</span>
+hello_world
+    </pre>
+
+    <p> That feels like a pretty solid introduction to the command line. With these simple
+        tools we can zip around the filesystem creating directories like a pro!</p>
+
+    <div class='figure'>
+        <h4>Curtis's Big Sexy Terminal Top Eight Commands</h4>
         <table>
             <tr>
-                <th>ls</th> <td> list the contents of a directory </td>
+                <th><code>ls</code></th> <td> list the contents of a directory </td>
             </tr>
             <tr>
-                <th>cd</th> <td> change the directory </td>
+                <th><code>cd</code></th> <td> change the directory </td>
             </tr>
             <tr>
-                <th>pwd</th> <td> tell me what directory I'm in </td>
+                <th><code>pwd</code></th> <td> tell me what directory I'm in </td>
             </tr>
             <tr>
-                <th>mkdir</th> <td> make a directory </td>
+                <th><code>mkdir</code></th> <td> make a directory </td>
             </tr>
             <tr>
-                <th>rmdir</th> <td> remove a directory </td>
+                <th><code>rmdir</code></th> <td> remove a directory </td>
             </tr>
             <tr>
-                <th>touch</th> <td> make a file </td>
+                <th><code>touch</code></th> <td> make a file </td>
             </tr>
             <tr>
-                <th>cat</th> <td> print a file </td>
+                <th><code>cat</code></th> <td> print a file </td>
             </tr>
             <tr>
-                <th>rm</th> <td> remove a file </td>
+                <th><code>rm</code></th> <td> remove a file </td>
             </tr>
         </table>
     </div>
 
-    <h4>Git init</h4>
+    <h3>Vagrant</h3>
 
-    <h5>Why would I use source control when there's just the one of me?</h5>
+    <p>We installed Vagrant and VirtualBox, earlier. What are these for?</p>
 
-    <h4>Vagrant init</h4>
+    <p>
+        Well, VirtualBox is software to run virtual machines. We could get away with
+        just using VirtualBox in our quest to install Ubuntu, but that would take
+        a lot of effort and clicking.
+    </p>
 
+    <p>
+        Vagrant is a wrapper around VirtualBox that provides a very hackable
+        command line interface and a gigantic repository of pre-created
+        operating system images. Installing an operating system with Vagrant
+        can be as easy as just picking it out of a catalogue and modifying a text
+        file.
+    </p>
+
+    <p>
+        One of the things I like most about Vagrant is that it's possible to configure
+        the entire operating system automatically. Instead of laboriously hand-configuring
+        the operating system every time we move to a new machine or accidentally bork
+        a database, we can just scour the virtual machine clean and summon a new one.
+    </p>
+
+    <p>Let's go back to our new 'hello_world' directory and type in <code>vagrant init</code></p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> cd hello_world
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span> vagrant init
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please
+read the comments in the Vagrantfile as well as documentation
+on `vagrantup.com` for more information on using Vagrant.
+    </pre>
+
+    <p><code>vagrant init</code> creates for us a <strong>Vagrantfile</strong>. This file
+        describes all of the important details about the operating system we are about
+        to create &mdash; which Linux distribution we want, networking details, how much
+        RAM it gets to use, and even, if we configure it right, the instructions for
+        setting up all of the software that runs on the operating system.</p>
+
+    <p>Now it's time to open up the Vagrantfile in a text editor. </p>
+
+    <!-- TODO: this bit, here -->
+
+    <!-- not until we get to nginx configuration modifications -->
+
+    <h3> A Different Kind of Text Editor </h3>
+
+    <p>
+        Presumably, we're far enough along in the craft of programming to know that a
+        text editor is the software developer's multi-tool, and one's choice of text editor
+        is approximately as emotionally charged and contentious as one's choice of video
+        game console.
+    </p>
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside small-aside aside'>
+        <p>
+            TurboGrafx 16 forever!
+        </p>
+    </div>
+
+    <p>
+        But there's a problem &mdash; because we're going to be working extensively with SSH,
+        and SSH is a command shell, with no mouse to speak of, we're going to need
+        a text editor that operates entirely from within the shell.
+    </p>
+
+    <p>
+        This leaves us, then, with about three different options:
+        <ul>
+            <li><strong>vim</strong>, my favourite, which is cryptic and difficult, but powerful</li>
+            <li><strong>emacs</strong>, which is even more cryptic and difficult, but even more powerful</li>
+            <li><strong>nano</strong>, which is quite easy to learn, but offers limited functionality</li>
+        </ul>
+    </p>
+
+    <div class='figure'>
+        <h4>Nano is Like a Spork</h4>
+        <img src='images/chapter2/198.png' />
+    </div>
 
     <p class="ohno">
         <strong> Oh no! </strong> This is as far as I've written!

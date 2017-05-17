@@ -206,4 +206,20 @@ blockquote:before {
     margin: auto;
 }
 
+table{
+
+}
+
+table tr:nth-child(odd) {
+    background-color: #ddd;
+}
+
+table th{
+    padding: 10px;
+}
+
+table td{
+    padding: 10px;
+}
+
 
