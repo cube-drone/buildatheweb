@@ -71,6 +71,15 @@ code{
     font-family: inconsolata;
 }
 
+pre{
+    margin: 0 !important;
+}
+
+pre code{
+    font-size: 60%;
+    line-height: 1.5em;
+}
+
 .code{
     font-family: inconsolata;
     overflow: hidden;
@@ -91,6 +100,10 @@ code{
 
 .code .prompt{
     color: CadetBlue;
+}
+
+.barf{
+    font-size: 40%;
 }
 
 .code strong{
@@ -122,6 +135,40 @@ code{
 .left-aside-arrow{
     width: 150px;
     border-bottom: 5px dashed CadetBlue;
+}
+
+.long-arrow{
+    width: 450px !important;
+}
+
+.short-arrow{
+    width: 30px !important;
+}
+
+.hang-right-aside-arrow{
+    width: 150px;
+    position: absolute;
+    right: 0;
+    border-bottom: 5px dashed CadetBlue;
+}
+.hang-right-aside{
+    right: -245px;
+    border-bottom: 5px dashed CadetBlue;
+    border-left: 5px dashed CadetBlue;
+    border-top: 5px dashed CadetBlue;
+}
+
+.hang-left-aside-arrow{
+    width: 150px;
+    position: absolute;
+    left: 0;
+    border-bottom: 5px dashed CadetBlue;
+}
+.hang-left-aside{
+    left: -245px;
+    border-bottom: 5px dashed CadetBlue;
+    border-right: 5px dashed CadetBlue;
+    border-top: 5px dashed CadetBlue;
 }
 
 .right-aside{

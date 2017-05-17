@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <!-- Hey there! You're looking at the source for BuildATheWeb.com! Which is awesome! -->
+
+
     <title>Build A The Web</title>
     <meta name="description" content="We're going to learn you how to build a the web" />
     <meta name="author" content="Curtis Lassam" />
 
     <meta charset="UTF-8"/>
+
+
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- this script converts straight-quotes into proper directional quotes -->
+    <!-- This script converts straight-quotes into proper directional quotes -->
     <script src="js/smartquotes.js"></script>
     <script>smartquotes()</script>
+
+    <!-- Let's highlight code samples -->
+    <script src="js/highlight/highlight.pack.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/highlight/styles/monokai.css">
+    <script>hljs.initHighlightingOnLoad();</script>
 
     <!-- jQuery -->
     <!--
@@ -1108,40 +1119,6 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
     </p>
     <div class='right-aside-arrow'> </div>
 
-    <h3> Installing Ubuntu </h3>
-    <p>
-        This used to be a process that involved either running both Ubuntu and Windows/Mac OS X
-        on our primary computer, and switching from one to the other when we boot
-        up the computer &mdash; or, finding a junky old computer from around the house
-        and installing Ubuntu on that.
-    </p>
-    <div class='left-aside-arrow'> </div>
-    <div class='left-aside aside'>
-        <p>
-            There's also
-            <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about">Bash on Ubuntu on Windows Subsystem for Linux</a>, which
-            is a new and exciting way to install Ubuntu on Windows, but it's
-            still <em>very beta</em>.
-        </p>
-    </div>
-    <p>
-        With Virtual Machines, though, it's possible to run Ubuntu from within our primary operating
-        system. So we should definitely do that.
-        In fact, the toolset for doing this has become so easy to use that I've started
-        running a <em>different virtual machine for every project I'm working on</em>.
-    </p>
-    <div class='right-aside-arrow'> </div>
-    <div class='right-aside small-aside aside'>
-        <p>
-            I built a computer with 32GB of RAM just to make this practical, although
-            I could also <em>just remember to turn the virtual machines off once in a while</em>.
-        </p>
-    </div>
-
-    <p>
-        The tools that make this easy and free are <a href="https://www.virtualbox.org/">VirtualBox</a>
-        and <a href="https://www.vagrantup.com/">Vagrant</a>. Download and install these programs.
-    </p>
 
     <h3>Code Directory & Project Root</h3>
     <p>
@@ -1222,8 +1199,38 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
         we're at <code>~/code</code>. What's the deal?
     </p>
 
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside small-aside aside'>
+        <h3> Symbol Puns </h3>
+        <p>
+            Part of the elaborate online story
+            <a href="http://www.mspaintadventures.com/?s=6">Homestuck</a>
+            features three programming languages,
+            each a different symbol pun.
+        </p>
+        <ul>
+            <li><code>~ATH</code> (til death)</li>
+            <li><code>^CAKE</code> (carrot cake)</li>
+            <li><code>DIS*</code> (disasterisk)</li>
+        </ul>
+        <p>
+            Notably, <code>~ATH</code> addresses
+            multithreaded programming with
+            <em>syntactically significant color indicating
+            different threads of execution</em>, which
+            is a pretty <del>awesome</del> hilarious idea.
+        </p>
+        <p>
+            It's unfortunate that
+            the language's <em>unbounded runtime</em>
+            and <em>fictional nature</em>
+            render the programming
+            language almost completely useless.
+        </p>
+    </div>
+
     <p>
-        <code>~</code> is shorthand for "home".
+        <code>~</code>(tilde) is shorthand for "home".
         Since our home is <code>/c/Users/curtis</code>, <code>~/code</code>
         is shorthand for <code>/c/Users/curtis/code</code>.
     </p>
@@ -1274,7 +1281,23 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
 
     <p> Look, we're home, now! </p>
 
-    <p> We can navigate directly to a specific directory: </p>
+    <p> We can navigate to a specific directory: </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <h4> The Root Directory </h4>
+        <p>
+            The <code>/</code> directory is at the very base of
+            the filesystem tree, and thus, is the "root" directory.
+        </p>
+        <p>
+            "Root" is an overloaded term in the Linux world, because
+            just about everything is modelled as some kind of tree
+            structure. There's also a root <em>user</em>, and that's
+            a completely different thing that doesn't have anything
+            to do with the filesystem.
+        </p>
+    </div>
 
     <pre class='code'>
 <span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
@@ -1432,12 +1455,45 @@ hello_world
         </table>
     </div>
 
-    <h3>Vagrant</h3>
-
-    <p>We installed Vagrant and VirtualBox, earlier. What are these for?</p>
+    <h3> Installing Ubuntu </h3>
+    <p>
+        This used to be a process that involved either running both Ubuntu and Windows/Mac OS X
+        on our primary computer, and switching from one to the other when we boot
+        up the computer &mdash; or, finding a junky old computer from around the house
+        and installing Ubuntu on that.
+    </p>
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <p>
+            There's also
+            <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about">Bash on Ubuntu on Windows Subsystem for Linux</a>, which
+            is a new and exciting way to install Ubuntu on Windows, but it's
+            still <em>very beta</em>.
+        </p>
+    </div>
+    <p>
+        With Virtual Machines, though, it's possible to run Ubuntu from within our primary operating
+        system. So we should definitely do that.
+        In fact, the toolset for doing this has become so easy to use that I've started
+        running a <em>different virtual machine for every project I'm working on</em>.
+    </p>
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside small-aside aside'>
+        <p>
+            I built a computer with 32GB of RAM just to make this practical, although
+            I could also <em>just remember to turn the virtual machines off once in a while</em>.
+        </p>
+    </div>
 
     <p>
-        Well, VirtualBox is software to run virtual machines. We could get away with
+        The tools that make this easy and free are <a href="https://www.virtualbox.org/">VirtualBox</a>
+        and <a href="https://www.vagrantup.com/">Vagrant</a>. Download and install these programs.
+    </p>
+
+    <h4>VirtualBox &amp; Vagrant</h4>
+
+    <p>
+        VirtualBox is software to run virtual machines. We could get away with
         just using VirtualBox in our quest to install Ubuntu, but that would take
         a lot of effort and clicking.
     </p>
@@ -1454,7 +1510,7 @@ hello_world
         One of the things I like most about Vagrant is that it's possible to configure
         the entire operating system automatically. Instead of laboriously hand-configuring
         the operating system every time we move to a new machine or accidentally bork
-        a database, we can just scour the virtual machine clean and summon a new one.
+        a database, we can just incinerate the virtual machine clean and summon a new one.
     </p>
 
     <p>Let's go back to our new 'hello_world' directory and type in <code>vagrant init</code></p>
@@ -1471,13 +1527,131 @@ read the comments in the Vagrantfile as well as documentation
 on `vagrantup.com` for more information on using Vagrant.
     </pre>
 
-    <p><code>vagrant init</code> creates for us a <strong>Vagrantfile</strong>. This file
+    <p>
+        <code>vagrant init</code> creates for us a <strong>Vagrantfile</strong>. This file
         describes all of the important details about the operating system we are about
         to create &mdash; which Linux distribution we want, networking details, how much
         RAM it gets to use, and even, if we configure it right, the instructions for
-        setting up all of the software that runs on the operating system.</p>
+        setting up all of the software that runs on the operating system.
+    </p>
 
     <p>Now it's time to open up the Vagrantfile in a text editor. </p>
+
+    <div class='hang-left-aside-arrow short-arrow' style="margin-top: 85px;"></div>
+    <div class='hang-left-aside aside' style="margin-top: 50px;">
+        <h4>Ruby</h4>
+        <p>
+            Vagrantfiles are just ... Ruby.
+        </p>
+        <p>
+            If you wanted to write some Ruby code in here, you could.
+        </p>
+    </div>
+
+    <div class='hang-right-aside-arrow long-arrow' style="margin-top: 355px;"></div>
+    <div class='hang-right-aside aside' style="margin-top: 290px;">
+        <h4>1.</h4>
+        <p>
+            This is where we decide what linux distribution to use.
+        </p>
+        <p>
+            We're going to replace <code>"base"</code> with <code>"ubuntu/xenial64"</code>.
+        </p>
+    </div>
+
+    <div class='hang-left-aside-arrow short-arrow' style="margin-top: 555px;"></div>
+    <div class='hang-left-aside aside' style="margin-top: 500px;">
+        <h4>2.</h4>
+        <p>
+            This is where we forward port 8080 on our outer computer to port 80 on the
+            virtual machine, by uncommenting this line.
+        </p>
+    </div>
+
+    <div class='hang-right-aside-arrow' style="margin-top: 855px;"></div>
+    <div class='hang-right-aside aside' style="margin-top: 800px;">
+        <h4>4.</h4>
+        <p>
+            We are going to sync a folder on our outer computer to a folder on the
+            virtual machine by editing this line.
+        </p>
+    </div>
+
+    <pre>
+    <code class='ruby'>
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure(2) do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://atlas.hashicorp.com/search.
+  config.vm.box = "base"
+
+  # Disable automatic box update checking. If you disable this, then
+  # boxes will only be checked for updates when the user runs
+  # `vagrant box outdated`. This is not recommended.
+  # config.vm.box_check_update = false
+
+  # Create a forwarded port mapping which allows access to a specific port
+  # within the machine from a port on the host machine. In the example below,
+  # accessing "localhost:8080" will access port 80 on the guest machine.
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  # Create a private network, which allows host-only access to the machine
+  # using a specific IP.
+  # config.vm.network "private_network", ip: "192.168.33.10"
+
+  # Create a public network, which generally matched to bridged network.
+  # Bridged networks make the machine appear as another physical device on
+  # your network.
+  # config.vm.network "public_network"
+
+  # Share an additional folder to the guest VM. The first argument is
+  # the path on the host to the actual folder. The second argument is
+  # the path on the guest to mount the folder. And the optional third
+  # argument is a set of non-required options.
+  # config.vm.synced_folder "../data", "/vagrant_data"
+
+  # Provider-specific configuration so you can fine-tune various
+  # backing providers for Vagrant. These expose provider-specific options.
+  # Example for VirtualBox:
+  #
+  # config.vm.provider "virtualbox" do |vb|
+  #   # Display the VirtualBox GUI when booting the machine
+  #   vb.gui = true
+  #
+  #   # Customize the amount of memory on the VM:
+  #   vb.memory = "1024"
+  # end
+  #
+  # View the documentation for the provider you are using for more
+  # information on available options.
+
+  # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
+  # such as FTP and Heroku are also available. See the documentation at
+  # https://docs.vagrantup.com/v2/push/atlas.html for more information.
+  # config.push.define "atlas" do |push|
+  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
+  # end
+
+  # Enable provisioning with a shell script. Additional provisioners such as
+  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
+  # documentation for more information about their specific syntax and use.
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   sudo apt-get update
+  #   sudo apt-get install -y apache2
+  # SHELL
+end
+    </code>
+    </pre>
 
     <!-- TODO: this bit, here -->
 
