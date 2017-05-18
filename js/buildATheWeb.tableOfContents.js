@@ -60,7 +60,7 @@ var register = function(hLevel, i, element){
 
     tableOfContentsSparseArray[xheight] = {'level': hLevel, 'id':element.id,  'title': $(element).html()}
 
-    console.log(hLevel, i, $(element).html(), $(element).offset().top);
+    //console.log(hLevel, i, $(element).html(), $(element).offset().top);
 };
 
 var addToTree = function(tocEntry){
@@ -103,7 +103,7 @@ var renderHeader = function(treeObj){
     let htmlelements = "";
     let elements = new Array();
 
-    console.log(treeObj.depth);
+    //console.log(treeObj.depth);
     let currentObj = treeObj;
 
     for(var i = 0; i < treeObj.depth; i++){
@@ -141,7 +141,7 @@ $(document).ready(function(){
     $("h6").each(function(i, el){ register(6, i, el); });
 
     tableOfContentsSparseArray.forEach(function(el, i){
-        console.log(i, el);
+        //console.log(i, el);
         addToTree(el);
     });
 
@@ -162,18 +162,19 @@ $(document).ready(function(){
     $("#toc-bar").hide();
     $("#toc-full").hide();
 
+    $("#content").click(hideToc);
 });
 
-let eventuallyFadeBackIn = debounce(function(){
+var eventuallyFadeBackIn = debounce(function(){
     $("#toc-bar").slideDown();
 }, 900);
 
-let hideToc = debounce(function(){
+var hideToc = debounce(function(){
     $("#toc-bar").fadeOut();
     $("#toc-full").fadeOut();
 }, 10);
 
-let generateLocation = debounce(function(){
+var generateLocation = debounce(function(){
     var scrollPosition = $(document).scrollTop();
     let closest = closestElement(scrollPosition+200);
     let treeObj = findInTree(closest);

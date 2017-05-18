@@ -59,7 +59,7 @@
         of the book.
     </p>
     <p>
-        It was last updated <strong class='book_last_update'>May 15, 2017</strong>.
+        It was last updated <strong class='book_last_update'>May 18, 2017</strong>.
     </p>
 
     <p>
@@ -757,7 +757,7 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
         and scripts before they're completely rendered.
     </p>
 
-    <h3>Summary</h3>
+    <h3> Chapter 1 Summary</h3>
 
     <p>Every browser request&ndash;response goes a little something like this: </p>
 
@@ -1435,7 +1435,7 @@ hello_world
         tools we can zip around the filesystem creating directories like a pro!</p>
 
     <div class='figure'>
-        <h4>Curtis's Big Sexy Terminal Top Eight Commands</h4>
+        <h4>Curtis's Big Sexy Terminal Cheat Sheet</h4>
         <table>
             <tr>
                 <th><code>ls</code></th> <td> list the contents of a directory </td>
@@ -1460,6 +1460,15 @@ hello_world
             </tr>
             <tr>
                 <th><code>rm</code></th> <td> remove a file </td>
+            </tr>
+            <tr>
+                <th><code>cp</code></th> <td> copy </td>
+            </tr>
+            <tr>
+                <th><code>mv</code></th> <td> move </td>
+            </tr>
+            <tr>
+                <th><code>sudo</code></th> <td> i am an admin, let me do this thing </td>
             </tr>
         </table>
     </div>
@@ -1546,8 +1555,21 @@ on `vagrantup.com` for more information on using Vagrant.
 
     <p>Now it's time to open up the Vagrantfile in a text editor. </p>
 
-    <div class='hang-left-aside-arrow short-arrow' style="margin-top: 85px;"></div>
-    <div class='hang-left-aside aside' style="margin-top: 50px;">
+    <div class='right-aside-arrow short-arrow'></div>
+    <div class='right-aside aside'>
+        <h4>Text Editor</h4>
+        <p>
+            I'm just going to assume that you have a programmer's text editor on your
+            computer that you like and are familiar with.
+        </p>
+        <p>
+            If you don't, go install <strong>Notepad++</strong> or <strong>SublimeText</strong>
+            or maybe <strong>Atom</strong>.
+        </p>
+    </div>
+
+    <div class='hang-left-aside-arrow short-arrow' style="margin-top: 35px;"></div>
+    <div class='hang-left-aside aside' style="margin-top: 0px;">
         <h4>Ruby</h4>
         <p>
             Vagrantfiles are just ... Ruby.
@@ -1557,9 +1579,9 @@ on `vagrantup.com` for more information on using Vagrant.
         </p>
     </div>
 
-    <div class='hang-right-aside-arrow long-arrow' style="margin-top: 355px;"></div>
-    <div class='hang-right-aside aside' style="margin-top: 290px;">
-        <h4>1.</h4>
+    <div class='hang-right-aside-arrow long-arrow' style="margin-top: 305px;"></div>
+    <div class='hang-right-aside aside' style="margin-top: 240px;">
+        <h4>1. Base Box</h4>
         <p>
             This is where we decide what linux distribution to use.
         </p>
@@ -1568,18 +1590,18 @@ on `vagrantup.com` for more information on using Vagrant.
         </p>
     </div>
 
-    <div class='hang-left-aside-arrow short-arrow' style="margin-top: 555px;"></div>
-    <div class='hang-left-aside aside' style="margin-top: 500px;">
-        <h4>2.</h4>
+    <div class='hang-left-aside-arrow short-arrow' style="margin-top: 505px;"></div>
+    <div class='hang-left-aside aside' style="margin-top: 450px;">
+        <h4>2. Port Forward</h4>
         <p>
             This is where we forward port 8080 on our outer computer to port 80 on the
             virtual machine, by uncommenting this line.
         </p>
     </div>
 
-    <div class='hang-right-aside-arrow' style="margin-top: 855px;"></div>
-    <div class='hang-right-aside aside' style="margin-top: 800px;">
-        <h4>3.</h4>
+    <div class='hang-right-aside-arrow' style="margin-top: 805px;"></div>
+    <div class='hang-right-aside aside' style="margin-top: 750px;">
+        <h4>3. Folder Sync</h4>
         <p>
             We are going to sync a folder on our outer computer to a folder on the
             virtual machine by editing this line.
@@ -1662,9 +1684,411 @@ end
     </code>
     </pre>
 
-    <!-- TODO: this bit, here -->
+    <h5>Picking a Box</h5>
 
-    <!-- not until we get to nginx configuration modifications -->
+    <p>
+        In order to boot up an operating system, first, we have to pick a
+        <em>base box</em> &mdash; this is the blank, untouched, pristine
+        operating system that we are going to be working with.
+    </p>
+
+    <p>
+        A catalogue of base boxes exists <a href="https://atlas.hashicorp.com/boxes/search">here</a>.
+    </p>
+
+    <p>
+        We're going to choose <code>ubuntu/xenial64</code>.
+    </p>
+    <div class='right-aside-arrow'></div>
+    <div class='right-aside aside'>
+        <h4>Xenial Xerus</h4>
+        <p>
+            Every release of Ubuntu has been paired with an Alliterative Animal name,
+            and they've been in alphabetical order
+            from 5.10 (Breezy Badger) all the way up to 17.04 (Zesty Zapus).
+        </p>
+        <p>
+            Every 4 years, Ubuntu also releases a <strong>LTS</strong> "Long Term Support"
+            version of Ubuntu, which is scheduled to keep getting attention and
+            security updates for 5 years after it launches. Xenial Xerus, 16.04, is the
+            most recent LTS version of Ubuntu, which is why we picked it.
+        </p>
+        <p>
+            Now, they're rolling around to the front of the alphabet again.
+        </p>
+        <p>
+            One tradition when rolling through the alphabet is to go "X", "Y", "Z", "AA", "BB".
+        <p>
+            They've
+            managed to find an "AA" animal, the "Artful Aardvark".
+        <p>
+            "BB" might B a little harder.
+        </p>
+    </div>
+
+    <p> The line in the Vagrantfile pertaining to boxes will read: </p>
+
+    <pre>
+    <code class='ruby'>
+# Every Vagrant development environment requires a box. You can search for
+# boxes at https://atlas.hashicorp.com/search.
+config.vm.box = "ubuntu/xenial64"
+    </code>
+    </pre>
+
+    <h5>Forwarding Port 80</h5>
+
+    <p>
+        The virtual machine is going to be running a web server (spoiler alert)
+        on port 80. The only problem with that? The ports on the virtual machine
+        aren't accessible by default. We need to write a rule to connect
+        a port on our outer machine to a port on the virtual machine.
+    </p>
+
+    <p>
+        By convention, <code>8080</code> is popular port for developing HTTP services,
+        so we're going to use that.
+    </p>
+
+    <p>
+        The VagrantFile already had this option ready for us &mdash; all we have to do
+        is remove the <code>#</code> character to turn the line from a comment into
+        real code.
+    </p>
+
+    <pre>
+    <code class='ruby'>
+# Create a forwarded port mapping which allows access to a specific port
+# within the machine from a port on the host machine. In the example below,
+# accessing "localhost:8080" will access port 80 on the guest machine.
+config.vm.network "forwarded_port", guest: 80, host: 8080
+    </code>
+    </pre>
+
+    <h5>Syncing a Folder</h5>
+
+    <p>
+        This is a more advanced feature, but one that's going to allow
+        us to edit our codebase on the virtual machine with
+        a graphical text editor on our host machine, and
+        that seems like it's going to be worth the effort.
+    </p>
+
+    <p>
+        First of all, let's create a folder to sync.
+    </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span> mkdir html
+    </pre>
+
+    <p>
+        Then, let's sync that folder to a location within the virtual machine.
+    </p>
+
+    <p>
+        We could choose just about any location, but if we were to do something like
+        "accidentally sync over a bunch of important system files", we would be in
+        for a world of trouble.
+    </p>
+
+    <p>
+        One spot that's generally safe is <code>/home/ubuntu/something</code>.
+        Vagrant boxes usually come with one user operating on them, already.
+        This one comes with a user named <code>ubuntu</code>, and that user's home
+        directory is <code>/home/ubuntu</code>, which means we can put anything
+        in there that we want.
+    </p>
+    <p>
+        &nbsp;
+    </p>
+
+<pre>
+<code>
+# Share an additional folder to the guest VM. The first argument is
+# the path on the host to the actual folder. The second argument is
+# the path on the guest to mount the folder. And the optional third
+# argument is a set of non-required options.
+config.vm.synced_folder "html", "/home/ubuntu/html"
+</pre>
+</code>
+
+    <h5> Pull the Lever, Kronk </h5>
+
+    <p> Save the Vagrantfile and we're ready to get started! </p>
+
+    <p> Let's turn the Virtual Machine on, with <code>vagrant up</code>.</p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==&gt; default: Checking if box...
+    </pre>
+
+    <p> Eventually a mountain of output will go by. </p>
+
+    <p> If that process went off without a hitch, we are good to go. </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside small-aside aside'>
+        <p>
+            If it didn't, <a href="https://github.com/classam/buildatheweb/issues">file an issue</a>
+            and we can try to work out what the problem was.
+        </p>
+    </div>
+
+    <h5> Logging In </h5>
+
+    <p>
+        Finally, we can log in to our newly created Ubuntu operating system
+        with the command <code>vagrant ssh</code>.
+    </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span> vagrant ssh
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-78-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+Last login: Thu May 18 02:31:20 2017 from 10.0.2.2
+ubuntu@ubuntu-xenial:~$
+    </pre>
+
+    <p>
+        This is a whole new command line. The command line of the Ubuntu Virtual Machine.
+        We've got an Ubuntu server running inside our computer!
+    </p>
+
+    <p>
+        Take a moment for a brief celebration.
+    </p>
+
+    <h3> Installing a Web Server </h3>
+
+    <p>
+        We're not done, yet. Our server is running, yes, and we've made sure that,
+        if it listens on port 80, we can connect to it.
+    </p>
+
+    <p>
+        One problem, though &mdash; the server isn't listening on port 80.
+        This is just a server, right now. We need to install a <strong>web server</strong>
+        on our server server.
+    </p>
+
+    <p>
+        We can do that with the command <code>sudo apt-get install nginx</code>.
+    </p>
+
+    <p>
+        Whoa. There's a lot of stuff happening in that command. Let's unpack that a bit!
+    </p>
+
+    <h4>sudo</h4>
+
+    <p>
+        <code>sudo</code> stands for "<strong>su</strong>peruser <strong>do</strong>".
+    </p>
+
+    <p>
+        Linux is, by nature, a multi-user operating system. It's designed to have
+        many users logged in at once.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h4>Mainframe</h4>
+        <p>
+            This is a holdover from the mainframe era of computing, where
+            there was only money for one computer (which filled an entire room)
+            and every user had a physical terminal connected to that
+            computer with their own login and home directory.
+        </p>
+    </div>
+
+    <p>
+        In order to keep users from being able to access each other's files,
+        each file has a set of <strong>permissions</strong> that defines
+        who is able to see it, and many system functions are locked down
+        so that common users can't touch them.
+    </p>
+
+    <p>
+        <code>sudo</code> is a way of saying "I am the administrator and I can do whatever I like".
+    </p>
+
+    <div class='figure'>
+        <img src="images/chapter2/sandwich.png" />
+    </div>
+
+    <p>
+        Not everybody has access to sudo &mdash; only admin users.
+    </p>
+
+    <div class='figure'>
+        <img src="images/chapter2/naughty.png" />
+    </div>
+
+    <p> Superuser access is required to <em>install software</em> which is
+        what we wanted to to, here. </p>
+
+    <h4>apt-get install</h4>
+
+    <p><code>apt-get</code> is the command line interface to the
+        <a href="https://en.wikipedia.org/wiki/Advanced_Packaging_Tool">advanced packaging tool</a>,
+        which &mdash; and this is going to seem pretty magical if you're used to the way
+        that Windows does things &mdash; allows you to install any Ubuntu program, automatically,
+        with a single command.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <h4>Package Managers</h4>
+        <p>
+            Different Linuxes have different package managers. Ubuntu has <code>apt</code>,
+            Red Hat has <code>yum</code>, Arch has <code>pacman</code>, Gentoo has <code>portage</code>.
+        </p>
+        <p>
+            Mac OS X doesn't have a package manager by default, but some enterprising hackers
+            have stapled on <code>homebrew</code>, which is a <a href="https://www.slant.co/topics/523/~best-power-user-tools-for-macos">vital Mac tool</a>.
+        </p>
+        <p>
+            Windows remains a featureless wasteland.
+        </p>
+    </div>
+
+    <p>Seriously. Want vim? Type <code>sudo apt-get install vim</code>. Want to install a program
+        that pipes your command output through ASCII-art cows? <code>sudo apt-get install cowsay</code>.
+        Want a steam locomotive? <code>sudo apt-get install sl</code>.</p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h4>Cowsay-whaaat?</h4>
+        <p>
+            By default, if cowsay is installed, the <em>professional, enterprise-grade automation software</em>
+            ansible will route all of its output through it.
+        </p>
+        <p>
+            This is awesome.
+        </p>
+    </div>
+
+    <h4>nginx</h4>
+
+    <p>
+        <a href="https://en.wikipedia.org/wiki/Nginx">Nginx</a> is a fast, lightweight HTTP server.
+        It can also be configured to do a few other fun tricks, like act as a load balancer
+        or reverse proxy, but right now we're interested in just using Nginx to serve some
+        web page.
+    </p>
+
+    <h4>sudo apt-get install nginx</h4>
+
+    <p> Well, that's enough explanation. Let's get to it! </p>
+
+    <pre class='code'>
+ubuntu@ubuntu-xenial:~$ sudo apt-get install nginx
+    </pre>
+
+    <p>
+        This will ask us to confirm it by pressing <code>y</code>, then chug along
+        and eventually stop chugging. At this point, we have a web server!
+    </p>
+
+    <h4> Prove it </h4>
+
+    <p> Don't believe me? Open a browser and visit <code>localhost:8080</code> </p>
+
+    <div class='figure'>
+        <h3>Egads! It worked!</h3>
+        <img src="images/chapter2/nginx.png" />
+    </div>
+
+    <h5>localhost</h5>
+    <p>
+        This is a shortcut! <code>localhost</code> is a domain that always
+        resolves to <code>127.0.0.1</code>,
+        which is a special IP address that always resolves to <strong>this computer, the
+        one that I am using right now</strong>.
+    </p>
+
+    <h5>:8080</h5>
+    <p>
+        Earlier, I mentioned that the port that your browser connects to is always
+        the default port for the protocol &mdash; in the case of HTTP, that's <code>80</code>.
+        However, when we created the Virtual Machine, we specified that port 80 on the
+        Virtual Machine should correspond with port 8080 on the host machine.
+    </p>
+
+    <p>
+        When we enter a domain name, we can always add a colon and the port number to
+        specify that we're connecting to a non-standard port.
+    </p>
+
+    <h3> Creating a Basic HTML Document </h3>
+
+    <p>
+        Now that we've got a server running an HTTP server, we need something
+        to <a href="https://www.youtube.com/watch?v=Iwtwb4g1qsk">serve</a>.
+    </p>
+
+    <p>
+        We're going to go into more detail about <strong>HTML</strong> later,
+            but for now, let's create a very simple file, <code>index.html</code>
+        and put it in our <code>~/code/hello_world/html</code>
+        directory on our host computer
+    </p>
+
+    <pre>
+    <code class='html'>
+&lt;!-- I go in ~/code/hello_world/html/index.html --&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;hello, world&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;hello, world&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code>
+    </pre>
+
+    <p>
+        This file should now exist at <code>/home/ubuntu/html/index.html</code> on
+        our virtual machine.
+    </p>
+
+    <h3> Serving our Html </h3>
+
+    <p>
+        By default, nginx serves the contents of a system directory, <code>/var/www/html</code>,
+        which contains the "hey, you're running nginx" message we saw earlier.
+    </p>
+
+    <p>
+        We could just copy our file into <code>/var/www/html</code>, but that's not the
+        satisfying solution that we want. No, we want to tell nginx to serve
+        from <code>/home/ubuntu/html</code> rather than <code>/var/www/html</code>
+        by changing nginx's configuration files!
+    </p>
+
+    <p>
+        One problem: nginx's configuration files are deep within the Ubuntu virtual machine,
+        not synced to anywhere on our host machine. We have to edit these configuration
+        files from <em>within the virtual machine</em>.
+    </p>
 
     <h3> A Different Kind of Text Editor </h3>
 
@@ -1674,15 +2098,15 @@ end
         is approximately as emotionally charged and contentious as one's choice of video
         game console.
     </p>
-    <div class='right-aside-arrow'> </div>
-    <div class='right-aside small-aside aside'>
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside small-aside aside'>
         <p>
             TurboGrafx 16 forever!
         </p>
     </div>
 
     <p>
-        But there's a problem &mdash; because we're going to be working extensively with SSH,
+        But there's a problem &mdash; because we're working extensively with SSH,
         and SSH is a command shell, with no mouse to speak of, we're going to need
         a text editor that operates entirely from within the shell.
     </p>
@@ -1700,6 +2124,330 @@ end
         <h4>Nano is Like a Spork</h4>
         <img src='images/chapter2/198.png' />
     </div>
+
+    <p>
+        As much as I want to push my pigheaded <strong>vim</strong> lust on to a new generation
+        of developers, nano is the easiest editor to get started with.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside small-aside aside'>
+        <p>
+            nano nano nano nano nano nano nano nano
+        </p>
+        <p>
+            Batmaaaaaaan!
+        </p>
+    </div>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h3>Making nano suck less</h3>
+        <p>
+            Part of the trouble with nano is that, by default,
+            it has very limited undo support and it doesn't
+            highlight code.
+        </p>
+        <p>
+            While this is an excuse by many to embrace a more powerful editor,
+            nano is quite capable of doing these things
+            with <a href="https://www.nano-editor.org/dist/v2.1/nanorc.5.html">a little bit of configuration</a>.
+        </p>
+        <p>
+            Making nano better is just a pebble in your eventual path
+            to the boulder that is learning Vim, though.
+        </p>
+    </div>
+
+    <h3>Configuring Nginx</h3>
+
+    <pre class='code'>
+ubuntu@ubuntu-xenial:~$ sudo nano /etc/nginx/sites-available/default
+    </pre>
+
+    <h4>sudo again</h4>
+    <p>
+        Why <code>sudo</code>? Well, <code>/etc/nginx/sites-available/default</code> is a
+        system file, and we wouldn't normally have access to modify it.
+    </p>
+
+    <h4>/etc is for config</h4>
+    <p>
+        <code>/etc</code> is the directory that contains the configuration files
+        for most Linux systems. <strong>This is not a very good name</strong>.
+        They might as well have called this directory <code>/you/know/whatever</code>
+        or <code>/idfk</code> &mdash; or maybe, and I'm just spit-balling, here, <code>/config</code>,
+        but the insane tradition of calling this directory <code>/etc</code> lives on.
+    </p>
+
+    <h4>/sites-available/default</h4>
+    <p>
+        While the core configuration for nginx lives at <code>/etc/nginx/nginx.conf</code>,
+        all it does is reference a bunch of other files.
+    </p>
+    <p>
+        Sometimes I like to throw out all of the default configuration and just dump all
+        of my configuration directly into <code>nginx.conf</code>, but for this example
+        we're going to play ball with the rules and instead edit this
+        other configuration file.
+    </p>
+
+    <p>
+        Here's the configuration file:
+    </p>
+
+    <div class='hang-right-aside-arrow long-arrow' style="margin-top: 745px;"></div>
+    <div class='hang-right-aside aside' style="margin-top: 700px;">
+        <h4>Here!</h4>
+        <p>
+            Here's the line we want to change.
+        </p>
+        <p>
+            We want this to read <code>root /home/ubuntu/html;</code>
+        </p>
+    </div>
+    <pre>
+    <code>
+## /etc/nginx/sites-available/default
+##
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# http://wiki.nginx.org/Pitfalls
+# http://wiki.nginx.org/QuickStart
+# http://wiki.nginx.org/Configuration
+#
+# Generally, you will want to move this file somewhere, and start with a clean
+# file but keep this around for reference. Or just disable in sites-enabled.
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
+
+# Default server configuration
+#
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        # SSL configuration
+        #
+        # listen 443 ssl default_server;
+        # listen [::]:443 ssl default_server;
+        #
+        # Note: You should disable gzip for SSL traffic.
+        # See: https://bugs.debian.org/773332
+        #
+        # Read up on ssl_ciphers to ensure a secure configuration.
+        # See: https://bugs.debian.org/765782
+        #
+        # Self signed certs generated by the ssl-cert package
+        # Don't use them in a production server!
+        #
+        # include snippets/snakeoil.conf;
+
+        root /var/www/html;
+
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        #location ~ \.php$ {
+        #       include snippets/fastcgi-php.conf;
+        #
+        #       # With php7.0-cgi alone:
+        #       fastcgi_pass 127.0.0.1:9000;
+        #       # With php7.0-fpm:
+        #       fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+        #}
+
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        #location ~ /\.ht {
+        #       deny all;
+        #}
+}
+
+
+# Virtual Host configuration for example.com
+#
+# You can move that to a different file under sites-available/ and symlink that
+# to sites-enabled/ to enable it.
+#
+#server {
+#       listen 80;
+#       listen [::]:80;
+#
+#       server_name example.com;
+#
+#       root /var/www/example.com;
+#       index index.html;
+#
+#       location / {
+#               try_files $uri $uri/ =404;
+#       }
+#}
+    </code>
+    </pre>
+
+    <p>
+        This is an awful lot of file to look at, but there's only one line that we're concerned about.
+        We need to change <code>root /var/www/html;</code> to read <code>root /home/ubuntu/html;</code>,
+        and then save the file.
+    </p>
+
+    <h4>Rebooting nginx</h4>
+
+    <p>
+        That change should do it, but none of our configuration changes will take effect
+        until we <em>reboot nginx</em>.
+    </p>
+
+    <pre class='code'>
+ubuntu@ubuntu-xenial:~$ sudo service nginx restart
+    </pre>
+
+    <h3> We Did It! </h3>
+
+    <p>
+        Let's go back to <code>localhost:8080</code> in a browser.
+    </p>
+
+    <div class='figure'>
+        <img src="images/chapter2/success.png" />
+        <p><em>Please attempt to contain your excitement.</em></p>
+    </div>
+
+    <p>
+        Who would have thought that a simple "hello, world" program
+        would take so much effort?
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h4>Just Getting Started</h4>
+        <p>
+            We are going to construct <em>much</em> more elaborate "hello, world" programs.
+        </p>
+        <p>
+            Environment setup is a really important part of web development.
+        </p>
+    </div>
+
+    <h3> Cleaning Up &amp; Starting Over </h3>
+
+    <p>
+        We're done, but our Virtual Machine is still running. It'll keep on running, forever.
+        That's the whole point of a server.
+    </p>
+
+    <p>
+        We can quit the terminal.
+    </p>
+
+    <pre class='code'>
+ubuntu@ubuntu-xenial:~$ exit
+logout
+Connection to 127.0.0.1 closed.
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span>
+    </pre>
+
+    <p>
+        But if we check <code>localhost:8080</code>, the server's still running.
+    </p>
+
+    <p>
+        The only way to truly kill the server is to <del>plunge a stake through it's heart</del>
+        turn it off, which we can do with <code>vagrant halt</code>.
+    </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span> vagrant halt
+==&gt; default: Attempting graceful shutdown of VM...
+    </pre>
+
+    <p>
+        That killed it.
+    </p>
+
+    <p>
+        Let's imagine, though, that we made a serious mistake. While we were working
+        on the operating system we accidentally made a change that ruined everything
+        forever and we don't know how to fix it.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside small-aside aside'>
+        <p>
+            This happens to me a <em>lot</em>.
+        </p>
+    </div>
+
+    <p>
+        We want to go back to a completely
+        clean slate, to the good times before we had a Virtual Machine at all.
+        This is the situation where <code>vagrant destroy</code> is here to purify
+        our hard drive with its scouring light.
+    </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span> vagrant destroy
+default: Are you sure you want to destroy the 'default' VM? [y/N] y
+==&gt; default: Destroying VM and associated drives...
+    </pre>
+
+    <p>
+        Never again will you trouble our shores with your foul presence, <em>Virtual Machine</em>.
+    </p>
+
+    <p>
+        We can always bring it back with <code>vagrant up</code> when we need it again.
+    </p>
+
+    <h3> Chapter 2 Summary </h3>
+
+    <p>
+        We've done a lot, to get our web server up and running and serving "hello, world"!
+    </p>
+
+    <ul>
+        <li>
+            We installed a <strong>command line interface</strong> and
+            learned some basics about how to use it.
+        </li>
+        <li>
+            We used <strong>Vagrant and VirtualBox</strong> to install an
+            <strong>Ubuntu Linux Virtual Machine</strong> on our computer.
+        </li>
+        <li>
+            We used <strong>sudo</strong> and <strong>apt-get</strong> to
+            install <strong>nginx</strong> on our server.
+        </li>
+        <li>
+            We created a basic <strong>HTML</strong> file.
+        </li>
+        <li>
+            We used <strong>nano</strong> to change nginx's configuration.
+        </li>
+        <li>
+            We <strong>rebooted nginx</strong>.
+        </li>
+        <li>
+            We <strong>destroyed the Virtual Machine</strong>.
+        </li>
+    </ul>
 
     <p class="ohno">
         <strong> Oh no! </strong> This is as far as I've written!

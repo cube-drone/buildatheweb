@@ -69,15 +69,18 @@ a{
 
 code{
     font-family: inconsolata;
+    font-size: 80%;
+    color: #222;
+    background-color: #ddd;
 }
 
 pre{
-    margin: 0 !important;
 }
 
 pre code{
     font-size: 60%;
     line-height: 1.5em;
+    margin-top: -50px;
 }
 
 .code{
@@ -270,3 +273,6 @@ table td{
 }
 
 
+.ohno{
+    margin-top: 200px;
+}
