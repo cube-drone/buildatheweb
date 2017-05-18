@@ -25,15 +25,24 @@
     <link rel="stylesheet" type="text/css" href="js/highlight/styles/monokai.css">
     <script>hljs.initHighlightingOnLoad();</script>
 
+    <!-- Arboreal (tree data structure) -->
+    <script src="js/arboreal.js"></script>
+
     <!-- jQuery -->
-    <!--
     <script src="js/jquery-3.2.1.min.js"></script>
 
     <script src="js/buildATheWeb.tableOfContents.js"></script>
-    -->
+    <link rel="stylesheet" type="text/css" href="style.tableOfContents.css">
 </head>
 
 <body>
+
+<div id="toc-bar">
+
+</div>
+<div id="toc-full">
+
+</div>
 
 <div class="main" id="content">
     <h1> Build A The Web </h1>
@@ -76,7 +85,7 @@
         <a href="https://github.com/classam/buildatheweb">https://github.com/classam/buildatheweb</a>.
     </p>
 
-    <h2 id="Chapter1lequestResponse"> Chapter 1: Request, Response </h2>
+    <h2> Chapter 1: Request, Response </h2>
 
     <p>
         Our first chapter is going to focus on what happens behind the scenes when we make
@@ -162,7 +171,7 @@
     <p>This is just a bunch of words, describing where we think our document is. How do we actually
         <strong>get</strong> that document?</p>
 
-    <h2> Transport Control Protocol / Internet Protocol </h2>
+    <h3> Transport Control Protocol / Internet Protocol </h3>
 
     <p> Communicating with a far away computer is a process fraught with interesting problems. Problems like: </p>
 
@@ -1570,7 +1579,7 @@ on `vagrantup.com` for more information on using Vagrant.
 
     <div class='hang-right-aside-arrow' style="margin-top: 855px;"></div>
     <div class='hang-right-aside aside' style="margin-top: 800px;">
-        <h4>4.</h4>
+        <h4>3.</h4>
         <p>
             We are going to sync a folder on our outer computer to a folder on the
             virtual machine by editing this line.

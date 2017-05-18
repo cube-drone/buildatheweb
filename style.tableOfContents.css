@@ -1,0 +1,56 @@
+
+#toc-bar{
+    height: 50px;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    box-shadow: 0px 10px 100px #999;
+}
+
+.tocshell{
+    padding: 5px 10px;
+    color: CadetBlue;
+}
+
+.tocshell a, #toc-full a{
+    color: #93C5C7;
+}
+
+.tocshell .tocbutton{
+    border: 1px solid white;
+    width: 35px;
+    height: 35px;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 40%;
+    line-height: 1em;
+    padding: 3px;
+}
+
+.tocshell .tocbutton:hover{
+    background-color: #444;
+}
+
+#toc-full{
+    height: 50%;
+    overflow-y: scroll;
+    color: white;
+    background-color: black;
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0px 10px 100px #999;
+}
+
+#toc-full ul{
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+#toc-full li{
+    list-style-type: none;
+}
