@@ -2449,6 +2449,265 @@ default: Are you sure you want to destroy the 'default' VM? [y/N] y
         </li>
     </ul>
 
+    <h2> Chapter 3: HyperText and Markup Languages</h2>
+
+    <p>
+        We've talked about <strong>HyperText Transfer Protocol</strong> and <strong>HyperText Markup Language</strong>, 
+        so what in the blue blazes is <strong>HyperText</strong>?
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <h4>Garden of Forking Paths</h4>
+        <p>
+            In 1945, Vannevar Bush described a hypothetical device called the <em>memex</em> which allowed
+            its users to organize content in a way that allowed for it to be indexed, searched, 
+            and linked to other content. 
+        </p>
+        <p>
+            While a memex, as described, was never built, the concept of a network of interlinked documents
+            captured the public imagination. 
+        </p>
+        <p>
+            In the 1960's, Ted Nelson popularized the term "Hypertext" for the same concept. Engineers
+            spent the next 30 years working on various implementations until Tim Berners-Lee finally
+            produced a popular implementation in 1989. 
+        </p>
+        <h4>Tim Berners-Lee</h4>
+        <p>
+            The clever dude who figured this out was Tim Berners-Lee, who was looking for a way to 
+            take the peanut butter of 'hypertext' and the chocolate of 'a world-wide network of computers'
+            and mash them together.
+        </p>
+        <p>
+            He developed HTTP, HTML, and the URL,  
+            technologies that worked in concert to produce a world-spanning network of interlinked content
+            that he called the "WorldWideWeb".
+        </p>
+
+        <p>That means that when he lists his job title as 
+            <a href="https://pbs.twimg.com/media/Bp2GVC2CQAAH4uN.jpg">"Web Developer"</a>, 
+            this is both <em>literally true</em> and 
+            a wonderful example of subtle understatement.</p>
+    </div>
+    
+    <p>
+        As with most things, there's a lot of history and nuance behind the term, and <em>also</em>
+        as with most things, the way that most people understand the term completely discards all
+        of that history and nuance: <strong>HyperText</strong> is text with a bunch of extra stuff
+        strapped on, <em>links</em> and <em>images</em> and <em>style</em> and <em>fonts</em> and
+        <em>videos of cats</em> and <em>scripts</em>.
+    </p>
+    
+    
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h4>Hypermedia</h4>
+        <p>
+            Some will complain that the term "hypertext" only refers to "text with links", and 
+            the proper term for text with all of the images and videos is <strong>hypermedia</strong>.
+        </p>
+        <p>
+            But it's not <em>hypermedia markup language</em>, is it? 
+        </p>
+        <p>
+            You can safely sock these people away with the people who insist on saying URI.
+        </p>
+    </div>
+
+    <h3>Links and URLs</h3>
+    <p>
+        There are two big questions of hypertext
+        <ul>
+            <li>How do we represent a link to another document in a document? </li>
+            <li>How do we represent a diverse array of multimedia content in a simple file format? </li>
+        </ul>    
+    </p>
+    
+    <p>
+        The answer to both of these questions is the humble URL. A URL can represent a link to any sort
+        of content.
+    </p>
+    
+    <div class='left-aside-arrow'> </div>
+
+    <p>
+        So HTML documents are littered with URLs, both as links to other documents and as a means to embed multimedia
+        content in a wide variety of formats. 
+    </p>
+    
+    <h3> Text Files and Markup Language </h3>
+    <p>
+        Under the hood, all file formats are just binary narrowly disguised as something else.
+    </p>
+
+    <p>
+        When we think of file formats for text, our first thought might be of Word, from Microsoft Office &mdash;
+        a format that also contains information about how to properly render the document, fonts, document layout 
+        details, and much much more. Unfortunately, Word file formats &mdash; of which there 
+        are several at this point &mdash; are legendary tarpits of horrendous complexity, closed off so that
+        they can only be understood by Microsoft engineers, a hideous conglomeration of text and binary
+        that make Word the file format equivalent of the last 15 minutes of Akira.
+    </p>
+
+    <div class='figure'>
+        <img src="https://s-media-cache-ak0.pinimg.com/originals/82/57/b7/8257b7daf904eb51444a13cdff6b5655.gif" />
+        <p> Pictured: An OpenOffice developer trying to make sense of Word's file format. </p>
+    </div>
+
+    <p>
+        A common way to manage the complexity associated with complicated documents are to represent them
+        as simple plain-text files. It's not quite as simple and efficient as storing documents
+        in pure binary representations, but the file formats end up being human-readable by anybody with a text editor, 
+        which is great for the clarity and interoperability of the format.
+    </p>
+
+    <pre>
+But the problem of plaintext becomes quickly clear: 
+it doesn't support presentational elements very well.
+How do you include a list of items? A table? An image?
+How do you define font sizes and margin widths? 
+There need to be rules that a computer can follow 
+to take a plaintext file and turn it into 
+a proper document. 
+
+Furthermore, we shouldn't show these rules to 
+the user.
+
+A <strong>markup language</strong> allows us to mark
+the text with additional information that isn't shown 
+to the user, but indicates additional information
+like <em>emphasis</em>, <span style='color:red;font-weight:bold;'>color</span>, and <span style='font-family:chunk'>font</strong>.
+    </pre>
+    
+    <p>or, to look at that last line, again, in markup language: </p>
+
+    <pre>
+A &lt;strong&gt;markup language&lt;/strong&gt; allows us to mark
+the text with additional information that isn't shown 
+to the user, but indicates additional information
+like &lt;em&gt;emphasis&lt;/em&gt;, 
+&lt;span style='color:red;'&gt;color&lt;/span&gt;, and 
+&lt;span style='font-family:chunk'&gt;font&lt;/strong&gt;.
+    </pre>
+
+    <p>
+        HTML is not the only markup language &mdash; many of them exist. 
+    </p>
+
+    <p>
+        HTML is based on a language called "SGML", the Standard Generalized Markup Language, 
+        which was based on a language called "GML", the Generalized Markup Language, 
+        which was created at IBM in the 1970 as a documentation language.
+    </p>
+
+    <p> 
+        Technically, HTML qualified as a subclass of SGML until the introduction of HTML5, which
+        finally cut all remaining ties with the old standard.
+    </p>
+    
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <p>
+            This is a good thing. SGML is a hulking, overspecified government standard that isn't particularly
+            useful for people who aren't trying to achieve interoperability between government mainframes
+            in the 1970s. 
+        </p>
+    </div>
+
+    <p> 
+        Another child of SGML is "XML". While HTML was intended to be a representation of documents
+        and the sort of data that would commonly appear in documents &mdash; tables, images and such &mdash;
+        XML is a similar format that was designed as a general-purpose markup language for <em>any</em> kind of data. 
+        It was also intended to be easier use than the somewhat bureaucratic SGML framework.
+    </p>
+
+    <p>
+        Markdown is a markup language that's designed to be interoperable with HTML and easy for humans to read and edit.
+    </p>
+    
+    <p>
+        JSON (Javascript Object Notation) is a quite simple 
+        markup language that's also valid Javascript, which makes it very
+        easy for the language Javascript to handle.
+    </p>
+
+    <p>
+        YAML (Yet Another Markup Language) is a markup language that's designed to be easy for humans to read and edit.
+    </p>
+
+    <p>
+        All of these different markup langauges are good for different purposes. 
+            <ul>
+                <li>HTML is good for representing multimedia documents that link to one another</li>
+                <li>JSON is good for representing simple objects</li>
+                <li>YAML is good for human-written configuration</li>
+                <li>Markdown is good for human-written markup</li>
+                <li>XML is good for representing very complex objects</li>
+            </ul>
+    </p>
+    
+    <h3> Character Encoding, ASCII, and Utf-8</h3>
+    
+    <p>
+        It's possible, through the use of these different markup languages, to represent just about anything
+        as a plain-text file. 
+    </p>
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside small-aside aside'>
+        <p>
+            SVG graphics, for example, are defined by an XML file filled with vector graphics information. 
+        </p>
+    </div>
+
+    <p>
+        "A text file" is a little bit disingenuous, though. There's no such thing as just a "text file". 
+        A text file is, under the hood, a series of characters represented as binary data. 
+    </p>
+
+    <p>
+        There are numerous schemes for converting character data into binary data, and these schemes are 
+        known as character encodings.
+    </p>
+    
+    <p>
+        The simplest character encoding is ASCII &mdash; which is simple &mdash; 8 bits can make 256 different combinations,
+        and each combination can make a different ASCII character, with room for some control codes like
+        "alert" and "bell". 
+    </p>
+    
+    <p>
+        ASCII was enormously popular for a very long time &mdash; but the big problem with 
+        ASCII is that 256 characters are not enough characters to encompass the entire character
+        set of all available human languages. 
+    </p>
+
+    <p>
+        Some other character sets include ISO-8859-1 (latin-1), which is an 8-bit character encoding like ASCII with 
+        expanded support for characters used by most Western languages. The ISO-8859 standard uses
+        the same space to provide different encodings for different groups of languages.
+    </p>
+    
+    <p>
+        Unicode was a standard developed to support all languages. 
+        At last count, there are over 100,000 Unicode characters.  
+        There are a few different character codings that represent Unicode's representation in binary, 
+        the most popular of which is <strong>UTF-8</strong>.
+    </p>
+
+    <p> 
+        At the time of writing, utf-8 is slowly engaged in the process of consuming all other encodings, 
+        although latin-1 and ASCII encoded files are still common.
+    </p>
+    
+    <p> 
+        This is important when dealing with the web &mdash; web browsers will do their best to 
+        guess what character encoding that they have been handed, but if they guess wrong, 
+        instead of displaying text properly, they will display a lot of the � character.
+        The <a href="http://www.catb.org/jargon/html/A/all-your-base-are-belong-to-us.html">Jargon File</a>
+        has this problem in spades. 
+    </p>
+
     <p class="ohno">
         <strong> Oh no! </strong> This is as far as I've written!
         Keep track of the <a href="https://github.com/classam/buildatheweb">project on GitHub</a> for updates!
