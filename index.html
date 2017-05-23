@@ -611,16 +611,16 @@ Content-type: text/html; charset=UTF-8
 X-Clacks-Overhead: GNU Terry Pratchett
 
 &lt;!DOCTYPE html&gt;
-&lt;html&gt;
+&lt;html lang="en"&gt;
 &lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;/&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
     &lt;title&gt;Definitely Wikipedia&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-&lt;h1&gt;This is totally Wikipedia.&lt;/h1&gt;
-&lt;p&gt; Hi there. I am Bob Wikipedia and you are at my website.
-It&rsquo;s still under construction but I am pretty sure it will be done by 1998.&lt;/p&gt;
-&lt;img src=&rdquo;https://media0.giphy.com/media/K5Yn9JCXcrXr2/giphy.gif&rdquo;/&gt;
+    &lt;h1&gt;This is totally Wikipedia.&lt;/h1&gt;
+    &lt;p&gt; Hi there. I am Bob Wikipedia and you are at my website.
+    It&rsquo;s still under construction but I am pretty sure it will be done by 1998.&lt;/p&gt;
+    &lt;img src=&rdquo;https://media0.giphy.com/media/K5Yn9JCXcrXr2/giphy.gif&rdquo;&gt;
 &lt;/body&gt;
 &lt;/html&gt;</pre>
 
@@ -3088,10 +3088,181 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </p>
 
     <p>
-        I think the best way to start, here, might be to start by looking at a basic
-        HTML page.
+        I think the best way to start, here, might be to start by looking at a completely
+        empty HTML page.
     </p>
 
+    <pre>
+    <code class='html'>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;/html&gt;
+</code>
+    </pre>
+
+    <p>
+        So, this document doesn't contain anything except for a <strong>Doctype</strong>
+        and an HTML <strong>element</strong>.
+    </p>
+
+    <h4> Doctype </h4>
+
+    <p>
+        HTML has many versions at this point &mdash; HTML5, HTML4, XHTML2, XHTML1, HTML3 &mdash;
+        and in order for the browser to render the HTML properly, it needs to know which
+        version of HTML it is looking at.
+    </p>
+
+    <p>
+        Until HTML5, HTML was technically a subclass of a language called SGML, and SGML
+        required that documents come with a "Document Type Definition" which would lay
+        out all of the rules for displaying the document. Any HTML document released before
+        HTML5, then, would have a doctype that looks like:
+    </p>
+
+    <pre>
+    <code class='html'>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+    </code>
+    </pre>
+
+    <p>
+        When HTML5 dropped SGML compatibility, it was also decided that the doctype wouldn't need
+        a link to a document any longer: <code>&lt;!DOCTYPE html&gt;</code>.
+        All HTML5 documents start this way, to let browsers know that this is an HTML5 document.
+    </p>
+
+    <h4> HTML Element </h4>
+
+    <p>
+        HTML is strictly heirarchical, which means that every element in the document
+        must be enclosed by another element, except for the "root" element which
+        wraps everything in the entire document. This is the <strong>HTML element</strong>,
+        the outermost element that contains everything else.
+    </p>
+
+    <p>
+        HTML elements usually start with an opening tag and end with a closing tag &mdash;
+        in this case, <code>&lt;html&gt;</code> is the opening tag and
+        <code>&lt;/html&gt;</code> is the closing tag. Everything inside the HTML tag
+        is considered to be inside the document. Everything outside the HTML tag
+        is ... outside the document?
+    </p>
+
+    <h4> Attributes </h4>
+
+    <pre>
+    <code class='html'>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;/html&gt;
+</code>
+    </pre>
+
+    <p>
+        HTML elements can also have <strong>attributes</strong>, which are attached to the
+        opening tag and look like <code>attribute="value"</code>.
+    </p>
+
+    <p>
+        In this case, we've attached the <code>lang="en"</code> attribute to the base HTML
+        element to let the world know that this HTML document is in English.
+    </p>
+
+    <h4> Head &amp; Body </h4>
+
+    <pre>
+    <code class='html'>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code>
+    </pre>
+
+    <p>
+        Inside the HTML element comes two key elements that divide the document into
+        "the part you see" (the <strong>body</strong>) and "the part you don't see" (the <strong>head</strong>).
+    </p>
+
+    <p>
+        The head element is loaded before the rest of the page. It contains metadata
+        about the content in the body like the document's title, as well as any
+        style information that the page needs to load.
+    </p>
+
+    <h4>Charset</h4>
+
+    <pre>
+    <code class='html'>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code>
+    </pre>
+
+    <p>
+        This next part we've added, <code>&lt;meta charset=&quot;UTF-8&quot;/&gt;</code>,
+        defines the character encoding of the document as UTF-8.
+    </p>
+
+    <p>
+        The HTTP server that serves this document reads this when it serves the document
+        and uses it to accurately report what binary encoding scheme this document is
+        using.
+    </p>
+
+    <p>
+        The <code>&lt;meta&gt;</code> tag is a special tag that doesn't wrap any content, so it
+        <em>doesn't require a closing tag.</em>
+    </p>
+
+    <h4>Title</h4>
+
+    <pre>
+    <code class='html'>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;Definitely Wikipedia&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code>
+    </pre>
+
+    <p>
+    The <code>&lt;title&gt;</code> element contains the title of the document.
+    In this case, it is <strong>Definitely Wikipedia</strong>.
+    </p>
+
+    <pre>
+    <code class='html'>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Definitely Wikipedia&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;This is totally Wikipedia.&lt;/h1&gt;
+    &lt;p&gt; Hi there. I am Bob Wikipedia and you are at my website.
+    It&rsquo;s still under construction but I am pretty sure it will be done by 1998.&lt;/p&gt;
+    &lt;img src=&rdquo;https://media0.giphy.com/media/K5Yn9JCXcrXr2/giphy.gif&rdquo;&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+    </pre>
 
     <p id="end" class="ohno">
         <strong> Oh no! </strong> This is as far as I've written!
