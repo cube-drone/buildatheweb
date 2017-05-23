@@ -1,12 +1,13 @@
 
 #toc-bar{
-    height: 50px;
+    min-height: 50px;
     background-color: #333;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 5;
     box-shadow: 0px 10px 100px #999;
+    font-size: 90%;
 }
 
 .tocshell{

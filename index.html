@@ -814,6 +814,12 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
     </div>
 
     <p>
+        This chapter is going to cover a lot of topics <em>very loosely</em> in order to
+        get us to a workable initial state. Don't worry &mdash; we'll be covering everything,
+        in depth, eventually.
+    </p>
+
+    <p>
         We're going to be doing everything &mdash; absolutely everything &mdash; from
         a Linux command line.
     </p>
@@ -1471,6 +1477,11 @@ hello_world
                 <th><code>sudo</code></th> <td> i am an admin, let me do this thing </td>
             </tr>
         </table>
+
+        <p>
+            For a more in-depth introduction to Unix/Linux, you could always visit
+            this <a href="https://www2.cs.sfu.ca/~ggbaker/reference/unix/">Unix Tutorial for Beginners.</a>
+        </p>
     </div>
 
     <h3> Installing Ubuntu </h3>
@@ -2449,7 +2460,7 @@ default: Are you sure you want to destroy the 'default' VM? [y/N] y
         </li>
     </ul>
 
-    <h2> Chapter 3: HyperText and Markup Languages</h2>
+    <h2> Chapter 3: HyperText</h2>
 
     <p>
         We've talked about <strong>HyperText Transfer Protocol</strong> and <strong>HyperText Markup Language</strong>,
@@ -2602,28 +2613,33 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </p>
 
     <p>
-        Technically, HTML qualified as a subclass of SGML until the introduction of HTML5, which
-        finally cut all remaining ties with the old standard.
+        Technically, HTML qualified as a subclass of SGML until the introduction of
+        HTML5, which finally cut all remaining ties with the old standard.
     </p>
 
     <div class='left-aside-arrow'> </div>
     <div class='left-aside aside'>
         <p>
-            This is a good thing. SGML is a hulking, overspecified government standard that isn't particularly
-            useful for people who aren't trying to achieve interoperability between government mainframes
+            This is a good thing. SGML is a hulking, overspecified government
+            standard that isn't particularly useful for people who aren't
+            trying to achieve interoperability between government mainframes
             in the 1970s.
         </p>
     </div>
 
     <p>
-        Another child of SGML is "XML". While HTML was intended to be a representation of documents
-        and the sort of data that would commonly appear in documents &mdash; tables, images and such &mdash;
-        XML is a similar format that was designed as a general-purpose markup language for <em>any</em> kind of data.
-        It was also intended to be easier use than the somewhat bureaucratic SGML framework.
+        Another child of SGML is "XML". While HTML was intended to be a
+        representation of documents and the sort of data that would commonly
+        appear in documents &mdash; tables, images and such &mdash;
+        XML is a similar format that was designed as a general-purpose
+        markup language for <em>any</em> kind of data.
+        It was also intended to be easier use than the somewhat
+        bureaucratic SGML framework.
     </p>
 
     <p>
-        Markdown is a markup language that's designed to be interoperable with HTML and easy for humans to read and edit.
+        Markdown is a markup language that's designed to be interoperable
+        with HTML and easy for humans to read and edit.
     </p>
 
     <p>
@@ -2633,28 +2649,34 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </p>
 
     <p>
-        YAML (Yet Another Markup Language) is a markup language that's designed to be easy for humans to read and edit.
+        YAML (Yet Another Markup Language) is a markup language that's
+        designed to be easy for humans to read and edit.
     </p>
 
     <p>
         All of these different markup langauges are good for different purposes.
             <ul>
-                <li>HTML is good for representing multimedia documents that link to one another</li>
-                <li>JSON is good for representing simple objects</li>
-                <li>YAML is good for human-written configuration</li>
-                <li>Markdown is good for human-written markup</li>
-                <li>XML is good for representing very complex objects</li>
+                <li><strong>HTML</strong> is good for representing multimedia documents that link to one another.</li>
+                <li><strong>JSON</strong> is good for representing simple objects.</li>
+                <li><strong>YAML</strong> is good for human-written configuration.</li>
+                <li><strong>Markdown</strong> is good for human-written markup.</li>
+                <li><strong>XML</strong> is good for representing objects that have a defined format.</li>
             </ul>
     </p>
 
-    <h3> Character Encoding, ASCII, and UTF-8</h3>
+    <p> Bad news: You're probably going to have to learn <em>all of these markup languages</em>
+        at one point or another. </p>
+
+    <p> Good news: They're not very difficult to learn! </p>
+
+    <h3> Character Encoding </h3>
 
     <p>
         It's possible, through the use of these different markup languages, to represent just about anything
         as a plain-text file.
     </p>
-    <div class='left-aside-arrow'> </div>
-    <div class='left-aside small-aside aside'>
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside small-aside aside'>
         <p>
             SVG graphics, for example, are defined by an XML file filled with vector graphics information.
         </p>
@@ -2665,21 +2687,151 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
         A text file is, under the hood, a series of characters represented as binary data.
     </p>
 
+    <p> How, then, do we represent a text file as binary data? </p>
+
     <p>
         There are numerous schemes for converting character data into binary data, and these schemes are
         known as character encodings.
     </p>
 
+    <h4>ASCII</h4>
+
     <p>
-        The simplest character encoding is ASCII &mdash; which is simple &mdash; 8 bits can make 256 different combinations,
-        and each combination can make a different ASCII character, with room for some control codes like
-        "alert" and "bell".
+        An early common character encoding is ASCII &mdash; which is simple &mdash; 7 bits can make 128 different combinations.
+        That's more than enough room for all 26 latin alphabet characters in both lowercase and uppercase,
+        <em>and</em> all of the numbers and symbols on a standard US keyboard, with room left over
+        for some control codes like "new line", "tab", "alert", and "bell".
     </p>
+
+    <div class='figure'>
+        <h3> Here's a segment of the ASCII table: </h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Decimal</th>
+                    <th>Hex</th>
+                    <th>Binary</th>
+                    <th>Character</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>96</td>
+                    <td>60</td>
+                    <td>01100000</td>
+                    <td>`</td>
+                </tr>
+                <tr>
+                    <td>97</td>
+                    <td>61</td>
+                    <td>01100001</td>
+                    <td>a</td>
+                </tr>
+                <tr>
+                    <td>98</td>
+                    <td>62</td>
+                    <td>01100010</td>
+                    <td>b</td>
+                </tr>
+                <tr>
+                    <td>99</td>
+                    <td>62</td>
+                    <td>01100011</td>
+                    <td>c</td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td>63</td>
+                    <td>01100100</td>
+                    <td>d</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            The full table, as well as more additional detail than you could
+            possibly imagine, is available at <a href='https://en.wikipedia.org/wiki/ASCII'>Wikipedia</a>.
+        </p>
+    </div>
+
+    <p>
+        <code>hello, world</code> in ASCII would read as:
+    </p>
+
+    <pre>
+1101000 &nbsp; h
+1100101 &nbsp; e
+1101100 &nbsp; l
+1101100 &nbsp; l
+1101111 &nbsp; o
+0101100 &nbsp; ,
+0100000 &nbsp;
+1110111 &nbsp; w
+1101111 &nbsp; o
+1110010 &nbsp; r
+1101100 &nbsp; l
+1100100 &nbsp; d
+    </pre>
 
     <p>
         ASCII was enormously popular for a very long time &mdash; but the big problem with
-        ASCII is that 256 characters are not enough characters to encompass the entire character
+        ASCII is that 128 characters are not enough characters to encompass the entire character
         set of all available human languages.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside small-aside aside'>
+        <p>
+            Attempt to contain your surprise.
+        </p>
+    </div>
+
+    <h4> ISO-8859 </h4>
+
+    <p> 7 bits is all well and good, but 8 bits would double the amount of character space
+        available to us &mdash; and 8 bits makes a byte, which makes it really easy
+        to remember "A character is about a byte".</p>
+
+    <p> What characters do we cram into that extra 128 spaces on the table, though?
+        Even English contains a bunch of words that use
+        <a href="https://en.wikipedia.org/wiki/English_terms_with_diacritical_marks">diacritical marks</a>.
+    </p>
+
+    <p>
+        How do we decide whether to include the spanish ñ, so that we can say "jalapeño"
+        or the french ç, so that we can say "soupçon" and "façade"?
+    </p>
+
+    <p>
+        And what about characters that are used extensively by unimportant languages
+        like <em>every other human language?</em>
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <p>
+            <a href="https://www.youtube.com/watch?v=gO_1dEOkb_U">
+            "And this is my universal translator. Unfortunately, so far, it only
+            translates into an incomprehensible dead language."</a>
+        </p>
+    </div>
+
+    <p>
+        One idea was to use ASCII for the first 128 characters, and then, in the other
+        128 characters, fit all of the extra bits required for groups of different languages.
+        Group 1 would contain a bunch of characters for latin-based languages like
+        English, French, German, Italian, Portugese. Group 2 would have characters
+        useful for central european languages like Polish, Czech, and Hungarian.
+        This scheme would be extensible, allowing new groups to be added &mdash;
+        and, to date, there are <a href="https://en.wikipedia.org/wiki/ISO/IEC_8859">sixteen</a>.
+    </p>
+
+    <p>
+        This scheme was called <strong>ISO-8859</strong>, and it enjoyed common usage
+        through most of the 90s and 00s, and group 1, <strong>ISO-8859-1</strong>, commonly
+        known as <strong>latin-1</strong>, became one of the world's most common
+        character encodings.
     </p>
 
     <p>
@@ -2688,27 +2840,268 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
         the same space to provide different encodings for different groups of languages.
     </p>
 
+    <p> Here's <code>ñello, world</code> in latin-1: </p>
+
+    <pre>
+11110001 &nbsp; ñ
+01100101 &nbsp; e
+01101100 &nbsp; l
+01101100 &nbsp; l
+01101111 &nbsp; o
+00101100 &nbsp; ,
+00100000 &nbsp;
+01110111 &nbsp; w
+01101111 &nbsp; o
+01110010 &nbsp; r
+01101100 &nbsp; l
+01100100 &nbsp; d
+    </pre>
+
+    <p> The only character that stands out is ñ, which lives in the last-half of the encoding,
+        so it starts with a one. All of the other characters are the equivalent to their
+        ASCII-encodings.</p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside small-aside aside'>
+        <p>
+            Also note that "ñello" would be pronounced "nyello", which is a very
+            satisfying way to say the word.
+        </p>
+    </div>
+
+
+    <h4> &#xfffd; &#xfffd; &#xfffd; &#xfffd; what even </h4>
+
     <p>
-        Unicode was a standard developed to support all languages.
-        At last count, there are over 100,000 Unicode characters.
-        There are a few different character codings that represent Unicode's representation in binary,
-        the most popular of which is <strong>UTF-8</strong>.
+        When downloading a HTML file from the internet using HTTP, the HTTP server
+        is <em>supposed</em> to accurately report the character encoding
+        that the text is using.
+    </p>
+
+    <p> Sometimes, though, the HTTP server sends the wrong character encoding.
+        Stupid HTTP server. When most browsers can't understand a character,
+        they'll display the &#xfffd; character,
+        which is the browser equivalent of going &#xAF;\_(&#x30C4;)_/&#xAF;.
     </p>
 
     <p>
-        At the time of writing, UTF-8 is slowly engaged in the process of consuming all other encodings,
-        although latin-1 and ASCII encoded files are still common.
+        It's getting harder and harder to find webpages with serious encoding errors
+        but fortunately Eric S. Raymond hasn't updated his Jargon File in a long while,
+        <a href="http://www.catb.org/jargon/html/A/all-your-base-are-belong-to-us.html">so we can still find some</a>.
     </p>
 
     <p>
-        This is important when dealing with the web &mdash; web browsers will do their best to
-        guess what character encoding that they have been handed, but if they guess wrong,
-        instead of displaying text properly, they will display a lot of the � character.
-        The <a href="http://www.catb.org/jargon/html/A/all-your-base-are-belong-to-us.html">Jargon File</a>
-        has this problem in spades.
+        There's a bug that used to be common &mdash; Windows used an encoding in the
+        Windows-98 era, called <a href="https://en.wikipedia.org/wiki/Windows-1252">Windows 1252</a>
+        that was commonly confused for latin-1.
+    </p>
+    <p>
+        Webpages would report that they were returning latin-1 when they were actually returning
+        windows-1252, and the result would be web-pages lined with the &#xfffd; character.
+        It doesn't happen much any more, because the world has been standardizing on
+        a new encoding: <strong>UTF-8</strong>.
     </p>
 
-    <p class="ohno">
+    <p> But before we get to <strong>UTF-8</strong> we have to talk about <strong>Unicode</strong>.</p>
+
+    <h4>Unicode</h4>
+    <p>
+        The problem with all of these character schemes is that they have to be <em>efficient</em>.
+    </p>
+    <p>
+        Nobody is interested in a character encoding scheme that has room for all of the
+        different possible characters, because it's just not practical for every single
+        character to take several bytes of space to represent.
+    </p>
+
+    <p>
+        Character encoding is <em>hard</em>, though. For one thing, there's a lot of characters
+        that are <a href="https://www.cs.sfu.ca/~ggbaker/reference/characters/">very easy to confuse
+        for one another.</a>
+    </p>
+
+    <p>
+        "Do you know what would be nice?", I imagine someone saying. "It would be nice if we
+        just had a list of every single character and gave each one of them a number."
+    </p>
+
+    <p>
+        "That's not a character encoding scheme", said someone else in this hypothetical scenario.
+        "There's not even any instructions for how to convert that into a binary representation,
+        that's just a big list of all of the possible characters, and each of them have a unique
+        number."
+    </p>
+
+    <p>
+        "It doesn't need to be a <em>whole character encoding scheme</em>. It'd just be <em>nice</em> if we had a unique
+        number for each character."
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside small-aside aside'>
+        <h3> Emoji Are Just Unicode </h3>
+        <p>
+            Most emoji transmitted by our phones are just <a href="http://unicode.org/emoji/charts/full-emoji-list.html">unicode characters</a>.
+        </p>
+        <p>
+            The emoji are translated into graphics in the same way that
+            characters are translated into fonts, which is why
+            we can send a &#x1F601; "smiley face" symbol from an Apple phone
+            to an Android phone and &mdash; while they may render the symbol differently
+            &mdash; they both still mean "smiley face".
+        </p>
+    </div>
+
+
+    <p>
+        So, that's what <strong>Unicode</strong> is &mdash; not a binary encoding scheme at all, really,
+        just a list of all of the characters and a unique number for each of them.
+    </p>
+
+    <p> The <a href="https://unicode-table.com/en/">entire Unicode character table</a> is
+        enormous. "A" is 41, "&#194;" is 194, "&#3061;" is 3061. "&#9822;" is 9822. There's space
+        for everything, including every character in Chinese, Japanese, and Korean,
+        and there are over 120,000 characters in the complete table. </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside small-aside aside'>
+        <h3>He Comes</h3>
+        <p>
+            Unicode contains characters that modify previous characters and characters
+            to change how other characters are displayed, which enabled the coming of
+            the dark lord
+            Z&#x365;&#x338;&#x333;&#x32F;&#x320;&#x331;&#x33C;a&#x300;&#x367;&#x34C;&#x31C;l&#x340;&#x319;&#x356;&#x34E;&#x318;&#x347;&#x34E;&#x32F;g&#x310;&#x36D;&#x34A;&#x302;&#x489;&#x348;&#x329;&#x359;&#x31E;&#x32E;o&#x30E;&#x36C;&#x305;&#x34C;&#x36E;&#x31D;&#x32E;.
+        </p>
+    </div>
+
+
+    <h4> Unicode is not a Binary Encoding Scheme</h4>
+
+    <p>
+        Because Unicode is not itself a binary encoding scheme, just a list of characters,
+        that brings the obvious follow-up question: how do we represent Unicode in binary, then?
+    </p>
+
+    <p>
+        And the answer: there are lots of different schemes!
+        UCS-2, UTF-32, UTF-16, UTF-1, UTF-8, UTF-7, UTF-EBCDIC, there are many, many standards
+        for representing Unicode characters in binary, most of them with various clever tricks
+        to keep their size under control.
+    </p>
+
+    <p>
+        It's hard, especially because Unicode is an <em>giant, unbounded table</em>. New characters
+        are being added to Unicode all the time.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside small-aside aside'>
+        <h3> Taco Symbol </h3>
+        <p>
+            Code point 127,790 has been set aside
+            <a href="https://www.theverge.com/2015/6/17/8799255/taco-emoji-its-really-happening">for the Taco symbol</a>.
+        </p>
+        <p>
+            Unfortunately, support for the taco symbol is still limited,
+            and most browsers and phones won't display it, yet.
+        </p>
+        <p>
+            Here, let's give it a try: &#127790;
+        </p>
+        <p>
+            Dang. That's the "I don't have a font for that character" symbol.
+        </p>
+    </div>
+
+    <p>
+        If we're not interested in efficiency at all, we can just set aside 32 bits for
+        <em>each character</em>. So long as Unicode stays less than 4 billion characters, this
+        should work fine. This is known as <strong>UTF&ndash;32</strong>, and it's
+        very simple and easy to understand. It also wastes a <em>lot</em> of space.
+        If UTF-32 were common, it would quadruple the size of most web requests.
+    </p>
+
+    <h4>Just Use UTF-8</h4>
+    <p>
+        The sneaky trick is that, as much as we sometimes need special characters,
+        most of our day-to-day communication and code come out of the 128 characters
+        that we originally used for ASCII.
+    </p>
+
+    <p>
+        <strong>UTF-8</strong> is a scheme that uses 8-bytes for <em>most</em> characters,
+        but uses extra bytes when necessary to encode special characters.
+    </p>
+
+    <p>
+        This means that <strong>UTF-8</strong> is as efficient as <em>latin-1</em> most of the
+        time, while <em>also</em> being able to represent the entirety of Unicode.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside small-aside aside'>
+        <h3> &#3232;_&#3232;</h3>
+        <img src="http://i0.kym-cdn.com/photos/images/newsfeed/000/114/348/tom_delay.jpg">
+    </div>
+
+    <p> Here's <code>ñello, world &#3232;_&#3232;</code> in UTF-8: </p>
+
+    <pre>
+11000011 10110001 &nbsp; ñ
+01100101 &nbsp; e
+01101100 &nbsp; l
+01101100 &nbsp; l
+01101111 &nbsp; o
+00101100 &nbsp; ,
+00100000 &nbsp;
+01110111 &nbsp; w
+01101111 &nbsp; o
+01110010 &nbsp; r
+01101100 &nbsp; l
+01100100 &nbsp; d
+00100000 &nbsp;
+11100000 10110010 10100000 &nbsp; &#3232;
+01011111 &nbsp; _
+11100000 10110010 10100000 &nbsp; &#3232;
+    </pre>
+
+    <p>
+        Just like latin-1, all of the ASCII characters look the same that they did in ASCII. It's
+        not until we get into special characters that we see more bits start to appear.
+    </p>
+
+    <p>
+        UTF-8 is slowly consuming the entire internet &mdash; if we ask anybody what
+        character encoding to use today, they'll probably say "just use UTF-8".
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside small-aside aside'>
+        <h3>An Emoticon Renaissance</h3>
+        <p>
+            The new character set has enabled enterprising emojismiths to
+            craft many compelling new emoticons with the new symbols.
+        </p>
+        <p> Let us flip this table in their honour. </p>
+        <p>
+        <code>&#x200E;(&#xFF89;&#xCA5;&#x76CA;&#xCA5;&#xFF09;&#xFF89;&#xFEFF; &#x253B;&#x2501;&#x253B;</code>
+        </p>
+    </div>
+
+    <h3> HTML </h3>
+
+    <p>
+        Okay, so, now that we know about hypertext, markup languages, and character encodings,
+        let's look at the Hypertext Markup Language.
+    </p>
+
+    <p>
+        I think the best way to start, here, might be to start by looking at a basic
+        HTML page.
+    </p>
+
+
+    <p id="end" class="ohno">
         <strong> Oh no! </strong> This is as far as I've written!
         Keep track of the <a href="https://github.com/classam/buildatheweb">project on GitHub</a> for updates!
     </p>

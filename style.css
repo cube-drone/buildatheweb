@@ -185,6 +185,10 @@ pre code{
     max-width: 190px;
 }
 
+.left-aside img{
+    max-width: 190px;
+}
+
 .left-aside{
     left: -245px;
     border-bottom: 5px dashed CadetBlue;
