@@ -17,6 +17,8 @@
 
 .tocshell a, #toc-full a{
     color: #93C5C7;
+    text-decoration: none;
+    border-bottom: 1px dotted CadetBlue;
 }
 
 .tocshell .tocbutton{
@@ -36,15 +38,16 @@
 }
 
 #toc-full{
-    height: 50%;
+    height: 70%;
     overflow-y: scroll;
     color: white;
-    background-color: black;
+    background-color: #222;
     position: fixed;
     top: 50px;
     width: 100%;
     z-index: 10;
     box-shadow: 0px 10px 100px #999;
+    display: none;
 }
 
 #toc-full ul{
@@ -54,4 +57,33 @@
 
 #toc-full li{
     list-style-type: none;
+}
+
+
+.toc-entry{
+    display: block;
+}
+.toc-entry a{
+    text-decoration: none;
+    border-bottom: 1px dotted CadetBlue;
+}
+.toc-depth-1{
+}
+.toc-depth-2{
+    margin-top:30px;
+}
+.toc-depth-3{
+    margin-left: 25px;
+}
+.toc-depth-4{
+    margin-left: 50px;
+}
+.toc-depth-5{
+    margin-left: 75px;
+}
+.toc-depth-6{
+    margin-left: 100px;
+}
+.toc-depth-7{
+
 }

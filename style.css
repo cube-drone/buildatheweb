@@ -56,12 +56,17 @@ h1{
 }
 
 h2{
-    margin-top: 150px;
+    margin-top: 250px;
 }
 
 h3{
-    margin-top: 70px;
+    margin-top: 120px;
 }
+
+h4, h5, h6{
+    margin-top: 65px;
+}
+
 
 a{
     color: #226C70;
@@ -131,7 +136,7 @@ pre code{
 }
 
 .aside h1, .aside h2, .aside h3, .aside h4, .aside h5, .aside h6{
-    margin-top: 0
+    margin-top: 0;
     color: CadetBlue;
 }
 

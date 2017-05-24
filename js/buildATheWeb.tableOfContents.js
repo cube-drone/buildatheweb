@@ -147,9 +147,7 @@ $(document).ready(function(){
 
     var tocHtmlArray = new Array();
     tableOfContentsTree.children[0].traverseDown(function(node){
-        var depth = "", i;
-        for (i = 1; i <= node.depth; i++) depth += "&mdash;";
-        tocHtmlArray.push("\t<li>" + [depth, `<a href='#${node.data.id}'>${node.data.title}</a>`].join(" ") + "</li>");
+        tocHtmlArray.push(`\t<li class='toc-depth-${node.depth} toc-entry'><a href='#${node.data.id}'>${node.data.title}</a></li>`);
     });
 
     var tocHtml = "<ul>" + tocHtmlArray.join("\n") + "</ul>";
