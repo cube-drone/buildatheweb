@@ -85,6 +85,18 @@
         <a href="https://github.com/classam/buildatheweb">https://github.com/classam/buildatheweb</a>.
     </p>
 
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <p>
+            There are a few images included for comedic effect, here, that I do not own,
+            and thus cannot make available under the same license as the rest of the work.
+        </p>
+        <p>
+            The copyright implications of "a screenshot of someone else's work" are still
+            pretty legally fuzzy.
+        </p>
+    </div>
+
     <h2> Chapter 1: Request, Response </h2>
 
     <p>
@@ -3236,6 +3248,23 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
         not until we get into special characters that we see more bits start to appear.
     </p>
 
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <p>
+            It's entirely possible that I didn't explain character encodings
+            as well as I could have. Fortunately, I have not one but two
+            separate articles that cover the same ground that I just did
+            but in different words:
+        </p>
+        <ul>
+            <li><a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">Joel Spolsky &ndash; The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses)</a></li>
+            <li><a href="http://kunststube.net/encoding/">Kunststube &ndash; What Every Programmer Absolutely, Positively Needs To Know About Encodings and Character Sets to Work With Text</a></li>
+        </ul>
+        <p>
+            I guess that we had better be <em>absolute</em> and <em>positive</em>.
+        </p>
+    </div>
+
     <p>
         <abbr title="Unicode Transformation Format - 8 Bit">UTF-8</abbr> is slowly consuming the entire internet &mdash; if we ask anybody what
         character encoding to use today, they'll probably say "just use
@@ -3394,7 +3423,32 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
         style information that the page needs to load.
     </p>
 
-    <h4>Charset</h4>
+    <h4>Elements What Go In The Head</h4>
+
+    <p>
+        The elements that go in the <code>&lt;head&gt;</code> element are
+        important metadata about the page.
+    </p>
+
+    <p>
+        It's <em>possible</em> to completely skip the <code>head</code> and go right on
+        to the <code>body</code>.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <img src="images/chapter3/seduction.jpg">
+        <p>
+            This is also possible in <em>lovemaking</em>. And just as inadvisable.
+        </p>
+    </div>
+
+    <p>
+        We shouldn't, though &mdash; a lot of stuff in the <code>head</code> is
+        important to the proper operation of the page.
+    </p>
+
+    <h5>Charset</h5>
 
     <pre>
     <code class='html'>
@@ -3413,6 +3467,11 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
         This next part we've added, <code>&lt;meta charset=&quot;UTF-8&quot;/&gt;</code>,
         defines the character encoding of the document as
         <abbr title="Unicode Transformation Format - 8 Byte">UTF-8</abbr>.
+    </p>
+
+    <p>
+        Yeah, that whole entire segment on character encoding? That was just
+        so that we'd understand this bit right here.
     </p>
 
     <p>
@@ -3442,7 +3501,7 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
         <em>doesn't require a closing tag.</em>
     </p>
 
-    <h4>Title</h4>
+    <h5>Title</h5>
 
     <pre>
     <code class='html'>
@@ -3463,21 +3522,177 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     In this case, it is <strong>Definitely Wikipedia</strong>.
     </p>
 
-    <h4>Presentational Elements </h4>
+    <div class='figure'>
+        <img src='images/chapter3/title.png'>
+        <p>
+            Hey, it's a thing that we can see! Look at that sweet title.
+        </p>
+    </div>
+
+    <h5>Author &amp; Description</h5>
+
+    <pre>
+    <code class='html'>
+&lt;meta name="description" content="This is a description of the content on the page" /&gt;
+&lt;meta name="author" content="Andrea Authorface" /&gt;
+    </code>
+    </pre>
+
+    <p>
+        The <code>description</code> meta tag is picked up by Google and Twitter when we share a link
+        to our html page somewhere.
+    </p>
+
+    <div class='figure'>
+        <img src='images/chapter3/description.png'>
+        <p>
+            The content of the <code>description</code> meta tag shows up here.
+        </p>
+    </div>
+
+    <p>
+        Best I can tell, the <code>author</code> meta tag isn't used anywhere and is completely optional.
+    </p>
+
+    <h5>Favicon</h5>
+
+    <p>
+        This is one of my favourite <abbr title="HyperText Markup Language">HTML</abbr> tricks!
+    </p>
+
+    <div class='figure'>
+        <p>Let's take a look at my browser's tabs.</p>
+        <img src='images/chapter3/favicon_row.png'>
+
+        <p>It almost seems like the icon is more important than the title, for most of these!</p>
+
+        <p>Also, and this is a fun thing to note, the Google Calendar favicon is
+            <em>accurate to the day that I'm looking at it</em> which is a very
+            cool touch. </p>
+    </div>
+
+    <p>
+        These icons are called "favicons".
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <p>
+            In the 1986 classic "Transformers: The Movie", the Autobots
+            fight the Favicons for dominance over Cybertron.
+        </p>
+    </div>
+
+    <p>
+        It's possible to link a favicon to our page by including a link
+        to a very small image file.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <p>
+            The favicon can be an <code>.ico</code>, a <code>.png</code>,
+            a <code>.gif</code>, even a <code>.jpg</code> if you're feeling
+            sassy.
+        </p>
+        <p>
+            One of the nice things about the <code>.ico</code> format is that
+            it is possible to generate an icon file that contains different
+            versions of the icon in <code>16x16</code>,
+            <code>32x32</code>, <code>64x64</code>, and <code>128x128</code> sizes,
+            so that browsers have the option to display the icon at varying
+            scales without horrifying scaling artifacts.
+        </p>
+        <p>
+            It's possible, using the <code>.gif</code> format, to have an
+            animated favicon, but please don't.
+        </p>
+    </div>
+
+    <p>A basic favicon link looks like this: </p>
+    <pre>
+    <code class='html'>
+&lt;link rel="shortcut icon" href="http://buildatheweb.com/favicon.ico" type="image/x-icon"&gt;
+    </code>
+    </pre>
+
+    <p>
+        The <code>type</code> option here needs to match the type of the file that we're
+        linking to. In the case of an <code>.ico</code> file, it's <code>image/x-icon</code>,
+        but if we were to provide a <code>.png</code> file, it would be
+        <code>image/png</code>. This format is a standard called
+        <abbr title="Multimedia Internet Mail Extensions - Type">MIME Type</abbr>, and a list
+        of file-extension to
+        <abbr title="Multimedia Internet Mail Extensions - Type">MIME Type</abbr> mappings
+        can be found
+        <a href='https://www.sitepoint.com/web-foundations/mime-types-complete-list/'>here</a>.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <p>
+            <abbr title="Multimedia Internet Mail Extensions - Type">MIME Types</abbr>
+            appear pretty often.
+        </p>
+        <p>
+            Despite being ostensibly for "Multimedia Internet Mail", the standard
+            is used extensively within
+            <abbr title="HyperText Transfer Protocol">HTTP</abbr> to describe the type
+            of files that are being passed around and linked to.
+        </p>
+        <p>
+            If you look back at our sample
+            <abbr title="HyperText Transfer Protocol">HTTP</abbr> response
+            from the server in Chapter 1, it included the header
+            <code>Content-type: text/html</code>.
+        </p>
+        <p>
+            <code>Content-type</code> in
+            <abbr title="HyperText Transfer Protocol">HTTP</abbr>
+            uses <abbr title="Multimedia Internet Mail Extensions - Type">MIME Types</abbr>,
+            and <code>text/html</code> is the type for
+            <abbr title="HyperText Markup Language">HTML</abbr>.
+        </p>
+    </div>
+
+    <p> It's possible to really go to town optimizing our favicons &mdash; providing different
+        icon sizes and formats for every device that could possibly display our webpage,
+        but just a <code>32x32</code> <code>.png</code> file should be a serviceable option.
+    </p>
+
+    <h5>Style &amp; Scripts</h5>
+
+    <p>
+        We're not going to talk about these yet! Wait until we get to our chapters on CSS
+        and JavaScript respectively.
+    </p>
+
+    <h4>Body Elements</h4>
+
+    <p>
+        All of the parts of the document we've built so far? They're hiding just under the surface
+        of our document. Now we look at the exciting parts that people can actually see!
+    </p>
 
     <h5>Headers </h5>
 
     <h5>Paragraphs </h5>
-
-    <h5>Links </h5>
-
-    <h5>Images </h5>
 
     <h5>Lists </h5>
 
     <h5>Tables </h5>
 
     <h5>Divisions &amp; Sections</h5>
+
+    <h5>Links </h5>
+
+    <!-- Absolute vs. Relative Linking -->
+
+    <h5>Images </h5>
+
+    <!-- A Brief Walk through the Image Formats -->
+
+    <!-- Base64 inline images -->
 
     <h5>Fragment Identifiers</h5>
 
