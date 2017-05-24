@@ -2,41 +2,67 @@
 <html>
 <head>
 
-    <!-- Hey there! You're looking at the source for BuildATheWeb.com! Which is awesome! -->
+    <!-- Hey there! You're looking at the source code! Which is awesome! -->
 
+    <!--
+
+     (  )   (   )  )
+      ) (   )  (  (
+      ( )  (    ) )
+      _____________
+     <_____________> ___
+     |             |/ _ \
+     |               | | |
+     |               |_| |
+  ___|             |\___/
+ /    \___________/    \
+ \_____________________/
+
+    You should always sneak some kind of ASCII art into your HTML header.
+
+    Fully 0.1% of your site's visitors will appreciate it!
+
+    -->
 
     <title>Build A The Web</title>
     <meta name="description" content="We're going to learn you how to build a the web" />
-    <meta name="author" content="Curtis Lassam" />
+    <meta name="author" content="Curtis Lassam" /> <!-- it me -->
 
+    <!-- I wrote a whole essay in here about UTF-8. Did you read it? -->
     <meta charset="UTF-8"/>
 
-
+    <!-- The CSS stylesheet for the page is located at 'style.css' -->
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <!-- It's a happy icon for the page. :) -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- This script converts straight-quotes into proper directional quotes -->
+    <!-- This Javascript converts straight-quotes into proper directional quotes -->
     <script src="js/smartquotes.js"></script>
     <script>smartquotes()</script>
 
-    <!-- Let's highlight code samples -->
+    <!-- This Javascript will automatically highlight code samples for us -->
     <script src="js/highlight/highlight.pack.js"></script>
     <link rel="stylesheet" type="text/css" href="js/highlight/styles/monokai.css">
     <script>hljs.initHighlightingOnLoad();</script>
 
-    <!-- Arboreal (tree data structure) -->
+    <!-- Arboreal is a tree data structure that we use to power the Table of Contents -->
     <script src="js/arboreal.js"></script>
 
     <!-- jQuery -->
     <script src="js/jquery-3.2.1.min.js"></script>
 
+    <!-- This is the Javascript code and CSS style that I wrote for the Table of Contents -->
     <script src="js/buildATheWeb.tableOfContents.js"></script>
     <link rel="stylesheet" type="text/css" href="style.tableOfContents.css">
 </head>
 
 <body>
 
+<!--
+    these DIVs are empty now, but the Javascript that produces the Table of Contents will fill
+    them with content.
+-->
 <div id="toc-bar">
 
 </div>
@@ -44,22 +70,44 @@
 
 </div>
 
+<!-- IT BEGINS -->
 <div class="main" id="content">
     <h1> Build A The Web </h1>
 
     <h2> Introduction </h2>
 
+    <!-- One of the things we'll notice in this book is that I try to address us as 'we'
+        instead of addressing you as 'you'. -->
+    <!-- It's not "you're going to build a the web", it's "we're going to build a the web" -->
     <p>
         This is <strong>Build A The Web</strong>, a book devoted to taking us, people with
         basic programming and computer knowledge, and upgrading us into web programmers.
     </p>
 
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <h4>Halp</h4>
+        <p>
+            I'm starting this book assuming that we already know how to program a little bit!
+        </p>
+        <p>
+            To learn to program, I recommend this <em>other</em> open textbook:
+            <a href='http://openbookproject.net/thinkcs/python/english3e/'>How To Think Like a Computer Scientist</a>.
+        </p>
+    </div>
+
     <p>
-        This is <strong class='book_version'>Version 0.1 &ndash; Drafty Old House</strong>
-        of the book.
+        The best kind of textbook about
+        the web is made out of <abbr title="HyperText Markup Language">HTML</abbr>
+        and filled with media and links to other content. That is what
+        the web is <em>all about</em>, not dusty ol' textbooks that
+        are no longer valid because they cover a version of the web that
+        went obsolete nine years ago.
     </p>
+
     <p>
-        It was last updated <strong class='book_last_update'>May 18, 2017</strong>.
+        This book was last updated <strong class='book_last_update'>May 24, 2017</strong>.
+        If that's a <em>long time ago</em>, I might have died. Avenge me!
     </p>
 
     <p>
@@ -83,6 +131,8 @@
         This site, and all of the resources used to generate this site, including class materials
         and examples, are available at
         <a href="https://github.com/classam/buildatheweb">https://github.com/classam/buildatheweb</a>.
+        That's also a good place to comment, suggest updates, file bugs, and generally
+        improve the book if you feel that it needs some attention.
     </p>
 
     <div class='left-aside-arrow'> </div>
@@ -91,9 +141,14 @@
             There are a few images included for comedic effect, here, that I do not own,
             and thus cannot make available under the same license as the rest of the work.
         </p>
+        <!-- tl;dr: I do not own Seinfeld or The Simpsons for some reason -->
         <p>
             The copyright implications of "a screenshot of someone else's work" are still
             pretty legally fuzzy.
+        </p>
+        <p>
+            The copyright implications of "a screenshot from an episode of The Simpsons"
+            are even more so.
         </p>
     </div>
 
@@ -103,6 +158,21 @@
         Our first chapter is going to focus on what happens behind the scenes when we make
         a web request. What that means is a crash course in computer networking.
     </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h4>Crash Course</h4>
+        <p>
+            For a crash course in everything else in Computer Science, there's always
+            <a href='https://www.youtube.com/watch?v=tpIctyqH29Q&list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo&index=1'>Crash Course Computer Science</a>.
+        </p>
+        <p>
+            They tell you that they are not going
+            to help you change the <abbr title="Cascading Style Sheets">CSS</abbr> on your
+            Grandma's sewing blog so visitor's cursors turn into kittens, though,
+            so there's still a <em>job for me to do, here</em>.
+        </p>
+    </div>
 
     <h3> Uniform Resource Locators </h3>
 
@@ -129,6 +199,16 @@
         This <abbr title="Uniform Resource Locator">URL</abbr> uniquely identifies a document somewhere on someone else's
         computer that we are going to request from that computer.
     </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h4>Abbreviations</h4>
+        <p>
+            If you hold your mouse over an abbreviation like
+            <abbr title="Uniform Resource Locator">URL</abbr> for a few seconds,
+            the definition of that term should pop up.
+        </p>
+    </div>
 
     <p>
         This divides into protocol, domain name, path, parameters,
@@ -3398,6 +3478,27 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
         element to let the world know that this HTML document is in English.
     </p>
 
+    <h4> HTML Comments </h4>
+    <pre>
+    <code class="html">
+&lt;!-- Nobody can see this, no matter where you put it in the HTML --&gt;
+
+&lt;!-- Comments are important in any language, even HTML --&gt;
+
+&lt;!--
+Comments
+can
+span
+multiple
+lines
+--&gt;
+
+&lt;!-- Sometimes you want to say stuff that nobody can see in the final page output. --&gt;
+
+&lt;!-- Watch out, though - people can still see the comments in your HTML source. --&gt;
+    </code>
+    </pre>
+
     <h4> Head &amp; Body </h4>
 
     <pre>
@@ -3663,7 +3764,8 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     <h5>Style &amp; Scripts</h5>
 
     <p>
-        We're not going to talk about these yet! Wait until we get to our chapters on CSS
+        We're not going to talk about these yet! Wait until we get to our chapters on
+        <abbr title="Cascading Style Sheets">CSS</abbr>
         and JavaScript respectively.
     </p>
 

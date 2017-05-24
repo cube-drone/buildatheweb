@@ -266,6 +266,11 @@ blockquote:before {
     background-color: white;
 }
 
+.figure h1, .figure h2, .figure h3, .figure h4, .figure h5, .figure h6{
+    margin-top: 10px;
+    color: #222;
+}
+
 .figure img{
     max-width: 660px;
     border: 2px solid #222;
