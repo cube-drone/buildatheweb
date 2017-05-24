@@ -101,19 +101,20 @@
 
     <pre class='code'>https://en.wikipedia.org/w/index.php?title=Blinkenlights&amp;action=edit#Etymology</pre>
 
-    <p> This is a <strong>URL</strong>, which stands for <strong>Uniform Resource Locator</strong>.</p>
+    <p> This is a <abbr title="Uniform Resource Locator">URL</abbr>, which stands for <strong>Uniform Resource Locator</strong>.</p>
 
     <div class='left-aside-arrow'> </div>
     <div class='left-aside aside'>
         <h4>URI</h4>
         <p>
-        Some people might also call this an URI, but if we encounter a person who does this,
+        Some people might also call this an
+        <abbr title="Uniform Resource Identifier">URI</abbr>, but if we encounter a person who does this,
         I recommend that we shun then socially until they stop. </p>
     </div>
 
 
     <p>
-        This URL uniquely identifies a document somewhere on someone else's
+        This <abbr title="Uniform Resource Locator">URL</abbr> uniquely identifies a document somewhere on someone else's
         computer that we are going to request from that computer.
     </p>
 
@@ -198,9 +199,9 @@
 
     <p>
         We have two protocols at the very top of the stack that define how we communicate between computers &mdash;
-        <strong>IP</strong>,
+        <abbr title="Internet Protocol">IP</abbr>,
         the <strong>Internet Protocol</strong>, which defines how we send messages across the network,
-        and <strong>TCP</strong>, the <strong>Transport Control Protocol</strong>, which makes sure that
+        and <abbr title="Transport Control Procotol">TCP</abbr>, the <strong>Transport Control Protocol</strong>, which makes sure that
         our messsages completely arrive, in the right order, and uncorrupted.
     </p>
 
@@ -230,7 +231,12 @@
         In the same way that a program is an implementation of an algorithm, a
         <strong>stack</strong> is an implementation of a protocol.
         A protocol is an algorithm, and a stack is a program to implement a protocol.
-        So, in order to run TCP/IP, our computer runs the TCP/IP stack, which implements the TCP/IP protocol. </p>
+        So, in order to run
+        <abbr title="Transport Control Protocol/Internet Protocol">TCP/IP</abbr>,
+        our computer runs the
+        <abbr title="Transport Control Protocol/Internet Protocol">TCP/IP</abbr> stack,
+        which implements the
+        <abbr title="Transport Control Protocol/Internet Protocol">TCP/IP</abbr> protocol. </p>
 
     <div class='left-aside-arrow'> </div>
     <div class='left-aside aside'>
@@ -245,16 +251,20 @@
     <h3> IP Address &amp; Sockets </h3>
 
     <p>
-        The abstraction presented by TCP/IP is simple: every computer has an IP address.
-        An IP address looks like this: <code>192.0.2.0</code> &mdash; or, like this:
+        The abstraction presented by <abbr title="Transport Control Protocol/Internet Protocol">TCP/IP</abbr>
+        is simple: every computer has an <abbr title="Internet Protocol">IP</abbr> address.
+        An <abbr title="Internet Protocol">IP</abbr> address looks like this: <code>192.0.2.0</code> &mdash; or, like this:
         <code>2001:DB80:c501:17ef:a063:a37f:3803:5c1a</code>. These are just
         identifiers that communicate a unique identity for the computer in question.
     </p>
 
     <p>
-        If we know our IP address, and the IP address of the computer that we want to
-        communicate with, and that other computer is online, we can trust that IP will
-        get the message to that computer. We can use TCP to open a <strong>socket</strong> to a specific
+        If we know our <abbr title="Internet Protocol">IP</abbr> address, and the
+        <abbr title="Internet Protocol">IP</abbr> address of the computer that we want to
+        communicate with, and that other computer is online, we can trust that
+        <abbr title="Internet Protocol">IP</abbr> will
+        get the message to that computer. We can use
+        <abbr title="Transport Control Protocol">TCP</abbr> to open a <strong>socket</strong> to a specific
         <strong>port</strong> on our target computer.
     </p>
 
@@ -263,24 +273,26 @@
         <img src="images/ports.png" />
         <p>
             Imagine these computers like giant walls of plugs &mdash; or ports &mdash; and when we open a connection,
-            TCP creates a two way communication link between two ports with a socket on each end.
+            <abbr title="Transport Control Protocol">TCP</abbr>
+            creates a two way communication link between two ports with a socket on each end.
         </p>
     </div>
 
     <p>
         There are thousands of these ports &mdash; they're numbered from 1 to 65,535. In order to keep things tidy,
-        each different protocol that runs on top of TCP usually runs on a different port.
+        each different protocol that runs on top of
+        <abbr title="Transport Control Protocol">TCP</abbr> usually runs on a different port.
         Of course, most computers aren't communicating on all of these ports at once &mdash;
         in fact, there are six ports that, on most computers, get more use than all
         of the rest of them combined:
     </p>
 
     <ul>
-        <li><strong>25</strong>, for the Simple Mail Transfer Protocol (SMTP) </li>
-        <li><strong>53</strong>, for the Domain Name System (DNS) </li>
-        <li><strong>67</strong> and <strong>68</strong> for the Dynamic Host Configuration Protocol (DHCP) </li>
-        <li><strong>80</strong> for the Hypertext Transfer Protocol (HTTP)</li>
-        <li><strong>443</strong>, for the Hypertext Transfer Protocol over Transport Layer Security (HTTPS)</li>
+        <li><strong>25</strong>, for the Simple Mail Transfer Protocol (<abbr title="Simple Mail Transfer Protocol">SMTP</abbr>) </li>
+        <li><strong>53</strong>, for the Domain Name System (<abbr title="Domain Name System">DNS</abbr>) </li>
+        <li><strong>67</strong> and <strong>68</strong> for the Dynamic Host Configuration Protocol (<abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>) </li>
+        <li><strong>80</strong> for the HyperText Transfer Protocol (<abbr title="HyperText Transfer Protocol">HTTP</abbr>)</li>
+        <li><strong>443</strong>, for the HyperText Transfer Protocol over Transport Layer Security (<abbr title="HyperText Transfer Protocol over Transport Layer Security">HTTPS</abbr>)</li>
     </ul>
 
     <p> We're going to cover all of these protocols in detail at one point or another. </p>
@@ -306,83 +318,115 @@
     <h3> DHCP </h3>
     <p>
         In order to communicate with a remote server, then, we need three things &mdash;
-        our IP, their IP, and a port number, to communicate with.
+        our <abbr title="Internet Protocol">IP</abbr> address, their <abbr title="Internet Protocol">IP</abbr> address,
+        and a port number, to communicate with.
     </p>
     <p>
-        First of all, let's talk about how we got <strong>our IP Address</strong>.
+        First of all, let's talk about how we got <strong>our <abbr title="Internet Protocol">IP</abbr> Address</strong>.
     </p>
     <p>
-        Well, the short answer is, our computer already knows its IP address. We just ask.
+        Well, the short answer is, our computer already knows its <abbr title="Internet Protocol">IP</abbr> address. We just ask.
     </p>
     <p>
-        How did our computer get its IP address? Well, when we connected it to the router &mdash;
-        either via WiFi or by plugging it in &mdash; it communicated to the router, using
-        <strong>DHCP</strong>, the <strong>Dynamic Host Configuration Protocol</strong>, where
-        our computer asked the router to assign it an IP Address.
+        How did our computer get its <abbr title="Internet Protocol">IP</abbr> address?
+        Well, when we connected it to the router &mdash;
+        either via <abbr title="Wireless Local Area Networking">WiFi</abbr>
+        or by plugging it in &mdash; it communicated to the router, using
+        <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>, the <strong>Dynamic Host Configuration Protocol</strong>, where
+        our computer asked the router to assign it an <abbr title="Internet Protocol">IP</abbr> Address.
     </p>
     <p>
-        Then, how did the router get its IP address? Well, when we connected the router to the
+        Then, how did the router get its <abbr title="Internet Protocol">IP</abbr> address? Well, when we connected the router to the
         internet, either by plugging it in to a modem or by plugging it in to another link in
-        the network, it also communicated to a router, and communicated using DHCP.
+        the network, it also communicated to a router, and communicated using
+        <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>.
         <em>"What is my IP?"</em>
     </p>
 
     <div class='left-aside-arrow'> </div>
     <div class='left-aside small-aside aside'>
         <p>
-            How did that router get its IP? Magic. It was magic.
+            How did that router get its <abbr title="Internet Protocol">IP</abbr>? Magic. It was magic.
         </p>
     </div>
 
     <h3>Network Address Translation</h3>
 
-    <p> If we ask our computer to tell us its IP address, it'll probably report something
+    <p>
+        If we ask our computer to tell us its
+        <abbr title="Internet Protocol">IP</abbr> address, it'll probably report something
         that starts with <code>10.0</code> or <code>192.168</code> &mdash; but, if we go to
         Google and ask <em>"what is my IP?"</em>,
-        it'll tell us a completely different IP address. </p>
-
-    <p> What gives? How can our computer have more than one IP address? </p>
+        it'll tell us a completely different
+        <abbr title="Internet Protocol">IP</abbr> address.
+    </p>
 
     <p>
-        As part of our deal with our Internet Service Providers, we usually get just one IP address.
-        Just the one. Presumably, we have more than one device in our home &mdash; a computer, a cel phone,
-        a laptop, a second computer, a smart TV, a toaster that connects to the internet for some reason,
+        What gives? How can our computer have more than one
+        <abbr title="Internet Protocol">IP</abbr> address?
+    </p>
+
+    <p>
+        As part of our deal with our <abbr title="Internet Service Providers">ISPs</abbr>,
+        we usually get just one <abbr title="Internet Protocol">IP</abbr> address.
+        Just the one. Presumably, we have more than one device in our home &mdash;
+        a computer, a cel phone,
+        a laptop, a second computer, a smart <abbr title="Television">TV</abbr>,
+        a toaster that connects to the internet for some reason,
         a third computer, a toothbrush that connects to the internet for some reason,
         things have really gone out of control lately.
     </p>
 
     <p>
-        All of these devices need to share the one IP address, so, our router creates a little private
-        network, just for us, in our home. In this private network, any computer can have any IP address
-        that it wants. By convention, the IPs for use in private networks start with <code>192.168</code>
+        All of these devices need to share the one <abbr title="Internet Protocol">IP</abbr> address, so, our router creates a little private
+        network, just for us, in our home. In this private network, any computer can have any
+        <abbr title="Internet Protocol">IP</abbr> address
+        that it wants. By convention, the <abbr title="Internet Protocol">IP</abbr>
+        addresses for use in private networks start with <code>192.168</code>
         or <code>10.0</code>. Then, when we're connecting to the outside world, our router translates
-        our IP address in the private network into our public IP address.
+        our IP address in the private network into our public
+        <abbr title="Internet Protocol">IP</abbr> address.
     </p>
 
     <p>
-        This is <strong>NAT</strong>, <strong>Network Address Translation</strong>.
+        This is <abbr title="Network Address Translation">NAT</abbr>,
+        <strong>Network Address Translation</strong>.
     </p>
 
     <div class='figure'>
-        <p>The router creates a private network for all of our devices and
-            assigns them local IP addresses. </p>
+        <p>
+            The router creates a private network for all of our devices and
+            assigns them local <abbr title="Internet Protocol">IP</abbr> addresses.
+        </p>
         <img src='images/nat_1.png'>
-        <p>When our devices make requests to the internet, the router
-            translates them into the public-facing IP address. </p>
+        <p>
+            When our devices make requests to the internet, the router
+            translates them into the public-facing <abbr title="Internet Protocol">IP</abbr> address.
+        </p>
         <img src='images/nat_2.png'>
-        <p>When the internet responds, the router remembers who requested
-            the content and forwards the response back to that IP address. </p>
+        <p>
+            When the internet responds, the router remembers who requested
+            the content and forwards the response back to that
+            <abbr title="Internet Protocol">IP</abbr> address.
+        </p>
         <img src='images/nat_3.png'>
     </div>
 
 
     <h3>Domain Name System</h3>
 
-    <p> In order to communicate with a server, we need both our own IP address and the IP address
-        of the computer that we want to communicate with. </p>
+    <p>
+        In order to communicate with a server, we need both our own
+        <abbr title="Internet Protocol">IP</abbr> address and the
+        <abbr title="Internet Protocol">IP</abbr> address
+        of the computer that we want to communicate with.
+    </p>
 
-    <p> We have our own IP address &mdash; now we need to find the address of the server that we
-        want to talk to. </p>
+    <p>
+        We have our own <abbr title="Internet Protocol">IP</abbr> address &mdash;
+        now we need to find the address of the server that we
+        want to talk to.
+    </p>
 
     <p> Let's look at the link we're trying to access. </p>
 
@@ -391,35 +435,48 @@
     </p>
 
     <p>
-        There's no IP address anywhere in this link. There <strong>is</strong> a domain name,
+        There's no <abbr title="Internet Protocol">IP</abbr> address anywhere in this link. There <strong>is</strong> a domain name,
         <code>en.wikipedia.org</code>
     </p>
 
     <p>
-        In order to find the IP address for this server, we're going to have to start by consulting
-        a DNS server. <strong>DNS</strong> stands for <strong>Domain Name System</strong>,
-        and the process of converting a domain name into an IP address is called
+        In order to find the <abbr title="Internet Protocol">IP</abbr> address for this server, we're going to have to start by consulting
+        a <abbr title="Domain Name System">DNS</abbr> server.
+        <abbr title="Domain Name System">DNS</abbr> stands for <strong>Domain Name System</strong>,
+        and the process of converting a domain name into an
+        <abbr title="Internet Protocol">IP</abbr> address is called
         <strong>name resolution</strong>.
     </p>
 
     <p>
-        How do we know where the DNS server is? When we use DHCP to connect to WiFi, it
-        also provides us with the IP of the nearest DNS server, which is usually being maintained
-        by our ISP. Acronyms!
+        How do we know where the
+        <abbr title="Domain Name System">DNS</abbr> server is? When we use
+        <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> to connect to
+        <abbr title="Wireless Local Area Networking">WiFi</abbr>, it
+        also provides us with the
+        <abbr title="Internet Protocol">IP</abbr> address of the nearest
+        <abbr title="Domain Name System">DNS</abbr> server, which is usually being maintained
+        by our
+        <abbr title="Internet Service Provider">ISP</abbr>. Acronyms!
     </p>
 
     <div class='figure'>
         <h3>Turkish Protesters</h3>
         <img src="https://thumbs.mic.com/OTRlYzcwMmFjNyMvaFd2UmRLalRLejgzRUVlMGlfaXdRZVdrSWdNPS8weDI4OjU5Mng0MDEvMTYwMHg5MDAvZmlsdGVyczpmb3JtYXQoanBlZyk6cXVhbGl0eSg4MCkvaHR0cHM6Ly9zMy5hbWF6b25hd3MuY29tL3BvbGljeW1pYy1pbWFnZXMvZGFhMmMyNDQ1NGQxYmI2OThhZjY3Yzc2ZjNlOTM2MzZmZmUxYzViMzMxYmFhZDk3NzM2ZmZjMjExZTk3MzI2OS5qcGc.jpg">
         <p>
-            Google also maintains a public DNS server at the address <code>8.8.8.8</code>, which is good to know
-            in case our local DNS server ever goes down or is
+            Google also maintains a public
+            <abbr title="Domain Name System">DNS</abbr>
+            server at the address <code>8.8.8.8</code>, which is good to know
+            in case our local
+            <abbr title="Domain Name System">DNS</abbr> server ever goes down or is
             <a href="https://mic.com/articles/85987/turkish-protesters-are-spray-painting-8-8-8-8-and-8-8-4-4-on-walls-here-s-what-it-means#.x2HgXBndh">interfered with by a totalitarian government</a>.
         </p>
     </div>
 
     <p>
-        So our computer sends a request to the DNS server, asking where to find <code>en.wikipedia.org</code>.
+        So our computer sends a request to the
+        <abbr title="Domain Name System">DNS</abbr> server,
+        asking where to find <code>en.wikipedia.org</code>.
     </p>
 
     <p>
@@ -431,13 +488,15 @@
     <div class='right-aside small-aside aside'>
         <h3>howdns.works</h3>
         <a href="https://howdns.works/"><img src="images/dns_root.png"></a>
-        <p> The best way to understand DNS is to visit <a href='https://howdns.works/'>howdns.works</a>,
+        <p> The best way to understand
+            <abbr title="Domain Name System">DNS</abbr> is to visit
+            <a href='https://howdns.works/'>howdns.works</a>,
             where they illustrate the protocol with fun cartoons. </p>
     </div>
 
     <p>
-        DNS Root servers are distributed all over the globe, and they keep track of
-        exactly one thing: the IP addresses of the computers reponsible for the
+        <abbr title="Domain Name System">DNS</abbr> Root servers are distributed all over the globe, and they keep track of
+        exactly one thing: the <abbr title="Internet Protocol">IP</abbr> addresses of the computers reponsible for the
         recordkeeping of top level domains, like
         <ul>
             <li><code>.com</code></li>
@@ -455,20 +514,20 @@
     </p>
 
     <p>
-        So, the DNS server looks at the domain name we've given it &mdash;
+        So, the <abbr title="Domain Name System">DNS</abbr> server looks at the domain name we've given it &mdash;
         <code>en.wikipedia.org</code> &mdash;
         sends a request to the root server, and asks
         <em>"which servers can I ask about .org records?"</em>
     </p>
 
     <p>
-        The root server will reply with a list of IP addresses responsible
+        The root server will reply with a list of <abbr title="Internet Protocol">IP</abbr> addresses responsible
         for .org records. These are the addresses of <strong>Top Level Domain Servers</strong>,
         which are maintained by <strong>Domain Registrars</strong>.
-        We can pay these people about ten US dollars a year to
+        We can pay these people about ten <abbr title="United States">US</abbr> dollars a year to
         create and maintain a record for us,
         so long as nobody else has claimed that domain name already.
-        For a pittance, I now own http://butts.work.
+        For a pittance, I now own <a href="http://butts.work">http://butts.work</a>.
     </p>
 
     <div class='left-aside-arrow'> </div>
@@ -480,16 +539,17 @@
     </div>
 
     <p>
-        Finally, the DNS server queries the wikipedia nameservers, asking them
+        Finally, the <abbr title="Domain Name System">DNS</abbr> server queries the wikipedia nameservers, asking them
         where they can find <code>en</code>.
         If we paid a registrar to put up a domain name for us,
         they'll usually throw in a nameserver for free &mdash;
-        all we have to do is write some DNS rules that tell the nameserver what
-        IP we want to point at.
+        all we have to do is write some <abbr title="Domain Name System">DNS</abbr>
+        rules that tell the nameserver what
+        <abbr title="Internet Protocol">IP</abbr> address we want to point at.
     </p>
 
     <p>
-        DNS rules are written in a cryptic language that contains records
+        <abbr title="Domain Name System">DNS</abbr> rules are written in a cryptic language that contains records
         with names like <code>A</code>, <code>MX</code>, <code>AAAA</code>,
         and <code>AAAAAAAAAAAAAAAAHH SPIDERS</code> &mdash;
         I'm sorry, there was a spider next to the keyboard.
@@ -509,36 +569,47 @@
         </p>
     </div>
 
-    <h3>Hypertext Transfer Protocol</h3>
+    <h3>HyperText Transfer Protocol</h3>
 
     <p>
-        Our next step is to use TCP/IP to create a connection between our
-        IP address, and the IP address that we just resolved from DNS.
+        Our next step is to use <abbr title="Transport Control Protocol/Internet Protocol">TCP/IP</abbr> to create a connection between our
+        <abbr title="Internet Protocol">IP</abbr> address,
+        and the <abbr title="Internet Protocol">IP</abbr> address that we just resolved from
+        <abbr title="Domain Name System">DNS</abbr>.
     </p>
 
     <p>
         There's only one thing left that we need &mdash; a port number.
-        We also didn't specify a port number as part of the URL,
+        We also didn't specify a port number as part of the
+        <abbr title="Uniform Resource Locator">URL</abbr>,
         but we did specify a protocol,
-        <strong>HTTPS</strong> &mdash;
+        <abbr title="HyperText Transfer Protocol over Transport Layer Security">HTTPS</abbr> &mdash;
         the <strong>HyperText Transfer Protocol feat. Transport Layer Security</strong> &mdash;
         and when we specify a protocol without a port number,
         our connection automatically goes to the default port for that protocol.
-        In the case of HTTPS, that's <strong>443</strong>.
+        In the case of <abbr title="HyperText Transfer Protocol over Transport Layer Security">HTTPS</abbr>,
+        that's <strong>443</strong>.
     </p>
 
     <p>
-    The <strong>Hypertext Transfer Protocol (HTTP)</strong> is the protocol responsible
+    The <strong>HyperText Transfer Protocol (<abbr title="HyperText Transfer Protocol">HTTP</abbr>)</strong> is the protocol responsible
         for moving documents around. Request a document? Get a document.
-        The rules for that are laid out in the Hypertext Transfer Protocol,
+        The rules for that are laid out in the HyperText Transfer Protocol,
         which is the protocol that powers pretty much the entire web as we know it.
     </p>
 
     <p>
-        Our URL is HTTP<strong>S</strong>, though, not just HTTP. The difference is slight
-        but important &mdash; HTTPS is the same as HTTP, but over a connection encrypted
-        with <strong>Transport Layer Security (TLS)</strong>.
-        This prevents J. Random Hacker from watching every HTTP request that goes by.
+        Our <abbr title="Uniform Resource Locator">URL</abbr>'s
+        protocol is <abbr title="HyperText Transfer Protocol over Transport Layer Security">HTTPS</abbr>, though, not just
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr>. The difference is slight
+        but important &mdash;
+        <abbr title="HyperText Transfer Protocol over Transport Layer Security">HTTPS</abbr>
+        is the same as
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr>, but over a connection encrypted
+        with <strong>Transport Layer Security
+            (<abbr title="Transport Layer Security">TLS</abbr>)</strong>.
+        This prevents J. Random Hacker from watching every
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr> request that goes by.
     </p>
     <div class='right-aside-arrow'> </div>
     <div class='right-aside aside'>
@@ -563,7 +634,8 @@
 
     <p>
         Once we've created this encrypted communication path between our computer
-        and the faraway server, we need to construct a HTTP Request. It'll look
+        and the faraway server, we need to construct a
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr> Request. It'll look
         something like this:
     </p>
 
@@ -573,7 +645,7 @@ Host: en.wikipedia.org</pre>
 
     <p>
         This is a request to <code>GET</code> whatever's at the path
-        of the URL we provided to our browser.
+        of the <abbr title="Uniform Resource Locator">URL</abbr> we provided to our browser.
     </p>
 
     <p>
@@ -583,22 +655,26 @@ Host: en.wikipedia.org</pre>
     </p>
 
     <p>
-        The server will receive this request, and respond with a HTTP Response
+        The server will receive this request, and respond with a
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr> Response
         containing the sweet webpage we've been looking for this entire time.
     </p>
 
     <p>
         Virtually everything in web programming happens in the space between
-        the HTTP request and the HTTP response. Figuring out how to respond,
+        the <abbr title="HyperText Transfer Protocol">HTTP</abbr> request and the
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr> response. Figuring out how to respond,
         quickly,
         with the right stuff is the meat and potatoes of web programming.
         This bit, right here. It's all the marbles. Empires have risen
         and fallen, all dependant on the simple gap of how a server converts
-        this HTTP request into a HTTP response.
+        this <abbr title="HyperText Transfer Protocol">HTTP</abbr> request into a
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr> response.
     </p>
 
     <p>
-        And then, Wikipedia responds. The full HTTP response is several
+        And then, Wikipedia responds. The full
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr> response is several
         pages long, we can look at it <a href='wikipedia_http_response'>here</a>.
         In order to keep my book neat and tidy, though, I'm going to
         concoct a fake response for the sake of example:
@@ -625,26 +701,30 @@ X-Clacks-Overhead: GNU Terry Pratchett
 &lt;/html&gt;</pre>
 
     <p>
-        It opens with the version of HTTP that's currently running,
-        as well as a <strong>HTTP Status Code</strong>.
-        So long as the HTTP Status Code is <code>200 OK</code> we're good to go.
+        It opens with the version of
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr> that's currently running,
+        as well as a <strong><abbr title="HyperText Transfer Protocol">HTTP</abbr> Status Code</strong>.
+        So long as the <abbr title="HyperText Transfer Protocol">HTTP</abbr> Status Code is <code>200 OK</code> we're good to go.
     </p>
 
     <div class='figure'>
         <h3>A Brief And Mostly Inaccurate Reference Chart for HTTP Status Codes</h3>
         <img src="images/247.png">
         <p>
-            A more accurate look at HTTP status codes can be found
+            A more accurate look at <abbr title="HyperText Transfer Protocol">HTTP</abbr> status codes can be found
             <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">here</a>.
         </p>
         <p>
-            Alternatively, pictures of cats matching every HTTP status code exist
+            Alternatively, pictures of cats matching every
+            <abbr title="HyperText Transfer Protocol">HTTP</abbr> status code exist
             at <a href="http://http.cat">http.cat</a>.
         </p>
     </div>
 
     <p>
-        After the HTTP version and status code, there are <strong>Headers</strong>
+        After the
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr>
+        version and status code, there are <strong>Headers</strong>
         again. These headers describe important properties of the file that's
         been returned.
     </p>
@@ -655,16 +735,20 @@ Content-type: text/html; charset=UTF-8
 X-Clacks-Overhead: GNU Terry Pratchett</pre>
 
     <p>
-        Most headers are defined in the <a href='https://tools.ietf.org/html/rfc2616'>HTTP protocol</a>, but we can add
+        Most headers are defined in the <a href='https://tools.ietf.org/html/rfc2616'>protocol itself</a>,
+        but we can add
         any headers that we want by starting them with <code>X-</code>,
         which is how we can sneak in <a href='http://www.gnuterrypratchett.com/'>the clacks</a>.
     </p>
 
     <p>
-        After the HTTP version and status code, we get into a big patch
-        of HTML. How do we know that it's HTML? Well, the <code>Content-type</code>
+        After the <abbr title="HyperText Transfer Protocol">HTTP</abbr> version and status code, we get into a big patch
+        of <abbr title="HyperText Markup Language">HTML</abbr>.
+        How do we know that it's
+        <abbr title="HyperText Markup Language">HTML</abbr>? Well, the <code>Content-type</code>
         header referred to this as <code>text/html</code>, so we can be
-        pretty sure that we've got a big handful of HTML.
+        pretty sure that we've got a big handful of
+        <abbr title="HyperText Markup Language">HTML</abbr>.
     </p>
 
     <h3> Hypertext Markup Language </h3>
@@ -734,7 +818,8 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
     </div>
 
     <p>
-        So, the HTML that Wikipedia has returned to us contains a description of
+        So, the <abbr title="HyperText Markup Language">HTML</abbr>
+        that Wikipedia has returned to us contains a description of
         the content that we're looking at, and then our web browser
         renders it into a webpage.
     </p>
@@ -742,17 +827,21 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
     <p>
         It would seem like, here, our journey is complete.
         We've made a round trip between our device and the server, and we're done
-        &mdash; but, not quite! When the browser renderer gets to this part of the HTML:
+        &mdash; but, not quite! When the browser renderer gets to this part of the
+        <abbr title="HyperText Markup Language">HTML</abbr>:
     </p>
 
     <pre class='code'>
 &lt;img src=&rdquo;https://media0.giphy.com/media/K5Yn9JCXcrXr2/giphy.gif&rdquo;/&gt;</pre>
 
     <p>
-        This image tag references content that exists at another URL.
+        This image tag references content that exists at another
+        <abbr title="Uniform Resource Locator">URL</abbr>.
         And so, we kick off this entire process again, from start to finish,
         to get whatever it is at that new address. The trick is, though,
-        instead of sending us HTML, this server will respond with an animated image.
+        instead of sending us
+        <abbr title="HyperText Markup Language">HTML</abbr>,
+        this server will respond with an animated image.
         Modern web-pages may require dozens of requests to various images
         and scripts before they're completely rendered.
     </p>
@@ -762,19 +851,41 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
     <p>Every browser request&ndash;response goes a little something like this: </p>
 
     <ul>
-        <li>Our browser uses <strong>DNS</strong> to resolve the <strong>URL</strong>'s
-            domain into an <strong>IP</strong> address. </li>
-        <li>Our browser uses <strong>TCP</strong> to create a two-way connection with the
-            server at that IP address. </li>
-        <li>If the URL's protocol is <strong>HTTPS</strong>, then a
-            <strong>TLS</strong> connection is made to the server.</li>
-        <li>Our browser sends a <strong>HTTP request</strong> to the server. </li>
-        <li>The server does some stuff. </li>
-        <li>A <strong>HTTP response</strong> is sent back to us, containing a document. </li>
-        <li>If that document is <strong>HTML</strong>, the browser will render that HTML
-            into a webpage. </li>
-        <li>If that document contains other URLs, the browser will create new requests
-            for each of them. </li>
+        <li>
+            Our browser uses <abbr title="Domain Name System">DNS</abbr> to resolve the
+            <abbr title="Uniform Resource Locator">URL</abbr>'s
+            domain into an <abbr title="Internet Protocol">IP</abbr> address.
+        </li>
+        <li>
+            Our browser uses <abbr title="Transport Control Protocol">TCP</abbr>
+            to create a two-way connection with the
+            server at that <abbr title="Internet Protocol">IP</abbr> address.
+        </li>
+        <li>
+            If the URL's protocol is <abbr title="HyperText Transport Protocol over Transport Layer Security">HTTPS</abbr>,
+            then a
+            <abbr title="Transport Layer Security">TLS</abbr> connection is made to the server.
+        </li>
+        <li>
+            Our browser sends a <abbr title="HyperText Transport Protocol">HTTP</abbr>
+            request to the server.
+        </li>
+        <li>
+            The server does some stuff.
+        </li>
+        <li>
+            A <abbr title="HyperText Transport Protocol">HTTP</abbr> response
+            is sent back to us, containing a document.
+        </li>
+        <li>
+            If that document is <abbr title="HyperText Markup Language">HTML</abbr>,
+            the browser will render that <abbr title="HyperText Markup Language">HTML</abbr>
+            into a webpage.
+        </li>
+        <li>
+            If that document contains other <abbr title="Uniform Resource Locator">URL</abbr>s,
+            the browser will create new requests for each of them.
+        </li>
     </ul>
 
 
@@ -3184,7 +3295,7 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </pre>
 
     <p>
-        Inside the HTML element comes two key elements that divide the document into
+        Inside the <abbr title="HyperText Markup Language">HTML</abbr> element comes two key elements that divide the document into
         "the part you see" (the <strong>body</strong>) and "the part you don't see" (the <strong>head</strong>).
     </p>
 
@@ -3215,7 +3326,7 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </p>
 
     <p>
-        The HTTP server that serves this document reads this when it serves the document
+        The <abbr title="HyperText Transfer Protocol">HTTP</abbr> server that serves this document reads this when it serves the document
         and uses it to accurately report what binary encoding scheme this document is
         using.
     </p>
@@ -3245,6 +3356,26 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     The <code>&lt;title&gt;</code> element contains the title of the document.
     In this case, it is <strong>Definitely Wikipedia</strong>.
     </p>
+
+    <h4>Presentational Elements </h4>
+
+    <h5>Headers </h5>
+
+    <h5>Paragraphs </h5>
+
+    <h5>Links </h5>
+
+    <h5>Images </h5>
+
+    <h5>Lists </h5>
+
+    <h5>Tables </h5>
+
+    <h5>Divisions &amp; Sections</h5>
+
+    <h5>Fragment Identifiers</h5>
+
+    <h5>Tags That Are Pretty Safe To Ignore</h5>
 
     <pre>
     <code class='html'>

@@ -52,19 +52,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1{
-    padding-top: 200px;
+    padding-top: 250px;
 }
 
 h2{
-    margin-top: 100px;
+    margin-top: 150px;
 }
 
 h3{
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 a{
     color: #226C70;
+}
+
+abbr[title]{
+    font-family: chunk;
+    text-decoration: none;
+    font-size: 70%;
 }
 
 code{
