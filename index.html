@@ -974,8 +974,10 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
                 that would be appropriate for a computer on a home network,
                 not a computer exposed to the tireless onslaught of the
                 public internet. </li>
-            <li>Unless we pay our ISP extra for a static IP address, our
-                home's IP address changes regularly, which means that it
+                <li>Unless we pay our <abbr title="Internet Service Provider">ISP</abbr>
+                extra for a static <abbr title="Internet Protocol">IP</abbr> address, our
+                home's <abbr title="Internet Protocol">IP</abbr>
+                address changes regularly, which means that it
                 will be difficult to find our computer. </li>
             <li>Our home computer likely contains our own, personal, private information. </li>
             <li>Doing other stuff on our home computer, like opening 80 browser tabs
@@ -1071,7 +1073,8 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
             it more Nobel laureates than the University of British Columbia.
         </p>
         <p>
-            Bell Labs invented transistors in the fifties, invented CCDs in 2009,
+            Bell Labs invented transistors in the fifties, invented
+            <abbr title="Charge-coupled Device">CCD</abbr>s in 2009,
             and, in the sixties, discovered the cosmic background radiation that validated
             the existence of the Big Bang.
         </p>
@@ -1128,7 +1131,8 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
 
     <p>
         <strong>Ubuntu</strong> started out resolutely trying to conquer the
-        desktop PC market, but after a decade of mostly failing to do so, has
+        desktop <abbr title="Personal Computer">PC</abbr>
+        market, but after a decade of mostly failing to do so, has
         seemingly embraced its position as a competitive and pretty comprehensive
         server operating system. I like Ubuntu, a lot, and it's the
         distribution I'm going to be using as an example distribution.
@@ -1145,25 +1149,31 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
         inherently superior to all other methods of interaction
         with a computer, the actual reasons are simple:
         <ul>
-            <li>It's easier to write a command line program than a GUI program. </li>
-            <li>SSH</li>
+            <li>
+                It's easier to write a command line program than a
+                <abbr title="Graphical User Interface">GUI</abbr> program.
+            </li>
+            <li>
+                <abbr title="Secure Shell">SSH</abbr>
+            </li>
         </ul>
 
     <div class='left-aside-arrow'> </div>
     <div class='left-aside aside'>
         <p>
-            What's a librarian's favourite shell command? SSH.
+            What's a librarian's favourite shell command?
+            <abbr title="Secure Shell">SSH</abbr>.
         </p>
     </div>
     </p>
 
     <p>
-        <strong>SSH</strong>, or <strong>Secure Shell</strong>,
+        <abbr title="Secure Shell">SSH</abbr>, or <strong>Secure Shell</strong>,
         is one of the most important tools in our web programming arsenal.
-        SSH is a tool allowing for remote control of computers.
+        <abbr title="Secure Shell">SSH</abbr> is a tool allowing for remote control of computers.
     </p>
     <p>
-        Most Linux distributions run the SSH daemon in the background, all the time,
+        Most Linux distributions run the <abbr title="Secure Shell">SSH</abbr> daemon in the background, all the time,
         and it's possible to log in to the computer directly with a username and
         password.
     </p>
@@ -1179,7 +1189,7 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
     </p>
 
     <p>
-        But the SSH interface to a Linux computer doesn't come with any fancy doodads
+        But the <abbr title="Secure Shell">SSH</abbr> interface to a Linux computer doesn't come with any fancy doodads
         or graphical user interfaces. Nope, dad-gummit, we have to control the system
         by pulling up our suspenders, tying an onion to our belts, walking uphill
         both ways, and using the command line interface.
@@ -1671,7 +1681,7 @@ on `vagrantup.com` for more information on using Vagrant.
         <code>vagrant init</code> creates for us a <strong>Vagrantfile</strong>. This file
         describes all of the important details about the operating system we are about
         to create &mdash; which Linux distribution we want, networking details, how much
-        RAM it gets to use, and even, if we configure it right, the instructions for
+        <abbr title="Random Access Memory">RAM</abbr> it gets to use, and even, if we configure it right, the instructions for
         setting up all of the software that runs on the operating system.
     </p>
 
@@ -1868,7 +1878,8 @@ config.vm.box = "ubuntu/xenial64"
     </p>
 
     <p>
-        By convention, <code>8080</code> is popular port for developing HTTP services,
+        By convention, <code>8080</code> is popular port for developing
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr> services,
         so we're going to use that.
     </p>
 
@@ -2092,7 +2103,8 @@ ubuntu@ubuntu-xenial:~$
     </div>
 
     <p>Seriously. Want vim? Type <code>sudo apt-get install vim</code>. Want to install a program
-        that pipes your command output through ASCII-art cows? <code>sudo apt-get install cowsay</code>.
+        that pipes your command output through
+        <abbr title="American Standard Code for Information Interchange">ASCII</abbr>-art cows? <code>sudo apt-get install cowsay</code>.
         Want a steam locomotive? <code>sudo apt-get install sl</code>.</p>
 
     <div class='right-aside-arrow'> </div>
@@ -2162,13 +2174,14 @@ ubuntu@ubuntu-xenial:~$ sudo apt-get install nginx
     <h3> Creating a Basic HTML Document </h3>
 
     <p>
-        Now that we've got a server running an HTTP server, we need something
+        Now that we've got a server running an
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr> server, we need something
         to <a href="https://www.youtube.com/watch?v=Iwtwb4g1qsk">serve</a>.
     </p>
 
     <p>
-        We're going to go into more detail about <strong>HTML</strong> later,
-            but for now, let's create a very simple file, <code>index.html</code>
+        We're going to go into more detail about <abbr title="HyperText Markup Language">HTML</abbr> later,
+        but for now, let's create a very simple file, <code>index.html</code>
         and put it in our <code>~/code/hello_world/html</code>
         directory on our host computer
     </p>
@@ -2192,7 +2205,7 @@ ubuntu@ubuntu-xenial:~$ sudo apt-get install nginx
         our virtual machine.
     </p>
 
-    <h3> Serving our Html </h3>
+    <h3> Serving our HTML </h3>
 
     <p>
         By default, nginx serves the contents of a system directory, <code>/var/www/html</code>,
@@ -2228,8 +2241,8 @@ ubuntu@ubuntu-xenial:~$ sudo apt-get install nginx
     </div>
 
     <p>
-        But there's a problem &mdash; because we're working extensively with SSH,
-        and SSH is a command shell, with no mouse to speak of, we're going to need
+        But there's a problem &mdash; because we're working extensively with <abbr title="Secure Shell">SSH</abbr>,
+        and <abbr title="Secure Shell">SSH</abbr> is a command shell, with no mouse to speak of, we're going to need
         a text editor that operates entirely from within the shell.
     </p>
 
@@ -2556,7 +2569,7 @@ default: Are you sure you want to destroy the 'default' VM? [y/N] y
             install <strong>nginx</strong> on our server.
         </li>
         <li>
-            We created a basic <strong>HTML</strong> file.
+            We created a basic <abbr title="HyperText Markup Language">HTML</abbr> file.
         </li>
         <li>
             We used <strong>nano</strong> to change nginx's configuration.
@@ -2645,14 +2658,18 @@ default: Are you sure you want to destroy the 'default' VM? [y/N] y
     </p>
 
     <p>
-        The answer to both of these questions is the humble URL. A URL can represent a link to any sort
+        The answer to both of these questions is the humble
+        <abbr title="Uniform Resource Locator">URL</abbr>. A
+        <abbr title="Uniform Resource Locator">URL</abbr> can represent a link to any sort
         of content.
     </p>
 
     <div class='left-aside-arrow'> </div>
 
     <p>
-        So HTML documents are littered with URLs, both as links to other documents and as a means to embed multimedia
+        So <abbr title="HyperText Markup Language">HTML</abbr> documents are littered with
+        <abbr title="Uniform Resource Locator">URL</abbr>s,
+        both as links to other documents and as a means to embed multimedia
         content in a wide variety of formats.
     </p>
 
@@ -2712,24 +2729,33 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </pre>
 
     <p>
-        HTML is not the only markup language &mdash; many of them exist.
+        <abbr title="HyperText Markup Language">HTML</abbr> is not the only markup language &mdash; many of them exist.
     </p>
 
     <p>
-        HTML is based on a language called "SGML", the Standard Generalized Markup Language,
-        which was based on a language called "GML", the Generalized Markup Language,
-        which was created at IBM in the 1970 as a documentation language.
+        <abbr title="HyperText Markup Language">HTML</abbr> is based on a language called
+        <abbr title="Standard Generalized Markup Language">SGML</abbr>,
+        which was based on a language called
+        <abbr title="Generalized Markup Language">GML</abbr>,
+        which was created at
+        <abbr title="International Business Machines">IBM</abbr>
+        in the 1970 as a documentation language.
     </p>
 
     <p>
-        Technically, HTML qualified as a subclass of SGML until the introduction of
-        HTML5, which finally cut all remaining ties with the old standard.
+        Technically, <abbr title="HyperText Markup Language">HTML</abbr> qualified as a
+        subclass of <abbr title="Standard Generalized Markup Language">SGML</abbr>
+        until the introduction of
+        <abbr title="HyperText Markup Language version 5">HTML5</abbr>,
+        which finally cut all remaining ties with the old standard.
     </p>
 
     <div class='left-aside-arrow'> </div>
     <div class='left-aside aside'>
         <p>
-            This is a good thing. SGML is a hulking, overspecified government
+            This is a good thing.
+            <abbr title="Standard Generalized Markup Language">SGML</abbr>
+            is a hulking, overspecified government
             standard that isn't particularly useful for people who aren't
             trying to achieve interoperability between government mainframes
             in the 1970s.
@@ -2737,39 +2763,43 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </div>
 
     <p>
-        Another child of SGML is "XML". While HTML was intended to be a
+        Another child of <abbr title="Standard Generalized Markup Language">SGML</abbr>
+        is <abbr title="eXtensible Markup Language">XML</abbr>. While
+        <abbr title="HyperText Markup Language">HTML</abbr> was intended to be a
         representation of documents and the sort of data that would commonly
         appear in documents &mdash; tables, images and such &mdash;
-        XML is a similar format that was designed as a general-purpose
+        <abbr title="eXtensible Markup Language">XML</abbr> is a similar format
+        that was designed as a general-purpose
         markup language for <em>any</em> kind of data.
         It was also intended to be easier use than the somewhat
-        bureaucratic SGML framework.
+        bureaucratic
+        <abbr title="Standard Generalized Markup Language">SGML</abbr> framework.
     </p>
 
     <p>
         Markdown is a markup language that's designed to be interoperable
-        with HTML and easy for humans to read and edit.
+        with <abbr title="HyperText Markup Language">HTML</abbr> and easy for humans to read and edit.
     </p>
 
     <p>
-        JSON (Javascript Object Notation) is a quite simple
-        markup language that's also valid Javascript, which makes it very
+        <abbr title="Javascript Object Notation">JSON</abbr> (Javascript Object Notation)
+        is a quite simple markup language that's also valid Javascript, which makes it very
         easy for the language Javascript to handle.
     </p>
 
     <p>
-        YAML (Yet Another Markup Language) is a markup language that's
+        <abbr title="Yet Another Markup Language">YAML</abbr> (Yet Another Markup Language) is a markup language that's
         designed to be easy for humans to read and edit.
     </p>
 
     <p>
         All of these different markup langauges are good for different purposes.
             <ul>
-                <li><strong>HTML</strong> is good for representing multimedia documents that link to one another.</li>
-                <li><strong>JSON</strong> is good for representing simple objects.</li>
-                <li><strong>YAML</strong> is good for human-written configuration.</li>
+                <li><abbr title="HyperText Markup Language">HTML</abbr> is good for representing multimedia documents that link to one another.</li>
+                <li><abbr title="Javascript Object Notation">JSON</abbr> is good for representing simple objects.</li>
+                <li><abbr title="Yet Another Markup Language">YAML</abbr> is good for human-written configuration.</li>
                 <li><strong>Markdown</strong> is good for human-written markup.</li>
-                <li><strong>XML</strong> is good for representing objects that have a defined format.</li>
+                <li><abbr title="eXtensible Markup Language">XML</abbr> is good for representing objects that have a defined format.</li>
             </ul>
     </p>
 
@@ -2787,7 +2817,9 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     <div class='right-aside-arrow'> </div>
     <div class='right-aside small-aside aside'>
         <p>
-            SVG graphics, for example, are defined by an XML file filled with vector graphics information.
+            SVG graphics, for example, are defined by an
+            <abbr title="eXtensible Markup Language">XML</abbr>
+            file filled with vector graphics information.
         </p>
     </div>
 
@@ -2806,9 +2838,12 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     <h4>ASCII</h4>
 
     <p>
-        An early common character encoding is ASCII &mdash; which is simple &mdash; 7 bits can make 128 different combinations.
+        An early common character encoding is
+        <abbr title="American Standard Code for Information Interchange">ASCII</abbr> &mdash;
+        which is simple &mdash; 7 bits can make 128 different combinations.
         That's more than enough room for all 26 latin alphabet characters in both lowercase and uppercase,
-        <em>and</em> all of the numbers and symbols on a standard US keyboard, with room left over
+        <em>and</em> all of the numbers and symbols on a standard
+        <abbr title="United States">US</abbr> keyboard, with room left over
         for some control codes like "new line", "tab", "alert", and "bell".
     </p>
 
@@ -2865,7 +2900,7 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </div>
 
     <p>
-        <code>hello, world</code> in ASCII would read as:
+        <code>hello, world</code> in <abbr title="American Standard Code for Information Interchange">ASCII</abbr> would read as:
     </p>
 
     <pre>
@@ -2884,8 +2919,10 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </pre>
 
     <p>
-        ASCII was enormously popular for a very long time &mdash; but the big problem with
-        ASCII is that 128 characters are not enough characters to encompass the entire character
+        <abbr title="American Standard Code for Information Interchange">ASCII</abbr>
+        was enormously popular for a very long time &mdash; but the big problem with
+        <abbr title="American Standard Code for Information Interchange">ASCII</abbr>
+        is that 128 characters are not enough characters to encompass the entire character
         set of all available human languages.
     </p>
 
@@ -2927,7 +2964,7 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </div>
 
     <p>
-        One idea was to use ASCII for the first 128 characters, and then, in the other
+        One idea was to use <abbr title="American Standard Code for Information Interchange">ASCII</abbr> for the first 128 characters, and then, in the other
         128 characters, fit all of the extra bits required for groups of different languages.
         Group 1 would contain a bunch of characters for latin-based languages like
         English, French, German, Italian, Portugese. Group 2 would have characters
@@ -2937,8 +2974,11 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </p>
 
     <p>
-        This scheme was called <strong>ISO-8859</strong>, and it enjoyed common usage
-        through most of the 90s and 00s, and group 1, <strong>ISO-8859-1</strong>, commonly
+        This scheme was called
+        <abbr title="International Standards Organization, Standard 8859 - 8-bit Single-byte Coded Graphic Character Sets">ISO-8859</abbr>,
+        and it enjoyed common usage
+        through most of the 90s and 00s, and group 1,
+        <abbr title="International Standards Organization, Standard 8859 - 8-bit Single-byte Coded Graphic Character Sets - Part 1: Latin Alphabet No. 1">ISO-8859-1</abbr>, commonly
         known as <strong>latin-1</strong>, became one of the world's most common
         character encodings.
     </p>
@@ -2962,7 +3002,7 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
 
     <p> The only character that stands out is ñ, which lives in the last-half of the encoding,
         so it starts with a one. All of the other characters are the equivalent to their
-        ASCII-encodings.</p>
+        <abbr title="American Standard Code for Information Interchange">ASCII</abbr>-encodings.</p>
 
     <div class='right-aside-arrow'> </div>
     <div class='right-aside small-aside aside'>
@@ -2976,13 +3016,19 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     <h4> &#xfffd; &#xfffd; &#xfffd; &#xfffd; what even </h4>
 
     <p>
-        When downloading a HTML file from the internet using HTTP, the HTTP server
+        When downloading a <abbr title="HyperText Markup Language">HTML</abbr> file from
+        the internet using <abbr title="HyperText Transfer Protocol">HTTP</abbr>, the
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr> server
         is <em>supposed</em> to accurately report the character encoding
         that the text is using.
     </p>
 
-    <p> Sometimes, though, the HTTP server sends the wrong character encoding.
-        Stupid HTTP server. When most browsers can't understand a character,
+    <p> Sometimes, though, the
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr>
+        server sends the wrong character encoding.
+        Stupid
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr> server.
+        When most browsers can't understand a character,
         they'll display the &#xfffd; character,
         which is the browser equivalent of going &#xAF;\_(&#x30C4;)_/&#xAF;.
     </p>
@@ -3002,10 +3048,10 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
         Webpages would report that they were returning latin-1 when they were actually returning
         windows-1252, and the result would be web-pages lined with the &#xfffd; character.
         It doesn't happen much any more, because the world has been standardizing on
-        a new encoding: <strong>UTF-8</strong>.
+        a new encoding: <abbr title="Unicode Transformation Format - 8 Bit">UTF-8</abbr>.
     </p>
 
-    <p> But before we get to <strong>UTF-8</strong> we have to talk about <strong>Unicode</strong>.</p>
+    <p> But before we get to <abbr title="Unicode Transformation Format - 8 Bit">UTF-8</abbr> we have to talk about <strong>Unicode</strong>.</p>
 
     <h4>Unicode</h4>
     <p>
@@ -3087,7 +3133,13 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
 
     <p>
         And the answer: there are lots of different schemes!
-        UCS-2, UTF-32, UTF-16, UTF-1, UTF-8, UTF-7, UTF-EBCDIC, there are many, many standards
+        <abbr title="2-Byte Universal Character Set">UCS-2</abbr>,
+        <abbr title="Unicode Transformation Format - 32 Bit">UTF-32</abbr>,
+        <abbr title="Unicode Transformation Format - 16 Bit">UTF-16</abbr>,
+        <abbr title="Unicode Transformation Format - Stream">UTF-1</abbr>,
+        <abbr title="Unicode Transformation Format - 8 Bit">UTF-8</abbr>,
+        <abbr title="Unicode Transformation Format - 7 Bit">UTF-7</abbr>,
+        <abbr title="Unicode Transformation Format - Extended Binary Coded Decimal Interchange Code">UTF-EBCDIC</abbr>, there are many, many standards
         for representing Unicode characters in binary, most of them with various clever tricks
         to keep their size under control.
     </p>
@@ -3119,25 +3171,33 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     <p>
         If we're not interested in efficiency at all, we can just set aside 32 bits for
         <em>each character</em>. So long as Unicode stays less than 4 billion characters, this
-        should work fine. This is known as <strong>UTF&ndash;32</strong>, and it's
+        should work fine. This is known as
+        <abbr title="Unicode Transformation Format - 32 Bit">UTF-32</abbr>
+        , and it's
         very simple and easy to understand. It also wastes a <em>lot</em> of space.
-        If UTF-32 were common, it would quadruple the size of most web requests.
+        If
+        <abbr title="Unicode Transformation Format - 32 Bit">UTF-32</abbr>
+        were common, it would quadruple the size of most web requests.
     </p>
 
     <h4>Just Use UTF-8</h4>
     <p>
         The sneaky trick is that, as much as we sometimes need special characters,
         most of our day-to-day communication and code come out of the 128 characters
-        that we originally used for ASCII.
+        that we originally used for
+        <abbr title="American Standard Code for Information Interchange">ASCII</abbr>.
     </p>
 
     <p>
-        <strong>UTF-8</strong> is a scheme that uses 8-bytes for <em>most</em> characters,
+        <abbr title="Unicode Transformation Format - 8 Bit">UTF-8</abbr>
+        is a scheme that uses 8-bytes for <em>most</em> characters,
         but uses extra bytes when necessary to encode special characters.
     </p>
 
     <p>
-        This means that <strong>UTF-8</strong> is as efficient as <em>latin-1</em> most of the
+        This means that
+        <abbr title="Unicode Transformation Format - 8 Bit">UTF-8</abbr>
+        is as efficient as <em>latin-1</em> most of the
         time, while <em>also</em> being able to represent the entirety of Unicode.
     </p>
 
@@ -3147,7 +3207,8 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
         <img src="http://i0.kym-cdn.com/photos/images/newsfeed/000/114/348/tom_delay.jpg">
     </div>
 
-    <p> Here's <code>ñello, world &#3232;_&#3232;</code> in UTF-8: </p>
+    <p> Here's <code>ñello, world &#3232;_&#3232;</code> in
+        <abbr title="Unicode Transformation Format - 8 Bit">UTF-8</abbr>: </p>
 
     <pre>
 11000011 10110001 &nbsp; ñ
@@ -3169,13 +3230,16 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </pre>
 
     <p>
-        Just like latin-1, all of the ASCII characters look the same that they did in ASCII. It's
+        Just like latin-1, all of the <abbr title="American Standard Code for Information Interchange">ASCII</abbr>
+        characters look the same that they did in
+        <abbr title="American Standard Code for Information Interchange">ASCII</abbr>. It's
         not until we get into special characters that we see more bits start to appear.
     </p>
 
     <p>
-        UTF-8 is slowly consuming the entire internet &mdash; if we ask anybody what
-        character encoding to use today, they'll probably say "just use UTF-8".
+        <abbr title="Unicode Transformation Format - 8 Bit">UTF-8</abbr> is slowly consuming the entire internet &mdash; if we ask anybody what
+        character encoding to use today, they'll probably say "just use
+        <abbr title="Unicode Transformation Format - 8 Bit">UTF-8</abbr>".
     </p>
 
     <div class='right-aside-arrow'> </div>
@@ -3200,7 +3264,7 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
 
     <p>
         I think the best way to start, here, might be to start by looking at a completely
-        empty HTML page.
+        empty <abbr title="HyperText Markup Language">HTML</abbr> page.
     </p>
 
     <pre>
@@ -3213,22 +3277,32 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
 
     <p>
         So, this document doesn't contain anything except for a <strong>Doctype</strong>
-        and an HTML <strong>element</strong>.
+        and an <abbr title="HyperText Markup Language">HTML</abbr> <strong>element</strong>.
     </p>
 
     <h4> Doctype </h4>
 
     <p>
-        HTML has many versions at this point &mdash; HTML5, HTML4, XHTML2, XHTML1, HTML3 &mdash;
-        and in order for the browser to render the HTML properly, it needs to know which
-        version of HTML it is looking at.
+        <abbr title="HyperText Markup Language">HTML</abbr>
+        has many versions at this point &mdash;
+        <abbr title="HyperText Markup Language Version 5">HTML5</abbr>,
+        <abbr title="HyperText Markup Language Version 4">HTML 4.1</abbr>,
+        <abbr title="eXtensible HyperText Markup Language Version 2">XHTML 2.0</abbr> &mdash;
+        and in order for the browser to render the
+        <abbr title="HyperText Markup Language">HTML</abbr> properly, it needs to know which
+        version of <abbr title="HyperText Markup Language">HTML</abbr> it is looking at.
     </p>
 
     <p>
-        Until HTML5, HTML was technically a subclass of a language called SGML, and SGML
+        Until <abbr title="HyperText Markup Language Version 5">HTML5</abbr>,
+        <abbr title="HyperText Markup Language">HTML</abbr> was technically a
+        subset of a language called <abbr title="Standard Generalized Markup Language">SGML</abbr>, and
+        <abbr title="Standard Generalized Markup Language">SGML</abbr>
         required that documents come with a "Document Type Definition" which would lay
-        out all of the rules for displaying the document. Any HTML document released before
-        HTML5, then, would have a doctype that looks like:
+        out all of the rules for displaying the document. Any
+        <abbr title="HyperText Markup Language">HTML</abbr> document released before
+        <abbr title="HyperText Markup Language Version 5">HTML5</abbr>,
+        then, would have a doctype that looks like:
     </p>
 
     <pre>
@@ -3238,25 +3312,31 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </pre>
 
     <p>
-        When HTML5 dropped SGML compatibility, it was also decided that the doctype wouldn't need
-        a link to a document any longer: <code>&lt;!DOCTYPE html&gt;</code>.
-        All HTML5 documents start this way, to let browsers know that this is an HTML5 document.
+        When <abbr title="HyperText Markup Language Version 5">HTML5</abbr> dropped
+        <abbr title="Standard Generalized Markup Language">SGML</abbr> compatibility,
+        it was also decided that the doctype wouldn't need
+        a link to a document type definition any longer. Now it's just <code>&lt;!DOCTYPE html&gt;</code>.
+        All <abbr title="HyperText Markup Language Version 5">HTML5</abbr>
+        documents start this way, to let browsers know that this is an
+        <abbr title="HyperText Markup Language Version 5">HTML5</abbr> document.
     </p>
 
     <h4> HTML Element </h4>
 
     <p>
-        HTML is strictly heirarchical, which means that every element in the document
+        <abbr title="HyperText Markup Language">HTML</abbr> is strictly heirarchical,
+        which means that every element in the document
         must be enclosed by another element, except for the "root" element which
-        wraps everything in the entire document. This is the <strong>HTML element</strong>,
+        wraps everything in the entire document. This is the <code>&lt;html&gt;</code> element,
         the outermost element that contains everything else.
     </p>
 
     <p>
-        HTML elements usually start with an opening tag and end with a closing tag &mdash;
+    <abbr title="HyperText Markup Language">HTML</abbr> elements usually start with an
+        opening tag and end with a closing tag &mdash;
         in this case, <code>&lt;html&gt;</code> is the opening tag and
-        <code>&lt;/html&gt;</code> is the closing tag. Everything inside the HTML tag
-        is considered to be inside the document. Everything outside the HTML tag
+        <code>&lt;/html&gt;</code> is the closing tag. Everything inside the <code>&lt;html&gt;</code> tag
+        is considered to be inside the document. Everything outside the <code>&lt;html&gt;</code> tag
         is ... outside the document?
     </p>
 
@@ -3271,7 +3351,8 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </pre>
 
     <p>
-        HTML elements can also have <strong>attributes</strong>, which are attached to the
+        <abbr title="HyperText Markup Language">HTML</abbr>
+        elements can also have <strong>attributes</strong>, which are attached to the
         opening tag and look like <code>attribute="value"</code>.
     </p>
 
@@ -3322,7 +3403,8 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
 
     <p>
         This next part we've added, <code>&lt;meta charset=&quot;UTF-8&quot;/&gt;</code>,
-        defines the character encoding of the document as UTF-8.
+        defines the character encoding of the document as
+        <abbr title="Unicode Transformation Format - 8 Byte">UTF-8</abbr>.
     </p>
 
     <p>
