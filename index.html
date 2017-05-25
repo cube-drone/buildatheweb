@@ -32,29 +32,14 @@
     <meta charset="UTF-8"/>
 
     <!-- The CSS stylesheet for the page is located at 'style.css' -->
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet preload" type="text/css" href="style.css">
 
     <!-- It's a happy icon for the page. :) -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon preload" href="favicon.ico" type="image/x-icon">
 
     <!-- This Javascript converts straight-quotes into proper directional quotes -->
     <script src="js/smartquotes.js"></script>
     <script>smartquotes()</script>
-
-    <!-- This Javascript will automatically highlight code samples for us -->
-    <script src="js/highlight/highlight.pack.js"></script>
-    <link rel="stylesheet" type="text/css" href="js/highlight/styles/monokai.css">
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    <!-- Arboreal is a tree data structure that we use to power the Table of Contents -->
-    <script src="js/arboreal.js"></script>
-
-    <!-- jQuery -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-
-    <!-- This is the Javascript code and CSS style that I wrote for the Table of Contents -->
-    <script src="js/buildATheWeb.tableOfContents.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.tableOfContents.css">
 </head>
 
 <body>
@@ -3796,11 +3781,256 @@ lines
         of our document. Now we look at the exciting parts that people can actually see!
     </p>
 
-    <!--
+    <h4>Paragraphs</h4>
+    <p>
+        Let's start by just dropping a bunch of Charles Stross quotes in the <code>&lt;body&gt;</code>:
+    </p>
+
+    <pre>
+    <code class='html'>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;Definitely Wikipedia&lt;/title&gt;
+        &lt;meta name="description" content="This is a description of the content on the page" /&gt;
+        &lt;meta name="author" content="Andrea Authorface" /&gt;
+        &lt;link rel="shortcut icon" href="http://buildatheweb.com/favicon.ico" type="image/x-icon"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+Like the famous mad philosopher said, when you stare into the void, the void stares also;
+but if you cast into the void, you get a type conversion error.
+(Which just goes to show Nietzsche wasn't a C++ programmer.)
+
+Helpfiles are traditionally outnumbered by no-help files, which superficially resemble a helpfile
+in form but not in content because they don't actually tell you anything you don't already know,
+or they answer every question except the one you're asking, or you open them and a giant
+animated paper clip leaps out and cheerfully asks where you want to go today. And wikis are worse.
+    &lt;/body&gt;
+&lt;/html&gt;
+</code>
+    </pre>
+
+    <p>
+        When we open this <abbr title="HyperText Markup Language">HTML</abbr> file in a
+        browser, we get something that looks like this:
+    </p>
+
+    <iframe src='ex3.html'></iframe>
+
+    <p>
+        We wanted those paragraphs to be separate! The
+        <abbr title="HyperText Markup Language">HTML</abbr>
+        just up and ignored our helpful spacing in the HTML file.
+    </p>
+
+    <div class='hang-right-aside-arrow short-arrow' style='margin-top:20px'> </div>
+    <div class='hang-right-aside aside' style='margin-top:-25px'>
+        <p>
+            This is a paragraph!
+        </p>
+    </div>
+
+    <p>
+        What we need is to indicate that those words are in separate paragraphs.
+        We can do this with the <code>&lt;p&gt;</code> tag.
+    </p>
+
+    <pre>
+    <code class='html'>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;Definitely Wikipedia&lt;/title&gt;
+        &lt;meta name="description" content="This is a description of the content on the page" /&gt;
+        &lt;meta name="author" content="Andrea Authorface" /&gt;
+        &lt;link rel="shortcut icon" href="http://buildatheweb.com/favicon.ico" type="image/x-icon"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;
+            Like the famous mad philosopher said, when you stare into the void, the void stares also;
+            but if you cast into the void, you get a type conversion error.
+            (Which just goes to show Nietzsche wasn't a C++ programmer.)
+        &lt;/p&gt;
+
+        &lt;p&gt;
+            Helpfiles are traditionally outnumbered by no-help files, which superficially resemble a helpfile
+            in form but not in content because they don't actually tell you anything you don't already know,
+            or they answer every question except the one you're asking, or you open them and a giant
+            animated paper clip leaps out and cheerfully asks where you want to go today. And wikis are worse.
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code>
+    </pre>
+
+    <iframe src='ex4.html'></iframe>
+
+    <p>There we go. </p>
+
+    <h5>Is The Indentation Really Necessary?</h5>
+
+    <p>As we discovered just now, the whitespace in our HTML file doesn't matter. </p>
+
+    <p>So the indentation is just there to make the source code easier to read &mdash;
+        it doesn't have any effect on the rendering of the page.</p>
+
+    <div class='hang-left-aside-arrow tiny-arrow' style='margin-top:60px;width:5px;'> </div>
+    <div class='hang-left-aside aside' style='margin-top:20px'>
+        <p>
+            This is a header!
+        </p>
+    </div>
 
     <h5>Headers </h5>
 
-    <h5>Paragraphs </h5>
+    <p>
+        You've been reading this document (presumably), so you've noticed that
+        it's divided into segments, by <strong>Headers</strong>, like the one
+        that says "Headers" that I used to open this segment.
+    </p>
+
+    <p>
+        Headers come in six different "levels", from
+        <code>&lt;h1&gt;</code>
+        all the way up to
+        <code>&lt;h6&gt;</code>.
+    </p>
+
+    <p>
+        Conventionally,
+        <code>&lt;h1&gt;</code>,
+        the largest header, is used for the document's title.
+        <code>&lt;h2&gt;</code> is used for headings,
+        <code>&lt;h3&gt;</code> for sub-headings, and so on,
+        through the document.
+    </p>
+
+    <pre>
+    <code class='html'>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;Definitely Wikipedia&lt;/title&gt;
+        &lt;meta name="description" content="This is a description of the content on the page" /&gt;
+        &lt;meta name="author" content="Andrea Authorface" /&gt;
+        &lt;link rel="shortcut icon" href="http://buildatheweb.com/favicon.ico" type="image/x-icon"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Header Level One&lt;/h1&gt;
+        &lt;p&gt;
+            There is a philosophy by which many people live their lives,
+            and it is this: life is a shit sandwich, but the more bread you&apos;ve got,
+            the less shit you have to eat.
+        &lt;/p&gt;
+
+        &lt;h2&gt;Header Level Two&lt;/h2&gt;
+        &lt;p&gt;
+            These people are often selfish brats as kids, and they don&apos;t get better
+            with age: think of the shifty-eyed smarmy asshole from the sixth form
+            who grow up to be a merchant banker, or an estate agent, or one of the
+            Conservative Party funny-handshake mine&apos;s a Rolex brigade.
+        &lt;/p&gt;
+
+        &lt;h3&gt;Header Level Three&lt;/h3&gt;
+        &lt;p&gt;
+            (This isn&apos;t to say that all estate agents, or merchant bankers, or conservatives
+            are selfish, but that these are ways of life that provide opportunities
+            of a certain disposition to enrich themselves at the expense of others. Bear with me.)
+        &lt;/p&gt;
+
+        &lt;h4&gt;Header Level Four&lt;/h4&gt;
+        &lt;p&gt;
+            There is another philosophy by which people live their lives,
+            and it goes thus: You will do as I say or I will hurt you.
+        &lt;/p&gt;
+
+        &lt;h5&gt;Header Level Five&lt;/h5&gt;
+        &lt;p&gt;
+            Let me draw you a Venn diagram with two circles on it, denoting sets of individuals.
+            They overlap: the greedy ones and the authoritarian ones.
+            Let&apos;s shade in the intersecting area in a different color and label it: dangerous.
+        &lt;/p&gt;
+
+        &lt;h6&gt;Header Level Six&lt;/h6&gt;
+        &lt;p&gt;
+            Greed isn&apos;t automatically dangerous on its own, and petty authoritarians aren&apos;t
+            usually dangerous outside their immediate vicinity &amp;mdash; but when you combine the two,
+            you get gangsters and dictators and hate-spewing preachers.
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code>
+    </pre>
+
+    <iframe style='height:650px' src='ex5.html'></iframe>
+
+    <h5>Lists </h5>
+
+    <p> Lists can either be numbered or simply bulleted, and they can also contain sub-lists. </p>
+
+    <pre>
+    <code class='html'>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;Definitely Wikipedia&lt;/title&gt;
+        &lt;meta name="description" content="This is a recipe for sausages on a bun" /&gt;
+        &lt;meta name="author" content="Andrea Authorface" /&gt;
+        &lt;link rel="shortcut icon" href="http://buildatheweb.com/favicon.ico" type="image/x-icon"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt; Tasty Sausage Recipe &lt;/h1&gt;
+
+        &lt;h2&gt; Ingredients &lt;/h2&gt;
+        &lt;!-- ul stands for 'unordered list' --&gt;
+        &lt;ul&gt;
+            &lt;!-- li stands for 'list item' --&gt;
+            &lt;li&gt;Sausages (Bratwurst or Italian Sausage)&lt;/li&gt;
+            &lt;li&gt;Onions&lt;/li&gt;
+            &lt;li&gt;Beer&lt;/li&gt;
+            &lt;li&gt;Sausage Bun&lt;/li&gt;
+            &lt;li&gt;Pickle Relish&lt;/li&gt;
+            &lt;li&gt;Mustard&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;h2&gt; Instructions &lt;/h2&gt;
+        &lt;!-- ol stands for 'ordered list' --&gt;
+        &lt;ol&gt;
+            &lt;li&gt;
+                Put the sausages and onions in a pan with a few cups full of water or beer
+                and crank the heat unil the liquid starts to boil.
+            &lt;/li&gt;
+            &lt;li&gt;
+                Turn the temperature down and cover the pan with a lid. Let the
+                sausages and onions steam for 10 minutes.
+            &lt;/li&gt;
+            &lt;li&gt;
+                Remove the lid, set aside the onions, and turn the heat up to medium-high,
+                browning the exterior of the sausages.
+                &lt;em&gt;A safe internal temperature for sausages is 165&amp;#8451; &lt;/em&gt;
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;!-- it's possible to put lists inside of lists --&gt;
+                Serve on a toasted sausage bun with
+                &lt;ul&gt;
+                    &lt;li&gt;the onions&lt;/li&gt;
+                    &lt;li&gt;a chunky pickle relish&lt;/li&gt;
+                    &lt;li&gt;grainy mustard&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code>
+    </pre>
+
+    <iframe style='height:550px' src='ex6.html'></iframe>
+
+    <!--
 
     <h5>Lists </h5>
 
@@ -3845,6 +4075,23 @@ lines
     <h4> Fun DNS Hacks </h4>
     -->
     <!-- Upside Down Ternet, Cat DNS, log everything, create in-house name resolution -->
+
+    <!-- Here's where we put Javascript that isn't needed until after the page's loaded -->
+
+    <!-- This Javascript will automatically highlight code samples for us -->
+    <script src="js/highlight/highlight.pack.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/highlight/styles/monokai.css">
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Arboreal is a tree data structure that we use to power the Table of Contents -->
+    <script src="js/arboreal.js"></script>
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <!-- This is the Javascript code and CSS style that I wrote for the Table of Contents -->
+    <script src="js/buildATheWeb.tableOfContents.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.tableOfContents.css">
 </div>
 </body>
 
