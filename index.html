@@ -2059,6 +2059,32 @@ Bringing machine 'default' up with 'virtualbox' provider...
 
     <p> Eventually a mountain of output will go by. </p>
 
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside small-aside aside'>
+        <p>
+            Sometimes instead of good things, we'll see
+            <code>VT-x/AMD-V hardware acceleration is not available on your system.
+                Your 64-bit guest will fail to detect a 64-bit CPU and will not be able to boot.</code>
+        </p>
+        <p>
+            This is a bad thing. There are three things we might need to do to get this working:
+            <ol>
+                <li>
+                    Turn on <abbr title="Intel Virtualization">VT-x</abbr>/<abbr title="Advanced Micro Devices Virtualization">AMD-V</abbr>
+                    in the BIOS
+                </li>
+                <li>
+                    <a href='https://superuser.com/questions/597121/vt-x-amd-v-hardware-acceleration-is-not-available-on-your-system'>
+                    Disable Windows Hyper-V</a>
+                </li>
+                <li>
+                    Abandon the 64-bit <abbr title="Virtual Machine">VM</abbr>
+                    and just run a 32-bit <abbr title="Virtual Machine">VM</abbr>.
+                </li>
+            </ol>
+        </p>
+    </div>
+
     <p> If that process went off without a hitch, we are good to go. </p>
 
     <div class='right-aside-arrow'> </div>
