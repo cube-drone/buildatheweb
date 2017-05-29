@@ -3807,7 +3807,7 @@ lines
         of our document. Now we look at the exciting parts that people can actually see!
     </p>
 
-    <h4>Paragraphs</h4>
+    <h5>Paragraphs</h5>
     <p>
         Let's start by just dropping a bunch of Charles Stross quotes in the <code>&lt;body&gt;</code>:
     </p>
@@ -4156,14 +4156,67 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 
     <iframe style='height:200px' src='ex7.html'></iframe>
 
+    <p>
+        Tables are pretty flexible about how you align them, but
+        <code>td</code> and <code>th</code> elements always go
+        <em> inside </em> <code>tr</code> elements.
+    </p>
+
     <pre>
     <code class='html'>
-    
+        &lt;table&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name:&lt;/th&gt;
+                &lt;td&gt;Curtis&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Class:&lt;/th&gt;
+                &lt;td&gt;Software Developer&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Blood Type:&lt;/th&gt;
+                &lt;td&gt;Double Plus Good&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Sandwich:&lt;/th&gt;
+                &lt;td&gt;BLT&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Weaknesses:&lt;/th&gt;
+                &lt;td&gt;Myriad&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
 
     </code>
     </pre>
-    
+
     <iframe style='height:200px' src='ex8.html'></iframe>
+
+    <h5>Special Characters</h5>
+
+    <p>
+        Certain characters, like <code>&amp;</code> and <code>&gt;</code>,
+        are used as part of the <abbr title="HyperText Markup Language">HTML</abbr>
+        markup.
+    </p>
+
+    <p>
+        How do we show these characters to the user? The answer is
+        with special characters.
+    </p>
+
+    <p>
+        The ampersand character, <code>&amp;</code>, can be
+        represented with <code>&amp;amp;</code>.
+        The "greater than" character, <code>&gt;</code>, can
+        be represented with <code>&amp;gt</code>.
+        The "less than" character, <code>&lt;</code> can
+        be represented with <code>&amp;lt</code>.
+        That's enough characters to represent any
+        <abbr title="HyperText Markup Language">HTML</abbr> characters
+        that we come across.
+    </p>
+
 
     <!--
 
@@ -4189,6 +4242,8 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
     <h5>Fragment Identifiers</h5>
 
     <h5>Tags That Are Pretty Safe To Ignore</h5>
+
+    <h3> Validation </h3>
     -->
 
     <p id="end" class="ohno">
