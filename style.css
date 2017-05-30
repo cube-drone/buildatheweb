@@ -51,6 +51,10 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.08em;
 }
 
+h6{
+    font-size: 80%;
+}
+
 h1{
     padding-top: 250px;
 }
@@ -298,8 +302,7 @@ table td{
 }
 
 iframe{
-    width: 830px;
-    margin-left: -50px;
+    width: 100%;
     min-height: 300px;
     background-color: white;
     border-radius: 5px;

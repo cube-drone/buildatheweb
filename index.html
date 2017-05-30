@@ -2309,6 +2309,31 @@ ubuntu@ubuntu-xenial:~$ sudo apt-get install nginx
         directory on our host computer
     </p>
 
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <h4>index.html</h4>
+        <p>
+            <code>index.html</code> is a special filename.
+        </p>
+        <p>
+            Technically, when we navigate to a website, we are always
+            supposed to indicate the file that we are asking for &mdash;
+            our <abbr title="Uniform Resource Locator">URL</abbr> should
+            end with <code>/whatever.html</code> or <code>/anything.jpg</code>
+            to indicate the file that we're looking for.
+        </p>
+        <p>
+            By convention, however, many web servers are configured to look
+            for <code>index.html</code> by default when no filename
+            is specified. This is because, when we enter a directory,
+            the index file would provide us a list of files in that directory.
+        </p>
+        <p>
+            So, remember &mdash; the <code>index.html</code> file is what
+            your web browser will serve if you don't request a specific file.
+        </p>
+    </div>
+
     <pre>
     <code class='html'>
 &lt;!-- I go in ~/code/hello_world/html/index.html --&gt;
@@ -2559,6 +2584,16 @@ server {
         We need to change <code>root /var/www/html;</code> to read <code>root /home/ubuntu/html;</code>,
         and then save the file.
     </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h4>Web Root</h4>
+        <p>
+            Here, we are making <code>/home/ubuntu/html</code> our
+            <strong>web root</strong> and serving everything in
+            that entire folder.
+        </p>
+    </div>
 
     <h4>Rebooting nginx</h4>
 
@@ -3212,6 +3247,7 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     <p>
         So, that's what <strong>Unicode</strong> is &mdash; not a binary encoding scheme at all, really,
         just a list of all of the characters and a unique number for each of them.
+        This unique number is called a <strong>code point</strong>.
     </p>
 
     <div class='right-aside-arrow'> </div>
@@ -3302,6 +3338,16 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
         <abbr title="Unicode Transformation Format - 32 Bit">UTF-32</abbr>
         were common, it would quadruple the size of most web requests.
     </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside small-aside aside'>
+        <h3>Awesome Code Points</h3>
+        <p>
+            Some internet folk have been collecting
+            <a href="https://github.com/Codepoints/awesome-codepoints">Awesome Codepoints</a>.
+            Just in case we need some.
+        </p>
+    </div>
 
     <h4>Just Use UTF-8</h4>
     <p>
@@ -3601,10 +3647,14 @@ lines
         <abbr title="Unicode Transformation Format - 8 Byte">UTF-8</abbr>.
     </p>
 
-    <p>
-        Yeah, that whole entire segment on character encoding? That was just
-        so that we'd understand this bit right here.
-    </p>
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <h3>Crazy Like a Fox</h3>
+        <p>
+            Yeah, that whole entire segment on character encoding? That was just
+            so that we'd understand this bit right here.
+        </p>
+    </div>
 
     <p>
         The <abbr title="HyperText Transfer Protocol">HTTP</abbr> server that serves this document reads this when it serves the document
@@ -3997,6 +4047,24 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 
     <p> Lists can either be numbered or simply bulleted, and they can also contain sub-lists. </p>
 
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <h3>The Home Game</h3>
+        <p>
+            In our last chapter we built a web server with an
+            <abbr title="HyperText Markup Language">HTML</abbr>
+            file on it.
+        </p>
+        <p>
+            We can construct our own
+            <abbr title="HyperText Markup Language">HTML</abbr>
+            pages using that web
+            server, although it's also possible just to build
+            them in an arbitrary directory on our computer.
+        </p>
+    </div>
+
+
     <pre>
     <code class='html'>
 &lt;!DOCTYPE html&gt;
@@ -4103,6 +4171,15 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
             next chapter, but we need to understand vanilla
             <abbr title='HyperText Markup Language'>HTML</abbr> first!
         </p>
+
+        <p>
+            One of the rules of good web design is that the
+            <abbr title='HyperText Markup Language'>HTML</abbr> of a page should
+            be as clean to read without <abbr title='Cascading Style Sheets'>CSS</abbr>
+            as it is with it &mdash; some users, especially the visually impaired, use
+            the raw <abbr title='HyperText Markup Language'>HTML</abbr> of a page
+            without any additional style.
+        </p>
     </div>
 
     <h5>Tables </h5>
@@ -4162,6 +4239,18 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
         <em> inside </em> <code>tr</code> elements.
     </p>
 
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside small-aside aside'>
+        <h3>Flip</h3>
+        <p>
+            We can always flip the table over using the special
+            table-flipping operator.
+        </p>
+        <p>
+        <code>&#x200E;(&#xFF89;&#xCA5;&#x76CA;&#xCA5;&#xFF09;&#xFF89;&#xFEFF; &#x253B;&#x2501;&#x253B;</code>
+        </p>
+    </div>
+
     <pre>
     <code class='html'>
         &lt;table&gt;
@@ -4192,17 +4281,43 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 
     <iframe style='height:200px' src='ex8.html'></iframe>
 
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h3>Building Everything With Just Tables</h3>
+        <p>
+            Some time ago, some enterprising graphic designers
+            noticed that <abbr title="HyperText Markup Language">HTML</abbr>
+            tables bore more than a passing resemblance to a concept
+            from graphic design called the
+            <a href='https://www.designersinsights.com/designer-resources/using-layout-grids-effectively/'>layout grid</a>.
+        </p>
+        <p>
+            It's <em>possible</em> to build complex layouts with
+            nothing but vanilla
+            <abbr title="HyperText Markup Language">HTML</abbr>
+            and tables, but in modern web development this is
+            <strong>highly discouraged</strong>.
+        </p>
+    </div>
+
+
     <h5>Special Characters</h5>
 
     <p>
         Certain characters, like <code>&amp;</code> and <code>&gt;</code>,
-        are used as part of the <abbr title="HyperText Markup Language">HTML</abbr>
+        are used in <abbr title="HyperText Markup Language">HTML</abbr>
         markup.
     </p>
 
     <p>
-        How do we show these characters to the user? The answer is
-        with special characters.
+        We cannot simply type the <code>&lt;</code> character into our
+        <abbr title="HyperText Markup Language">HTML</abbr> &mdash;
+        the browser would confuse it for the start of an
+        <abbr title="HyperText Markup Language">HTML</abbr> tag.
+    </p>
+    <p>
+        Instead, we need to use a special escaping syntax:
+        <a href="https://www.w3schools.com/html/html_entities.asp">HTML Entities</a>.
     </p>
 
     <p>
@@ -4210,22 +4325,232 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
         represented with <code>&amp;amp;</code>.
         The "greater than" character, <code>&gt;</code>, can
         be represented with <code>&amp;gt</code>.
-        The "less than" character, <code>&lt;</code> can
+        The "less than" character, <code>&lt;</code>, can
         be represented with <code>&amp;lt</code>.
-        That's enough characters to represent any
+        With these three entities, we can represent any
         <abbr title="HyperText Markup Language">HTML</abbr> characters
         that we come across.
     </p>
 
+    <p>
+        Special characters can represent more than just
+        <abbr title="HyperText Markup Language">HTML</abbr> characters,
+        though! There are many special typographic characters that
+        just don't exist on the keyboard, like "&mdash;" (<code>&amp;mdash;</code>),
+        "&copy;" (<code>&amp;copy;</code>), and "&euro;" (<code>&amp;euro;</code>).
+    </p>
+
+    <p>
+        On top of that, if we don't want to enter Unicode characters, we
+        can always reference them directly by their Unicode code point, like
+        "&#10084;" (<code>&amp;#10084;</code>), "&#3424;" (<code>&amp;#3424;</code>)
+        or "&#129304;"(<code>&amp;#129304</code>).
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <p>
+            Lots of useful icons in Unicode.
+        </p>
+    </div>
+
+    <h5>Links </h5>
+
+    <p>
+        Do you know what would make a lot of sense? If the
+        <abbr title="HyperText Markup Language">HTML</abbr> tag for
+        links between pages was <code>&lt;link&gt;</code>.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <p>
+            It's important not to confuse the term "Link"
+            with this video game character:
+        </p>
+        <img src="images/chapter3/zelda.png" title="Princess Link">
+        <p>
+            This is Princess Link, from the Zelda video games.
+            As the brave warrior, Zelda, you have to rescue her
+            from <em>bad voice acting</em>.
+        </p>
+    </div>
+
+    <p>
+        But <code>&lt;link&gt;</code> was already taken, so instead,
+        a <em>link</em> to another page is represented with the
+        <code>&lt;a&gt;</code> tag. Which stands for <strong>anchor</strong>.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <img src="images/chapter3/anchor.jpg" alt="An anchor">
+        <p>
+            Pictured: an anchor, linking two webpages together <em>obviously</em>.
+        </p>
+    </div>
+
+    <p>
+        So, if we wanted to construct a link to, say,
+        <a href='https://www.youtube.com/watch?v=L0nuQ5o2DYU'>a video
+        about the death of Flash from the point of view of some
+        characters who were animated in Flash</a>, I'd need to use an
+        <code>&lt;a&gt;</code> tag, like so:
+    </p>
+
+    <pre>
+    <code class='html'>
+        &lt;a href="https://www.youtube.com/watch?v=L0nuQ5o2DYU"&gt; a video about the
+            death of Flash from the point of view of some
+            characters who were animated in Flash &lt;/a&gt;
+    </code>
+    </pre>
+
+    <p>
+        Yeah, that's right, the <abbr title="Uniform Resource Locator">URL</abbr>
+        is encoded in an attribute called <code>href</code>.
+        This whole deal is just a cascade of nonsense. It's possible to
+        connect all of these details with minutiae in the history of
+        <abbr title="HyperText Markup Language">HTML</abbr>, but I think
+        it's easier just to remember "links are <code>a href=</code>" without
+        trying to justify it.
+    </p>
+
+    <h6>Absolute vs. Relative Links </h6>
+
+    <p>
+        There are two different ways to link to content.
+        These linking rules apply to anything that we might link to &mdash;
+        other web pages, images, videos, stylesheets &mdash;
+        the rules are the same for all of them.
+    </p>
+
+    <p>
+        An <strong>absolute</strong> link is a full
+        <abbr title="Uniform Resource Locator">URL</abbr>,
+        like the one that we saw in the first chapter, with protocol,
+        domain, and path.
+    </p>
+
+    <p>
+        One of these:
+        <code>http://buildatheweb.com/images/chapter3/seduction.jpg</code>
+    </p>
+
+    <p>
+        As we've established, this refers to <code>/images/chapter3/seduction.jpg</code>
+        on the domain <code>buildatheweb.com</code> using the <code>http</code> protocol.
+    </p>
+
+    <p>
+        A <strong>relative</strong> link is a link that contains
+        less information, and depends on context to resolve the full
+        <abbr title='Uniform Resource Locator'>URL</abbr>.
+        The rules of resolving relative links can be a little bit complicated,
+        but it's almost always a better idea to use relative links
+        rather than absolute ones when we are building webpages, because if we
+        leave information like the domain name and protocol out of our
+        links, we can change these things more easily.
+    </p>
+
+    <p>
+        This is particularly useful because <em>when we are developing our
+        web sites, we usually do not have a domain name, yet</em>.
+        Even if we do, it's common practice to develop our site on
+        our personal computer, without a domain name, before launching
+        it to our <em>production</em> server, where it does have
+        a domain name &mdash; so, relative links are important.
+    </p>
+
+    <p>
+        The first rule of relative links is that they always resolve to
+        the same domain as the source page. I cannot, for example,
+        create a relative link to a <code>youtube.com</code> page
+        from <code>buildatheweb.com</code>.
+    </p>
+
+    <p>
+        That means, though, that if we wanted to link to <code>/images/chapter3/seduction.jpg</code>,
+        but we know that this file is going to be on the same
+        domain and protocol as the place that we are linking from,
+        we can just leave out the domain and protocol entirely,
+        and include a link to <code>/images/chapter3/seduction.jpg</code>.
+    </p>
+
+    <pre>
+    <code class='html'>
+        &lt;!-- these links go to the same place --&gt;
+        &lt;a href='http://buildatheweb.com/images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
+        &lt;a href='/images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
+    </code>
+    </pre>
+
+    <p>
+        The <code>/</code> at the beginning of the relative link communicates
+        the web root &mdash; in the case of this page, the web root is
+        <code>buildatheweb.com/</code>.
+    </p>
+
+    <p>
+        If we leave out the web root (represented by the initial <code>/</code> character)
+        we instead ask the web server to construct the link
+        starting at the folder that we are <em>currently in</em>.
+    </p>
+
+    <p>
+        Which means that, because we are already at the web root,
+        we could link to <code>images/chapter3/seduction.jpg</code>
+        and it, again, would refer to the same file.
+    </p>
+
+    <pre>
+    <code class='html'>
+        &lt;!-- these links go to the same place --&gt;
+        &lt;a href='http://buildatheweb.com/images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
+        &lt;a href='/images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
+        &lt;a href='images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
+    </code>
+    </pre>
+
+    <p>
+        However, let's now imagine that our
+        <abbr title="HyperText Markup Language">HTML</abbr> file is located
+        in the <code>/images</code> directory.
+        The first two links would stay the same &mdash; the absolute link
+        and the relative link that references the web root &mdash; but
+        the relative link that didn't start with <code>/</code>
+        would no longer be rooted at the same
+        directory. It would become invalid.
+    </p>
+
+    <pre>
+    <code class='html'>
+        &lt;!-- these links go to the same place --&gt;
+        &lt;a href='http://buildatheweb.com/images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
+        &lt;a href='/images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
+
+        &lt;!-- because we are already in the images directory,
+                this link would go to the wrong place: /images/images/chapter3/seduction.jpg --&gt;
+        &lt;a href='images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
+
+        &lt;!-- this would fix the problem --&gt;
+        &lt;a href='chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
+    </code>
+    </pre>
+
+    <h5>Images</h5>
+
+    <p>
+        Links are all well and good, but let's get our hands dirty with
+        some honest-to-goodness multimedia content. Images!
+    </p>
 
     <!--
 
 
     <h5>Divisions &amp; Sections</h5>
 
-    <h5>Links </h5>
-
-    <h5>Emphasis &amp; Strong</h5>
+    <h5>Emphasis, Strong, and Abbreviations</h5>
     -->
 
     <!-- Absolute vs. Relative Linking -->
