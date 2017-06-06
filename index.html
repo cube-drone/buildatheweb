@@ -91,7 +91,7 @@
     </p>
 
     <p>
-        This book was last updated <strong class='book_last_update'>May 24, 2017</strong>.
+        This book was last updated <strong class='book_last_update'>June 6, 2017</strong>.
         If that's a <em>long time ago</em>, I might have died. Avenge me!
     </p>
 
@@ -4434,11 +4434,11 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 
     <p>
         One of these:
-        <code>http://buildatheweb.com/images/chapter3/seduction.jpg</code>
+        <code>http://buildatheweb.com/images/chapter3/hot_dog.jpg</code>
     </p>
 
     <p>
-        As we've established, this refers to <code>/images/chapter3/seduction.jpg</code>
+        As we've established, this refers to <code>/images/chapter3/hot_dog.jpg</code>
         on the domain <code>buildatheweb.com</code> using the <code>http</code> protocol.
     </p>
 
@@ -4470,18 +4470,18 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
     </p>
 
     <p>
-        That means, though, that if we wanted to link to <code>/images/chapter3/seduction.jpg</code>,
+        That means, though, that if we wanted to link to <code>/images/chapter3/hot_dog.jpg</code>,
         but we know that this file is going to be on the same
         domain and protocol as the place that we are linking from,
         we can just leave out the domain and protocol entirely,
-        and include a link to <code>/images/chapter3/seduction.jpg</code>.
+        and include a link to <code>/images/chapter3/hot_dog.jpg</code>.
     </p>
 
     <pre>
     <code class='html'>
         &lt;!-- these links go to the same place --&gt;
-        &lt;a href='http://buildatheweb.com/images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
-        &lt;a href='/images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
+        &lt;a href='http://buildatheweb.com/images/chapter3/hot_dog.jpg'&gt;Hot Dog&lt;/a&gt;
+        &lt;a href='/images/chapter3/hot_dog.jpg'&gt;Hot Dog&lt;/a&gt;
     </code>
     </pre>
 
@@ -4499,16 +4499,16 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 
     <p>
         Which means that, because we are already at the web root,
-        we could link to <code>images/chapter3/seduction.jpg</code>
+        we could link to <code>images/chapter3/hot_dog.jpg</code>
         and it, again, would refer to the same file.
     </p>
 
     <pre>
     <code class='html'>
         &lt;!-- these links go to the same place --&gt;
-        &lt;a href='http://buildatheweb.com/images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
-        &lt;a href='/images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
-        &lt;a href='images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
+        &lt;a href='http://buildatheweb.com/images/chapter3/hot_dog.jpg'&gt;Hot Dog&lt;/a&gt;
+        &lt;a href='/images/chapter3/hot_dog.jpg'&gt;Hot Dog&lt;/a&gt;
+        &lt;a href='images/chapter3/hot_dog.jpg'&gt;Hot Dog&lt;/a&gt;
     </code>
     </pre>
 
@@ -4526,15 +4526,15 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
     <pre>
     <code class='html'>
         &lt;!-- these links go to the same place --&gt;
-        &lt;a href='http://buildatheweb.com/images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
-        &lt;a href='/images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
+        &lt;a href='http://buildatheweb.com/images/chapter3/hot_dog.jpg'&gt;Hot Dog&lt;/a&gt;
+        &lt;a href='/images/chapter3/hot_dog.jpg'&gt;Hot Dog&lt;/a&gt;
 
         &lt;!-- because we are already in the images directory,
-                this link would go to the wrong place: /images/images/chapter3/seduction.jpg --&gt;
-        &lt;a href='images/chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
+                this link would go to the wrong place: /images/images/chapter3/hot_dog.jpg --&gt;
+        &lt;a href='images/chapter3/hot_dog.jpg'&gt;Hot Dog&lt;/a&gt;
 
         &lt;!-- this would fix the problem --&gt;
-        &lt;a href='chapter3/seduction.jpg'&gt;Seduction&lt;/a&gt;
+        &lt;a href='chapter3/hot_dog.jpg'&gt;Hot Dog&lt;/a&gt;
     </code>
     </pre>
 
@@ -4544,6 +4544,20 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
         Links are all well and good, but let's get our hands dirty with
         some honest-to-goodness multimedia content. Images!
     </p>
+
+    <div class='figure'>
+        <h3>Pictured: A Picture</h3>
+        <img src="images/chapter3/hot_dog.jpg">
+    </div>
+
+    <pre>
+    <code class='html'>
+        &lt;!-- images work like links but use 'src' instead of 'href' --&gt;
+        &lt;img src='http://buildatheweb.com/images/chapter3/hot_dog.jpg'&gt;
+        &lt;img src='/images/chapter3/hot_dog.jpg'&gt;
+        &lt;img src='images/chapter3/hot_dog.jpg'&gt;
+    </code>
+    </pre>
 
     <!--
 
