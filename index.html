@@ -259,6 +259,10 @@
         <p class='code'>
             https://en.wikipedia.org/w/index.php?title=Blinkenlights&amp;action=edit<strong>#Etymology</strong>
         </p>
+        <p>
+            The fragment describe a specific <strong>part</strong> of the document that
+            we want to look at.
+        </p>
 
         <h4>Locus &amp; Spindle</h4>
         <p class='code'>
@@ -433,11 +437,15 @@
         our computer asked the router to assign it an <abbr title="Internet Protocol">IP</abbr> Address.
     </p>
     <p>
-        Then, how did the router get its <abbr title="Internet Protocol">IP</abbr> address? Well, when we connected the router to the
+        Then, how did the router that gave us an
+        <abbr title="Internet Protocol">IP</abbr> address
+        get its own <abbr title="Internet Protocol">IP</abbr> address?
+        Well, when we connected the router to the
         internet, either by plugging it in to a modem or by plugging it in to another link in
         the network, it also communicated to a router, and communicated using
         <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr>.
-        <em>"What is my IP?"</em>
+        It asked
+        <em>"What is my IP?"</em>.
     </p>
 
     <div class='left-aside-arrow'> </div>
@@ -2875,7 +2883,7 @@ to the user, but indicates additional information
 like <em>emphasis</em>, <span style='color:red;font-weight:bold;'>color</span>, and <span style='font-family:chunk'>font</strong>.
     </pre>
 
-    <p>or, to look at that last line, again, in markup language: </p>
+    <p>or, to look at that last line, again, in Hypertext Markup Language: </p>
 
     <pre>
 A &lt;strong&gt;markup language&lt;/strong&gt; allows us to mark
@@ -2887,7 +2895,9 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </pre>
 
     <p>
-        <abbr title="HyperText Markup Language">HTML</abbr> is not the only markup language &mdash; many of them exist.
+        <abbr title="HyperText Markup Language">HTML</abbr> &mdash; Hypertext Markup Language &mdash;
+        is not the only markup language
+        &mdash; many of them exist.
     </p>
 
     <p>
@@ -2908,17 +2918,7 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
         which finally cut all remaining ties with the old standard.
     </p>
 
-    <div class='left-aside-arrow'> </div>
-    <div class='left-aside aside'>
-        <p>
-            This is a good thing.
-            <abbr title="Standard Generalized Markup Language">SGML</abbr>
-            is a hulking, overspecified government
-            standard that isn't particularly useful for people who aren't
-            trying to achieve interoperability between government mainframes
-            in the 1970s.
-        </p>
-    </div>
+    <h4>Some Other Markup Languages</h4>
 
     <p>
         Another child of <abbr title="Standard Generalized Markup Language">SGML</abbr>
@@ -2929,15 +2929,88 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
         <abbr title="eXtensible Markup Language">XML</abbr> is a similar format
         that was designed as a general-purpose
         markup language for <em>any</em> kind of data.
-        It was also intended to be easier use than the somewhat
-        bureaucratic
-        <abbr title="Standard Generalized Markup Language">SGML</abbr> framework.
     </p>
 
+    <p>Some <abbr title="eXtensible Markup Language">XML</abbr> might look like this: </p>
+
+    <pre>
+    <code class='xml'>
+&lt;employee&gt;
+    &lt;name&gt;Barry Fudgechampion&lt;/name&gt;
+    &lt;age&gt;27&lt;/age&gt;
+    &lt;salary&gt;Low&lt;/salary&gt;
+    &lt;odor&gt;Potent&lt;/odor&gt;
+&lt;/employee&gt;
+    </code>
+    </pre>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h3>Documents vs. Data</h3>
+        <p>
+            One potential point of confusion with markup languages
+            is that some of them, like
+            <abbr title="HyperText Markup Language">HTML</abbr>
+            and
+            <strong>Markdown</strong>,
+            are intended to represent documents
+            &mdash; like recipes, or textbooks.
+        </p>
+        <p>
+            Some other markup languages, like
+            <abbr title="Javascript Object Notation">JSON</abbr>
+            or
+            <abbr title="eXtensible Markup Language">XML</abbr>,
+            are intended to
+            represent <em>arbitrary</em> data, which might be "employees"
+            or "products in a catalogue" or "geographical data".
+        </p>
+    </div>
+
     <p>
-        Markdown is a markup language that's designed to be interoperable
-        with <abbr title="HyperText Markup Language">HTML</abbr> and easy for humans to read and edit.
+        <strong>Markdown</strong> is a markup language that's designed to be interoperable
+        with <abbr title="HyperText Markup Language">HTML</abbr> and easy for humans to read and edit,
+        even when it's just plain text.
     </p>
+
+    <p>Some Markdown might look like this: </p>
+
+    <pre>
+    <code class='markdown'>
+
+# Laziness, Impatience, and Hubris
+
+    "We will encourage you to develop the three great virtues of a programmer:
+    laziness, impatience, and hubris." -- Larry Wall, Programming Perl (1st edition)
+
+Take a look at [this link](http://wiki.c2.com/?LazinessImpatienceHubris)
+for more information.
+
+## Laziness
+
+The quality that makes you go to great effort to reduce overall energy expenditure.
+It makes you write labor-saving programs that other people will find useful,
+and document what you wrote so you don't have to answer so many questions about it.
+Hence, the first great virtue of a programmer.
+Also hence, this book. See also _impatience and hubris_.
+
+## Impatience
+
+The anger you feel when the computer is being lazy.
+This makes you write programs that don't just react to your needs,
+but actually anticipate them.
+Or at least pretend to. Hence, the second great virtue of a programmer.
+See also _laziness and hubris_.
+
+## Hubris
+
+Excessive pride, the sort of thing Zeus zaps you for.
+Also the quality that makes you write (and maintain) programs that other people won't
+want to say bad things about. Hence, the third great virtue of a programmer.
+See also _laziness and impatience_.
+
+    </code>
+    </pre>
 
     <p>
         <abbr title="Javascript Object Notation">JSON</abbr> (Javascript Object Notation)
@@ -2945,24 +3018,77 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
         easy for the language Javascript to handle.
     </p>
 
+    <p>Some <abbr title="Javascript Object Notation">JSON</abbr> might look like this: </p>
+
+    <pre>
+    <code class='json'>
+{name: "Barry Fudgechampion",
+ age: 27,
+ salary: "Low",
+ odor: "Potent"}
+    </code>
+    </pre>
+
     <p>
-        <abbr title="Yet Another Markup Language">YAML</abbr> (Yet Another Markup Language) is a markup language that's
-        designed to be easy for humans to read and edit.
+        <abbr title="Yet Another Markup Language">YAML</abbr> (Yet Another Markup Language)
+        is a markup language that's
+        designed to be easy for humans to read and edit, designed to represent
+        complex objects.
+    </p>
+
+    <p>Some <abbr title="Yet Another Markup Language">YAML</abbr> might look like this: </p>
+
+    <pre>
+    <code class='xml'>
+- name: Barry Fudgechampion
+  age: 27
+  salary: Low
+  data: |
+     There once was a short man from Ealing
+     Who got on a bus to Darjeeling
+         It said on the door
+         "Please don't spit on the floor"
+     So he carefully spat on the ceiling
+    </code>
+    </pre>
+
+    <p>
+        Some of these markup languages are easier for humans to read. Some of them are easier
+        to code with. Some of them are more stict and some of them are less strict.
+        Some of them are intended to represent data and some of them are intended to represent documents.
+        But they are all <em>a way to use plain text to represent something more complicated than plain text</em>.
     </p>
 
     <p>
         All of these different markup langauges are good for different purposes.
             <ul>
-                <li><abbr title="HyperText Markup Language">HTML</abbr> is good for representing multimedia documents that link to one another.</li>
-                <li><abbr title="Javascript Object Notation">JSON</abbr> is good for representing simple objects.</li>
-                <li><abbr title="Yet Another Markup Language">YAML</abbr> is good for human-written configuration.</li>
-                <li><strong>Markdown</strong> is good for human-written markup.</li>
-                <li><abbr title="eXtensible Markup Language">XML</abbr> is good for representing objects that have a defined format.</li>
+                <li>
+                    <abbr title="HyperText Markup Language">HTML</abbr> is good for representing
+                    multimedia documents that link to one another.
+                </li>
+                <li>
+                    <abbr title="Javascript Object Notation">JSON</abbr> is good for transmitting
+                    data in a simple format between systems.
+                </li>
+                <li>
+                    <abbr title="Yet Another Markup Language">YAML</abbr> is good for human-written
+                    data, like configuration files.
+                </li>
+                <li>
+                    <strong>Markdown</strong> is good for human-written multimedia documents
+                    that are still readable in their text format.
+                </li>
+                <li>
+                    <abbr title="eXtensible Markup Language">XML</abbr> is good for representing
+                    objects that have a strictly defined format.
+                </li>
             </ul>
     </p>
 
-    <p> Bad news: You're probably going to have to learn <em>all of these markup languages</em>
-        at one point or another. </p>
+    <p>
+        Bad news: You're probably going to have to learn <em>all of these markup languages</em>
+        at one point or another.
+    </p>
 
     <p> Good news: They're not very difficult to learn! </p>
 
@@ -3228,7 +3354,7 @@ like &lt;em&gt;emphasis&lt;/em&gt;,
     </p>
 
     <p>
-        "Do you know what would be nice?", I imagine someone saying. "It would be nice if we
+        "Do you know what would be nice", I imagine someone saying. "It would be nice if we
         just had a list of every single character and gave each one of them a number."
     </p>
 
@@ -4354,6 +4480,19 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
         </p>
     </div>
 
+    <h5>Emphasis and Strong</h5>
+
+    <p>
+        This one's going to be really quick. Sometimes, you want to <em>emphasize text</em>
+        or <strong>really, really emphasize text</strong>.
+    </p>
+
+    <p>
+        This is where the <code>&lt;em&gt;</code> (for emphasis) and <code>&lt;strong&gt;</code> (for strong emphasis) tags shine.
+    </p>
+
+    <p> Figure them out on your own time. I'm not yer' daddy. </p>
+
     <h5>Links </h5>
 
     <p>
@@ -4545,10 +4684,8 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
         some honest-to-goodness multimedia content. Images!
     </p>
 
-    <div class='figure'>
-        <h3>Pictured: A Picture</h3>
-        <img src="images/chapter3/hot_dog.jpg">
-    </div>
+    <p> Images can be rendered with the <code>&lt;img&gt;</code> tag, which works a lot like the
+        <code>&lt;a&gt;</code> tag, but with <code>src</code> instead of <code>href</code>.</p>
 
     <pre>
     <code class='html'>
@@ -4559,31 +4696,190 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
     </code>
     </pre>
 
-    <!--
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h4>Base-64 Inline</h4>
+        <p>
+            In modern browsers, you can even convert your image into Base64 and include
+            it in the HTML itself, using a
+            <a href="https://en.wikipedia.org/wiki/Data_URI_scheme">Data URI</a>.
+        </p>
+        <p>
+            This is only sometimes useful.
+        </p>
+    </div>
+
+    <div class='figure'>
+        <h3>Pictured: A Picture</h3>
+        <img src="images/chapter3/hot_dog.jpg">
+    </div>
+
+    <p>
+        The <code>title</code> attribute can be used to provide pop-over text for an image.
+    </p>
+
+    <p>
+        The <code>alt</code> attribute should be used to provide screen-reader text for an image,
+        to help the visually impaired.
+    </p>
+
+    <pre>
+    <code class='html'>
+&lt;img src="images/chapter3/hot_dog.jpg"
+    alt="A picture of a hot dog"
+    title="Do I look like I know what a JPEG is? I just want a picture of a god-dang hot dog."&gt;
+    </code>
+    </pre>
+
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <h4>Image Formats And You</h4>
+        <p>
+            If we're going to post pictures to the internet, we're quickly going to run abreast
+            of the myriad different image formats that exist, the most popular of which include
+            <abbr title="Bitmap">BMP</abbr>,
+            <abbr title="Joint Photographic Experts Group">JPEG</abbr>,
+            <abbr title="Portable Network Graphics">PNG</abbr>,
+            and
+            <abbr title="Graphics Interchange Format">GIF</abbr>.
+        </p>
+        <p>
+            Each format has its strengths and weaknesses &mdash;
+            <abbr title="Joint Photographic Experts Group">JPEG</abbr> files are great at reproducing
+            photographic images but terrible for text content, <abbr title="Graphics Interchange Format">GIF</abbr>
+            files can be animated but are limited to 256 colors at best,
+            <abbr title="Bitmap">BMP</abbr> files are great when it's 1995...
+        </p>
+        <p>
+            <strong>When in doubt, just use a <abbr title="Portable Network Graphics">PNG</abbr> file.</strong>
+            It's the most versatile mix of compression and clarity for <em>most</em> purposes.
+        </p>
+        <p>
+            For much, much more detail, check out
+            <a href="https://99designs.ca/blog/tips/image-file-types/">this article</a>.
+        </p>
+    </div>
+
+    <div class='figure'>
+        <h3>Pictured: A Picture With Pop-Over Text and Alt Text</h3>
+        <img src="images/chapter3/hot_dog.jpg"
+            alt="A picture of a hot dog"
+            title="Do I look like I know what a JPEG is? I just want a picture of a god-dang hot dog.">
+    </div>
+
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h4>Image Editing Tools</h4>
+        <p>
+            If we're going to add images to our websites, we're going to want
+            some tools that make editing images and exporting them in a
+            wide variety of formats easier.
+        </p>
+        <p>
+            For a free, powerful image editing program, I recommend
+            <a href="https://www.gimp.org/">GIMP</a>, the GNU Image Editing Program.
+        </p>
+        <p>
+            While I use and pay for Adobe Photoshop, I can't in good faith
+            recommend it &mdash;
+            it's expensive and only runs on Mac and Windows.
+        </p>
+    </div>
 
 
-    <h5>Divisions &amp; Sections</h5>
+    <h5> Divisions, Sections, and Asides </h5>
 
-    <h5>Emphasis, Strong, and Abbreviations</h5>
-    -->
+    <p>
+        We're not going to talk about divisions and sections until we get to the chapter on CSS.
+    </p>
 
-    <!-- Absolute vs. Relative Linking -->
+    <p>
+        They're important, but they're not really visible until we start to style things.
+    </p>
 
-    <!--
-    <h5>Images </h5>
-    -->
+    <h5> Audio &amp; Video </h5>
 
-    <!-- A Brief Walk through the Image Formats -->
+    <p>
+        It's possible to embed both audio and video content in the browser. This is a relatively
+        new feature.
+    </p>
 
-    <!-- Base64 inline images -->
+    <div class='left-aside-arrow'> </div>
+    <div class='left-aside aside'>
+        <p>
+            Be careful with the <code>&lt;audio&gt;</code> tag &mdash;
+            at some point it was decided by a committee of elders that
+            websites with sound were hopelessly tacky.
+        </p>
+    </div>
 
-    <!--
-    <h5>Fragment Identifiers</h5>
+    <p>
+        Let's look at some!
+    </p>
 
-    <h5>Tags That Are Pretty Safe To Ignore</h5>
+    <pre>
+    <code class='html'>
+
+&lt;audio controls&gt;
+  &lt;source src=&quot;horse.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+  &lt;source src=&quot;horse.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+  Your browser does not support the audio element.
+&lt;/audio&gt;
+
+&lt;video width=&quot;320&quot; height=&quot;240&quot; controls&gt;
+  &lt;source src=&quot;movie.mp4&quot; type=&quot;video/mp4&quot;&gt;
+  &lt;source src=&quot;movie.webm&quot; type=&quot;video/webm&quot;&gt;
+  Your browser does not support the video tag.
+&lt;/video&gt;
+
+    </code>
+    </pre>
+
+    <p>
+        The <code>audio</code> and <code>video</code> tags work a little bit differently
+        than the <code>img</code> tag. Instead of having just one <code>src</code> attribute,
+        these tags wrap multiple <code>source</code> tags that each have their own <code>src</code>
+        attribute.
+    </p>
+
+    <p>
+        The reason for this is that the browser can cycle through the various sources until
+        it finds a source type that it supports &mdash; not all browsers support all of the different
+        audio and video types.
+        If a browser is too old to understand
+        the <code>audio</code> or <code>video</code> tag, it will just display the text
+        contained within the tag: "Your browser does not support the video tag".
+    </p>
+
+    <p>
+        Like with images, there are lots of different potential file formats for both audio and video files.
+    </p>
+
+    <h4> Frames and iFrames </h4>
+
+    <p>
+
+    </p>
+
+    <h4> Many More Tags </h4>
+
+    <p>
+        I feel like we've covered enough <abbr title="HyperText Markup Language">HTML</abbr>
+        tags that we can get a good start on building a webpage,
+        but there are lots of other tags, like <code>abbr</code>, <code>form</code>, and <code>input</code>
+        that we'll have to touch on in later chapters.
+    </p>
+
+    <p> <a href='https://www.w3schools.com/tags/default.asp'>Here's a list of tags</a>.</p>
 
     <h3> Validation </h3>
-    -->
+
+    <p>
+
+    </p>
+
+
+    <h3> Summary </h3>
 
     <p id="end" class="ohno">
         <strong> Oh no! </strong> This is as far as I've written!
