@@ -91,7 +91,7 @@
     </p>
 
     <p>
-        This book was last updated <strong class='book_last_update'>June 6, 2017</strong>.
+        This book was last updated <strong class='book_last_update'>June 17, 2017</strong>.
         If that's a <em>long time ago</em>, I might have died. Avenge me!
     </p>
 
@@ -3602,6 +3602,17 @@ See also _laziness and impatience_.
 
     <h4> Doctype </h4>
 
+    <div class='right-aside-arrow'> </div>
+    <div class='right-aside aside'>
+        <h3>Mozilla Will Help</h3>
+        <p>
+            I'm trying my best, here, but Mozilla's
+            <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML">Introduction to HTML</a>
+            is much more comprehensive than mine.
+        </p>
+    </div>
+
+
     <p>
         <abbr title="HyperText Markup Language">HTML</abbr>
         has many versions at this point &mdash;
@@ -4858,10 +4869,14 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
     <h4> iFrames </h4>
 
     <p>
-        Frames aren't a thing anymore. They're no longer part of the 
+        <code>frame</code> was a tag that allowed for webpages to be constructed
+        out of parts of other pages.
+    </p>
+
+    <p>
+        Frames aren't a thing anymore, though. They're no longer part of the
         <abbr title="HyperText Markup Language">HTML</abbr>
-        specification. They were a tag that allowed for webpages to be constructed 
-        of parts of other pages. 
+        specification. <a href="https://en.wikipedia.org/wiki/Framing_(World_Wide_Web)">Frames are dead.</a>
     </p>
 
     <p>
@@ -4869,10 +4884,18 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
     </p>
 
     <p>
-        It allows for a webpage to be embedded within a webpage. 
+        It allows for a webpage to be embedded within a webpage.
     </p>
 
-    <iframe src="http://google.com"> </iframe>
+    <iframe src="ex10.html"> </iframe>
+
+    <pre>
+    <code class='html'>
+ &lt;iframe src=&quot;ex10.html&quot;&gt; &lt;/iframe&gt;
+
+    </code>
+    </pre>
+
 
     <h4> Many More Tags </h4>
 

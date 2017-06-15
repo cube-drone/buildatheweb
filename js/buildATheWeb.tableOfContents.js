@@ -113,7 +113,7 @@ var renderHeader = function(treeObj){
 
     elements.reverse();
 
-    let tocButton = $("<div class='tocbutton'>Table of Contents</div>")
+    let tocButton = $("<div class='tocbutton'>&#x1f4d6;</div>")
     tocButton.click(function(){
         $("#toc-full").toggle();
     });
