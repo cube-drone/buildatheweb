@@ -4965,12 +4965,32 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
         The <abbr title="Cascading Style Sheets">CSS</abbr> language is all about styling things.
     </p>
 
+    <h3>The Content Stays the Same</h3>
+
+    <p>
+        One of the foundational rules of <abbr title="Cascading Style Sheets">CSS</abbr> design is that
+        the content should be laid out in a way that makes styling it easy, but also that the
+        content should be laid out in such a way that the theme could <em>completely</em> change without
+        touching the <abbr title="HyperText Markup Language">HTML</abbr> at all.
+    </p>
+
+    <p>
+        An exemplar of this is the site <a href='http://www.csszengarden.com/214/'>CSS Zen Garden</a>,
+        which has the exact same content rendered a few hundred different ways, using nothing but a succession
+        of different stylesheets.
+    </p>
+
+    <h3>CSS is Made of Many Small Rules</h3>
+
+    <p>
+        <abbr title='Cascading Style Sheets'>CSS</abbr> is composed of many small rules, each responsible
+        for the display rules controlling a handful of elements.
+    </p>
+
     <p>
         A <abbr title="Cascading Style Sheets">CSS</abbr> rule is composed of two parts:
         the <strong>selector</strong> and <strong>properties</strong>.
     </p>
-
-    <h3>Selectors and Properties</h3>
 
     <p>
         The <strong>selector</strong> is a part of the CSS rule that defines which
@@ -4983,9 +5003,11 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
         the object &mdash; for example, <em>should be blue</em> or <em>should be really big</em>.
     </p>
 
+    <h3>Selectors</h3>
+
     <p>
         So, let's create a <abbr title="Cascading Style Sheets">CSS</abbr> rule that
-        defines that <em>just the h1 tag</em> should be <em>really blue</em> and <em>really big</em>.
+        defines that <em>just the <code>h1</code> tag</em> should be <em>really blue</em> and <em>really big</em>.
     </p>
 
     <pre>
@@ -4998,7 +5020,11 @@ h1 {
     </pre>
 
     <p>
-        This rule will do the trick. Let's add it to our HTML file and watch it in action.
+        Here, the <code>h1</code> is the selector, and everything between the curly braces are the properties.
+    </p>
+
+    <p>
+        Let's add this rule to our HTML file and watch it in action.
         We can do this with the <code>&lt;style&gt;</code> tag.
     </p>
 
@@ -5028,17 +5054,26 @@ h1 {
 
     <iframe src="ex11.html"></iframe>
 
-    <h3>With a Little Help From Our Friends</h3>
+    <p>Success! We've applied <code>color:blue;</code> and <code>font-size:300%</code> to the <code>h1</code> tag!</p>
 
-    <p>
-        The selector library allows us to select all sorts of things on a webpage to apply
-        different styles to them. We're going to talk about that a little more, but
-        the best way to learn this topic, I think, is interactively.
-    </p>
 
-    <p>
-        So, check out <a href="https://flukeout.github.io/">this interactive CSS selector tutorial</a>.
-    </p>
+    <div class='figure'>
+        <h4>With a Little Help From Our Friends</h4>
+
+        <p>
+            The selector library allows us to select all sorts of things on a webpage to apply
+            different styles to them. We're going to talk about that a little more, but
+            the best way to learn this topic, I think, is interactively.
+        </p>
+
+        <img src='images/chapter4/css_diner.png'>
+
+        <p>
+            So, check out <a href="https://flukeout.github.io/">this interactive CSS selector tutorial</a>.
+        </p>
+
+    </div>
+
 
 
     <p id="end" class="ohno">
