@@ -91,7 +91,7 @@
     </p>
 
     <p>
-        This book was last updated <strong class='book_last_update'>June 17, 2017</strong>.
+        This book was last updated <strong class='book_last_update'>June 21, 2017</strong>.
         If that's a <em>long time ago</em>, I might have died. Avenge me!
     </p>
 
@@ -4955,12 +4955,96 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 
     <h2> Chapter 4 - Cascading Style Sheets </h2>
 
+    <p>
+        It's all well and good to be able to author webpages, but we've come to expect
+        a little more graphical acuity from the modern internet. A little more punch.
+        A little more pizzazz. A touch more razzamatazz.
+    </p>
+
+    <p>
+        The <abbr title="Cascading Style Sheets">CSS</abbr> language is all about styling things.
+    </p>
+
+    <p>
+        A <abbr title="Cascading Style Sheets">CSS</abbr> rule is composed of two parts:
+        the <strong>selector</strong> and <strong>properties</strong>.
+    </p>
+
+    <h3>Selectors and Properties</h3>
+
+    <p>
+        The <strong>selector</strong> is a part of the CSS rule that defines which
+        <abbr title="Hypertext Markup Language">HTML</abbr> tags we are interested in
+        targeting &mdash; for example, <em>all header tags</em> or <em>just the h1 tag</em> or <em>paragraph text</em>.
+    </p>
+
+    <p>
+        The <strong>properties</strong> are a set of rules that define how to display
+        the object &mdash; for example, <em>should be blue</em> or <em>should be really big</em>.
+    </p>
+
+    <p>
+        So, let's create a <abbr title="Cascading Style Sheets">CSS</abbr> rule that
+        defines that <em>just the h1 tag</em> should be <em>really blue</em> and <em>really big</em>.
+    </p>
+
+    <pre>
+    <code class='css'>
+h1 {
+    color: blue;
+    font-size: 300%;
+}
+    </code>
+    </pre>
+
+    <p>
+        This rule will do the trick. Let's add it to our HTML file and watch it in action.
+        We can do this with the <code>&lt;style&gt;</code> tag.
+    </p>
+
+    <pre>
+    <code class='html'>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;CSS Example&lt;/title&gt;
+        &lt;meta name=&quot;description&quot; content=&quot;CSS&quot;&gt;
+        &lt;style&gt;
+            h1{
+                color: blue;
+                font-size: 300%;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt; Hello, world. &lt;/h1&gt;
+        &lt;p&gt; Well would you look at that? That h1 element is big and blue! &lt;/p&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+    </code>
+    </pre>
+
+    <iframe src="ex11.html"></iframe>
+
+    <h3>With a Little Help From Our Friends</h3>
+
+    <p>
+        The selector library allows us to select all sorts of things on a webpage to apply
+        different styles to them. We're going to talk about that a little more, but
+        the best way to learn this topic, I think, is interactively.
+    </p>
+
+    <p>
+        So, check out <a href="https://flukeout.github.io/">this interactive CSS selector tutorial</a>.
+    </p>
+
+
     <p id="end" class="ohno">
         <strong> Oh no! </strong> This is as far as I've written!
         Keep track of the <a href="https://github.com/classam/buildatheweb">project on GitHub</a> for updates!
     </p>
-
-
 
     <!--
 
