@@ -53,26 +53,28 @@ var register = function(hLevel, i, element){
     element.id = slugify($(element).html());
     $(element).html($(element).html().trim());
 
-    if(isChildOfClass(element, 'aside') || isChildOfClass(element, 'figure')){
+    if($(element).is("aside") || isChildOfClass(element, 'aside') || isChildOfClass(element, 'figure')){
         return;
     };
     var xheight = Math.round($(element).offset().top);
 
     tableOfContentsSparseArray[xheight] = {'level': hLevel, 'id':element.id,  'title': $(element).html()}
-
-    //console.log(hLevel, i, $(element).html(), $(element).offset().top);
 };
 
 var addToTree = function(tocEntry){
     var level = tocEntry.level;
 
-    let deepestChild = tableOfContentsTree;
+    var deepestChild = tableOfContentsTree;
 
     while(level > 1){
         if(deepestChild.children != null){
             deepestChild = deepestChild.children[deepestChild.children.length - 1];
         }
         level = level - 1;
+        //console.log(level);
+    }
+    if(deepestChild == null){
+        return false;
     }
     deepestChild.appendChild(tocEntry);
 }
@@ -100,11 +102,15 @@ var closestElement = function(scrollPosition){
 
 var renderHeader = function(treeObj){
 
-    let htmlelements = "";
-    let elements = new Array();
+    var htmlelements = "";
+    var elements = new Array();
 
     //console.log(treeObj.depth);
-    let currentObj = treeObj;
+    var currentObj = treeObj;
+
+    if(treeObj == null){
+        console.error("treeObj is null?!?");
+    }
 
     for(var i = 0; i < treeObj.depth; i++){
         elements.push(currentObj.data);
@@ -113,14 +119,14 @@ var renderHeader = function(treeObj){
 
     elements.reverse();
 
-    let tocButton = $("<div class='tocbutton'>&#x1f4d6;</div>")
+    var tocButton = $("<div class='tocbutton'>&#x1f4d6;</div>")
     tocButton.click(function(){
         $("#toc-full").toggle();
     });
 
-    let tocbar = $("<div class='tocshell'></div>");
+    var tocbar = $("<div class='tocshell'></div>");
     tocbar.append(tocButton);
-    tocbar.append(elements.map(function(el){return `<a href='#${el.id}'>${el.title}</a>`}).join(" &gt; "));
+    tocbar.append(elements.map(function(el){return "<a href='#"+el.id+"'>"+el.title+"</a>"}).join(" &gt; "));
 
     $("#toc-bar").html(tocbar);
 }
@@ -147,7 +153,7 @@ $(document).ready(function(){
 
     var tocHtmlArray = new Array();
     tableOfContentsTree.children[0].traverseDown(function(node){
-        tocHtmlArray.push(`\t<li class='toc-depth-${node.depth} toc-entry'><a href='#${node.data.id}'>${node.data.title}</a></li>`);
+        tocHtmlArray.push("\t<li class='toc-depth-"+node.depth+"'} toc-entry'><a href='#"+node.data.id+"'>"+node.data.title+"</a></li>");
     });
 
     var tocHtml = "<ul>" + tocHtmlArray.join("\n") + "</ul>";
@@ -174,8 +180,8 @@ var hideToc = debounce(function(){
 
 var generateLocation = debounce(function(){
     var scrollPosition = $(document).scrollTop();
-    let closest = closestElement(scrollPosition+200);
-    let treeObj = findInTree(closest);
+    var closest = closestElement(scrollPosition+200);
+    var treeObj = findInTree(closest);
 
     renderHeader(treeObj);
 
