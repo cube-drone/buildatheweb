@@ -129,7 +129,7 @@ pre code{
     background-color: #666;
 }
 
-.aside{
+aside{
     color: #444;
     position: absolute;
     width: 200px;
@@ -139,7 +139,7 @@ pre code{
     line-height: 1.2em;
 }
 
-.aside h1, .aside h2, .aside h3, .aside h4, .aside h5, .aside h6{
+aside h1, aside h2, aside h3, aside h4, aside h5, aside h6{
     margin-top: 0;
     color: CadetBlue;
 }
@@ -220,16 +220,16 @@ pre code{
     margin-top: -50px;
 }
 
-.aside blockquote{
+aside blockquote{
     margin-left: 8px;
 }
 
-.aside blockquote .citation{
+aside blockquote .citation{
     display: block;
     text-align: right;
 }
 
-.aside blockquote .citation:before{
+aside blockquote .citation:before{
     color: #666;
     content: "@";
     font-size: 1em;
@@ -237,7 +237,7 @@ pre code{
     margin-right: 0.1em;
 }
 
-.aside blockquote:before {
+aside blockquote:before {
     color: #666;
     content: ">";
     font-size: 2em;
