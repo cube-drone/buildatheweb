@@ -67,19 +67,15 @@
     <p>
         This is <strong>Build A The Web</strong>, a book devoted to taking us, people with
         basic programming and computer knowledge, and upgrading us into web programmers.
+        I am <a href="https://twitter.com/classam">Curtis Lassam</a> and I'll be your host.
     </p>
 
     <div class='left-aside-arrow'> </div>
     <aside class='left-aside aside'>
-        <h4>Halp</h4>
-        <p>
-            I'm starting this book assuming that we already know how to program a little bit!
-        </p>
-        <p>
-            To learn to program, I recommend this <em>other</em> open textbook:
-            <a href='http://openbookproject.net/thinkcs/python/english3e/'>How To Think Like a Computer Scientist</a>.
-        </p>
+        <h4>It Me</h4>
+        <img src="images/classam.png">
     </aside>
+
 
     <p>
         The best kind of textbook about
@@ -91,7 +87,7 @@
     </p>
 
     <p>
-        This book was last updated <strong class='book_last_update'>June 21, 2017</strong>.
+        This book was last updated <strong class='book_last_update'>July 16, 2017</strong>.
         If that's a <em>long time ago</em>, I might have died. Avenge me!
     </p>
 
@@ -137,25 +133,34 @@
         </p>
     </aside>
 
-    <h3> New Phone, Who Dis? </h3>
+    <h3>What are we going to learn?</h3>
 
     <p>
-        My name is <a href='https://twitter.com/classam'>Curtis Lassam</a>.
+        Becoming a web developer involves a lot of skills! This handy <a href="https://github.com/kamranahmedse/developer-roadmap">Web Developer Roadmap</a>
+        lays them out in a way that's pretty sensible, and we're going to try our best to carve a path through many of these skills that
+        leaves us ready to build some cool websites.
     </p>
 
-    <p>
-        I like to make sometimes humorous, sometimes educational content,
-        almost always on the topic of programming.
-    </p>
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <h4>Halp</h4>
+        <p>
+            I'm starting this book assuming that we already know how to program a little bit!
+        </p>
+        <p>
+            To learn to program, I recommend this <em>other</em> open textbook:
+            <a href='http://openbookproject.net/thinkcs/python/english3e/'>How To Think Like a Computer Scientist</a>.
+        </p>
+        <p>
+            If you can't code, you can still make it as far as the chapter on Javascript before you're going
+            to start to get in over your head.
+        </p>
+    </aside>
 
     <p>
-        I'm a web developer, a Vancouver native, and a <a href='http://cube-drone.com'>cartoonist</a>.
+        <strong>Okay, let's get started. Are you ready?</strong>
     </p>
 
-    <p>
-        Sometimes, I make <a href='https://www.youtube.com/user/IkoIkoComic'>videos</a>,
-        or do <a href='https://www.youtube.com/watch?v=IGwNQfjLTp0&t=1s'>conference talks</a>.
-    </p>
 
     <h2> Chapter 1: Request, Response </h2>
 
@@ -167,15 +172,10 @@
     <div class='right-aside-arrow'> </div>
     <aside class='right-aside aside'>
         <h4>Crash Course</h4>
+        <img src="images/chapter1/crash_course.png">
         <p>
             For a crash course in everything else in Computer Science, there's always
             <a href='https://www.youtube.com/watch?v=tpIctyqH29Q&list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo&index=1'>Crash Course Computer Science</a>.
-        </p>
-        <p>
-            They tell you that they are not going
-            to help you change the <abbr title="Cascading Style Sheets">CSS</abbr> on your
-            Grandma's sewing blog so visitor's cursors turn into kittens, though,
-            so there's still a <em>job for me to do, here</em>.
         </p>
     </aside>
 
@@ -291,6 +291,11 @@
         Believe me, that is the <em>last</em> thing that we want.
     </p>
 
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <img src="images/chapter1/math.gif">
+    </aside>
+
     <p>
         Fortunately, smart people have already solved most of these problems for us.
         The solutions to these problems stack up on top of another &mdash; at the bottom, electrical engineers
@@ -302,9 +307,24 @@
         We have two protocols at the very top of the stack that define how we communicate between computers &mdash;
         <abbr title="Internet Protocol">IP</abbr>,
         the <strong>Internet Protocol</strong>, which defines how we send messages across the network,
-        and <abbr title="Transport Control Procotol">TCP</abbr>, the <strong>Transport Control Protocol</strong>, which makes sure that
+        and <abbr title="Transport Control Protocol">TCP</abbr>, the <strong>Transport Control Protocol</strong>, which makes sure that
         our messsages completely arrive, in the right order, and uncorrupted.
     </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <h4>UDP</h4>
+        <p>
+            <abbr title="Transport Control Protocol">TCP</abbr> is often presented in relation to
+            <abbr title="User Datagram Protocol">UDP</abbr>, the User Datagram Protocol, which is a protocol
+            that is <em>also</em> built on top of the Internet Protocol.
+        </p>
+        <p>
+            <abbr title="User Datagram Protocol">UDP</abbr> doesn't worry about
+            error correction the way that TCP does &mdash; it's commonly used for applications like voice where
+            any extra overhead could hurt the performance of the underlying application.
+        </p>
+    </aside>
 
     <h3> Protocol &amp; Stack</h3>
 
@@ -321,6 +341,7 @@
 
     <div class='right-aside-arrow'> </div>
     <aside class='right-aside aside'>
+        <img src="images/chapter1/c3po.gif">
         <p>
             <strong>C&ndash;3P0</strong> was a protocol droid, because he was programmed with all of the rules
             for communicating with the various different cultures in the Galaxy Far Far Away.
@@ -1289,7 +1310,7 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
             without user intervention.
         </p>
         <p> Windows, perhaps wanting to divorce itself from the theological implications of
-            having a legion of demons under the hood, calls these services instead. </p>
+            having a legion of demons under the hood, calls these "services" instead. </p>
     </aside>
     </p>
 
@@ -1302,6 +1323,7 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
 
     <div class='left-aside-arrow'> </div>
     <aside class='left-aside aside'>
+        <img src="images/chapter2/grampa.jpg">
         <p>
             And in those days, nickels had pictures of bumblebees on them. Give me five bees for a quarter, you'd say.
         </p>
@@ -3955,6 +3977,8 @@ lines
 
     <div class='left-aside-arrow'> </div>
     <aside class='left-aside aside'>
+        <h3>MIME Types</h3>
+        <img src="images/chapter3/mime_cheating.gif">
         <p>
             <abbr title="Multimedia Internet Mail Extensions - Type">MIME Types</abbr>
             appear pretty often.
@@ -4005,6 +4029,14 @@ lines
         Let's start by just dropping a bunch of Charles Stross quotes in the <code>&lt;body&gt;</code>:
     </p>
 
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <p>
+            These are from a series of books called "<a href="https://en.wikipedia.org/wiki/The_Laundry_Files">The Laundry Files</a>", wherein
+            a lowly system administrator becomes a supernatural secret agent.
+        </p>
+    </aside>
+
     <pre>
     <code class='html'>
 &lt;!DOCTYPE html&gt;
@@ -4035,7 +4067,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
         browser, we get something that looks like this:
     </p>
 
-    <iframe src='ex3.html'></iframe>
+    <iframe src='examples/chapter3/ex3.html'></iframe>
 
     <p>
         We wanted those paragraphs to be separate! The
@@ -4084,7 +4116,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 </code>
     </pre>
 
-    <iframe src='ex4.html'></iframe>
+    <iframe src='examples/chapter3/ex4.html'></iframe>
 
     <p>There we go. </p>
 
@@ -4184,7 +4216,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 </code>
     </pre>
 
-    <iframe style='height:650px' src='ex5.html'></iframe>
+    <iframe style='height:650px' src='examples/chapter3/ex5.html'></iframe>
 
     <h5>Lists </h5>
 
@@ -4265,7 +4297,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 </code>
     </pre>
 
-    <iframe style='height:550px' src='ex6.html'></iframe>
+    <iframe style='height:550px' src='examples/chapter3/ex6.html'></iframe>
 
     <h5>So Boring. Dying. </h5>
 
@@ -4374,7 +4406,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
     </code>
     </pre>
 
-    <iframe style='height:200px' src='ex7.html'></iframe>
+    <iframe style='height:200px' src='examples/chapter3/ex7.html'></iframe>
 
     <p>
         Tables are pretty flexible about how you align them, but
@@ -4422,7 +4454,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
     </code>
     </pre>
 
-    <iframe style='height:200px' src='ex8.html'></iframe>
+    <iframe style='height:200px' src='examples/chapter3/ex8.html'></iframe>
 
     <div class='right-aside-arrow'> </div>
     <aside class='right-aside aside'>
@@ -4837,7 +4869,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
         <p>
             Be careful with the <code>&lt;audio&gt;</code> tag &mdash;
             at some point it was decided by a committee of elders that
-            websites with sound were hopelessly tacky.
+            <a href="https://ux.stackexchange.com/questions/88252/why-is-sound-sparingly-used-on-websites">websites with sound were hopelessly tacky</a>.
         </p>
     </aside>
 
@@ -4880,13 +4912,16 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
     </p>
 
     <p>
-        Like with images, there are lots of different potential file formats for both audio and video files.
+        Like with images, there are <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats">
+        lots of different potential file formats for both audio and video files</a> &mdash; although mostly we just
+        need to remember to use <abbr title="">mp3</abbr> for audio and <abbr title="">mp4</abbr> for video if
+        we want every browser to be able to play our files.
     </p>
 
     <h4> iFrames </h4>
 
     <p>
-        <code>frame</code> was a tag that allowed for webpages to be constructed
+        The <code>frame</code> tag was once a tag that allowed for webpages to be constructed
         out of parts of other pages.
     </p>
 
@@ -4901,18 +4936,40 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
     </p>
 
     <p>
-        It allows for a webpage to be embedded within a webpage.
+        It allows for a webpage to be embedded within a webpage. We've been looking at them every time
+        I've embedded a sample webpage into this one!
     </p>
 
-    <iframe src="ex10.html"> </iframe>
+    <iframe src="examples/chapter3/ex10.html"> </iframe>
 
     <pre>
     <code class='html'>
+ &lt;!-- this is the iframe--&gt;
  &lt;iframe src=&quot;ex10.html&quot;&gt; &lt;/iframe&gt;
 
     </code>
     </pre>
 
+    <pre>
+    <code class='html'>
+&lt;!-- this is the code that's inside the iframe--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;iFrame Example&lt;/title&gt;
+        &lt;meta name=&quot;description&quot; content=&quot;ifraaaaaame&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;h3&gt;This is an iFrame&lt;/h3&gt;
+        &lt;p&gt;It&apos;s an entirely different webpage, but it exists inline on this webpage. &lt;/p&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+
+    </code>
+    </pre>
 
     <h4> Many More Tags </h4>
 
@@ -4943,6 +5000,15 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
             <strong>this</strong> site</a>. If I've done my job, this should be completely empty, although
             I can guarantee you that it is probably not.
     </p>
+
+    <h3> Let's Put it All Together </h3>
+
+    <p>
+        We've learned a lot of stuff, put some tags together, but now, I think it's time to put together
+        a <abbr title="HyperText Markup Language">HTML</abbr> resume for my friend,
+        <strong>Dr. Frampton Q. Fakenamington</strong>.
+    </p>
+
 
 
     <h3> Chapter 3 Summary </h3>
@@ -4993,6 +5059,23 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
         has the exact same content rendered a few hundred different ways, using nothing but a succession
         of different stylesheets.
     </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <h3>Craft Beer</h3>
+        <p>
+            The creator of the CSS Zen Garden, <a href="https://twitter.com/mezzoblue">Dave Shea</a>, lives in Vancouver and got
+            really, really in to the local craft beer scene.
+        </p>
+
+        <img src="images/chapter4/beer.jpg">
+
+        <p>
+            He's responsible for both the local <a href="http://daveshea.com/projects/style-class/">Style &amp; Class</a>
+            meetup and the local <a href="http://daveshea.com/projects/farmhouse-fest/">Farmhouse Fest</a> beer festival.
+            If you're in Vancouver and you're interested in the web <em>or</em> beer, Dave is a hero amongst Daves.
+        </p>
+    </aside>
 
     <h3>CSS is Made of Many Small Rules</h3>
 
@@ -5066,7 +5149,7 @@ h1 {
     </code>
     </pre>
 
-    <iframe src="ex11.html"></iframe>
+    <iframe src="examples/chapter4/ex1.html"></iframe>
 
     <p>Success! We've applied <code>color:blue;</code> and <code>font-size:300%</code> to the <code>h1</code> tag!</p>
 

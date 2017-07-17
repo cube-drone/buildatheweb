@@ -56,7 +56,11 @@ h1{
 }
 
 h2{
-    margin-top: 250px;
+    margin-top: 300px;
+    padding: 10px;
+    padding-top: 200px;
+    color: #eee;
+    background-color: #226C70;
 }
 
 h3{
@@ -69,6 +73,10 @@ h4, h5, h6{
 
 h6{
     font-size: 80%;
+}
+
+p{
+    margin: 22px 12px;
 }
 
 a{
@@ -99,7 +107,7 @@ pre code{
 .code{
     font-family: inconsolata;
     overflow: hidden;
-    font-size: 60%;
+    font-size: 58%;
     background-color: #222;
     color: white;
     padding: 10px;

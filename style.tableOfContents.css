@@ -22,13 +22,13 @@
 }
 
 .tocshell .tocbutton{
-    border: 1px solid white;
     width: 35px;
     height: 35px;
     float: left;
+    margin-top: 5px;
     margin-right: 10px;
     cursor: pointer;
-    font-size: 170%;
+    font-size: 130%;
     line-height: 1em;
     padding: 3px;
 }
