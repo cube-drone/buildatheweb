@@ -5303,6 +5303,10 @@ h1 {
     </p>
 
     <p>
+        A class allows us to apply a style to a group of elements.
+    </p>
+
+    <p>
         What we can do is mark it with the telephone class:
     </p>
 
@@ -5315,7 +5319,11 @@ h1 {
     </pre>
 
     <p>
-        Then, we can write a CSS rule that makes all telephone numbers <strong>bold</strong>.
+        Then, we can write a <abbr title="Cascading Style Sheets">CSS</abbr> rule that makes all telephone numbers <strong>bold</strong>.
+    </p>
+
+    <p>
+        Class selectors in <abbr title="Cascading Style Sheets">CSS</abbr> start with the <code>.</code> character.
     </p>
 
     <pre>
@@ -5326,9 +5334,90 @@ h1 {
     </code>
     </pre>
 
+    <iframe src="examples/chapter4/ex2.html"></iframe>
+
     <p>
-        An <strong>ID</strong> allows us to mark a <em>single</em> element,
-        and a <strong>class</strong> allows us to mark a whole <em>group</em> of elements.
+        That should do it. It's also possible to apply more than one class to the same object!
+    </p>
+
+    <pre>
+    <code class='html'>
+    &lt;p&gt;
+        &lt;a class=&quot;telephone bigger&quot; href=&quot;tel:+16045555555&quot;&gt;604-555-5555&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;a class=&quot;telephone smaller&quot; href=&quot;tel:+17785555555&quot;&gt;778-555-5555&lt;/a&gt;
+    &lt;/p&gt;
+    </code>
+    </pre>
+
+    <pre>
+    <code class='css'>
+    .telephone{
+        font-weight: bold;
+    }
+    .bigger{
+        font-size: 120%;
+    }
+    .smaller{
+        font-size: 80%;
+    }
+    </code>
+    </pre>
+
+    <iframe src="examples/chapter4/ex3.html"></iframe>
+
+    <p>
+        A class works for an object that might appear again and again on a page &mdash;
+        like telephone numbers, or dates &mdash; but sometimes we want to identify a single, unique object.
+        Let's imagine, for example, we had more than one telephone number, and we wanted to name them
+        different things.
+    </p>
+
+    <pre>
+    <code class='html'>
+    &lt;p&gt;
+        &lt;a class=&quot;telephone&quot; id=&quot;office_number&quot; href=&quot;tel:+16045555555&quot;&gt;604-555-5555&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;a class=&quot;telephone&quot; id=&quot;cel_number&quot; href=&quot;tel:+17785555555&quot;&gt;778-555-5555&lt;/a&gt;
+    &lt;/p&gt;
+    </code>
+    </pre>
+
+    <p>
+        We can select these identifiers using the <code>#</code> character.
+    </p>
+
+    <pre>
+    <code class='css'>
+    .telephone{
+        font-weight: bold;
+    }
+    #office_number{
+        color: fuchsia;
+    }
+    #cel_number{
+        color: red;
+    }
+    </code>
+    </pre>
+
+    <iframe src="examples/chapter4/ex4.html"></iframe>
+
+    <h5>Fragments</h5>
+
+    <p>
+        <strong>Why in the world would we ever use IDs?</strong> &mdash;
+        It seems like everything an ID can do, a class can do better!
+    </p>
+
+    <p>
+        The ID serves a double purpose, though! It's also possible to link directly to
+        an ID within a webpage. On this page, we can navigate directly to the
+        paragraph on <strong>Fragments</strong> (this paragraph) by navigating to
+        <a href="http://buildatheweb.com/#fragments">http://buildatheweb.com/#fragments</a>.
+        The reason that we can do this? The header element has the ID <code>fragments</code>.
     </p>
 
     <div class='figure'>
