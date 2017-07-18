@@ -8,9 +8,12 @@
 
 aside{
     position: relative !important;
-    margin: 10px !important;
+    margin: auto !important;
     border: 5px dashed CadetBlue;
     font-size: 100%;
+    width: 80% !important;
+    right: 0 !important;
+    left: 0 !important;
 }
 
 aside img{
