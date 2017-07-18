@@ -1,12 +1,20 @@
 
 .main{
-    width: inherit;
-    margin: inherit;
+    width: 100%;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 aside{
-    position: relative;
-    margin-top: inherit;
+    position: relative !important;
+    margin: 10px !important;
+    border: 5px dashed CadetBlue;
+    font-size: 100%;
+}
+
+aside img{
+    max-width: 300px !important;
 }
 
 aside h1, aside h2, aside h3, aside h4, aside h5, aside h6{
@@ -14,148 +22,7 @@ aside h1, aside h2, aside h3, aside h4, aside h5, aside h6{
     color: CadetBlue;
 }
 
-.right-aside-arrow{
+.right-aside-arrow, .left-aside-arrow, .long-arrow, .short-arrow, .tiny-arrow, .hang-right-aside-arrow, .hang-left-aside-arrow{
     display: none;
 }
 
-.left-aside-arrow{
-    display: none;
-}
-
-.long-arrow{
-    display: none;
-}
-
-.short-arrow{
-    display: none;
-}
-
-.tiny-arrow{
-    display: none;
-}
-
-.hang-right-aside-arrow{
-    display: none;
-}
-.hang-right-aside{
-    position: relative;
-}
-
-.hang-left-aside-arrow{
-    display: none;
-}
-.hang-left-aside{
-    position: relative;
-}
-
-.right-aside{
-    position: relative;
-}
-
-.right-aside img{
-    max-width: 190px;
-}
-
-.left-aside img{
-    max-width: 190px;
-}
-
-.left-aside{
-    position: relative;
-}
-
-.small-aside{
-    margin-top: inherit;
-}
-
-aside blockquote{
-    margin-left: 8px;
-}
-
-aside blockquote .citation{
-    display: block;
-    text-align: right;
-}
-
-aside blockquote .citation:before{
-    color: #666;
-    content: "@";
-    font-size: 1em;
-    line-height: 0.1em;
-    margin-right: 0.1em;
-}
-
-aside blockquote:before {
-    color: #666;
-    content: ">";
-    font-size: 2em;
-    line-height: 0.12em;
-    margin-right: 0.05em;
-    vertical-align: -0.1em;
-}
-
-blockquote .citation{
-    display: block;
-    text-align: right;
-}
-
-blockquote .citation:before{
-    color: #666;
-    content: "@";
-    font-size: 1em;
-    line-height: 0.1em;
-    margin-right: 0.1em;
-}
-
-blockquote:before {
-    color: #666;
-    content: ">";
-    font-size: 3em;
-    line-height: 0.1em;
-    margin-right: 0.1em;
-    vertical-align: -0.3em;
-}
-
-.figure{
-    padding: 10px 30px;
-    border: 5px solid #aaa;
-    background-color: white;
-}
-
-.figure h1, .figure h2, .figure h3, .figure h4, .figure h5, .figure h6{
-    margin-top: 10px;
-    color: #222;
-}
-
-.figure img{
-    max-width: 660px;
-    border: 2px solid #222;
-    margin: auto;
-}
-
-table{
-
-}
-
-table tr:nth-child(odd) {
-    background-color: #ddd;
-}
-
-table th{
-    padding: 10px;
-}
-
-table td{
-    padding: 10px;
-}
-
-.example{
-    width: 100%;
-    min-height: 300px;
-    background-color: white;
-    border-radius: 5px;
-}
-
-.ohno{
-    margin-top: 200px;
-}
