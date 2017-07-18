@@ -5,10 +5,46 @@
     display: none !important;
 }
 
+body{
+    font-size: 110%;
+    line-height: 1.3em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #226C70;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+h1{
+    padding-top: 100px;
+}
+
+h2{
+    margin-top: 300px;
+    padding: 10px;
+    padding-top: 200px;
+    color: #eee;
+    background-color: #226C70;
+}
+
+h3{
+    margin-top: 120px;
+}
+
+h4, h5, h6{
+    margin-top: 65px;
+}
+
+h6{
+    font-size: 80%;
+}
+
 img{
     width: 100%;
     max-width: 100%;
-    max-height: 400px;
+    max-height: 600px;
     margin: auto;
 }
 
@@ -19,6 +55,15 @@ aside{
     text-align: center;
 }
 
+aside img{
+    width: auto;
+    max-height: 300px;
+}
+
+aside h1, aside h2, aside h3, aside h4, aside h5, aside h6{
+    margin-top: 10px;
+}
+
 .hang-left-aside, .hang-right-aside{
     margin-top: 10px !important;
 }
@@ -27,8 +72,14 @@ aside{
     display: none;
 }
 
+code, .code{
+    font-family: inconsolata, "Courier New", monospace;
+    color: white;
+    background-color: black;
+    padding: 5px;
+}
 
-aside img{
-    width: auto;
-    max-height: 300px;
+
+iframe{
+    width: 100%;
 }
