@@ -10,6 +10,10 @@ body{
     line-height: 1.6em;
 }
 
+p{
+    margin-top: 20px;
+}
+
 h1, h2, h3, h4, h5, h6 {
     color: #226C70;
     font-family: Helvetica, Arial, sans-serif;
