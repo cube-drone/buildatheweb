@@ -1,31 +1,34 @@
 
-.main{
+/* let's try this instead */
+
+#toc-bar{
+    display: none !important;
+}
+
+img{
     width: 100%;
-    margin: 0;
-    padding-left: 10px;
-    padding-right: 10px;
+    max-width: 100%;
+    max-height: 400px;
+    margin: auto;
 }
 
 aside{
-    position: relative !important;
-    margin: auto !important;
-    border: 5px dashed CadetBlue;
-    font-size: 100%;
-    width: 80% !important;
-    right: 0 !important;
-    left: 0 !important;
+    background-color: #ccc;
+    border: 2px dashed #999;
+    padding: 10px;
+    text-align: center;
 }
 
-aside img{
-    max-width: 300px !important;
+.hang-left-aside, .hang-right-aside{
+    margin-top: 10px !important;
 }
 
-aside h1, aside h2, aside h3, aside h4, aside h5, aside h6{
-    margin-top: 0;
-    color: CadetBlue;
-}
-
-.right-aside-arrow, .left-aside-arrow, .long-arrow, .short-arrow, .tiny-arrow, .hang-right-aside-arrow, .hang-left-aside-arrow{
+.hang-left-aside-arrow, .hang-right-aside-arrow{
     display: none;
 }
 
+
+aside img{
+    width: auto;
+    max-height: 300px;
+}
