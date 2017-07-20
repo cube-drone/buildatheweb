@@ -5766,13 +5766,15 @@ h1 {
     <iframe class="example" src="examples/chapter4/ex7.html"></iframe>
 
     <p>
-        Looking at this example, what's the difference between <code>.big-ol-block:hover</code> and <code>.big-ol-block :hover</code>?
+        Looking at this example, what's the difference between <code>.big-ol-block:hover</code>
+        and <code>.big-ol-block :hover</code>?
     </p>
 
     <p>
-        It's the space, right? <code>.big-ol-block:hover</code> selects the <code>big-ol-block</code> class when <code>hover</code> is
-        applied to it, but <code>.big-ol-block :hover</code> selects <strong>any children</strong> of the <code>big-ol-block</code> class
-        &mdash; namely, the <code>p</code> element contained within.
+        It's the space, right? <code>.big-ol-block:hover</code> selects the <code>big-ol-block</code>
+        class when <code>hover</code> is applied to it, but <code>.big-ol-block :hover</code> selects
+        <strong>any children</strong> of the <code>big-ol-block</code> class that the cursor is
+        hovering over &mdash; namely, the <code>p</code> element contained within.
     </p>
 
     <div class='figure'>
@@ -5790,10 +5792,11 @@ h1 {
             So, check out <a href="https://flukeout.github.io/">this interactive CSS selector tutorial</a>.
             It covers everything I've covered, and much more!
         </p>
-
     </div>
 
-    <h4>The Cascade, Specificity, and Inheritance</h4>
+    <h4>Inheritance</h4>
+
+    <h4>The Cascade and Specificity</h4>
 
     <p>
         What happens when multiple rules <em>overlap?</em>
