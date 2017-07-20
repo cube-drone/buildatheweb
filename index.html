@@ -5677,11 +5677,102 @@ h1 {
     </p>
     <p>
         For example, an <code>a</code> link will have the pseudo-class <code>visited</code>, when the
-        client has already visited that link. Any class will have the psuedo-class <code>hover</code>,
+        client has already visited that link. Any element will have the psuedo-class <code>hover</code>,
         when the client's cursor is hanging over it.
     </p>
     <p>
+        The selector for pseudo-classes uses a <code>:</code> instead of a <code>.</code> &mdash; so,
+        a pseudo-class selector might look like this:
+    </p>
 
+    <pre>
+        <code class="css">
+:hover{
+    background-color: pink;
+}
+        </code>
+    </pre>
+
+    <p>
+        That's good, but that <abbr title="Cascading Stylesheets">CSS</abbr> rule will apply that
+        hover property to anything on the entire page! We can glom the hover property on to any
+        other selector, though, by combining them: <code>p:hover</code> or <code>.telephone:hover</code>.
+        Let's look at an example:
+    </p>
+
+    <pre>
+        <code class="html">
+    &lt;div class=&quot;big-ol-block&quot;&gt;
+        &lt;p&gt;Put your mouse over this&lt;/p&gt;
+    &lt;/div&gt;
+        </code>
+    </pre>
+
+    <pre>
+        <code class="css">
+        .big-ol-block{
+            width: 300px;
+            height: 200px;
+            background-color: blue;
+        }
+        .big-ol-block p{
+            color: white;
+        }
+        .big-ol-block:hover{
+            background-color: green;
+            width: 500px;
+        }
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter4/ex6.html"></iframe>
+
+    <h5>A Common Mistake With Pseudo Classes</h5>
+
+    <p>
+        Here's a mistake that I frequently make with these elements:
+    </p>
+
+    <pre>
+        <code class="html">
+    &lt;div class=&quot;big-ol-block&quot;&gt;
+        &lt;p&gt;Put your mouse over this&lt;/p&gt;
+    &lt;/div&gt;
+        </code>
+    </pre>
+
+    <pre>
+        <code class="css">
+        .big-ol-block{
+            width: 300px;
+            height: 200px;
+            background-color: blue;
+        }
+        .big-ol-block p{
+            color: white;
+        }
+        .big-ol-block:hover{
+            background-color: green;
+            font-size: xx-large;
+            width: 500px;
+        }
+        .big-ol-block :hover{
+            background-color: red;
+            font-family: monospace;
+        }
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter4/ex7.html"></iframe>
+
+    <p>
+        Looking at this example, what's the difference between <code>.big-ol-block:hover</code> and <code>.big-ol-block :hover</code>?
+    </p>
+
+    <p>
+        It's the space, right? <code>.big-ol-block:hover</code> selects the <code>big-ol-block</code> class when <code>hover</code> is
+        applied to it, but <code>.big-ol-block :hover</code> selects <strong>any children</strong> of the <code>big-ol-block</code> class
+        &mdash; namely, the <code>p</code> element contained within.
     </p>
 
     <div class='figure'>
