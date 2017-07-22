@@ -5263,7 +5263,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
         the object &mdash; for example, <em>should be blue</em> or <em>should be really big</em>.
     </p>
 
-    <h3>Selectors</h3>
+    <h3>Including CSS In Our Page</h3>
 
     <p>
         So, let's create a <abbr title="Cascading Style Sheets">CSS</abbr> rule that
@@ -5315,6 +5315,103 @@ h1 {
     <iframe class="example" src="examples/chapter4/ex1.html" style="min-height: 175px;"></iframe>
 
     <p>Success! We've applied <code>color:blue;</code> and <code>font-size:300%</code> to the <code>h1</code> tag!</p>
+
+    <p>
+        There are three ways to apply <abbr title="Cascading Stylesheets">CSS</abbr> styles to our pages:
+
+        <ul>
+            <li>By including it within the <code>style</code> tag, which we've just seen</li>
+            <li>By attaching a <abbr title="Cascading Stylesheets">CSS</abbr> file to the page</li>
+            <li>
+                By attaching <abbr title="Cascading Stylesheets">CSS</abbr> properties directly
+                to an <abbr title="HyperText Markup Language">HTML</abbr> element using the <code>style</code>
+                attribute.
+            </li>
+        </ul>
+    </p>
+
+    <h4>CSS File</h4>
+
+    <p>
+        If we have a lot of style to define &mdash; and we probably do &mdash; we can keep all of these style
+        definitions in a separate <code>.css</code> file.
+    </p>
+
+    <pre>
+        <code class="html">
+            &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;
+        </code>
+    </pre>
+
+    <p>
+        Here, we link to the <code>style.css</code> file. Any <abbr title="Cascading Stylesheets">CSS</abbr>
+        rules that we write in this file will be applied to this page.
+    </p>
+
+    <p>
+        Our <code>style.css</code> file might contain this:
+    </p>
+
+    <pre>
+        <code class="css">
+            h1{
+                color: blue;
+                font-size: 300%;
+            }
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter4/ex1.html" style="min-height: 175px;"></iframe>
+
+    <p>Success once more!</p>
+
+    <h4>Directly Applying CSS Properties</h4>
+
+    <p>
+        Finally, it's possible to apply <abbr title="Cascading Stylesheets">CSS</abbr>
+        properties directly to <abbr title="HyperText Markup Language">HTML</abbr> elements
+        using the <code>style</code> property.
+    </p>
+
+    <pre>
+    <code class='html'>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;CSS Example&lt;/title&gt;
+        &lt;meta name=&quot;description&quot; content=&quot;CSS&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1 style="color:blue; font-size:300%;"&gt; Hello, world. &lt;/h1&gt;
+        &lt;p&gt; Well would you look at that? That h1 element is big and blue! &lt;/p&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+    </code>
+    </pre>
+
+    <p>
+        When we do this, we don't need to bother with <em>selectors</em> &mdash; we've already
+        got the element that we want to apply this rule to, right here!
+    </p>
+
+    <iframe class="example" src="examples/chapter4/ex1.html" style="min-height: 175px;"></iframe>
+
+    <p>
+        Success once again! Any way we apply these styles to the <abbr title="Hypertext Markup Language">HTML</abbr>,
+        the result is always the same.
+    </p>
+
+
+    <h3>Selectors</h3>
+
+    <p>
+        The <strong>selector</strong> is a part of the <abbr title="Cascading Stylesheets">CSS</abbr>
+        rule that defines which
+        <abbr title="Hypertext Markup Language">HTML</abbr> tags we are interested in
+        targeting &mdash; so let's dig in a bit and learn how to select elements.
+    </p>
 
     <h4>Classes &amp; IDs</h4>
 
@@ -5568,10 +5665,10 @@ h1 {
     </pre>
 
     <p>
-        Let's imagine that we want to apply a style to each of the <code>td</code>
+        Let's imagine that we want to apply a property to each of the <code>td</code>
         elements in <code>a-simple-taxonomy-of-grainy-mustards</code>,
         but not in <code>ballpark-or-dijon</code>.
-        If we tried to apply a style directly to <code>td</code>, it would be applied to both!
+        If we tried to use the selector <code>td</code>, our property would be applied to both groups!
     </p>
 
     <p>
@@ -5618,6 +5715,8 @@ h1 {
             }
         </code>
     </pre>
+
+    <p>This selects all <code>td</code> elements that are children of <code>#a-simple-taxonomy-of-grainy-mustards</code>:</p>
 
     <iframe class="example" src="examples/chapter4/ex5.html"></iframe>
 
@@ -5794,19 +5893,190 @@ h1 {
         </p>
     </div>
 
-    <h4>Inheritance</h4>
-
-    <h4>The Cascade and Specificity</h4>
+    <h3>Properties</h3>
 
     <p>
-        What happens when multiple rules <em>overlap?</em>
+        The other half of the <abbr title="Cascading Stylesheets">CSS</abbr> rule is the list of <strong>properties</strong>
+        that define what we want the selected element to look like, like <code>font-family: Arial</code> or <code>color: blue</code>.
     </p>
 
-    <h5>!important</h5>
+    <h4>Inheritance</h4>
 
-    <h3>Style Rules</h3>
+    <p>
+        When we set some CSS properties in a rule, they apply not just to an element,
+        but to all children of that element.
+    </p>
+
+    <p>
+        For example, let's imagine that we want to change the font for the entire document
+        at once. We <em>could</em> use the wildcard selector:
+    </p>
+
+    <pre>
+        <code class="css">
+            * {
+                font-family: "Courier New", monospace;
+            }
+        </code>
+    </pre>
+
+    <p>
+        But if we just set the font for the <code>body</code> element, which wraps all content
+        on the page, all of the children of <code>body</code> will inherit that font.
+    </p>
+
+    <pre>
+        <code class="css">
+            body {
+                font-family: "Courier New", monospace;
+            }
+        </code>
+    </pre>
+
+    <p>
+        That makes it clearer when we want to use a different font for a different part of the page.
+    </p>
+
+    <pre>
+        <code class="css">
+            body {
+                font-family: "Courier New", monospace;
+            }
+            h1, h2, h3, h4, h5, h6{
+                font-family: "Arial", sans-serif;
+            }
+        </code>
+    </pre>
+
+    <pre>
+        <code class="html">
+&lt;h1&gt;Hello, world&lt;/h1&gt;
+
+&lt;p&gt;
+    We&apos;re a lazy, inattentive chef, so a sous vide is probably
+    a better purchase than a pressure cooker.
+&lt;/p&gt;
+
+&lt;h2&gt;Sous Vide&lt;/h2&gt;
+
+&lt;p&gt;
+    Sous vide is a cooking technique where we leave a
+    vacuum-sealed bag of our food in hot water for a long time.
+    It makes it really hard to overcook our food, because we
+    can forget it for hours and it doesn&apos;t matter.
+&lt;/p&gt;
+
+        </code>
+    </pre>
+
+    <iframe class='example' src="examples/chapter4/ex8.html"></iframe>
+
+    <p>
+        Some <abbr title="Cascading Stylesheets">CSS</abbr> properties do not inherit. Others do.
+        This definitely happens on a case-by-case basis, so the only way to really learn
+        which ones are which are a little bit of trial and error &mdash; hopefully, with
+        a bit of experience, this will become intuitive.
+    </p>
+
+    <h5>Inheritance Overwritten</h5>
+
+    <p>
+        An inherited property is always overwritten by an actual rule that sets the property.
+        If, for example, we were to have:
+    </p>
+
+    <pre>
+        <code class="css">
+            body {
+                font-family: "Courier New", monospace;
+            }
+            p {
+                font-family: Arial, sans-serif;
+            }
+        </code>
+    </pre>
+
+    <p>
+        In this case, the <code>p</code> element would inherit the <code>font-family: "Courier New", monospace;</code>
+        property from <code>body</code> &mdash; but immediately write over it with the <code>font-family: Arial, sans-serif;</code>
+        property of its own.
+    </p>
+
+    <h4>The Cascade</h4>
+
+    <p>
+        What happens when two different rules both select the same element and contain the same property?
+        How do we resolve <em>overlapping properties</em>?
+    </p>
+
+    <p>
+        Well, the rules that define how overlapping properties collide
+        are called
+        the <em>cascade</em>, and they're the reason that
+        <abbr title="Cascading Stylesheets">CSS</abbr> stands for
+        "Cascading Stylesheets", rather than just "Stylesheets".
+    </p>
+
+    <p>
+        For each property applied to an element, the priority of that
+        property is calculated based on its <strong>importance</strong>
+        then <strong>specificity</strong> then <strong>order</strong>.
+        Higher priority rules win out over lower priority rules,
+        but the final set of properties that are applied to an element
+        can be a combination of a set of properties from a variety of different
+        <abbr title="Cascading Stylesheets">CSS</abbr> rules.
+    </p>
+
+    <h5>Importance</h5>
+
+    <p>
+        The first rule of the cascade is that you do not talk about the cascade.
+    </p>
+
+    <p>
+        The second rule of the cascade is that a property with the <code>!important</code>
+        tag always wins over a property that doesn't have an <code>!important</code>
+        tag.
+    </p>
+
+    <pre>
+        <code class="css">
+            p {
+                font-family: "Courier New", monospace;
+                color: blue !important;
+                font-size: small;
+            }
+            p {
+                font-family: Arial, sans-serif !important;
+                color: red;
+                font-size: medium;
+            }
+            p {
+                font-family: "Times New Roman", serif;
+                color: green;
+                font-size: large !important;
+            }
+        </code>
+    </pre>
+
+    <pre>
+        <code class="html">
+    &lt;p&gt; This text should be large, blue, and in the Arial font &lt;/p&gt;
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter4/ex9.html" style="height:100px;min-height:100px;"></iframe>
+
+    <h5>Specificity</h5>
+
+
+    <h5>Order</h5>
 
     <h4>Font Stuff</h4>
+
+    <h5>The Web Safe Fonts</h5>
+
+    <h5>Using Strange Fonts</h5>
 
     <h4>Hex Colors</h4>
 
@@ -5818,12 +6088,11 @@ h1 {
 
     <h4>Position: Absolute</h4>
 
-    <h3>Including CSS Files</h3>
-
     <h3>Special CSS For Mobile</h3>
 
+    <h3>CSS Comments</h3>
 
-    <h3></h3>
+    <h3>Monkeying Around With The CSS Live</h3>
 
     <h3>Putting it All Together</h3>
 
