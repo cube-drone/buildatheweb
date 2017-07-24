@@ -6069,10 +6069,103 @@ h1 {
 
     <h5>Specificity</h5>
 
+    <p>
+        The next rule of the cascade is that <em>more specific</em> selectors always
+        win out over <em>less specific</em> selectors.
+    </p>
+
+    <ul>
+        <li>
+            Properties applied directly to an <abbr title="HyperText Markup Language">HTML</abbr> element have the
+            highest specificity.
+        </li>
+        <li>An ID selector (<code>#this</code>) is more specific than a class (<code>.this</code>)</li>
+        <li>A class is more specific than a type selector (<code>td</code>)</li>
+        <li>Selectors that chain children together (<code>table tr td</code>) are more specific than selectors that don't (<code>td</code>).</li>
+    </ul>
+
+    <pre>
+        <code class="css">
+            p {
+                font-family: "Courier New", monospace;
+                color: blue;
+                font-size: small;
+            }
+            /* an ID has the highest specificity */
+            #argle {
+                font-family: Arial, sans-serif;
+                color: red;
+                font-size: medium;
+            }
+            .bargle {
+                font-family: "Times New Roman", serif;
+                color: green;
+                font-size: x-large;
+            }
+            /* because it is part of a chain, p .bargle has higher specificity than just .bargle */
+            p .bargle {
+                font-family: Verdana, sans-serif;
+                color: pink;
+                font-size: xx-large;
+            }
+        </code>
+    </pre>
+
+    <pre>
+        <code class="html">
+    &lt;p id="argle" class="bargle"&gt; This text should be medium-sized,
+            red, and in the Arial font &lt;/p&gt;
+    &lt;p class="bargle"&gt; This text should be large, green,
+            and in the Times New Roman font &lt;/p&gt;
+    &lt;p&gt; This text should be small, blue,
+            and Courier New &lt;/p&gt;
+    &lt;p&gt; &lt;span class="bargle"&gt; This text should be extra large,
+             pink, and in the Verdana font &lt;/span&gt;&lt;/p&gt;
+        </code>
+    </pre>
+
+    <iframe src="examples/chapter4/ex10.html"></iframe>
+
 
     <h5>Order</h5>
 
-    <h4>Font Stuff</h4>
+    <p>
+        The final rule of the cascade is that, with all other things being equal, the last rule defined wins.
+    </p>
+
+    <pre>
+        <code class="css">
+            p {
+                font-family: "Courier New", monospace;
+                color: blue;
+                font-size: small;
+            }
+            p {
+                font-family: Arial, sans-serif;
+                color: red;
+                font-size: medium;
+            }
+            p {
+                font-family: "Times New Roman", serif;
+                color: green;
+                font-size: large;
+            }
+        </code>
+    </pre>
+
+    <pre>
+        <code class="html">
+    &lt;p&gt; This text should be large, green, and in the Times New Roman font &lt;/p&gt;
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter4/ex11.html" style="height:100px;min-height:100px;"></iframe>
+
+    <h4>Web Typography</h4>
+
+    <p>
+
+    </p>
 
     <h5>The Web Safe Fonts</h5>
 
@@ -6087,6 +6180,8 @@ h1 {
     <h4>Floats</h4>
 
     <h4>Position: Absolute</h4>
+
+    <h4>Flexbox</h4>
 
     <h3>Special CSS For Mobile</h3>
 
