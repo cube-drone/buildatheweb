@@ -6164,12 +6164,164 @@ h1 {
     <h4>Web Typography</h4>
 
     <p>
-
+        Fonts! They're a huge part of design and we're going to talk about them for a bit!
     </p>
 
-    <h5>The Web Safe Fonts</h5>
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <h4>Typeface</h4>
+        <blockquote>
+            "Many a typographic expert has haughtily corrected a beginner for mistakenly using the
+            word font when he or she should have said typeface."
+            <a class='citation' href="https://www.fastcodesign.com/3028971/whats-the-difference-between-a-font-and-a-typeface">John Brownlee</a>
+        </blockquote>
+        <p>
+            This makes the key error of imagining that there's such a thing as a "typographic expert"
+            or that we even remotely care what one of them would think.
+        </p>
+        <p>
+            That being said, the article is probably right &mdash; from a typographic standpoint, a font
+            refers to one set of characters in a much larger "font-family" that comprises a whole typeface
+            like "Arial".
+        </p>
+    </aside>
+
+    <p>
+        The typographic choices that we make surrounding our site's body text &mdash; the
+        text that we display when we're not displaying anything else &mdash; set
+        the design tone for the whole rest of the document, and the four choices
+        that matter the most are:
+    </p>
+
+    <ul>
+        <li>Font Choice</li>
+        <li>Font Size</li>
+        <li>Line Spacing</li>
+        <li>Line Length</li>
+    </ul>
+
+    <p>
+        We already know to avoid <span style="font-family:Times New Roman">Times New Roman</span>,
+        <span style="font-family: Arial">Arial</span>, and <span style="font-family:Comic Sans MS, Comic Sans, sans-serif">Comic Sans</span>
+        if we want to be taken seriously &mdash; but the world of stuffy typography nerds has
+        <a href="http://practicaltypography.com/summary-of-key-rules.html">many rules</a>, most
+        of which can be converted directly into <abbr title="Cascading Stylesheets">CSS</abbr> rules.
+    </p>
+
+    <h5>Font Choice &amp; The Web Safe Fonts</h5>
+
+    <p>
+        We can choose a font for our website using the <code>font-family</code> property.
+    </p>
+
+    <pre>
+        <code class="css">
+            body {
+                font-family: Helvetica;
+            }
+        </code>
+    </pre>
+
+    <p>
+        What do we do if our website visitor doesn't have
+        <span style="font-family:Helvetica;">Helvetica</span> installed on their computer?
+        The <code>font-family</code> property allows us to list a whole group of fonts. The browser will
+        try to use each one of these fonts in turn until it finds one that works.
+    </p>
+
+    <pre>
+        <code class="css">
+            body {
+                font-family: Helvetica, Arial, sans-serif;
+            }
+        </code>
+    </pre>
+
+    <p>
+        While some fonts, like <span style="font-family:Arial;">Arial</span>,
+        <span style="font-family:Times New Roman;">Times New Roman</span>,
+        <span style="font-family:Verdana;">Verdana</span>,
+        <span style="font-family:Georgia">Georgia</span>,
+        <span style="font-family:Courier New">Courier New</span>,
+        <span style="font-family:Arial Black">Arial Black</span>, and
+        <span style="font-family:Impact">Impact</span>
+        exist on virtually every computer, the browser also provides default fallback fonts called
+        <code>serif</code>, <code>sans-serif</code>, <code>monospace</code>, <code>cursive</code>,
+        and <code>fantasy</code>.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <h4>Serif's Up</h4>
+        <img src="images/chapter4/serif.png">
+
+        <p>
+            A <strong>serif</strong> is the small line attached to the end of a stroke
+            in some typefaces. A font is considered to be <strong>serif</strong>
+            if it has these small lines, and <strong>sans-serif</strong> if it does not.
+        </p>
+
+        <h4>Monospace</h4>
+
+        <p>
+            Monospace fonts, like <span style="font-family:Courier New">Courier New</span>,
+            differ from normal fonts in that each character takes up
+            exactly the same amount of vertical space.
+        </p>
+
+        <p>
+            This makes them popular with coders and old-timey typewriter enthusiasts,
+            but terrible for readability.
+        </p>
+    </aside>
 
     <h5>Using Strange Fonts</h5>
+
+    <p>
+        It's possible to embed fonts directly in to our webpages, allowing us to use
+        a typeface that our users don't have installed. This font &mdash; the one
+        that you're reading right now &mdash; is "Goudy Bookletter".
+    </p>
+
+    <p>
+        Currently, the best resource for this is <a href="https://fonts.google.com/">Google Fonts</a>,
+        which provides both an enormous library of useful fonts and a helpful
+        wizard to help install and configure these fonts in our pages.
+    </p>
+
+    <p>
+        It's important to note, though, that adding a large web font or two can significantly increase
+        the size of a webpage.
+    </p>
+
+    <h5>Font Size</h5>
+
+    <h5>Line Height</h5>
+
+    <h5>Line Width</h5>
+
+    <p>
+        Our typography guideline suggests that lines should be no more than 90 characters long.
+    </p>
+
+    <p>
+        We can set this using the <code>width</code> property.
+    </p>
+
+    <pre>
+        <code class="css">
+            p {
+                width: 90em;
+            }
+        </code>
+    </pre>
+
+    <p>
+        An <code>em</code> measurement is a measurement that works based on the width of the size of the "m"
+        in the current font &mdash; so, even if we change our font, or the size of our font,
+        our <code>p</code> elements will change
+        size so that they are still <code>90em</code> wide.
+    </p>
 
     <h4>Hex Colors</h4>
 
