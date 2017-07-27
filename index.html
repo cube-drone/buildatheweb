@@ -1020,1757 +1020,7 @@ X-Clacks-Overhead: GNU Terry Pratchett</pre>
         </li>
     </ul>
 
-
-    <h2> Chapter 2: Hello, World </h2>
-
-    <p>Theory is fun, but do you know what would be more fun? </p>
-
-    <p>Getting a server up and running!</p>
-
-    <p>By tradition, when computering, our first program is always a program to print
-        out 'hello, world'. </p>
-
-    <div class='figure'>
-        <img src='images/tattoo_1.jpg' alt='hello world, being tattooed on my arm'/>
-        <p>
-            You could, of course, broadcast the message "hello, world" by tattooing
-            it on your arm, as I have, but perhaps we should start with a less
-            permanent solution to the problem.
-        </p>
-    </div>
-
-    <div class='right-aside-arrow'> </div>
-    <aside class='right-aside aside'>
-        <h3>Hello, world</h3>
-        <p>
-            "Hello, world" is important to me (as you might have guessed), as a symbol
-            of learning by starting small.
-        </p>
-        <p>
-            Even experienced programmers start with "hello, world" in a new environment.
-            It's a great way to make sure that everything is configured properly.
-        </p>
-        <p>
-            The tradition started with Brian Kernighan at Bell Labs, with the introduction
-            of the C Language.
-        </p>
-    </aside>
-
-    <p>
-        This chapter is going to cover a lot of topics <em>very loosely</em> in order to
-        get us to a workable initial state. Don't worry &mdash; we'll be covering everything,
-        in depth, eventually.
-    </p>
-
-    <p>
-        We're going to be doing everything &mdash; absolutely everything &mdash; from
-        a Linux command line.
-    </p>
-
-    <p>
-        Both of these choices &mdash; Linux, and the command line &mdash; might seem
-        a little strange. Let's dig into them a bit.
-    </p>
-
-    <div class='left-aside-arrow'> </div>
-    <aside class='left-aside aside'>
-        <h3>GNU/Linux</h3>
-        <p>
-            <a href="https://www.gnu.org/gnu/why-gnu-linux.en.html">Some people</a>
-            believe that Linux should be called "GNU/Linux", on account of
-            Linux was partially built using tools provided by the GNU project.
-        </p>
-        <p>
-            However, if all things were named the way that they should be named,
-            IKEA would be called "Garbage Furniture Store" and all sandwiches
-            would be "Mayonnaise Sandwich" because without the mayonnaise they
-            are not really sandwiches at all.
-        </p>
-    </aside>
-
-    <h3> Linux </h3>
-
-    <p>
-        Fully half of web programming is server programming. In order to program
-        a server, we're going to need a server &mdash; a computer that stays online all
-        the time and responds to client requests.
-    </p>
-
-    <p>
-        We could use our home computer as a server, but:
-        <ul>
-            <li>Windows and Mac operating systems have an awkward tendency to
-                reboot themselves to install security updates and add features,
-                and this is not optional. </li>
-            <li>A home computer has all of its security defaults set in a way
-                that would be appropriate for a computer on a home network,
-                not a computer exposed to the tireless onslaught of the
-                public internet. </li>
-                <li>Unless we pay our <abbr title="Internet Service Provider">ISP</abbr>
-                extra for a static <abbr title="Internet Protocol">IP</abbr> address, our
-                home's <abbr title="Internet Protocol">IP</abbr>
-                address changes regularly, which means that it
-                will be difficult to find our computer. </li>
-            <li>Our home computer likely contains our own, personal, private information. </li>
-            <li>Doing other stuff on our home computer, like opening 80 browser tabs
-                while playing video games, could affect the performance of our server. </li>
-    <div class='right-aside-arrow'> </div>
-    <aside class='right-aside small-aside aside'>
-        <p>Only 80 tabs?</p>
-        <p>You are like a little <strong>baby</strong>.</p>
-    </aside>
-            <li> Unless we happen to have a home fibre connection, it's likely
-                that we're on an asymmetric connection to the internet &mdash; with downloads
-                <em>much</em> faster than uploads. For a server, though, it is the upload
-                speed that matters; serving a lot of traffic from our home internet
-                connection would be like trying to operate a Denny's through a foot-wide hole
-                &mdash; possible, but frustrating once we have more than one or two customers.
-            </li>
-        </ul>
-    </p>
-
-    <p>
-        These are not insurmountable problems, and building a home server out of a
-        spare computer is a fun and instructive project that I highly recommend.
-    </p>
-
-    <p>
-        With the home computer out as a server option, that leaves us renting server time
-        from someone else.
-    </p>
-
-    <p>
-        There are lots of reasons that we might choose Linux over Windows if we're
-        planning on running a server for a long time. Linux is lightweight. Linux is secure.
-        Linux is able to stay online for a very long time. The reason
-        for Linux's popularity as a server is very simple, though: <strong>Linux is free</strong>,
-        which generally makes server Linux the most cost-effective option.
-    </p>
-
-    <div class='right-aside-arrow'> </div>
-    <aside class='right-aside aside'>
-        <h3>Free or Four</h3>
-        <p>
-            In software, there are two meanings of free.
-        </p>
-
-        <p>
-            The first meaning is the obvious one, and the correct one:
-            free means "we don't have to pay for it".
-        </p>
-
-        <p>
-            But there's the other meaning of free, meaning the code
-            is <em>wild and free like an unbroken stallion</em>.
-            This is an alternative definition of free that has to do with
-            our freedom to legally take the code, modify it as we please,
-            and share it with others. Linux is also free in this way.
-        </p>
-
-        <p>
-            Many systems are one kind of free but not another - GitHub, for example,
-            is don't-have-to-pay free but not freeeeeeedom!-free, whereas Red Hat Linux
-            is freeeedom!-free but we still have to pay money dollars for it.
-        </p>
-    </aside>
-
-    <h4>"It's a UNIX system! I know this!"</h4>
-
-    <p>
-        Linux, like Mac OS X, is based on Unix, an operating system with an
-        almost half-century of history, only some of which involves
-        <a href="https://www.wired.com/2015/06/tech-time-warp-time-unix-saved-day-jurassic-park/">velociraptors</a>.
-        That half-century can be a double-edged
-        sword &mdash; the reason for strange design decisions is often shrouded
-        in some ancient
-        <a href="http://ergoemacs.org/emacs/emacs_kb_shortcuts_pain.html">obscure keyboard layout</a>.
-    </p>
-
-    <div class='left-aside-arrow'> </div>
-    <aside class='left-aside aside'>
-        <h3>Bell Labs &amp; Unix</h3>
-        <p>
-            If we're at all interested in computing history &mdash; and why
-            wouldn't we be, it's the <em>best history</em> &mdash; we're
-            going to hear Bell Labs come up a lot.
-        </p>
-        <p>
-            It was created by Alexander Graham Bell in 1925, as the
-            "Volta Laboratory and Bureau", a private research laboratory,
-            and has changed hands numerous times since then.
-        </p>
-        <p>
-            Since opening, the laboratory has been responsible for eight
-            different Nobel prizes between 1937 and 2014 &mdash; which gives
-            it more Nobel laureates than the University of British Columbia.
-        </p>
-        <p>
-            Bell Labs invented transistors in the fifties, invented
-            <abbr title="Charge-coupled Device">CCD</abbr>s in 2009,
-            and, in the sixties, discovered the cosmic background radiation that validated
-            the existence of the Big Bang.
-        </p>
-        <p>
-            Oh, and during a brief lull in the seventies, Bell Labs created
-            Unix and C, the most successful operating system and
-            programming language in the world.
-        </p>
-        <p> Way to go, Bell Labs. </p>
-
-    </aside>
-
-    <h4>Linux Distributions</h4>
-    <p>
-        One confusing thing about Linux is that we can't just crack open a laptop
-        and start running Linux on it &mdash; in fact, Linux really refers to
-        <strong>The Linux Kernel</strong>, which is the tiny beating heart
-        of the operating system.
-    </p>
-    <p>
-        There are lots of things that we think of as part of an operating system
-        &mdash; the window system, a desktop environment, the software that
-        comes pre-installed on the system, device drivers, installers,
-        Minesweeper &mdash; but the Linux Kernel doesn't come with any of these
-        things.
-    </p>
-
-    <p>
-        So, the complete kit required to make a computer actually do computer
-        things is called a <strong>Linux Distribution</strong>.
-    </p>
-
-    <p>
-        Popular distributions
-        include <strong>Ubuntu</strong>, <strong>Red Hat/Fedora</strong>, <strong>Mint</strong>,
-        <strong>Slackware</strong>, and <strong>Arch</strong>.
-    </p>
-
-    <p>
-        Different distributions focus on different priorities.
-        Some, like <strong>Mint</strong>, focus on being easy to use as a desktop OS.
-        <strong>Arch</strong> is highly configurable and optimizable, and
-        popular with the sort of people who drive a 1996 Nissan 300ZX Turbo
-        with a gigantic aftermarket spoiler and undercar lights.
-    </p>
-
-    <div class='right-aside-arrow'> </div>
-    <aside class='right-aside aside'>
-        <p>
-            Gentoo is for the sort of people who would buy the Arch user's car,
-            then take the aftermarket spoiler and lights off.
-        </p>
-    </aside>
-
-    <p>
-        <strong>Ubuntu</strong> started out resolutely trying to conquer the
-        desktop <abbr title="Personal Computer">PC</abbr>
-        market, but after a decade of mostly failing to do so, has
-        seemingly embraced its position as a competitive and pretty comprehensive
-        server operating system. I like Ubuntu, a lot, and it's the
-        distribution I'm going to be using as an example distribution.
-    </p>
-
-    <h3> The Command Line & The Secure Shell </h3>
-
-    <p>
-        Most systems work is still done with the command line.
-    </p>
-
-    <p>
-        While I'd love to say that this is because the command line is
-        inherently superior to all other methods of interaction
-        with a computer, the actual reasons are simple:
-        <ul>
-            <li>
-                It's easier to write a command line program than a
-                <abbr title="Graphical User Interface">GUI</abbr> program.
-            </li>
-            <li>
-                <abbr title="Secure Shell">SSH</abbr>
-            </li>
-        </ul>
-    </p>
-
-    <p>
-        <abbr title="Secure Shell">SSH</abbr>, or <strong>Secure Shell</strong>,
-        is one of the most important tools in our web programming arsenal.
-        <abbr title="Secure Shell">SSH</abbr> is a tool allowing for remote control of computers.
-    </p>
-
-    <div class='left-aside-arrow'> </div>
-    <aside class='left-aside aside'>
-        <img src="images/chapter2/ssh.png">
-        <p>
-            <a href="https://www.youtube.com/watch?v=zlv9dI-9g1U">This video provides a quick overview of SSH</a>.
-        </p>
-    </aside>
-
-    <p>
-        Most Linux distributions run the <abbr title="Secure Shell">SSH</abbr> daemon in the background, all the time,
-        and it's possible to log in to the computer directly with a username and
-        password.
-    </p>
-    <div class='right-aside-arrow'> </div>
-    <aside class='right-aside aside'>
-        <p>
-            <strong>Daemon</strong> is the Unix term for a program that runs in the background,
-            without user intervention.
-        </p>
-        <p> Windows, perhaps wanting to divorce itself from the theological implications of
-            having a legion of demons under the hood, calls these "services" instead. </p>
-    </aside>
-    </p>
-
-    <p>
-        But the <abbr title="Secure Shell">SSH</abbr> interface to a Linux computer doesn't come with any fancy doodads
-        or graphical user interfaces. Nope, dad-gummit, we have to control the system
-        by pulling up our suspenders, tying an onion to our belts, walking uphill
-        both ways, and using the command line interface.
-    </p>
-
-    <div class='left-aside-arrow'> </div>
-    <aside class='left-aside aside'>
-        <img src="images/chapter2/grampa.jpg">
-        <p>
-            And in those days, nickels had pictures of bumblebees on them. Give me five bees for a quarter, you'd say.
-        </p>
-        <p>
-            Now where were we? Oh yeah, the important thing was that I had an onion on my belt, which was the style
-            at the time. They didn't have white onions, becuase of the war. The only thing that you could
-            get was those big yellow ones.
-        </p>
-    </aside>
-
-    <h3> Let's Get This Terrible Party Started </h3>
-
-    <p>
-        First and foremost, we are going to need access to a command line.
-    </p>
-
-    <p>
-        If we're running Mac OS X, we can get to a command line, right now,
-        by opening the "Terminal" program &mdash; although
-        downloading <a href="https://www.iterm2.com/">iTerm2</a> gets us tabs and splits.
-    </p>
-
-    <div class='right-aside-arrow'> </div>
-    <aside class='right-aside aside'>
-        <h3>Tabs &amp; Splits</h3>
-        <p>
-            When we work with terminals, sooner or later we're going to have 10 of them open
-            at once. When this starts happening, having the ability to split them out
-            into separate tabs starts to become <em>way convenient</em>.
-        </p>
-        <p>
-            If you have a wide screen, it's also nice to be able to split the
-            terminal in half and have <em>twice as many terminals</em>.
-        </p>
-    </aside>
-
-    <p>
-        If we're running Windows, we can download <a href="https://git-scm.com/">Git</a>.
-        We're going to need Git anyways, it's the most widely used source control
-        tool on the market, but it also comes with the <em>easiest to configure unix-like console
-        available in Windows</em>. Move over, Cygwin.
-    </p>
-
-    <p>
-        If we're not in a hurry, we also might spend some time configuring
-        <a href="https://conemu.github.io/">ConEmu</a> to
-        <a href="https://gist.github.com/n3dst4/cc875d83401c06bd6faa">work with Git Bash</a>.
-        This gets us the tabs and the splits.
-    </p>
-    <div class='right-aside-arrow'> </div>
-
-
-    <h3>Code Directory & Project Root</h3>
-    <p>
-        Somewhere on our computer is our <strong>home directory</strong>. This is the root
-        for all of our personal files. In Windows, my home directory lives at
-        <code>C:\Users\Curtis</code>, whereas in Mac OS X, the home directory lives
-        in <code>/users/curtis</code>.
-    </p>
-
-    <p>
-        I'm fond of creating a directory, <code>code</code>, under the home root, as
-        my project root. Every different project I'm working on lives in this directory.
-        Then, I configure my terminal to open this directory when it starts up.
-    </p>
-
-    <p>
-        Let's open our terminal &mdash; be it Terminal, iTerm2, Git Bash, or ConEmu.
-    </p>
-
-    <div class='right-aside-arrow'> </div>
-    <aside class='right-aside small-aside aside'>
-        <h3> Shell Game </h3>
-        <p>
-            Technically, the <strong>terminal</strong> is the window that shows you
-            the <strong>shell</strong>, which is the program that actually handles
-            your interactions with the command prompt.
-        </p>
-        <p>
-            <strong>Bash</strong> is the Bourne Again Shell, the most common shell
-            for Linux systems.
-        </p>
-        <p>
-            <strong>SSH</strong> is the Secure Shell, a shell to remote systems.
-        </p>
-        <p>
-            <strong>sh</strong> stands for "Shell", and it refers to whatever
-            is the default shell on a system.
-        </p>
-        <p>
-            <strong>dash</strong> is a lightweight shell without the features
-            and functionality of Bash. In Debian and Ubuntu, <code>/bin/sh</code>
-            points to dash instead of bash, but bash is still the default shell
-            for users.
-        </p>
-    </aside>
-
-    <div class='figure'>
-        <img src='images/chapter2/terminal_1.png' alt="a terminal window"/>
-        <p>dat's some good terminal</p>
-    </div>
-
-    <p>
-        We're staring a <strong>command prompt</strong> in the face. That <code>$</code>
-        means that the terminal is ready for us to enter a command.
-    </p>
-
-    <h3>Let's Putter Around In The Terminal A Bit</h3>
-
-    <p>
-        I'm excited! I get to tell you about the <strong>most important</strong> shell commands!
-    </p>
-
-    <p>
-        Let's start by asking where we are, using the <strong>print working directory</strong> command,
-        <code>pwd</code>.
-    </p>
-
-    <pre class='code'>
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
-<span class='prompt'>$</span> pwd
-/c/Users/curtis/code</pre>
-
-
-    <h4> Tilde Swinton</h4>
-
-    <p>
-        So, we're at <code>/c/Users/curtis/code</code>, but the terminal says that
-        we're at <code>~/code</code>. What's the deal?
-    </p>
-
-    <div class='left-aside-arrow'> </div>
-    <aside class='left-aside small-aside aside'>
-        <h3> Symbol Puns </h3>
-        <p>
-            Part of the elaborate online story
-            <a href="http://www.mspaintadventures.com/?s=6">Homestuck</a>
-            features three programming languages,
-            each a different symbol pun.
-        </p>
-        <ul>
-            <li><code>~ATH</code> (til death)</li>
-            <li><code>^CAKE</code> (carrot cake)</li>
-            <li><code>DIS*</code> (disasterisk)</li>
-        </ul>
-        <p>
-            Notably, <code>~ATH</code> addresses
-            multithreaded programming with
-            <em>syntactically significant color indicating
-            different threads of execution</em>, which
-            is a pretty <del>awesome</del> hilarious idea.
-        </p>
-        <p>
-            It's unfortunate that
-            the language's <em>unbounded runtime</em>
-            and <em>fictional nature</em>
-            render the programming
-            language almost completely useless.
-        </p>
-    </aside>
-
-    <p>
-        <code>~</code>(tilde) is shorthand for "home".
-        Since our home is <code>/c/Users/curtis</code>, <code>~/code</code>
-        is shorthand for <code>/c/Users/curtis/code</code>.
-    </p>
-
-    <h4> MSYS </h4>
-    <p>
-        Follow-up question: why is it <code>/c/Users/curtis/code</code>
-        and not <code>C:\Users\curtis\code</code>?
-    </p>
-
-    <p>
-        Simulating Bash on Windows requires a layer to translate Windows concepts
-        into vaguely-Linux-shaped concepts. This is provided by MinGW &mdash; Minimalist GNU for Windows
-        &mdash; and MSYS, which is a collection of utilities like Bash ported to run on MinGW.
-    </p>
-
-    <p>
-        Linux doesn't support lettered-drive roots like <code>C:</code>, instead prefering
-        to have a single root for all drives, <code>/</code>.
-        Linux also uses forward slashes instead of backslashes.
-    </p>
-
-    <p>
-        MSYS and MinGW do this conversion for us, but the differences between Windows
-        and Linux are going to continue to bite us all the way throughout this journey.
-    </p>
-
-    <p>
-        Mac OS X, being built on top of a Unix system called "Darwin", doesn't suffer from
-        these problems.
-    </p>
-
-    <h4>Terminal Commands</h4>
-
-    <p>
-        Using the <strong>change directory</strong> command, <code>cd</code>, we can change
-        our directory.
-    </p>
-
-    <pre class='code'>
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
-<span class='prompt'>$</span> cd ~
-
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
-<span class='prompt'>$</span> pwd
-/c/users/curtis
-</pre>
-
-    <p> Look, we're home, now! </p>
-
-    <p> We can navigate to a specific directory: </p>
-
-    <div class='left-aside-arrow'> </div>
-    <aside class='left-aside aside'>
-        <h4> The Root Directory </h4>
-        <p>
-            The <code>/</code> directory is at the very base of
-            the filesystem tree, and thus, is the "root" directory.
-        </p>
-        <p>
-            "Root" is an overloaded term in the Linux world, because
-            just about everything is modelled as some kind of tree
-            structure. There's also a root <em>user</em>, and that's
-            a completely different thing that doesn't have anything
-            to do with the filesystem.
-        </p>
-    </aside>
-
-    <pre class='code'>
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
-<span class='prompt'>$</span> cd /
-
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>/</span>
-<span class='prompt'>$</span> cd /etc
-
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>/etc</span>
-<span class='prompt'>$</span>
-</pre>
-
-    <p> And we can use <code>ls</code> to display the contents of a directory: </p>
-
-    <pre class='code'>
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>/etc</span>
-<span class='prompt'>$</span> cd ~
-
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
-<span class='prompt'>$</span> ls
-AppData
-Application Data
-ConEmu
-Contacts
-Cookies
-Creative Cloud Files
-Embarrassing Pornography
-Even More Embarrassing Pornography
-Seriously, Goats and Stuff
-Desktop
-Documents
-Music
-NTUSER.DAT
-_vim
-_viminfo
-_vimrc
-code
-pip
-vimfiles
-</pre>
-
-    <p>Whoa. There's a lot of stuff in my home directory.</p>
-
-    <p>If there's no code directory in here, yet, we can make one, with <code>mkdir</code></p>
-
-    <pre class='code'>
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
-<span class='prompt'>$</span> mkdir code
-mkdir: cannot create directory 'code': File exists
-</pre>
-
-    <p>That doesn't work, because in my case, the code directory already exists. </p>
-
-    <p>Here's a good trick. Type in <code> cd c</code> and then hit the tab key.</p>
-
-    <pre class='code'>
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
-<span class='prompt'>$</span> cd code
-
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
-<span class='prompt'>$</span>
-    </pre>
-
-    <p>The terminal should auto-complete to the first thing that starts with a 'c'. If you press tab again, it'll
-        auto-complete to the second thing that starts with a 'c'. This is a very useful tool. </p>
-
-    <div class='figure'>
-        <p>All this computer hacking is making me thirsty. I think I'll order a TAB.</p>
-
-        <img src="http://i.imgur.com/rIePs33.jpg" alt="A dated Simpsons reference">
-
-        <div class='right-aside-arrow'> </div>
-        <aside class='right-aside aside'>
-            <p><em>This is a reference to a joke from an episode of The Simpsons that is now over 20 years old,
-            referencing a brand of diet cola that is only sold in the United States and Spain</em></p>
-        </aside>
-    </div>
-
-    <p> Let's create a directory for our hello world program. </p>
-
-    <pre class='code'>
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
-<span class='prompt'>$</span> mkdir hello_world
-
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
-<span class='prompt'>$</span> ls
-hello_world
-    </pre>
-
-    <p> Now let's delete that directory and then recreate it, just to be contrary. </p>
-
-    <pre class='code'>
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
-<span class='prompt'>$</span> rmdir hello_world
-
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
-<span class='prompt'>$</span> ls
-
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
-<span class='prompt'>$</span> mkdir hello_world
-
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
-<span class='prompt'>$</span> ls
-hello_world
-    </pre>
-
-    <p> We can use <code>cd</code> to jump in to the folder we've just created, and we can also
-        use <code>cd</code> with the special shortcut <code>..</code> to go up a level. </p>
-
-    <pre class='code'>
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
-<span class='prompt'>$</span> cd hello_world
-
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
-<span class='prompt'>$</span> cd ..
-
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
-<span class='prompt'>$</span> cd ..
-
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/</span>
-<span class='prompt'>$</span>
-hello_world
-    </pre>
-
-    <p> That feels like a pretty solid introduction to the command line. With these simple
-        tools we can zip around the filesystem creating directories like a pro!</p>
-
-    <div class='figure'>
-        <h4>Curtis's Big Sexy Terminal Cheat Sheet</h4>
-        <table>
-            <tr>
-                <th><code>ls</code></th> <td> list the contents of a directory </td>
-            </tr>
-            <tr>
-                <th><code>cd</code></th> <td> change the directory </td>
-            </tr>
-            <tr>
-                <th><code>pwd</code></th> <td> tell me what directory I'm in </td>
-            </tr>
-            <tr>
-                <th><code>mkdir</code></th> <td> make a directory </td>
-            </tr>
-            <tr>
-                <th><code>rmdir</code></th> <td> remove a directory </td>
-            </tr>
-            <tr>
-                <th><code>touch</code></th> <td> make a file </td>
-            </tr>
-            <tr>
-                <th><code>cat</code></th> <td> print a file </td>
-            </tr>
-            <tr>
-                <th><code>rm</code></th> <td> remove a file </td>
-            </tr>
-            <tr>
-                <th><code>cp</code></th> <td> copy </td>
-            </tr>
-            <tr>
-                <th><code>mv</code></th> <td> move </td>
-            </tr>
-            <tr>
-                <th><code>sudo</code></th> <td> i am an admin, let me do this thing </td>
-            </tr>
-        </table>
-
-        <p>
-            For a more in-depth introduction to Unix/Linux, you could always visit
-            this <a href="https://www2.cs.sfu.ca/~ggbaker/reference/unix/">Unix Tutorial for Beginners.</a>
-        </p>
-    </div>
-
-    <h3> Installing Ubuntu </h3>
-    <p>
-        This used to be a process that involved either running both Ubuntu and Windows/Mac OS X
-        on our primary computer, and switching from one to the other when we boot
-        up the computer &mdash; or, finding a junky old computer from around the house
-        and installing Ubuntu on that.
-    </p>
-    <div class='left-aside-arrow'> </div>
-    <aside class='left-aside aside'>
-        <p>
-            There's also
-            <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about">Bash on Ubuntu on Windows Subsystem for Linux</a>, which
-            is a new and exciting way to install Ubuntu on Windows, but it's
-            still <em>very beta</em>.
-        </p>
-    </aside>
-    <p>
-        With Virtual Machines, though, it's possible to run Ubuntu from within our primary operating
-        system. So we should definitely do that.
-        In fact, the toolset for doing this has become so easy to use that I've started
-        running a <em>different virtual machine for every project I'm working on</em>.
-    </p>
-    <div class='right-aside-arrow'> </div>
-    <aside class='right-aside small-aside aside'>
-        <p>
-            I built a computer with 32GB of RAM just to make this practical, although
-            I could also <em>just remember to turn the virtual machines off once in a while</em>.
-        </p>
-    </aside>
-
-    <p>
-        The tools that make this easy and free are <a href="https://www.virtualbox.org/">VirtualBox</a>
-        and <a href="https://www.vagrantup.com/">Vagrant</a>. Download and install these programs.
-    </p>
-
-    <h4>VirtualBox &amp; Vagrant</h4>
-
-    <p>
-        VirtualBox is software to run virtual machines. We could get away with
-        just using VirtualBox in our quest to install Ubuntu, but that would take
-        a lot of effort and clicking.
-    </p>
-
-    <p>
-        Vagrant is a wrapper around VirtualBox that provides a very hackable
-        command line interface and a gigantic repository of pre-created
-        operating system images. Installing an operating system with Vagrant
-        can be as easy as just picking it out of a catalogue and modifying a text
-        file.
-    </p>
-
-    <p>
-        One of the things I like most about Vagrant is that it's possible to configure
-        the entire operating system automatically. Instead of laboriously hand-configuring
-        the operating system every time we move to a new machine or accidentally bork
-        a database, we can just incinerate the virtual machine clean and summon a new one.
-    </p>
-
-    <p>Let's go back to our new 'hello_world' directory and type in <code>vagrant init</code></p>
-
-    <pre class='code'>
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
-<span class='prompt'>$</span> cd hello_world
-
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
-<span class='prompt'>$</span> vagrant init
-A `Vagrantfile` has been placed in this directory. You are now
-ready to `vagrant up` your first virtual environment! Please
-read the comments in the Vagrantfile as well as documentation
-on `vagrantup.com` for more information on using Vagrant.
-    </pre>
-
-    <p>
-        <code>vagrant init</code> creates for us a <strong>Vagrantfile</strong>. This file
-        describes all of the important details about the operating system we are about
-        to create &mdash; which Linux distribution we want, networking details, how much
-        <abbr title="Random Access Memory">RAM</abbr> it gets to use, and even, if we configure it right, the instructions for
-        setting up all of the software that runs on the operating system.
-    </p>
-
-    <p>Now it's time to open up the Vagrantfile in a text editor. </p>
-
-    <div class='right-aside-arrow short-arrow'></div>
-    <aside class='right-aside aside'>
-        <h4>Text Editor</h4>
-        <p>
-            I'm just going to assume that you have a programmer's text editor on your
-            computer that you like and are familiar with.
-        </p>
-        <p>
-            If you don't, go install <strong>Notepad++</strong> or <strong>SublimeText</strong>
-            or maybe <strong>Atom</strong>.
-        </p>
-    </aside>
-
-    <div class='hang-left-aside-arrow short-arrow' style="margin-top: 35px;"></div>
-    <aside class='hang-left-aside aside' style="margin-top: 0px;">
-        <h4>Ruby</h4>
-        <p>
-            Vagrantfiles are just ... Ruby.
-        </p>
-        <p>
-            If you wanted to write some Ruby code in here, you could.
-        </p>
-    </aside>
-
-    <div class='hang-right-aside-arrow long-arrow' style="margin-top: 283px;"></div>
-    <aside class='hang-right-aside aside' style="margin-top: 240px;">
-        <h4>1. Base Box</h4>
-        <p>
-            This is where we decide what linux distribution to use.
-        </p>
-        <p>
-            We're going to replace <code>"base"</code> with <code>"ubuntu/xenial64"</code>.
-        </p>
-    </aside>
-
-    <div class='hang-left-aside-arrow short-arrow' style="margin-top: 473px;"></div>
-    <aside class='hang-left-aside aside' style="margin-top: 450px;">
-        <h4>2. Port Forward</h4>
-        <p>
-            This is where we forward port 8080 on our outer computer to port 80 on the
-            virtual machine, by uncommenting this line.
-        </p>
-    </aside>
-
-    <div class='hang-right-aside-arrow' style="margin-top: 760px;"></div>
-    <aside class='hang-right-aside aside' style="margin-top: 700px;">
-        <h4>3. Folder Sync</h4>
-        <p>
-            We are going to sync a folder on our outer computer to a folder on the
-            virtual machine by editing this line.
-        </p>
-    </aside>
-
-    <pre>
-    <code class='ruby'>
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-
-# All Vagrant configuration is done below. The "2" in Vagrant.configure
-# configures the configuration version (we support older styles for
-# backwards compatibility). Please don't change it unless you know what
-# you're doing.
-Vagrant.configure(2) do |config|
-  # The most common configuration options are documented and commented below.
-  # For a complete reference, please see the online documentation at
-  # https://docs.vagrantup.com.
-
-  # Every Vagrant development environment requires a box. You can search for
-  # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "base"
-
-  # Disable automatic box update checking. If you disable this, then
-  # boxes will only be checked for updates when the user runs
-  # `vagrant box outdated`. This is not recommended.
-  # config.vm.box_check_update = false
-
-  # Create a forwarded port mapping which allows access to a specific port
-  # within the machine from a port on the host machine. In the example below,
-  # accessing "localhost:8080" will access port 80 on the guest machine.
-  # config.vm.network "forwarded_port", guest: 80, host: 8080
-
-  # Create a private network, which allows host-only access to the machine
-  # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
-
-  # Create a public network, which generally matched to bridged network.
-  # Bridged networks make the machine appear as another physical device on
-  # your network.
-  # config.vm.network "public_network"
-
-  # Share an additional folder to the guest VM. The first argument is
-  # the path on the host to the actual folder. The second argument is
-  # the path on the guest to mount the folder. And the optional third
-  # argument is a set of non-required options.
-  # config.vm.synced_folder "../data", "/vagrant_data"
-
-  # Provider-specific configuration so you can fine-tune various
-  # backing providers for Vagrant. These expose provider-specific options.
-  # Example for VirtualBox:
-  #
-  # config.vm.provider "virtualbox" do |vb|
-  #   # Display the VirtualBox GUI when booting the machine
-  #   vb.gui = true
-  #
-  #   # Customize the amount of memory on the VM:
-  #   vb.memory = "1024"
-  # end
-  #
-  # View the documentation for the provider you are using for more
-  # information on available options.
-
-  # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
-  # such as FTP and Heroku are also available. See the documentation at
-  # https://docs.vagrantup.com/v2/push/atlas.html for more information.
-  # config.push.define "atlas" do |push|
-  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
-  # end
-
-  # Enable provisioning with a shell script. Additional provisioners such as
-  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
-  # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   sudo apt-get update
-  #   sudo apt-get install -y apache2
-  # SHELL
-end
-    </code>
-    </pre>
-
-    <h5>Picking a Box</h5>
-
-    <p>
-        In order to boot up an operating system, first, we have to pick a
-        <em>base box</em> &mdash; this is the blank, untouched, pristine
-        operating system that we are going to be working with.
-    </p>
-
-    <p>
-        A catalogue of base boxes exists <a href="https://atlas.hashicorp.com/boxes/search">here</a>.
-    </p>
-
-    <p>
-        We're going to choose <code>ubuntu/xenial64</code>.
-    </p>
-    <div class='right-aside-arrow'></div>
-    <aside class='right-aside aside'>
-        <h4>Xenial Xerus</h4>
-        <p>
-            Every release of Ubuntu has been paired with an Alliterative Animal name,
-            and they've been in alphabetical order
-            from 5.10 (Breezy Badger) all the way up to 17.04 (Zesty Zapus).
-        </p>
-        <p>
-            Every 4 years, Ubuntu also releases a <strong>LTS</strong> "Long Term Support"
-            version of Ubuntu, which is scheduled to keep getting attention and
-            security updates for 5 years after it launches. Xenial Xerus, 16.04, is the
-            most recent LTS version of Ubuntu, which is why we picked it.
-        </p>
-        <p>
-            Now, they're rolling around to the front of the alphabet again.
-        </p>
-        <p>
-            One tradition when rolling through the alphabet is to go "X", "Y", "Z", "AA", "BB".
-        <p>
-            They've
-            managed to find an "AA" animal, the "Artful Aardvark".
-        <p>
-            "BB" might B a little harder.
-        </p>
-    </aside>
-
-    <p> The line in the Vagrantfile pertaining to boxes will read: </p>
-
-    <pre>
-    <code class='ruby'>
-# Every Vagrant development environment requires a box. You can search for
-# boxes at https://atlas.hashicorp.com/search.
-config.vm.box = "ubuntu/xenial64"
-    </code>
-    </pre>
-
-    <h5>Forwarding Port 80</h5>
-
-    <p>
-        The virtual machine is going to be running a web server (spoiler alert)
-        on port 80. The only problem with that? The ports on the virtual machine
-        aren't accessible by default. We need to write a rule to connect
-        a port on our outer machine to a port on the virtual machine.
-    </p>
-
-    <p>
-        By convention, <code>8080</code> is popular port for developing
-        <abbr title="HyperText Transfer Protocol">HTTP</abbr> services,
-        so we're going to use that.
-    </p>
-
-    <p>
-        The VagrantFile already had this option ready for us &mdash; all we have to do
-        is remove the <code>#</code> character to turn the line from a comment into
-        real code.
-    </p>
-
-    <pre>
-    <code class='ruby'>
-# Create a forwarded port mapping which allows access to a specific port
-# within the machine from a port on the host machine. In the example below,
-# accessing "localhost:8080" will access port 80 on the guest machine.
-config.vm.network "forwarded_port", guest: 80, host: 8080
-    </code>
-    </pre>
-
-    <h5>Syncing a Folder</h5>
-
-    <p>
-        This is a more advanced feature, but one that's going to allow
-        us to edit our codebase on the virtual machine with
-        a graphical text editor on our host machine, and
-        that seems like it's going to be worth the effort.
-    </p>
-
-    <p>
-        First of all, let's create a folder to sync.
-    </p>
-
-    <pre class='code'>
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
-<span class='prompt'>$</span> mkdir html
-    </pre>
-
-    <p>
-        Then, let's sync that folder to a location within the virtual machine.
-    </p>
-
-    <p>
-        We could choose just about any location, but if we were to do something like
-        "accidentally sync over a whole lot of important system files", we would be in
-        for a world of trouble.
-    </p>
-
-    <p>
-        One spot that's generally safe is <code>/home/ubuntu/something</code>.
-        Vagrant boxes usually come with one user operating on them, already.
-        This one comes with a user named <code>ubuntu</code>, and that user's home
-        directory is <code>/home/ubuntu</code>, which means we can put anything
-        in there that we want.
-    </p>
-    <p>
-        &nbsp;
-    </p>
-
-<pre>
-<code>
-# Share an additional folder to the guest VM. The first argument is
-# the path on the host to the actual folder. The second argument is
-# the path on the guest to mount the folder. And the optional third
-# argument is a set of non-required options.
-config.vm.synced_folder "html", "/home/ubuntu/html"
-</pre>
-</code>
-
-    <h5> Pull the Lever, Kronk </h5>
-
-    <p> Save the Vagrantfile and we're ready to get started! </p>
-
-    <p> Let's turn the Virtual Machine on, with <code>vagrant up</code>.</p>
-
-    <pre class='code'>
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
-<span class='prompt'>$</span> vagrant up
-Bringing machine 'default' up with 'virtualbox' provider...
-==&gt; default: Checking if box...
-    </pre>
-
-    <p> Eventually a mountain of output will go by. </p>
-
-    <div class='left-aside-arrow'> </div>
-    <aside class='left-aside small-aside aside'>
-        <p>
-            Sometimes instead of good things, we'll see
-            <code>VT-x/AMD-V hardware acceleration is not available on your system.
-                Your 64-bit guest will fail to detect a 64-bit CPU and will not be able to boot.</code>
-        </p>
-        <p>
-            This is a bad thing. There are three different things we could do to get this working:
-            <ol>
-                <li>
-                    Turn on <abbr title="Intel Virtualization">VT-x</abbr>/<abbr title="Advanced Micro Devices Virtualization">AMD-V</abbr>
-                    in the BIOS
-                </li>
-                <li>
-                    <a href='https://superuser.com/questions/597121/vt-x-amd-v-hardware-acceleration-is-not-available-on-your-system'>
-                    Disable Windows Hyper-V</a>
-                </li>
-                <li>
-                    Abandon the 64-bit <abbr title="Virtual Machine">VM</abbr>
-                    and just run a 32-bit <abbr title="Virtual Machine">VM</abbr>.
-                </li>
-            </ol>
-        </p>
-    </aside>
-
-    <p> If that process went off without a hitch, we are good to go. </p>
-
-    <div class='right-aside-arrow'> </div>
-    <aside class='right-aside small-aside aside'>
-        <p>
-            If it didn't, <a href="https://github.com/classam/buildatheweb/issues">file an issue</a>
-            and we can try to work out what the problem was.
-        </p>
-    </aside>
-
-    <h5> Logging In </h5>
-
-    <p>
-        Finally, we can log in to our newly created Ubuntu operating system
-        with the command <code>vagrant ssh</code>.
-    </p>
-
-    <pre class='code'>
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
-<span class='prompt'>$</span> vagrant ssh
-Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-78-generic x86_64)
-
- * Documentation:  https://help.ubuntu.com
- * Management:     https://landscape.canonical.com
- * Support:        https://ubuntu.com/advantage
-
-  Get cloud support with Ubuntu Advantage Cloud Guest:
-    http://www.ubuntu.com/business/services/cloud
-
-0 packages can be updated.
-0 updates are security updates.
-
-
-Last login: Thu May 18 02:31:20 2017 from 10.0.2.2
-ubuntu@ubuntu-xenial:~$
-    </pre>
-
-    <p>
-        This is a whole new command line. The command line of the Ubuntu Virtual Machine.
-        We've got an Ubuntu server running inside our computer!
-    </p>
-
-    <p>
-        Take a moment for a brief celebration.
-    </p>
-
-    <h3> Installing a Web Server </h3>
-
-    <p>
-        We're not done, yet. Our server is running, yes, and we've made sure that,
-        if it listens on port 80, we can connect to it.
-    </p>
-
-    <p>
-        One problem, though &mdash; the server isn't listening on port 80.
-        This is just a server, right now. We need to install a <strong>web server</strong>
-        on our server server.
-    </p>
-
-    <p>
-        We can do that with the command <code>sudo apt-get install nginx</code>.
-    </p>
-
-    <p>
-        Whoa. There's a lot of stuff happening in that command. Let's unpack that a bit!
-    </p>
-
-    <h4>sudo</h4>
-
-    <p>
-        <code>sudo</code> stands for "<strong>su</strong>peruser <strong>do</strong>".
-    </p>
-
-    <p>
-        Linux is, by nature, a multi-user operating system. It's designed to have
-        many users logged in at once.
-    </p>
-
-    <div class='right-aside-arrow'> </div>
-    <aside class='right-aside aside'>
-        <h4>Mainframe</h4>
-        <p>
-            This is a holdover from the mainframe era of computing, where
-            there was only money for one computer (which filled an entire room)
-            and every user had a physical terminal connected to that
-            computer with their own login and home directory.
-        </p>
-    </aside>
-
-    <p>
-        In order to keep users from being able to access each other's files,
-        each file has a set of <strong>permissions</strong> that defines
-        who is able to see it, and many system functions are locked down
-        so that common users can't touch them.
-    </p>
-
-    <p>
-        <code>sudo</code> is a way of saying "I am the administrator and I can do whatever I like".
-    </p>
-
-    <div class='figure'>
-        <img src="images/chapter2/sandwich.png" alt="The 'sudo make me a sandwich' comic from XCKD'"/>
-    </div>
-
-    <p>
-        Not everybody has access to sudo &mdash; only admin users.
-    </p>
-
-    <div class='figure'>
-        <img src="images/chapter2/naughty.png" alt="The root user comic from XKCD"/>
-    </div>
-
-    <p> Superuser access is required to <em>install software</em> which is
-        what we wanted to to, here. </p>
-
-    <h4>apt-get install</h4>
-
-    <p><code>apt-get</code> is the command line interface to the
-        <a href="https://en.wikipedia.org/wiki/Advanced_Packaging_Tool">advanced packaging tool</a>,
-        which &mdash; and this is going to seem pretty magical if you're used to the way
-        that Windows does things &mdash; allows you to install any Ubuntu program, automatically,
-        with a single command.
-    </p>
-
-    <div class='left-aside-arrow'> </div>
-    <aside class='left-aside aside'>
-        <h4>Package Managers</h4>
-        <p>
-            Different Linuxes have different package managers. Ubuntu has <code>apt</code>,
-            Red Hat has <code>yum</code>, Arch has <code>pacman</code>, Gentoo has <code>portage</code>.
-        </p>
-        <p>
-            Mac OS X doesn't have a package manager by default, but some enterprising hackers
-            have stapled on <code>homebrew</code>, which is a <a href="https://www.slant.co/topics/523/~best-power-user-tools-for-macos">vital Mac tool</a>.
-        </p>
-        <p>
-            Windows remains a featureless wasteland.
-        </p>
-    </aside>
-
-    <p>Seriously. Want vim? Type <code>sudo apt-get install vim</code>. Want to install a program
-        that pipes your command output through
-        <abbr title="American Standard Code for Information Interchange">ASCII</abbr>-art cows? <code>sudo apt-get install cowsay</code>.
-        Want a steam locomotive? <code>sudo apt-get install sl</code>.</p>
-
-    <div class='right-aside-arrow'> </div>
-    <aside class='right-aside aside'>
-        <h4>Cowsay-whaaat?</h4>
-        <p>
-            By default, if cowsay is installed, the <em>professional, enterprise-grade automation software</em>
-            <strong>ansible</strong> will route all of its output through it.
-        </p>
-        <p>
-            This is awesome.
-        </p>
-    </aside>
-
-    <h4>nginx</h4>
-
-    <p>
-        <a href="https://en.wikipedia.org/wiki/Nginx">Nginx</a> is a fast, lightweight HTTP server.
-        It can also be configured to do a few other fun tricks, like act as a load balancer
-        or reverse proxy, but right now we're interested in just using Nginx to serve some
-        web page.
-    </p>
-
-    <h4>sudo apt-get install nginx</h4>
-
-    <p> Well, that's enough explanation. Let's get to it! </p>
-
-    <pre class='code'>
-ubuntu@ubuntu-xenial:~$ sudo apt-get install nginx
-    </pre>
-
-    <p>
-        This will ask us to confirm it by pressing <code>y</code>, then chug along
-        and eventually stop chugging. At this point, we have a web server!
-    </p>
-
-    <h4> Prove it </h4>
-
-    <p> Don't believe me? Open a browser and visit <code>localhost:8080</code> </p>
-
-    <div class='figure'>
-        <h3>Egads! It worked!</h3>
-        <img src="images/chapter2/nginx.png" alt="A blank NGINX webpage" />
-    </div>
-
-    <h5>localhost</h5>
-    <p>
-        This is a shortcut! <code>localhost</code> is a domain that always
-        resolves to <code>127.0.0.1</code>,
-        which is a special IP address that always resolves to <strong>this computer, the
-        one that I am using right now</strong>.
-    </p>
-
-    <h5>:8080</h5>
-    <p>
-        Earlier, I mentioned that the port that your browser connects to is always
-        the default port for the protocol &mdash; in the case of HTTP, that's <code>80</code>.
-        However, when we created the Virtual Machine, we specified that port 80 on the
-        Virtual Machine should correspond with port 8080 on the host machine.
-    </p>
-
-    <p>
-        When we enter a domain name, we can always add a colon and the port number to
-        specify that we're connecting to a non-standard port.
-    </p>
-
-    <h3> Creating a Basic HTML Document </h3>
-
-    <p>
-        Now that we've got a server running an
-        <abbr title="HyperText Transfer Protocol">HTTP</abbr> server, we need something
-        to <a href="https://www.youtube.com/watch?v=Iwtwb4g1qsk">serve</a>.
-    </p>
-
-    <p>
-        We're going to go into more detail about <abbr title="HyperText Markup Language">HTML</abbr> later,
-        but for now, let's create a very simple file, <code>index.html</code>
-        and put it in our <code>~/code/hello_world/html</code>
-        directory on our host computer
-    </p>
-
-    <div class='left-aside-arrow'> </div>
-    <aside class='left-aside aside'>
-        <h4>index.html</h4>
-        <p>
-            <code>index.html</code> is a special filename.
-        </p>
-        <p>
-            Technically, when we navigate to a website, we are always
-            supposed to indicate the file that we are asking for &mdash;
-            our <abbr title="Uniform Resource Locator">URL</abbr> should
-            end with <code>/whatever.html</code> or <code>/anything.jpg</code>
-            to indicate the file that we're looking for.
-        </p>
-        <p>
-            By convention, however, many web servers are configured to look
-            for <code>index.html</code> by default when no filename
-            is specified. This is because, when we enter a directory,
-            the index file would provide us a list of files in that directory.
-        </p>
-        <p>
-            So, remember &mdash; the <code>index.html</code> file is what
-            your web browser will serve if you don't request a specific file.
-        </p>
-    </aside>
-
-    <pre>
-    <code class='html'>
-&lt;!-- I go in ~/code/hello_world/html/index.html --&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;hello, world&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;hello, world&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-    </code>
-    </pre>
-
-    <p>
-        This file should now exist at <code>/home/ubuntu/html/index.html</code> on
-        our virtual machine.
-    </p>
-
-    <h3> Serving our HTML </h3>
-
-    <p>
-        By default, nginx serves the contents of a system directory, <code>/var/www/html</code>,
-        which contains the "hey, you're running nginx" message we saw earlier.
-    </p>
-
-    <p>
-        We could just copy our file into <code>/var/www/html</code>, but that's not the
-        satisfying solution that we want. No, we want to tell nginx to serve
-        from <code>/home/ubuntu/html</code> rather than <code>/var/www/html</code>
-        by changing nginx's configuration files!
-    </p>
-
-    <p>
-        One problem: nginx's configuration files are deep within the Ubuntu virtual machine,
-        not synced to anywhere on our host machine. We have to edit these configuration
-        files from <em>within the virtual machine</em>.
-    </p>
-
-    <h3> A Different Kind of Text Editor </h3>
-
-    <p>
-        Presumably, we're far enough along in the craft of programming to know that a
-        text editor is the software developer's multi-tool, and one's choice of text editor
-        is approximately as emotionally charged and contentious as one's choice of video
-        game console.
-    </p>
-    <div class='left-aside-arrow'> </div>
-    <aside class='left-aside small-aside aside'>
-        <p>
-            TurboGrafx 16 forever!
-        </p>
-    </aside>
-
-    <p>
-        But there's a problem &mdash; because we're working extensively with <abbr title="Secure Shell">SSH</abbr>,
-        and <abbr title="Secure Shell">SSH</abbr> is a command shell, with no mouse to speak of, we're going to need
-        a text editor that operates entirely from within the shell.
-    </p>
-
-    <p>
-        This leaves us, then, with about three different options:
-        <ul>
-            <li><strong>vim</strong>, my favourite, which is cryptic and difficult, but powerful</li>
-            <li><strong>emacs</strong>, which is even more cryptic and difficult, but even more powerful</li>
-            <li><strong>nano</strong>, which is quite easy to learn, but offers limited functionality</li>
-        </ul>
-    </p>
-
-    <div class='figure'>
-        <h4>Nano is Like a Spork</h4>
-        <img src='images/chapter2/198.png' alt="a comic that makes fun of nano users" />
-    </div>
-
-    <p>
-        As much as I want to push my pigheaded <strong>vim</strong> lust on to a new generation
-        of developers, nano is the easiest editor to get started with.
-    </p>
-
-    <div class='left-aside-arrow'> </div>
-    <aside class='left-aside small-aside aside'>
-        <p>
-            <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">"I've been programming in vim for 10 years. I don't like it, I just
-            can't figure out how to quit."</a>
-        </p>
-    </aside>
-
-    <div class='right-aside-arrow'> </div>
-    <aside class='right-aside aside'>
-        <h3>Making nano suck less</h3>
-        <p>
-            Part of the trouble with nano is that, by default,
-            it has very limited undo support and it doesn't
-            highlight code.
-        </p>
-        <p>
-            While this is an excuse by many to embrace a more powerful editor,
-            nano is quite capable of doing these things
-            with <a href="https://www.nano-editor.org/dist/v2.1/nanorc.5.html">a little bit of configuration</a>.
-        </p>
-        <p>
-            Making nano better is just a pebble in your eventual path
-            to the boulder that is learning Vim, though.
-        </p>
-    </aside>
-
-    <h3>Configuring Nginx</h3>
-
-    <pre class='code'>
-ubuntu@ubuntu-xenial:~$ sudo nano /etc/nginx/sites-available/default
-    </pre>
-
-    <h4>sudo again</h4>
-    <p>
-        Why <code>sudo</code>? Well, <code>/etc/nginx/sites-available/default</code> is a
-        system file, and we wouldn't normally have access to modify it.
-    </p>
-
-    <h4>/etc is for config</h4>
-    <p>
-        <code>/etc</code> is the directory that contains the configuration files
-        for most Linux systems. <strong>This is not a very good name</strong>.
-        They might as well have called this directory <code>/you/know/whatever</code>
-        or <code>/idfk</code> &mdash; or maybe, and I'm just spit-balling, here, <code>/config</code>,
-        but the insane tradition of calling this directory <code>/etc</code> lives on.
-    </p>
-
-    <h4>/sites-available/default</h4>
-    <p>
-        While the core configuration for nginx lives at <code>/etc/nginx/nginx.conf</code>,
-        all it does is reference a multitude of other files.
-    </p>
-    <p>
-        Sometimes I like to throw out all of the default configuration and just dump all
-        of my configuration directly into <code>nginx.conf</code>, but for this example
-        we're going to play ball with the rules and instead edit this
-        other configuration file.
-    </p>
-
-    <p>
-        Here's the configuration file:
-    </p>
-
-    <div class='hang-right-aside-arrow long-arrow' style="margin-top: 702px;"></div>
-    <aside class='hang-right-aside aside' style="margin-top: 670px;">
-        <h4>Here!</h4>
-        <p>
-            Here's the line we want to change.
-        </p>
-        <p>
-            We want this to read <code>root /home/ubuntu/html;</code>
-        </p>
-    </aside>
-    <pre>
-    <code>
-## /etc/nginx/sites-available/default
-##
-# You should look at the following URL's in order to grasp a solid understanding
-# of Nginx configuration files in order to fully unleash the power of Nginx.
-# http://wiki.nginx.org/Pitfalls
-# http://wiki.nginx.org/QuickStart
-# http://wiki.nginx.org/Configuration
-#
-# Generally, you will want to move this file somewhere, and start with a clean
-# file but keep this around for reference. Or just disable in sites-enabled.
-#
-# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
-##
-
-# Default server configuration
-#
-server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
-
-        # SSL configuration
-        #
-        # listen 443 ssl default_server;
-        # listen [::]:443 ssl default_server;
-        #
-        # Note: You should disable gzip for SSL traffic.
-        # See: https://bugs.debian.org/773332
-        #
-        # Read up on ssl_ciphers to ensure a secure configuration.
-        # See: https://bugs.debian.org/765782
-        #
-        # Self signed certs generated by the ssl-cert package
-        # Don't use them in a production server!
-        #
-        # include snippets/snakeoil.conf;
-
-        root /var/www/html;
-
-        # Add index.php to the list if you are using PHP
-        index index.html index.htm index.nginx-debian.html;
-
-        server_name _;
-
-        location / {
-                # First attempt to serve request as file, then
-                # as directory, then fall back to displaying a 404.
-                try_files $uri $uri/ =404;
-        }
-
-        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-        #
-        #location ~ \.php$ {
-        #       include snippets/fastcgi-php.conf;
-        #
-        #       # With php7.0-cgi alone:
-        #       fastcgi_pass 127.0.0.1:9000;
-        #       # With php7.0-fpm:
-        #       fastcgi_pass unix:/run/php/php7.0-fpm.sock;
-        #}
-
-        # deny access to .htaccess files, if Apache's document root
-        # concurs with nginx's one
-        #
-        #location ~ /\.ht {
-        #       deny all;
-        #}
-}
-
-
-# Virtual Host configuration for example.com
-#
-# You can move that to a different file under sites-available/ and symlink that
-# to sites-enabled/ to enable it.
-#
-#server {
-#       listen 80;
-#       listen [::]:80;
-#
-#       server_name example.com;
-#
-#       root /var/www/example.com;
-#       index index.html;
-#
-#       location / {
-#               try_files $uri $uri/ =404;
-#       }
-#}
-    </code>
-    </pre>
-
-    <p>
-        This is an awful lot of file to look at, but there's only one line that we're concerned about.
-        We need to change <code>root /var/www/html;</code> to read <code>root /home/ubuntu/html;</code>,
-        and then save the file.
-    </p>
-
-    <div class='right-aside-arrow'> </div>
-    <aside class='right-aside aside'>
-        <h4>Web Root</h4>
-        <p>
-            Here, we are making <code>/home/ubuntu/html</code> our
-            <strong>web root</strong> and serving everything in
-            that entire folder.
-        </p>
-    </aside>
-
-    <h4>Rebooting nginx</h4>
-
-    <p>
-        That change should do it, but none of our configuration changes will take effect
-        until we <em>reboot nginx</em>.
-    </p>
-
-    <pre class='code'>
-ubuntu@ubuntu-xenial:~$ sudo service nginx restart
-    </pre>
-
-    <h3> We Did It! </h3>
-
-    <p>
-        Let's go back to <code>localhost:8080</code> in a browser.
-    </p>
-
-    <div class='figure'>
-        <img src="images/chapter2/success.png" alt="this is what the browser window should look like if we have succeeded"/>
-        <p><em>Please attempt to contain your excitement.</em></p>
-    </div>
-
-    <p>
-        Who would have thought that a simple "hello, world" program
-        would take so much effort?
-    </p>
-
-    <div class='right-aside-arrow'> </div>
-    <aside class='right-aside aside'>
-        <h4>Just Getting Started</h4>
-        <p>
-            We are going to construct <em>much</em> more elaborate "hello, world" programs.
-        </p>
-        <p>
-            Environment setup is a really important part of web development.
-        </p>
-    </aside>
-
-    <h3> Cleaning Up &amp; Starting Over </h3>
-
-    <p>
-        We're done, but our Virtual Machine is still running. It'll keep on running, forever.
-        That's the whole point of a server.
-    </p>
-
-    <p>
-        We can quit the terminal.
-    </p>
-
-    <pre class='code'>
-ubuntu@ubuntu-xenial:~$ exit
-logout
-Connection to 127.0.0.1 closed.
-
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
-<span class='prompt'>$</span>
-    </pre>
-
-    <p>
-        But if we check <code>localhost:8080</code>, the server's still running.
-    </p>
-
-    <p>
-        The only way to truly kill the server is to <del>plunge a stake through it's heart</del>
-        turn it off, which we can do with <code>vagrant halt</code>.
-    </p>
-
-    <pre class='code'>
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
-<span class='prompt'>$</span> vagrant halt
-==&gt; default: Attempting graceful shutdown of VM...
-    </pre>
-
-    <p>
-        That killed it.
-    </p>
-
-    <p>
-        Let's imagine, though, that we made a serious mistake. While we were working
-        on the operating system we accidentally made a change that ruined everything
-        forever and we don't know how to fix it.
-    </p>
-
-    <div class='left-aside-arrow'> </div>
-    <aside class='left-aside small-aside aside'>
-        <p>
-            This happens to me a <em>lot</em>.
-        </p>
-    </aside>
-
-    <p>
-        We want to go back to a completely
-        clean slate, to the good times before we had a Virtual Machine at all.
-        This is the situation where <code>vagrant destroy</code> is here to purify
-        our hard drive with its scouring light.
-    </p>
-
-    <pre class='code'>
-<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
-<span class='prompt'>$</span> vagrant destroy
-default: Are you sure you want to destroy the 'default' VM? [y/N] y
-==&gt; default: Destroying VM and associated drives...
-    </pre>
-
-    <p>
-        Never again will you trouble our shores with your foul presence, <em>Virtual Machine</em>.
-    </p>
-
-    <p>
-        We can always bring it back with <code>vagrant up</code> when we need it again.
-    </p>
-
-    <h3> Chapter 2 Summary </h3>
-
-    <p>
-        We've done a lot, to get our web server up and running and serving "hello, world"!
-    </p>
-
-    <ul>
-        <li>
-            We installed a <strong>command line interface</strong> and
-            learned some basics about how to use it.
-        </li>
-        <li>
-            We used <strong>Vagrant and VirtualBox</strong> to install an
-            <strong>Ubuntu Linux Virtual Machine</strong> on our computer.
-        </li>
-        <li>
-            We used <strong>sudo</strong> and <strong>apt-get</strong> to
-            install <strong>nginx</strong> on our server.
-        </li>
-        <li>
-            We created a basic <abbr title="HyperText Markup Language">HTML</abbr> file.
-        </li>
-        <li>
-            We used <strong>nano</strong> to change nginx's configuration.
-        </li>
-        <li>
-            We <strong>rebooted nginx</strong>.
-        </li>
-        <li>
-            We <strong>destroyed the Virtual Machine</strong>.
-        </li>
-    </ul>
-
-    <h2> Chapter 3: HyperText</h2>
+    <h2> Chapter 2: HyperText</h2>
 
     <p>
         We've talked about <strong>HyperText Transfer Protocol</strong> and <strong>HyperText Markup Language</strong>,
@@ -3693,10 +1943,10 @@ See also _laziness and impatience_.
     </p>
 
     <div class="figure">
-        <img src="images/chapter3/html_1.png">
-        <img src="images/chapter3/html_2.png">
-        <img src="images/chapter3/html_3.png">
-        <img src="images/chapter3/html_4.png">
+        <img src="images/chapter2/html_1.png">
+        <img src="images/chapter2/html_2.png">
+        <img src="images/chapter2/html_3.png">
+        <img src="images/chapter2/html_4.png">
     </div>
 
     <h4> Attributes </h4>
@@ -3780,7 +2030,7 @@ lines
 
     <div class='right-aside-arrow'> </div>
     <aside class='right-aside aside'>
-        <img src="images/chapter3/seduction.jpg" alt="a famous 'seduction' picture from Seinfeld">
+        <img src="images/chapter2/seduction.jpg" alt="a famous 'seduction' picture from Seinfeld">
         <p>
             This is also possible in <em>lovemaking</em>. And just as inadvisable.
         </p>
@@ -3870,7 +2120,7 @@ lines
     </p>
 
     <div class='figure'>
-        <img src='images/chapter3/title.png'>
+        <img src='images/chapter2/title.png'>
         <p>
             Hey, it's a thing that we can see! Look at that sweet title.
         </p>
@@ -3891,7 +2141,7 @@ lines
     </p>
 
     <div class='figure'>
-        <img src='images/chapter3/description.png'>
+        <img src='images/chapter2/description.png'>
         <p>
             The content of the <code>description</code> meta tag shows up here.
         </p>
@@ -3909,7 +2159,7 @@ lines
 
     <div class='figure'>
         <p>Let's take a look at my browser's tabs.</p>
-        <img src='images/chapter3/favicon_row.png'>
+        <img src='images/chapter2/favicon_row.png'>
 
         <p>It almost seems like the icon is more important than the title, for most of these!</p>
 
@@ -3978,7 +2228,7 @@ lines
     <div class='left-aside-arrow'> </div>
     <aside class='left-aside aside'>
         <h3>MIME Types</h3>
-        <img src="images/chapter3/mime_cheating.gif">
+        <img src="images/chapter2/mime_cheating.gif">
         <p>
             <abbr title="Multimedia Internet Mail Extensions - Type">MIME Types</abbr>
             appear pretty often.
@@ -4067,7 +2317,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
         browser, we get something that looks like this:
     </p>
 
-    <iframe class="example" src='examples/chapter3/ex3.html'></iframe>
+    <iframe class="example" src='examples/chapter2/ex3.html'></iframe>
 
     <p>
         We wanted those paragraphs to be separate! The
@@ -4116,7 +2366,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 </code>
     </pre>
 
-    <iframe class="example" src='examples/chapter3/ex4.html'></iframe>
+    <iframe class="example" src='examples/chapter2/ex4.html'></iframe>
 
     <p>There we go. </p>
 
@@ -4216,7 +2466,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 </code>
     </pre>
 
-    <iframe class="example" style='height:650px' src='examples/chapter3/ex5.html'></iframe>
+    <iframe class="example" style='height:650px' src='examples/chapter2/ex5.html'></iframe>
 
     <h5>Lists </h5>
 
@@ -4297,7 +2547,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 </code>
     </pre>
 
-    <iframe class="example" style='height:550px' src='examples/chapter3/ex6.html'></iframe>
+    <iframe class="example" style='height:550px' src='examples/chapter2/ex6.html'></iframe>
 
     <h5>So Boring. Dying. </h5>
 
@@ -4324,21 +2574,21 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
     <div class='figure'>
         <p>This is what the New York Times looks like without style:</p>
 
-        <img src="images/chapter3/ny_post.png">
+        <img src="images/chapter2/ny_post.png">
 
         <p>Okay, that was a cheap shot. I mean, this is what the New York
             Times looks like without <em>a <abbr title='Cascading Style Sheet'>CSS</abbr> stylesheet</em>:
         </p>
 
-        <img src="images/chapter3/nyt1.png">
-        <img src="images/chapter3/nyt2.png">
+        <img src="images/chapter2/nyt1.png">
+        <img src="images/chapter2/nyt2.png">
 
         <p>
             That's not much, right? Now let's look at what it looks like
             with a stylesheet:
         </p>
 
-        <img src="images/chapter3/nyt3.png">
+        <img src="images/chapter2/nyt3.png">
 
         <p>
             Wow! Much classier! We're going to be covering
@@ -4406,7 +2656,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
     </code>
     </pre>
 
-    <iframe class="example" style='height:200px' src='examples/chapter3/ex7.html'></iframe>
+    <iframe class="example" style='height:200px' src='examples/chapter2/ex7.html'></iframe>
 
     <p>
         Tables are pretty flexible about how you align them, but
@@ -4454,7 +2704,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
     </code>
     </pre>
 
-    <iframe class="example" style='height:200px' src='examples/chapter3/ex8.html'></iframe>
+    <iframe class="example" style='height:200px' src='examples/chapter2/ex8.html'></iframe>
 
     <div class='right-aside-arrow'> </div>
     <aside class='right-aside aside'>
@@ -4555,7 +2805,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
             It's important not to confuse the term "Link"
             with this video game character:
         </p>
-        <img src="images/chapter3/zelda.png" title="Princess Link">
+        <img src="images/chapter2/zelda.png" title="Princess Link">
         <p>
             This is Princess Link, from the Zelda video games.
             As the brave warrior, Zelda, you have to rescue the princess
@@ -4571,7 +2821,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 
     <div class='left-aside-arrow'> </div>
     <aside class='left-aside aside'>
-        <img src="images/chapter3/anchor.jpg" alt="An anchor">
+        <img src="images/chapter2/anchor.jpg" alt="An anchor">
         <p>
             Pictured: an anchor, linking two webpages together <em>obviously</em>.
         </p>
@@ -4759,7 +3009,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 
     <div class='figure'>
         <h3>Pictured: A Picture</h3>
-        <img src="images/chapter3/hot_dog.jpg">
+        <img src="images/chapter2/hot_dog.jpg">
     </div>
 
     <p>
@@ -4810,7 +3060,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 
     <div class='figure'>
         <h3>Pictured: A Picture With Pop-Over Text and Alt Text</h3>
-        <img src="images/chapter3/hot_dog.jpg"
+        <img src="images/chapter2/hot_dog.jpg"
             alt="A picture of a hot dog"
             title="Do I look like I know what a JPEG is? I just want a picture of a god-dang hot dog.">
     </div>
@@ -4940,7 +3190,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
         I've embedded a sample webpage into this one!
     </p>
 
-    <iframe class="example" src="examples/chapter3/ex10.html"> </iframe>
+    <iframe class="example" src="examples/chapter2/ex10.html"> </iframe>
 
     <pre>
     <code class='html'>
@@ -5123,7 +3373,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 
     <p>This produces the final product: </p>
 
-    <iframe class="example" src="examples/chapter3/ex11.html" style="height:1350px;"></iframe>
+    <iframe class="example" src="examples/chapter2/ex11.html" style="height:1350px;"></iframe>
 
     <p>
         Good ol' Dr. Fakenamington now has a website that would look at home in
@@ -5146,13 +3396,13 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
             Yes. Yes we do.
         </p>
 
-        <img src="images/chapter3/inspect_element.png">
+        <img src="images/chapter2/inspect_element.png">
 
         <p>
             Every modern browser now includes an "Inspect Element" or Developer Tools option.
         </p>
 
-        <img src="images/chapter3/inspect_element_2.png">
+        <img src="images/chapter2/inspect_element_2.png">
 
         <p>
             We can look at all of the HTML that comprises any page that we visit.
@@ -5163,7 +3413,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
             As it turns out, this is <a href="https://threepanel.com/t/the-fake-news/69">great fun</a>.
         </p>
 
-        <img src="images/chapter3/province_7.png">
+        <img src="images/chapter2/province_7.png">
 
         <p>
             The Developer Tools are a Swiss Army Knife of useful tools and techniques for doing Web Things,
@@ -5172,7 +3422,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 
     </div>
 
-    <h3> Chapter 3 Summary </h3>
+    <h3> Chapter 2 Summary </h3>
 
     <p>
         In this chapter, we've:
@@ -5185,7 +3435,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
         <code>image</code>, <code>a</code>, <code>div</code>, and <code>hotdog</code>.</li>
     </ul>
 
-    <h3> Chapter 3 Resources </h3>
+    <h3> Chapter 2 Resources </h3>
 
     <ul>
         <li><a href="https://www.w3schools.com/tags/">List of HTML Tags</a></li>
@@ -5195,10 +3445,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
     </ul>
 
 
-
-
-
-    <h2> Chapter 4: Cascading Style Sheets </h2>
+    <h2> Chapter 3: Cascading Style Sheets </h2>
 
     <p>
         It's all well and good to be able to author webpages, but we've come to expect
@@ -5233,7 +3480,7 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
             really, really in to the local craft beer scene.
         </p>
 
-        <img src="images/chapter4/beer.jpg">
+        <img src="images/chapter3/beer.jpg">
 
         <p>
             He's responsible for both the local <a href="http://daveshea.com/projects/style-class/">Style &amp; Class</a>
@@ -5314,7 +3561,7 @@ h1 {
     </code>
     </pre>
 
-    <iframe class="example" src="examples/chapter4/ex1.html" style="min-height: 175px;"></iframe>
+    <iframe class="example" src="examples/chapter3/ex1.html" style="min-height: 175px;"></iframe>
 
     <p>Success! We've applied <code>color:blue;</code> and <code>font-size:300%</code> to the <code>h1</code> tag!</p>
 
@@ -5363,7 +3610,7 @@ h1 {
         </code>
     </pre>
 
-    <iframe class="example" src="examples/chapter4/ex1.html" style="min-height: 175px;"></iframe>
+    <iframe class="example" src="examples/chapter3/ex1.html" style="min-height: 175px;"></iframe>
 
     <p>Success once more!</p>
 
@@ -5398,7 +3645,7 @@ h1 {
         got the element that we want to apply this rule to, right here!
     </p>
 
-    <iframe class="example" src="examples/chapter4/ex1.html" style="min-height: 175px;"></iframe>
+    <iframe class="example" src="examples/chapter3/ex1.html" style="min-height: 175px;"></iframe>
 
     <p>
         Success once again! Any way we apply these styles to the <abbr title="Hypertext Markup Language">HTML</abbr>,
@@ -5472,7 +3719,7 @@ h1 {
     </code>
     </pre>
 
-    <iframe class="example" src="examples/chapter4/ex2.html" style="min-height:100px;"></iframe>
+    <iframe class="example" src="examples/chapter3/ex2.html" style="min-height:100px;"></iframe>
 
     <p>
         That should do it. It's also possible to apply more than one class to the same object!
@@ -5503,7 +3750,7 @@ h1 {
     </code>
     </pre>
 
-    <iframe class="example" src="examples/chapter4/ex3.html" style="min-height:100px;"></iframe>
+    <iframe class="example" src="examples/chapter3/ex3.html" style="min-height:100px;"></iframe>
 
     <p>
         A class works for an object that might appear again and again on a page &mdash;
@@ -5541,7 +3788,7 @@ h1 {
     </code>
     </pre>
 
-    <iframe class="example" src="examples/chapter4/ex4.html" style="min-height:100px;"></iframe>
+    <iframe class="example" src="examples/chapter3/ex4.html" style="min-height:100px;"></iframe>
 
     <h5>Fragments</h5>
 
@@ -5568,7 +3815,7 @@ h1 {
     </p>
 
     <div class="figure">
-        <img src="images/chapter4/html_tree.png">
+        <img src="images/chapter3/html_tree.png">
     </div>
 
     <p>
@@ -5720,7 +3967,7 @@ h1 {
 
     <p>This selects all <code>td</code> elements that are children of <code>#a-simple-taxonomy-of-grainy-mustards</code>:</p>
 
-    <iframe class="example" src="examples/chapter4/ex5.html"></iframe>
+    <iframe class="example" src="examples/chapter3/ex5.html"></iframe>
 
     <h4>Wildcards</h4>
 
@@ -5826,7 +4073,7 @@ h1 {
         </code>
     </pre>
 
-    <iframe class="example" src="examples/chapter4/ex6.html"></iframe>
+    <iframe class="example" src="examples/chapter3/ex6.html"></iframe>
 
     <h5>A Common Mistake With Pseudo Classes</h5>
 
@@ -5864,7 +4111,7 @@ h1 {
         </code>
     </pre>
 
-    <iframe class="example" src="examples/chapter4/ex7.html"></iframe>
+    <iframe class="example" src="examples/chapter3/ex7.html"></iframe>
 
     <p>
         Looking at this example, what's the difference between <code>.big-ol-block:hover</code>
@@ -5887,7 +4134,7 @@ h1 {
             the best way to learn this topic, I think, is interactively.
         </p>
 
-        <img src='images/chapter4/css_diner.png'>
+        <img src='images/chapter3/css_diner.png'>
 
         <p>
             So, check out <a href="https://flukeout.github.io/">this interactive CSS selector tutorial</a>.
@@ -5971,7 +4218,7 @@ h1 {
         </code>
     </pre>
 
-    <iframe class='example' src="examples/chapter4/ex8.html"></iframe>
+    <iframe class='example' src="examples/chapter3/ex8.html"></iframe>
 
     <p>
         Some <abbr title="Cascading Stylesheets">CSS</abbr> properties do not inherit. Others do.
@@ -6067,7 +4314,7 @@ h1 {
         </code>
     </pre>
 
-    <iframe class="example" src="examples/chapter4/ex9.html" style="height:100px;min-height:100px;"></iframe>
+    <iframe class="example" src="examples/chapter3/ex9.html" style="height:100px;min-height:100px;"></iframe>
 
     <h5>Specificity</h5>
 
@@ -6126,7 +4373,7 @@ h1 {
         </code>
     </pre>
 
-    <iframe src="examples/chapter4/ex10.html"></iframe>
+    <iframe src="examples/chapter3/ex10.html"></iframe>
 
 
     <h5>Order</h5>
@@ -6161,7 +4408,7 @@ h1 {
         </code>
     </pre>
 
-    <iframe class="example" src="examples/chapter4/ex11.html" style="height:100px;min-height:100px;"></iframe>
+    <iframe class="example" src="examples/chapter3/ex11.html" style="height:100px;min-height:100px;"></iframe>
 
     <h4>Web Typography</h4>
 
@@ -6247,7 +4494,7 @@ h1 {
     <div class='right-aside-arrow'> </div>
     <aside class='right-aside aside'>
         <h4>Serif's Up</h4>
-        <img src="images/chapter4/serif.png">
+        <img src="images/chapter3/serif.png">
 
         <p>
             A <strong>serif</strong> is the small line attached to the end of a stroke
@@ -6309,7 +4556,7 @@ h1 {
     <div class='left-aside-arrow'> </div>
     <aside class='left-aside aside'>
         <h4>Pixels Gone Wild</h4>
-        <img src="images/chapter4/pixel_smashing.png">
+        <img src="images/chapter3/pixel_smashing.png">
     </aside>
 
     <p>
@@ -6365,7 +4612,7 @@ h1 {
         </code>
     </pre>
 
-    <iframe class="example" src="examples/chapter4/ex12.html" style="height:400px"></iframe>
+    <iframe class="example" src="examples/chapter3/ex12.html" style="height:400px"></iframe>
 
     <p>
         These different ways of setting the font size are all examples of <strong>CSS Measurements</strong>,
@@ -6537,7 +4784,7 @@ h1 {
         content:
     </p>
 
-    <iframe src="examples/chapter4/ex13.html" style="min-height: 200px; height: 200px;"></iframe>
+    <iframe src="examples/chapter3/ex13.html" style="min-height: 200px; height: 200px;"></iframe>
 
     <p>
         and add our four <abbr title="Cascading Stylesheets">CSS</abbr> rules.
@@ -6554,7 +4801,7 @@ h1 {
         </code>
     </pre>
 
-    <iframe src="examples/chapter4/ex14.html"></iframe>
+    <iframe src="examples/chapter3/ex14.html"></iframe>
 
     <p>I like it! It's no mystery that this textbook uses <em>very similar settings.</em></p>
 
@@ -6585,6 +4832,1768 @@ h1 {
     <h3>Monkeying Around With The CSS Live</h3>
 
     <h3>Putting it All Together</h3>
+
+    <h3>Chapter 3 Summary</h3>
+
+
+    <h2>Chapter 4: Getting It All Online</h2>
+
+
+    <h2>Chapter 5: Complex Layouts &amp; Multiple Pages</h2>
+
+
+    <h2>Chapter 6: Building A Web Server </h2>
+
+    <p>
+        Sure, we can let GitHub host our websites for us, but that really shelters us
+        from the details of running a website &mdash; details which we're going to
+        have to understand!
+    </p>
+
+
+    <p>By tradition, when computering, our first program is always a program to print
+        out 'hello, world'. </p>
+
+    <div class='figure'>
+        <img src='images/tattoo_1.jpg' alt='hello world, being tattooed on my arm'/>
+        <p>
+            You could, of course, broadcast the message "hello, world" by tattooing
+            it on your arm, as I have, but perhaps we should start with a less
+            permanent solution to the problem.
+        </p>
+    </div>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <h3>Hello, world</h3>
+        <p>
+            "Hello, world" is important to me (as you might have guessed), as a symbol
+            of learning by starting small.
+        </p>
+        <p>
+            Even experienced programmers start with "hello, world" in a new environment.
+            It's a great way to make sure that everything is configured properly.
+        </p>
+        <p>
+            The tradition started with Brian Kernighan at Bell Labs, with the introduction
+            of the C Language.
+        </p>
+    </aside>
+
+    <p>
+        This chapter is going to cover a lot of topics <em>very loosely</em> in order to
+        get us to a workable initial state. Don't worry &mdash; we'll be covering everything,
+        in depth, eventually.
+    </p>
+
+    <p>
+        We're going to be doing everything &mdash; absolutely everything &mdash; from
+        a Linux command line.
+    </p>
+
+    <p>
+        Both of these choices &mdash; Linux, and the command line &mdash; might seem
+        a little strange. Let's dig into them a bit.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <h3>GNU/Linux</h3>
+        <p>
+            <a href="https://www.gnu.org/gnu/why-gnu-linux.en.html">Some people</a>
+            believe that Linux should be called "GNU/Linux", on account of
+            Linux was partially built using tools provided by the GNU project.
+        </p>
+        <p>
+            However, if all things were named the way that they should be named,
+            IKEA would be called "Garbage Furniture Store" and all sandwiches
+            would be "Mayonnaise Sandwich" because without the mayonnaise they
+            are not really sandwiches at all.
+        </p>
+    </aside>
+
+    <h3> Linux </h3>
+
+    <p>
+        Fully half of web programming is server programming. In order to program
+        a server, we're going to need a server &mdash; a computer that stays online all
+        the time and responds to client requests.
+    </p>
+
+    <p>
+        We could use our home computer as a server, but:
+        <ul>
+            <li>Windows and Mac operating systems have an awkward tendency to
+                reboot themselves to install security updates and add features,
+                and this is not optional. </li>
+            <li>A home computer has all of its security defaults set in a way
+                that would be appropriate for a computer on a home network,
+                not a computer exposed to the tireless onslaught of the
+                public internet. </li>
+            <li>Unless we pay our <abbr title="Internet Service Provider">ISP</abbr>
+                extra for a static <abbr title="Internet Protocol">IP</abbr> address, our
+                home's <abbr title="Internet Protocol">IP</abbr>
+                address changes regularly, which means that it
+                will be difficult to find our computer. </li>
+            <li>Our home computer likely contains our own, personal, private information. </li>
+            <li>Doing other stuff on our home computer, like opening 80 browser tabs
+                while playing video games, could affect the performance of our server. </li>
+            <div class='right-aside-arrow'> </div>
+            <aside class='right-aside small-aside aside'>
+    <p>Only 80 tabs?</p>
+    <p>You are like a little <strong>baby</strong>.</p>
+    </aside>
+    <li> Unless we happen to have a home fibre connection, it's likely
+        that we're on an asymmetric connection to the internet &mdash; with downloads
+        <em>much</em> faster than uploads. For a server, though, it is the upload
+        speed that matters; serving a lot of traffic from our home internet
+        connection would be like trying to operate a Denny's through a foot-wide hole
+        &mdash; possible, but frustrating once we have more than one or two customers.
+    </li>
+    </ul>
+    </p>
+
+    <p>
+        These are not insurmountable problems, and building a home server out of a
+        spare computer is a fun and instructive project that I highly recommend.
+    </p>
+
+    <p>
+        With the home computer out as a server option, that leaves us renting server time
+        from someone else.
+    </p>
+
+    <p>
+        There are lots of reasons that we might choose Linux over Windows if we're
+        planning on running a server for a long time. Linux is lightweight. Linux is secure.
+        Linux is able to stay online for a very long time. The reason
+        for Linux's popularity as a server is very simple, though: <strong>Linux is free</strong>,
+        which generally makes server Linux the most cost-effective option.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <h3>Free or Four</h3>
+        <p>
+            In software, there are two meanings of free.
+        </p>
+
+        <p>
+            The first meaning is the obvious one, and the correct one:
+            free means "we don't have to pay for it".
+        </p>
+
+        <p>
+            But there's the other meaning of free, meaning the code
+            is <em>wild and free like an unbroken stallion</em>.
+            This is an alternative definition of free that has to do with
+            our freedom to legally take the code, modify it as we please,
+            and share it with others. Linux is also free in this way.
+        </p>
+
+        <p>
+            Many systems are one kind of free but not another - GitHub, for example,
+            is don't-have-to-pay free but not freeeeeeedom!-free, whereas Red Hat Linux
+            is freeeedom!-free but we still have to pay money dollars for it.
+        </p>
+    </aside>
+
+    <h4>"It's a UNIX system! I know this!"</h4>
+
+    <p>
+        Linux, like Mac OS X, is based on Unix, an operating system with an
+        almost half-century of history, only some of which involves
+        <a href="https://www.wired.com/2015/06/tech-time-warp-time-unix-saved-day-jurassic-park/">velociraptors</a>.
+        That half-century can be a double-edged
+        sword &mdash; the reason for strange design decisions is often shrouded
+        in some ancient
+        <a href="http://ergoemacs.org/emacs/emacs_kb_shortcuts_pain.html">obscure keyboard layout</a>.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <h3>Bell Labs &amp; Unix</h3>
+        <p>
+            If we're at all interested in computing history &mdash; and why
+            wouldn't we be, it's the <em>best history</em> &mdash; we're
+            going to hear Bell Labs come up a lot.
+        </p>
+        <p>
+            It was created by Alexander Graham Bell in 1925, as the
+            "Volta Laboratory and Bureau", a private research laboratory,
+            and has changed hands numerous times since then.
+        </p>
+        <p>
+            Since opening, the laboratory has been responsible for eight
+            different Nobel prizes between 1937 and 2014 &mdash; which gives
+            it more Nobel laureates than the University of British Columbia.
+        </p>
+        <p>
+            Bell Labs invented transistors in the fifties, invented
+            <abbr title="Charge-coupled Device">CCD</abbr>s in 2009,
+            and, in the sixties, discovered the cosmic background radiation that validated
+            the existence of the Big Bang.
+        </p>
+        <p>
+            Oh, and during a brief lull in the seventies, Bell Labs created
+            Unix and C, the most successful operating system and
+            programming language in the world.
+        </p>
+        <p> Way to go, Bell Labs. </p>
+
+    </aside>
+
+    <h4>Linux Distributions</h4>
+    <p>
+        One confusing thing about Linux is that we can't just crack open a laptop
+        and start running Linux on it &mdash; in fact, Linux really refers to
+        <strong>The Linux Kernel</strong>, which is the tiny beating heart
+        of the operating system.
+    </p>
+    <p>
+        There are lots of things that we think of as part of an operating system
+        &mdash; the window system, a desktop environment, the software that
+        comes pre-installed on the system, device drivers, installers,
+        Minesweeper &mdash; but the Linux Kernel doesn't come with any of these
+        things.
+    </p>
+
+    <p>
+        So, the complete kit required to make a computer actually do computer
+        things is called a <strong>Linux Distribution</strong>.
+    </p>
+
+    <p>
+        Popular distributions
+        include <strong>Ubuntu</strong>, <strong>Red Hat/Fedora</strong>, <strong>Mint</strong>,
+        <strong>Slackware</strong>, and <strong>Arch</strong>.
+    </p>
+
+    <p>
+        Different distributions focus on different priorities.
+        Some, like <strong>Mint</strong>, focus on being easy to use as a desktop OS.
+        <strong>Arch</strong> is highly configurable and optimizable, and
+        popular with the sort of people who drive a 1996 Nissan 300ZX Turbo
+        with a gigantic aftermarket spoiler and undercar lights.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <p>
+            Gentoo is for the sort of people who would buy the Arch user's car,
+            then take the aftermarket spoiler and lights off.
+        </p>
+    </aside>
+
+    <p>
+        <strong>Ubuntu</strong> started out resolutely trying to conquer the
+        desktop <abbr title="Personal Computer">PC</abbr>
+        market, but after a decade of mostly failing to do so, has
+        seemingly embraced its position as a competitive and pretty comprehensive
+        server operating system. I like Ubuntu, a lot, and it's the
+        distribution I'm going to be using as an example distribution.
+    </p>
+
+    <h3> The Command Line & The Secure Shell </h3>
+
+    <p>
+        Most systems work is still done with the command line.
+    </p>
+
+    <p>
+        While I'd love to say that this is because the command line is
+        inherently superior to all other methods of interaction
+        with a computer, the actual reasons are simple:
+    <ul>
+        <li>
+            It's easier to write a command line program than a
+            <abbr title="Graphical User Interface">GUI</abbr> program.
+        </li>
+        <li>
+            <abbr title="Secure Shell">SSH</abbr>
+        </li>
+    </ul>
+    </p>
+
+    <p>
+        <abbr title="Secure Shell">SSH</abbr>, or <strong>Secure Shell</strong>,
+        is one of the most important tools in our web programming arsenal.
+        <abbr title="Secure Shell">SSH</abbr> is a tool allowing for remote control of computers.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <img src="images/chapter6/ssh.png">
+        <p>
+            <a href="https://www.youtube.com/watch?v=zlv9dI-9g1U">This video provides a quick overview of SSH</a>.
+        </p>
+    </aside>
+
+    <p>
+        Most Linux distributions run the <abbr title="Secure Shell">SSH</abbr> daemon in the background, all the time,
+        and it's possible to log in to the computer directly with a username and
+        password.
+    </p>
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <p>
+            <strong>Daemon</strong> is the Unix term for a program that runs in the background,
+            without user intervention.
+        </p>
+        <p> Windows, perhaps wanting to divorce itself from the theological implications of
+            having a legion of demons under the hood, calls these "services" instead. </p>
+    </aside>
+    </p>
+
+    <p>
+        But the <abbr title="Secure Shell">SSH</abbr> interface to a Linux computer doesn't come with any fancy doodads
+        or graphical user interfaces. Nope, dad-gummit, we have to control the system
+        by pulling up our suspenders, tying an onion to our belts, walking uphill
+        both ways, and using the command line interface.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <img src="images/chapter6/grampa.jpg">
+        <p>
+            And in those days, nickels had pictures of bumblebees on them. Give me five bees for a quarter, you'd say.
+        </p>
+        <p>
+            Now where were we? Oh yeah, the important thing was that I had an onion on my belt, which was the style
+            at the time. They didn't have white onions, becuase of the war. The only thing that you could
+            get was those big yellow ones.
+        </p>
+    </aside>
+
+    <h3> Let's Get This Terrible Party Started </h3>
+
+    <p>
+        First and foremost, we are going to need access to a command line.
+    </p>
+
+    <p>
+        If we're running Mac OS X, we can get to a command line, right now,
+        by opening the "Terminal" program &mdash; although
+        downloading <a href="https://www.iterm2.com/">iTerm2</a> gets us tabs and splits.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <h3>Tabs &amp; Splits</h3>
+        <p>
+            When we work with terminals, sooner or later we're going to have 10 of them open
+            at once. When this starts happening, having the ability to split them out
+            into separate tabs starts to become <em>way convenient</em>.
+        </p>
+        <p>
+            If you have a wide screen, it's also nice to be able to split the
+            terminal in half and have <em>twice as many terminals</em>.
+        </p>
+    </aside>
+
+    <p>
+        If we're running Windows, we can download <a href="https://git-scm.com/">Git</a>.
+        We're going to need Git anyways, it's the most widely used source control
+        tool on the market, but it also comes with the <em>easiest to configure unix-like console
+        available in Windows</em>. Move over, Cygwin.
+    </p>
+
+    <p>
+        If we're not in a hurry, we also might spend some time configuring
+        <a href="https://conemu.github.io/">ConEmu</a> to
+        <a href="https://gist.github.com/n3dst4/cc875d83401c06bd6faa">work with Git Bash</a>.
+        This gets us the tabs and the splits.
+    </p>
+    <div class='right-aside-arrow'> </div>
+
+
+    <h3>Code Directory & Project Root</h3>
+    <p>
+        Somewhere on our computer is our <strong>home directory</strong>. This is the root
+        for all of our personal files. In Windows, my home directory lives at
+        <code>C:\Users\Curtis</code>, whereas in Mac OS X, the home directory lives
+        in <code>/users/curtis</code>.
+    </p>
+
+    <p>
+        I'm fond of creating a directory, <code>code</code>, under the home root, as
+        my project root. Every different project I'm working on lives in this directory.
+        Then, I configure my terminal to open this directory when it starts up.
+    </p>
+
+    <p>
+        Let's open our terminal &mdash; be it Terminal, iTerm2, Git Bash, or ConEmu.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside small-aside aside'>
+        <h3> Shell Game </h3>
+        <p>
+            Technically, the <strong>terminal</strong> is the window that shows you
+            the <strong>shell</strong>, which is the program that actually handles
+            your interactions with the command prompt.
+        </p>
+        <p>
+            <strong>Bash</strong> is the Bourne Again Shell, the most common shell
+            for Linux systems.
+        </p>
+        <p>
+            <strong>SSH</strong> is the Secure Shell, a shell to remote systems.
+        </p>
+        <p>
+            <strong>sh</strong> stands for "Shell", and it refers to whatever
+            is the default shell on a system.
+        </p>
+        <p>
+            <strong>dash</strong> is a lightweight shell without the features
+            and functionality of Bash. In Debian and Ubuntu, <code>/bin/sh</code>
+            points to dash instead of bash, but bash is still the default shell
+            for users.
+        </p>
+    </aside>
+
+    <div class='figure'>
+        <img src='images/chapter6/terminal_1.png' alt="a terminal window"/>
+        <p>dat's some good terminal</p>
+    </div>
+
+    <p>
+        We're staring a <strong>command prompt</strong> in the face. That <code>$</code>
+        means that the terminal is ready for us to enter a command.
+    </p>
+
+    <h3>Let's Putter Around In The Terminal A Bit</h3>
+
+    <p>
+        I'm excited! I get to tell you about the <strong>most important</strong> shell commands!
+    </p>
+
+    <p>
+        Let's start by asking where we are, using the <strong>print working directory</strong> command,
+        <code>pwd</code>.
+    </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> pwd
+/c/Users/curtis/code</pre>
+
+
+    <h4> Tilde Swinton</h4>
+
+    <p>
+        So, we're at <code>/c/Users/curtis/code</code>, but the terminal says that
+        we're at <code>~/code</code>. What's the deal?
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside small-aside aside'>
+        <h3> Symbol Puns </h3>
+        <p>
+            Part of the elaborate online story
+            <a href="http://www.mspaintadventures.com/?s=6">Homestuck</a>
+            features three programming languages,
+            each a different symbol pun.
+        </p>
+        <ul>
+            <li><code>~ATH</code> (til death)</li>
+            <li><code>^CAKE</code> (carrot cake)</li>
+            <li><code>DIS*</code> (disasterisk)</li>
+        </ul>
+        <p>
+            Notably, <code>~ATH</code> addresses
+            multithreaded programming with
+            <em>syntactically significant color indicating
+                different threads of execution</em>, which
+            is a pretty <del>awesome</del> hilarious idea.
+        </p>
+        <p>
+            It's unfortunate that
+            the language's <em>unbounded runtime</em>
+            and <em>fictional nature</em>
+            render the programming
+            language almost completely useless.
+        </p>
+    </aside>
+
+    <p>
+        <code>~</code>(tilde) is shorthand for "home".
+        Since our home is <code>/c/Users/curtis</code>, <code>~/code</code>
+        is shorthand for <code>/c/Users/curtis/code</code>.
+    </p>
+
+    <h4> MSYS </h4>
+    <p>
+        Follow-up question: why is it <code>/c/Users/curtis/code</code>
+        and not <code>C:\Users\curtis\code</code>?
+    </p>
+
+    <p>
+        Simulating Bash on Windows requires a layer to translate Windows concepts
+        into vaguely-Linux-shaped concepts. This is provided by MinGW &mdash; Minimalist GNU for Windows
+        &mdash; and MSYS, which is a collection of utilities like Bash ported to run on MinGW.
+    </p>
+
+    <p>
+        Linux doesn't support lettered-drive roots like <code>C:</code>, instead prefering
+        to have a single root for all drives, <code>/</code>.
+        Linux also uses forward slashes instead of backslashes.
+    </p>
+
+    <p>
+        MSYS and MinGW do this conversion for us, but the differences between Windows
+        and Linux are going to continue to bite us all the way throughout this journey.
+    </p>
+
+    <p>
+        Mac OS X, being built on top of a Unix system called "Darwin", doesn't suffer from
+        these problems.
+    </p>
+
+    <h4>Terminal Commands</h4>
+
+    <p>
+        Using the <strong>change directory</strong> command, <code>cd</code>, we can change
+        our directory.
+    </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> cd ~
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
+<span class='prompt'>$</span> pwd
+/c/users/curtis
+</pre>
+
+    <p> Look, we're home, now! </p>
+
+    <p> We can navigate to a specific directory: </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <h4> The Root Directory </h4>
+        <p>
+            The <code>/</code> directory is at the very base of
+            the filesystem tree, and thus, is the "root" directory.
+        </p>
+        <p>
+            "Root" is an overloaded term in the Linux world, because
+            just about everything is modelled as some kind of tree
+            structure. There's also a root <em>user</em>, and that's
+            a completely different thing that doesn't have anything
+            to do with the filesystem.
+        </p>
+    </aside>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
+<span class='prompt'>$</span> cd /
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>/</span>
+<span class='prompt'>$</span> cd /etc
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>/etc</span>
+<span class='prompt'>$</span>
+</pre>
+
+    <p> And we can use <code>ls</code> to display the contents of a directory: </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>/etc</span>
+<span class='prompt'>$</span> cd ~
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
+<span class='prompt'>$</span> ls
+AppData
+Application Data
+ConEmu
+Contacts
+Cookies
+Creative Cloud Files
+Embarrassing Pornography
+Even More Embarrassing Pornography
+Seriously, Goats and Stuff
+Desktop
+Documents
+Music
+NTUSER.DAT
+_vim
+_viminfo
+_vimrc
+code
+pip
+vimfiles
+</pre>
+
+    <p>Whoa. There's a lot of stuff in my home directory.</p>
+
+    <p>If there's no code directory in here, yet, we can make one, with <code>mkdir</code></p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
+<span class='prompt'>$</span> mkdir code
+mkdir: cannot create directory 'code': File exists
+</pre>
+
+    <p>That doesn't work, because in my case, the code directory already exists. </p>
+
+    <p>Here's a good trick. Type in <code> cd c</code> and then hit the tab key.</p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~</span>
+<span class='prompt'>$</span> cd code
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span>
+    </pre>
+
+    <p>The terminal should auto-complete to the first thing that starts with a 'c'. If you press tab again, it'll
+        auto-complete to the second thing that starts with a 'c'. This is a very useful tool. </p>
+
+    <div class='figure'>
+        <p>All this computer hacking is making me thirsty. I think I'll order a TAB.</p>
+
+        <img src="http://i.imgur.com/rIePs33.jpg" alt="A dated Simpsons reference">
+
+        <div class='right-aside-arrow'> </div>
+        <aside class='right-aside aside'>
+            <p><em>This is a reference to a joke from an episode of The Simpsons that is now over 20 years old,
+                referencing a brand of diet cola that is only sold in the United States and Spain</em></p>
+        </aside>
+    </div>
+
+    <p> Let's create a directory for our hello world program. </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> mkdir hello_world
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> ls
+hello_world
+    </pre>
+
+    <p> Now let's delete that directory and then recreate it, just to be contrary. </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> rmdir hello_world
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> ls
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> mkdir hello_world
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> ls
+hello_world
+    </pre>
+
+    <p> We can use <code>cd</code> to jump in to the folder we've just created, and we can also
+        use <code>cd</code> with the special shortcut <code>..</code> to go up a level. </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> cd hello_world
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span> cd ..
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> cd ..
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/</span>
+<span class='prompt'>$</span>
+hello_world
+    </pre>
+
+    <p> That feels like a pretty solid introduction to the command line. With these simple
+        tools we can zip around the filesystem creating directories like a pro!</p>
+
+    <div class='figure'>
+        <h4>Curtis's Big Sexy Terminal Cheat Sheet</h4>
+        <table>
+            <tr>
+                <th><code>ls</code></th> <td> list the contents of a directory </td>
+            </tr>
+            <tr>
+                <th><code>cd</code></th> <td> change the directory </td>
+            </tr>
+            <tr>
+                <th><code>pwd</code></th> <td> tell me what directory I'm in </td>
+            </tr>
+            <tr>
+                <th><code>mkdir</code></th> <td> make a directory </td>
+            </tr>
+            <tr>
+                <th><code>rmdir</code></th> <td> remove a directory </td>
+            </tr>
+            <tr>
+                <th><code>touch</code></th> <td> make a file </td>
+            </tr>
+            <tr>
+                <th><code>cat</code></th> <td> print a file </td>
+            </tr>
+            <tr>
+                <th><code>rm</code></th> <td> remove a file </td>
+            </tr>
+            <tr>
+                <th><code>cp</code></th> <td> copy </td>
+            </tr>
+            <tr>
+                <th><code>mv</code></th> <td> move </td>
+            </tr>
+            <tr>
+                <th><code>sudo</code></th> <td> i am an admin, let me do this thing </td>
+            </tr>
+        </table>
+
+        <p>
+            For a more in-depth introduction to Unix/Linux, you could always visit
+            this <a href="https://www2.cs.sfu.ca/~ggbaker/reference/unix/">Unix Tutorial for Beginners.</a>
+        </p>
+    </div>
+
+    <h3> Installing Ubuntu </h3>
+    <p>
+        This used to be a process that involved either running both Ubuntu and Windows/Mac OS X
+        on our primary computer, and switching from one to the other when we boot
+        up the computer &mdash; or, finding a junky old computer from around the house
+        and installing Ubuntu on that.
+    </p>
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <p>
+            There's also
+            <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about">Bash on Ubuntu on Windows Subsystem for Linux</a>, which
+            is a new and exciting way to install Ubuntu on Windows, but it's
+            still <em>very beta</em>.
+        </p>
+    </aside>
+    <p>
+        With Virtual Machines, though, it's possible to run Ubuntu from within our primary operating
+        system. So we should definitely do that.
+        In fact, the toolset for doing this has become so easy to use that I've started
+        running a <em>different virtual machine for every project I'm working on</em>.
+    </p>
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside small-aside aside'>
+        <p>
+            I built a computer with 32GB of RAM just to make this practical, although
+            I could also <em>just remember to turn the virtual machines off once in a while</em>.
+        </p>
+    </aside>
+
+    <p>
+        The tools that make this easy and free are <a href="https://www.virtualbox.org/">VirtualBox</a>
+        and <a href="https://www.vagrantup.com/">Vagrant</a>. Download and install these programs.
+    </p>
+
+    <h4>VirtualBox &amp; Vagrant</h4>
+
+    <p>
+        VirtualBox is software to run virtual machines. We could get away with
+        just using VirtualBox in our quest to install Ubuntu, but that would take
+        a lot of effort and clicking.
+    </p>
+
+    <p>
+        Vagrant is a wrapper around VirtualBox that provides a very hackable
+        command line interface and a gigantic repository of pre-created
+        operating system images. Installing an operating system with Vagrant
+        can be as easy as just picking it out of a catalogue and modifying a text
+        file.
+    </p>
+
+    <p>
+        One of the things I like most about Vagrant is that it's possible to configure
+        the entire operating system automatically. Instead of laboriously hand-configuring
+        the operating system every time we move to a new machine or accidentally bork
+        a database, we can just incinerate the virtual machine clean and summon a new one.
+    </p>
+
+    <p>Let's go back to our new 'hello_world' directory and type in <code>vagrant init</code></p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code</span>
+<span class='prompt'>$</span> cd hello_world
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span> vagrant init
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please
+read the comments in the Vagrantfile as well as documentation
+on `vagrantup.com` for more information on using Vagrant.
+    </pre>
+
+    <p>
+        <code>vagrant init</code> creates for us a <strong>Vagrantfile</strong>. This file
+        describes all of the important details about the operating system we are about
+        to create &mdash; which Linux distribution we want, networking details, how much
+        <abbr title="Random Access Memory">RAM</abbr> it gets to use, and even, if we configure it right, the instructions for
+        setting up all of the software that runs on the operating system.
+    </p>
+
+    <p>Now it's time to open up the Vagrantfile in a text editor. </p>
+
+    <div class='right-aside-arrow short-arrow'></div>
+    <aside class='right-aside aside'>
+        <h4>Text Editor</h4>
+        <p>
+            I'm just going to assume that you have a programmer's text editor on your
+            computer that you like and are familiar with.
+        </p>
+        <p>
+            If you don't, go install <strong>Notepad++</strong> or <strong>SublimeText</strong>
+            or maybe <strong>Atom</strong>.
+        </p>
+    </aside>
+
+    <div class='hang-left-aside-arrow short-arrow' style="margin-top: 35px;"></div>
+    <aside class='hang-left-aside aside' style="margin-top: 0px;">
+        <h4>Ruby</h4>
+        <p>
+            Vagrantfiles are just ... Ruby.
+        </p>
+        <p>
+            If you wanted to write some Ruby code in here, you could.
+        </p>
+    </aside>
+
+    <div class='hang-right-aside-arrow long-arrow' style="margin-top: 283px;"></div>
+    <aside class='hang-right-aside aside' style="margin-top: 240px;">
+        <h4>1. Base Box</h4>
+        <p>
+            This is where we decide what linux distribution to use.
+        </p>
+        <p>
+            We're going to replace <code>"base"</code> with <code>"ubuntu/xenial64"</code>.
+        </p>
+    </aside>
+
+    <div class='hang-left-aside-arrow short-arrow' style="margin-top: 473px;"></div>
+    <aside class='hang-left-aside aside' style="margin-top: 450px;">
+        <h4>2. Port Forward</h4>
+        <p>
+            This is where we forward port 8080 on our outer computer to port 80 on the
+            virtual machine, by uncommenting this line.
+        </p>
+    </aside>
+
+    <div class='hang-right-aside-arrow' style="margin-top: 760px;"></div>
+    <aside class='hang-right-aside aside' style="margin-top: 700px;">
+        <h4>3. Folder Sync</h4>
+        <p>
+            We are going to sync a folder on our outer computer to a folder on the
+            virtual machine by editing this line.
+        </p>
+    </aside>
+
+    <pre>
+    <code class='ruby'>
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure(2) do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://atlas.hashicorp.com/search.
+  config.vm.box = "base"
+
+  # Disable automatic box update checking. If you disable this, then
+  # boxes will only be checked for updates when the user runs
+  # `vagrant box outdated`. This is not recommended.
+  # config.vm.box_check_update = false
+
+  # Create a forwarded port mapping which allows access to a specific port
+  # within the machine from a port on the host machine. In the example below,
+  # accessing "localhost:8080" will access port 80 on the guest machine.
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  # Create a private network, which allows host-only access to the machine
+  # using a specific IP.
+  # config.vm.network "private_network", ip: "192.168.33.10"
+
+  # Create a public network, which generally matched to bridged network.
+  # Bridged networks make the machine appear as another physical device on
+  # your network.
+  # config.vm.network "public_network"
+
+  # Share an additional folder to the guest VM. The first argument is
+  # the path on the host to the actual folder. The second argument is
+  # the path on the guest to mount the folder. And the optional third
+  # argument is a set of non-required options.
+  # config.vm.synced_folder "../data", "/vagrant_data"
+
+  # Provider-specific configuration so you can fine-tune various
+  # backing providers for Vagrant. These expose provider-specific options.
+  # Example for VirtualBox:
+  #
+  # config.vm.provider "virtualbox" do |vb|
+  #   # Display the VirtualBox GUI when booting the machine
+  #   vb.gui = true
+  #
+  #   # Customize the amount of memory on the VM:
+  #   vb.memory = "1024"
+  # end
+  #
+  # View the documentation for the provider you are using for more
+  # information on available options.
+
+  # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
+  # such as FTP and Heroku are also available. See the documentation at
+  # https://docs.vagrantup.com/v2/push/atlas.html for more information.
+  # config.push.define "atlas" do |push|
+  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
+  # end
+
+  # Enable provisioning with a shell script. Additional provisioners such as
+  # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
+  # documentation for more information about their specific syntax and use.
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   sudo apt-get update
+  #   sudo apt-get install -y apache2
+  # SHELL
+end
+    </code>
+    </pre>
+
+    <h5>Picking a Box</h5>
+
+    <p>
+        In order to boot up an operating system, first, we have to pick a
+        <em>base box</em> &mdash; this is the blank, untouched, pristine
+        operating system that we are going to be working with.
+    </p>
+
+    <p>
+        A catalogue of base boxes exists <a href="https://atlas.hashicorp.com/boxes/search">here</a>.
+    </p>
+
+    <p>
+        We're going to choose <code>ubuntu/xenial64</code>.
+    </p>
+    <div class='right-aside-arrow'></div>
+    <aside class='right-aside aside'>
+        <h4>Xenial Xerus</h4>
+        <p>
+            Every release of Ubuntu has been paired with an Alliterative Animal name,
+            and they've been in alphabetical order
+            from 5.10 (Breezy Badger) all the way up to 17.04 (Zesty Zapus).
+        </p>
+        <p>
+            Every 4 years, Ubuntu also releases a <strong>LTS</strong> "Long Term Support"
+            version of Ubuntu, which is scheduled to keep getting attention and
+            security updates for 5 years after it launches. Xenial Xerus, 16.04, is the
+            most recent LTS version of Ubuntu, which is why we picked it.
+        </p>
+        <p>
+            Now, they're rolling around to the front of the alphabet again.
+        </p>
+        <p>
+            One tradition when rolling through the alphabet is to go "X", "Y", "Z", "AA", "BB".
+        <p>
+            They've
+            managed to find an "AA" animal, the "Artful Aardvark".
+        <p>
+            "BB" might B a little harder.
+        </p>
+    </aside>
+
+    <p> The line in the Vagrantfile pertaining to boxes will read: </p>
+
+    <pre>
+    <code class='ruby'>
+# Every Vagrant development environment requires a box. You can search for
+# boxes at https://atlas.hashicorp.com/search.
+config.vm.box = "ubuntu/xenial64"
+    </code>
+    </pre>
+
+    <h5>Forwarding Port 80</h5>
+
+    <p>
+        The virtual machine is going to be running a web server (spoiler alert)
+        on port 80. The only problem with that? The ports on the virtual machine
+        aren't accessible by default. We need to write a rule to connect
+        a port on our outer machine to a port on the virtual machine.
+    </p>
+
+    <p>
+        By convention, <code>8080</code> is popular port for developing
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr> services,
+        so we're going to use that.
+    </p>
+
+    <p>
+        The VagrantFile already had this option ready for us &mdash; all we have to do
+        is remove the <code>#</code> character to turn the line from a comment into
+        real code.
+    </p>
+
+    <pre>
+    <code class='ruby'>
+# Create a forwarded port mapping which allows access to a specific port
+# within the machine from a port on the host machine. In the example below,
+# accessing "localhost:8080" will access port 80 on the guest machine.
+config.vm.network "forwarded_port", guest: 80, host: 8080
+    </code>
+    </pre>
+
+    <h5>Syncing a Folder</h5>
+
+    <p>
+        This is a more advanced feature, but one that's going to allow
+        us to edit our codebase on the virtual machine with
+        a graphical text editor on our host machine, and
+        that seems like it's going to be worth the effort.
+    </p>
+
+    <p>
+        First of all, let's create a folder to sync.
+    </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span> mkdir html
+    </pre>
+
+    <p>
+        Then, let's sync that folder to a location within the virtual machine.
+    </p>
+
+    <p>
+        We could choose just about any location, but if we were to do something like
+        "accidentally sync over a whole lot of important system files", we would be in
+        for a world of trouble.
+    </p>
+
+    <p>
+        One spot that's generally safe is <code>/home/ubuntu/something</code>.
+        Vagrant boxes usually come with one user operating on them, already.
+        This one comes with a user named <code>ubuntu</code>, and that user's home
+        directory is <code>/home/ubuntu</code>, which means we can put anything
+        in there that we want.
+    </p>
+    <p>
+        &nbsp;
+    </p>
+
+    <pre>
+<code>
+# Share an additional folder to the guest VM. The first argument is
+# the path on the host to the actual folder. The second argument is
+# the path on the guest to mount the folder. And the optional third
+# argument is a set of non-required options.
+config.vm.synced_folder "html", "/home/ubuntu/html"
+</pre>
+    </code>
+
+    <h5> Pull the Lever, Kronk </h5>
+
+    <p> Save the Vagrantfile and we're ready to get started! </p>
+
+    <p> Let's turn the Virtual Machine on, with <code>vagrant up</code>.</p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span> vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+==&gt; default: Checking if box...
+    </pre>
+
+    <p> Eventually a mountain of output will go by. </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside small-aside aside'>
+        <p>
+            Sometimes instead of good things, we'll see
+            <code>VT-x/AMD-V hardware acceleration is not available on your system.
+                Your 64-bit guest will fail to detect a 64-bit CPU and will not be able to boot.</code>
+        </p>
+        <p>
+            This is a bad thing. There are three different things we could do to get this working:
+        <ol>
+            <li>
+                Turn on <abbr title="Intel Virtualization">VT-x</abbr>/<abbr title="Advanced Micro Devices Virtualization">AMD-V</abbr>
+                in the BIOS
+            </li>
+            <li>
+                <a href='https://superuser.com/questions/597121/vt-x-amd-v-hardware-acceleration-is-not-available-on-your-system'>
+                    Disable Windows Hyper-V</a>
+            </li>
+            <li>
+                Abandon the 64-bit <abbr title="Virtual Machine">VM</abbr>
+                and just run a 32-bit <abbr title="Virtual Machine">VM</abbr>.
+            </li>
+        </ol>
+        </p>
+    </aside>
+
+    <p> If that process went off without a hitch, we are good to go. </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside small-aside aside'>
+        <p>
+            If it didn't, <a href="https://github.com/classam/buildatheweb/issues">file an issue</a>
+            and we can try to work out what the problem was.
+        </p>
+    </aside>
+
+    <h5> Logging In </h5>
+
+    <p>
+        Finally, we can log in to our newly created Ubuntu operating system
+        with the command <code>vagrant ssh</code>.
+    </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span> vagrant ssh
+Welcome to Ubuntu 16.04.2 LTS (GNU/Linux 4.4.0-78-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+Last login: Thu May 18 02:31:20 2017 from 10.0.2.2
+ubuntu@ubuntu-xenial:~$
+    </pre>
+
+    <p>
+        This is a whole new command line. The command line of the Ubuntu Virtual Machine.
+        We've got an Ubuntu server running inside our computer!
+    </p>
+
+    <p>
+        Take a moment for a brief celebration.
+    </p>
+
+    <h3> Installing a Web Server </h3>
+
+    <p>
+        We're not done, yet. Our server is running, yes, and we've made sure that,
+        if it listens on port 80, we can connect to it.
+    </p>
+
+    <p>
+        One problem, though &mdash; the server isn't listening on port 80.
+        This is just a server, right now. We need to install a <strong>web server</strong>
+        on our server server.
+    </p>
+
+    <p>
+        We can do that with the command <code>sudo apt-get install nginx</code>.
+    </p>
+
+    <p>
+        Whoa. There's a lot of stuff happening in that command. Let's unpack that a bit!
+    </p>
+
+    <h4>sudo</h4>
+
+    <p>
+        <code>sudo</code> stands for "<strong>su</strong>peruser <strong>do</strong>".
+    </p>
+
+    <p>
+        Linux is, by nature, a multi-user operating system. It's designed to have
+        many users logged in at once.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <h4>Mainframe</h4>
+        <p>
+            This is a holdover from the mainframe era of computing, where
+            there was only money for one computer (which filled an entire room)
+            and every user had a physical terminal connected to that
+            computer with their own login and home directory.
+        </p>
+    </aside>
+
+    <p>
+        In order to keep users from being able to access each other's files,
+        each file has a set of <strong>permissions</strong> that defines
+        who is able to see it, and many system functions are locked down
+        so that common users can't touch them.
+    </p>
+
+    <p>
+        <code>sudo</code> is a way of saying "I am the administrator and I can do whatever I like".
+    </p>
+
+    <div class='figure'>
+        <img src="images/chapter6/sandwich.png" alt="The 'sudo make me a sandwich' comic from XCKD'"/>
+    </div>
+
+    <p>
+        Not everybody has access to sudo &mdash; only admin users.
+    </p>
+
+    <div class='figure'>
+        <img src="images/chapter6/naughty.png" alt="The root user comic from XKCD"/>
+    </div>
+
+    <p> Superuser access is required to <em>install software</em> which is
+        what we wanted to to, here. </p>
+
+    <h4>apt-get install</h4>
+
+    <p><code>apt-get</code> is the command line interface to the
+        <a href="https://en.wikipedia.org/wiki/Advanced_Packaging_Tool">advanced packaging tool</a>,
+        which &mdash; and this is going to seem pretty magical if you're used to the way
+        that Windows does things &mdash; allows you to install any Ubuntu program, automatically,
+        with a single command.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <h4>Package Managers</h4>
+        <p>
+            Different Linuxes have different package managers. Ubuntu has <code>apt</code>,
+            Red Hat has <code>yum</code>, Arch has <code>pacman</code>, Gentoo has <code>portage</code>.
+        </p>
+        <p>
+            Mac OS X doesn't have a package manager by default, but some enterprising hackers
+            have stapled on <code>homebrew</code>, which is a <a href="https://www.slant.co/topics/523/~best-power-user-tools-for-macos">vital Mac tool</a>.
+        </p>
+        <p>
+            Windows remains a featureless wasteland.
+        </p>
+    </aside>
+
+    <p>Seriously. Want vim? Type <code>sudo apt-get install vim</code>. Want to install a program
+        that pipes your command output through
+        <abbr title="American Standard Code for Information Interchange">ASCII</abbr>-art cows? <code>sudo apt-get install cowsay</code>.
+        Want a steam locomotive? <code>sudo apt-get install sl</code>.</p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <h4>Cowsay-whaaat?</h4>
+        <p>
+            By default, if cowsay is installed, the <em>professional, enterprise-grade automation software</em>
+            <strong>ansible</strong> will route all of its output through it.
+        </p>
+        <p>
+            This is awesome.
+        </p>
+    </aside>
+
+    <h4>nginx</h4>
+
+    <p>
+        <a href="https://en.wikipedia.org/wiki/Nginx">Nginx</a> is a fast, lightweight HTTP server.
+        It can also be configured to do a few other fun tricks, like act as a load balancer
+        or reverse proxy, but right now we're interested in just using Nginx to serve some
+        web page.
+    </p>
+
+    <h4>sudo apt-get install nginx</h4>
+
+    <p> Well, that's enough explanation. Let's get to it! </p>
+
+    <pre class='code'>
+ubuntu@ubuntu-xenial:~$ sudo apt-get install nginx
+    </pre>
+
+    <p>
+        This will ask us to confirm it by pressing <code>y</code>, then chug along
+        and eventually stop chugging. At this point, we have a web server!
+    </p>
+
+    <h4> Prove it </h4>
+
+    <p> Don't believe me? Open a browser and visit <code>localhost:8080</code> </p>
+
+    <div class='figure'>
+        <h3>Egads! It worked!</h3>
+        <img src="images/chapter6/nginx.png" alt="A blank NGINX webpage" />
+    </div>
+
+    <h5>localhost</h5>
+    <p>
+        This is a shortcut! <code>localhost</code> is a domain that always
+        resolves to <code>127.0.0.1</code>,
+        which is a special IP address that always resolves to <strong>this computer, the
+        one that I am using right now</strong>.
+    </p>
+
+    <h5>:8080</h5>
+    <p>
+        Earlier, I mentioned that the port that your browser connects to is always
+        the default port for the protocol &mdash; in the case of HTTP, that's <code>80</code>.
+        However, when we created the Virtual Machine, we specified that port 80 on the
+        Virtual Machine should correspond with port 8080 on the host machine.
+    </p>
+
+    <p>
+        When we enter a domain name, we can always add a colon and the port number to
+        specify that we're connecting to a non-standard port.
+    </p>
+
+    <h3> Creating a Basic HTML Document </h3>
+
+    <p>
+        Now that we've got a server running an
+        <abbr title="HyperText Transfer Protocol">HTTP</abbr> server, we need something
+        to <a href="https://www.youtube.com/watch?v=Iwtwb4g1qsk">serve</a>.
+    </p>
+
+    <p>
+        We're going to go into more detail about <abbr title="HyperText Markup Language">HTML</abbr> later,
+        but for now, let's create a very simple file, <code>index.html</code>
+        and put it in our <code>~/code/hello_world/html</code>
+        directory on our host computer
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <h4>index.html</h4>
+        <p>
+            <code>index.html</code> is a special filename.
+        </p>
+        <p>
+            Technically, when we navigate to a website, we are always
+            supposed to indicate the file that we are asking for &mdash;
+            our <abbr title="Uniform Resource Locator">URL</abbr> should
+            end with <code>/whatever.html</code> or <code>/anything.jpg</code>
+            to indicate the file that we're looking for.
+        </p>
+        <p>
+            By convention, however, many web servers are configured to look
+            for <code>index.html</code> by default when no filename
+            is specified. This is because, when we enter a directory,
+            the index file would provide us a list of files in that directory.
+        </p>
+        <p>
+            So, remember &mdash; the <code>index.html</code> file is what
+            your web browser will serve if you don't request a specific file.
+        </p>
+    </aside>
+
+    <pre>
+    <code class='html'>
+&lt;!-- I go in ~/code/hello_world/html/index.html --&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;hello, world&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;hello, world&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code>
+    </pre>
+
+    <p>
+        This file should now exist at <code>/home/ubuntu/html/index.html</code> on
+        our virtual machine.
+    </p>
+
+    <h3> Serving our HTML </h3>
+
+    <p>
+        By default, nginx serves the contents of a system directory, <code>/var/www/html</code>,
+        which contains the "hey, you're running nginx" message we saw earlier.
+    </p>
+
+    <p>
+        We could just copy our file into <code>/var/www/html</code>, but that's not the
+        satisfying solution that we want. No, we want to tell nginx to serve
+        from <code>/home/ubuntu/html</code> rather than <code>/var/www/html</code>
+        by changing nginx's configuration files!
+    </p>
+
+    <p>
+        One problem: nginx's configuration files are deep within the Ubuntu virtual machine,
+        not synced to anywhere on our host machine. We have to edit these configuration
+        files from <em>within the virtual machine</em>.
+    </p>
+
+    <h3> A Different Kind of Text Editor </h3>
+
+    <p>
+        Presumably, we're far enough along in the craft of programming to know that a
+        text editor is the software developer's multi-tool, and one's choice of text editor
+        is approximately as emotionally charged and contentious as one's choice of video
+        game console.
+    </p>
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside small-aside aside'>
+        <p>
+            TurboGrafx 16 forever!
+        </p>
+    </aside>
+
+    <p>
+        But there's a problem &mdash; because we're working extensively with <abbr title="Secure Shell">SSH</abbr>,
+        and <abbr title="Secure Shell">SSH</abbr> is a command shell, with no mouse to speak of, we're going to need
+        a text editor that operates entirely from within the shell.
+    </p>
+
+    <p>
+        This leaves us, then, with about three different options:
+    <ul>
+        <li><strong>vim</strong>, my favourite, which is cryptic and difficult, but powerful</li>
+        <li><strong>emacs</strong>, which is even more cryptic and difficult, but even more powerful</li>
+        <li><strong>nano</strong>, which is quite easy to learn, but offers limited functionality</li>
+    </ul>
+    </p>
+
+    <div class='figure'>
+        <h4>Nano is Like a Spork</h4>
+        <img src='images/chapter6/198.png' alt="a comic that makes fun of nano users" />
+    </div>
+
+    <p>
+        As much as I want to push my pigheaded <strong>vim</strong> lust on to a new generation
+        of developers, nano is the easiest editor to get started with.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside small-aside aside'>
+        <p>
+            <a href="https://stackoverflow.blog/2017/05/23/stack-overflow-helping-one-million-developers-exit-vim/">"I've been programming in vim for 10 years. I don't like it, I just
+                can't figure out how to quit."</a>
+        </p>
+    </aside>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <h3>Making nano suck less</h3>
+        <p>
+            Part of the trouble with nano is that, by default,
+            it has very limited undo support and it doesn't
+            highlight code.
+        </p>
+        <p>
+            While this is an excuse by many to embrace a more powerful editor,
+            nano is quite capable of doing these things
+            with <a href="https://www.nano-editor.org/dist/v2.1/nanorc.5.html">a little bit of configuration</a>.
+        </p>
+        <p>
+            Making nano better is just a pebble in your eventual path
+            to the boulder that is learning Vim, though.
+        </p>
+    </aside>
+
+    <h3>Configuring Nginx</h3>
+
+    <pre class='code'>
+ubuntu@ubuntu-xenial:~$ sudo nano /etc/nginx/sites-available/default
+    </pre>
+
+    <h4>sudo again</h4>
+    <p>
+        Why <code>sudo</code>? Well, <code>/etc/nginx/sites-available/default</code> is a
+        system file, and we wouldn't normally have access to modify it.
+    </p>
+
+    <h4>/etc is for config</h4>
+    <p>
+        <code>/etc</code> is the directory that contains the configuration files
+        for most Linux systems. <strong>This is not a very good name</strong>.
+        They might as well have called this directory <code>/you/know/whatever</code>
+        or <code>/idfk</code> &mdash; or maybe, and I'm just spit-balling, here, <code>/config</code>,
+        but the insane tradition of calling this directory <code>/etc</code> lives on.
+    </p>
+
+    <h4>/sites-available/default</h4>
+    <p>
+        While the core configuration for nginx lives at <code>/etc/nginx/nginx.conf</code>,
+        all it does is reference a multitude of other files.
+    </p>
+    <p>
+        Sometimes I like to throw out all of the default configuration and just dump all
+        of my configuration directly into <code>nginx.conf</code>, but for this example
+        we're going to play ball with the rules and instead edit this
+        other configuration file.
+    </p>
+
+    <p>
+        Here's the configuration file:
+    </p>
+
+    <div class='hang-right-aside-arrow long-arrow' style="margin-top: 702px;"></div>
+    <aside class='hang-right-aside aside' style="margin-top: 670px;">
+        <h4>Here!</h4>
+        <p>
+            Here's the line we want to change.
+        </p>
+        <p>
+            We want this to read <code>root /home/ubuntu/html;</code>
+        </p>
+    </aside>
+    <pre>
+    <code>
+## /etc/nginx/sites-available/default
+##
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# http://wiki.nginx.org/Pitfalls
+# http://wiki.nginx.org/QuickStart
+# http://wiki.nginx.org/Configuration
+#
+# Generally, you will want to move this file somewhere, and start with a clean
+# file but keep this around for reference. Or just disable in sites-enabled.
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
+
+# Default server configuration
+#
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        # SSL configuration
+        #
+        # listen 443 ssl default_server;
+        # listen [::]:443 ssl default_server;
+        #
+        # Note: You should disable gzip for SSL traffic.
+        # See: https://bugs.debian.org/773332
+        #
+        # Read up on ssl_ciphers to ensure a secure configuration.
+        # See: https://bugs.debian.org/765782
+        #
+        # Self signed certs generated by the ssl-cert package
+        # Don't use them in a production server!
+        #
+        # include snippets/snakeoil.conf;
+
+        root /var/www/html;
+
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        #location ~ \.php$ {
+        #       include snippets/fastcgi-php.conf;
+        #
+        #       # With php7.0-cgi alone:
+        #       fastcgi_pass 127.0.0.1:9000;
+        #       # With php7.0-fpm:
+        #       fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+        #}
+
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        #location ~ /\.ht {
+        #       deny all;
+        #}
+}
+
+
+# Virtual Host configuration for example.com
+#
+# You can move that to a different file under sites-available/ and symlink that
+# to sites-enabled/ to enable it.
+#
+#server {
+#       listen 80;
+#       listen [::]:80;
+#
+#       server_name example.com;
+#
+#       root /var/www/example.com;
+#       index index.html;
+#
+#       location / {
+#               try_files $uri $uri/ =404;
+#       }
+#}
+    </code>
+    </pre>
+
+    <p>
+        This is an awful lot of file to look at, but there's only one line that we're concerned about.
+        We need to change <code>root /var/www/html;</code> to read <code>root /home/ubuntu/html;</code>,
+        and then save the file.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <h4>Web Root</h4>
+        <p>
+            Here, we are making <code>/home/ubuntu/html</code> our
+            <strong>web root</strong> and serving everything in
+            that entire folder.
+        </p>
+    </aside>
+
+    <h4>Rebooting nginx</h4>
+
+    <p>
+        That change should do it, but none of our configuration changes will take effect
+        until we <em>reboot nginx</em>.
+    </p>
+
+    <pre class='code'>
+ubuntu@ubuntu-xenial:~$ sudo service nginx restart
+    </pre>
+
+    <h3> We Did It! </h3>
+
+    <p>
+        Let's go back to <code>localhost:8080</code> in a browser.
+    </p>
+
+    <div class='figure'>
+        <img src="images/chapter6/success.png" alt="this is what the browser window should look like if we have succeeded"/>
+        <p><em>Please attempt to contain your excitement.</em></p>
+    </div>
+
+    <p>
+        Who would have thought that a simple "hello, world" program
+        would take so much effort?
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <h4>Just Getting Started</h4>
+        <p>
+            We are going to construct <em>much</em> more elaborate "hello, world" programs.
+        </p>
+        <p>
+            Environment setup is a really important part of web development.
+        </p>
+    </aside>
+
+    <h3> Cleaning Up &amp; Starting Over </h3>
+
+    <p>
+        We're done, but our Virtual Machine is still running. It'll keep on running, forever.
+        That's the whole point of a server.
+    </p>
+
+    <p>
+        We can quit the terminal.
+    </p>
+
+    <pre class='code'>
+ubuntu@ubuntu-xenial:~$ exit
+logout
+Connection to 127.0.0.1 closed.
+
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span>
+    </pre>
+
+    <p>
+        But if we check <code>localhost:8080</code>, the server's still running.
+    </p>
+
+    <p>
+        The only way to truly kill the server is to <del>plunge a stake through it's heart</del>
+        turn it off, which we can do with <code>vagrant halt</code>.
+    </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span> vagrant halt
+==&gt; default: Attempting graceful shutdown of VM...
+    </pre>
+
+    <p>
+        That killed it.
+    </p>
+
+    <p>
+        Let's imagine, though, that we made a serious mistake. While we were working
+        on the operating system we accidentally made a change that ruined everything
+        forever and we don't know how to fix it.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside small-aside aside'>
+        <p>
+            This happens to me a <em>lot</em>.
+        </p>
+    </aside>
+
+    <p>
+        We want to go back to a completely
+        clean slate, to the good times before we had a Virtual Machine at all.
+        This is the situation where <code>vagrant destroy</code> is here to purify
+        our hard drive with its scouring light.
+    </p>
+
+    <pre class='code'>
+<span class='machine'>curtis@SMOKESTACK</span> <span class='path'>~/code/hello_world</span>
+<span class='prompt'>$</span> vagrant destroy
+default: Are you sure you want to destroy the 'default' VM? [y/N] y
+==&gt; default: Destroying VM and associated drives...
+    </pre>
+
+    <p>
+        Never again will you trouble our shores with your foul presence, <em>Virtual Machine</em>.
+    </p>
+
+    <p>
+        We can always bring it back with <code>vagrant up</code> when we need it again.
+    </p>
+
+    <h3> Chapter 6 Summary </h3>
+
+    <p>
+        We've done a lot, to get our web server up and running and serving "hello, world"!
+    </p>
+
+    <ul>
+        <li>
+            We installed a <strong>command line interface</strong> and
+            learned some basics about how to use it.
+        </li>
+        <li>
+            We used <strong>Vagrant and VirtualBox</strong> to install an
+            <strong>Ubuntu Linux Virtual Machine</strong> on our computer.
+        </li>
+        <li>
+            We used <strong>sudo</strong> and <strong>apt-get</strong> to
+            install <strong>nginx</strong> on our server.
+        </li>
+        <li>
+            We created a basic <abbr title="HyperText Markup Language">HTML</abbr> file.
+        </li>
+        <li>
+            We used <strong>nano</strong> to change nginx's configuration.
+        </li>
+        <li>
+            We <strong>rebooted nginx</strong>.
+        </li>
+        <li>
+            We <strong>destroyed the Virtual Machine</strong>.
+        </li>
+    </ul>
+
 
 
     <p id="end" class="ohno">

@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Audio/Video Example</title>
-        <meta name="description" content="Let's look at some tables">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Example</title>
+    <meta name="description" content="CSS">
+    <style>
+        p {
+            font-family: "Courier New", monospace;
+            color: blue !important;
+            font-size: small;
+        }
+        p {
+            font-family: Arial, sans-serif !important;
+            color: red;
+            font-size: medium;
+        }
+        p {
+            font-family: "Times New Roman", serif;
+            color: green;
+            font-size: large !important;
+        }
+    </style>
+</head>
+<body>
 
-        <audio controls>
-          <source src="horse.ogg" type="audio/ogg">
-          <source src="horse.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
+<p> This text should be large, blue, and in the Arial font </p>
 
-        <video width="320" height="240" controls>
-          <source src="movie.mp4" type="video/mp4">
-          <source src="movie.webm" type="video/webm">
-          Your browser does not support the video tag.
-        </video>
-    </body>
+</body>
 </html>

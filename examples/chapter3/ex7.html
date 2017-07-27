@@ -1,49 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Table Example</title>
-        <meta name="description" content="Let's look at some tables">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Example</title>
+    <meta name="description" content="CSS">
+    <style>
+        .big-ol-block{
+            width: 300px;
+            height: 200px;
+            background-color: blue;
+        }
+        .big-ol-block p{
+            color: white;
+        }
+        .big-ol-block:hover{
+            background-color: green;
+            font-size: xx-large;
+            width: 500px;
+        }
+        .big-ol-block :hover{
+            background-color: red;
+            font-family: monospace;
+        }
 
-        <table>
-            <tr>
-                <th>Vegetable</th>
-                <th>Fries</th>
-                <th>Chips</th>
-                <th>Smoothies</th>
-                <th>Real</th>
-            </tr>
-            <tr>
-                <td>Potato</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>No</td>
-                <td>Yes</td>
-            </tr>
-            <tr>
-                <td>Carrot</td>
-                <td>No</td>
-                <td>No</td>
-                <td>Yes</td>
-                <td>Yes</td>
-            </tr>
-            <tr>
-                <td>Beet</td>
-                <td>No</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>Yes</td>
-            </tr>
-            <tr>
-                <td>Brotato</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>Yes</td>
-                <td>No</td>
-            </tr>
-        </table>
+    </style>
+</head>
+<body>
 
-    </body>
+<div class="big-ol-block">
+    <p>Put your mouse over this</p>
+</div>
+
+</body>
 </html>
