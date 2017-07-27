@@ -1,28 +1,47 @@
 
-/* let's try this instead */
+
+/* Cadet Blue Color Scheme */
+/*
+ * Cadet Blue : cadetblue
+ * Darker: #226C70
+ * Lighter: #93C5C7
+ *
+ * Whole Pallete: http://paletton.com/#uid=33j0u0kd5xS4bTj8tJdhQrSminc
+ *
+ */
 
 #toc-bar{
     display: none !important;
 }
 
+@font-face{
+    font-family: inconsolata;
+    src: url('fonts/Inconsolata-dz.otf');
+}
+
 body{
-    font-size: 110%;
+    font-family: Georgia, serif;
+    font-size: 130%;
+    background-color: #eee;
     line-height: 1.6em;
 }
 
-p{
-    margin-top: 20px;
+.main{
+    color: #222;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: #226C70;
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 800;
-    letter-spacing: 0.08em;
+    font-family: "Averia Serif Libre", sans-serif;
+    font-weight: 700;
+    line-height: 1.8em;
 }
 
 h1{
-    padding-top: 100px;
+    padding-top: 250px;
+    font-size: 250%;
 }
 
 h2{
@@ -31,59 +50,218 @@ h2{
     padding-top: 200px;
     color: #eee;
     background-color: #226C70;
+    font-size: 200%;
 }
 
 h3{
     margin-top: 120px;
+    font-size: 180%;
 }
 
 h4, h5, h6{
     margin-top: 65px;
 }
 
-h6{
-    font-size: 80%;
+h4{
+    font-size: 160%;
 }
 
-img{
-    width: 100%;
-    max-width: 100%;
-    max-height: 600px;
-    margin: auto;
+h5{
+    font-size: 140%;
+}
+
+h6{
+    font-size: 120%;
+}
+
+p{
+    margin: 22px 12px;
+}
+
+a{
+    color: #226C70;
+}
+
+abbr[title]{
+    font-weight: bold;
+}
+
+code{
+    font-family: inconsolata, "Courier New", monospace;
+    font-size: 80%;
+    color: #222;
+    background-color: #ddd;
+}
+
+pre{
+}
+
+pre code{
+    font-size: 75%;
+    line-height: 1.5em;
+    margin-top: -50px;
+    margin-bottom: -50px;
+}
+
+.code{
+    font-family: inconsolata;
+    overflow: hidden;
+    font-size: 68%;
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    line-height: 1.5em;
+}
+
+.code .machine{
+    color: CadetBlue;
+}
+
+.code .path{
+    color: #ccc;
+}
+
+.code .prompt{
+    color: CadetBlue;
+}
+
+.barf{
+    font-size: 40%;
+}
+
+.code strong{
+    background-color: #666;
 }
 
 aside{
-    background-color: #ccc;
-    border: 2px dashed #999;
+    font-family: Verdana, sans-serif;
+    color: #444;
+    width: 80%;
+    font-size: 70%;
     padding: 10px;
-    text-align: center;
+    line-height: 1.3em;
+    border: 5px dashed CadetBlue;
 }
 
 aside img{
-    width: auto;
-    max-height: 300px;
+    max-width: 100%;
 }
 
 aside h1, aside h2, aside h3, aside h4, aside h5, aside h6{
-    margin-top: 10px;
+    margin-top: 0;
+    color: CadetBlue;
+    font-size: 120%;
+}
+
+.right-aside-arrow, .left-aside-arrow, .long-arrow, .short-arrow, .tiny-arrow, .hang-right-aside-arrow, .hang-left-aside-arrow{
+    display: none;
 }
 
 .hang-left-aside, .hang-right-aside{
     margin-top: 10px !important;
 }
 
-.hang-left-aside-arrow, .hang-right-aside-arrow{
-    display: none;
+aside p{
+    margin-left: 0;
+    margin-right: 0;
 }
 
-code, .code{
-    font-family: inconsolata, "Courier New", monospace;
-    color: white;
-    background-color: black;
-    padding: 5px;
+aside blockquote{
+    margin-left: 8px;
 }
 
+aside blockquote .citation{
+    display: block;
+    text-align: right;
+}
 
-iframe{
+aside blockquote .citation:before{
+    color: #666;
+    content: "@";
+    font-size: 1em;
+    line-height: 0.1em;
+    margin-right: 0.1em;
+}
+
+aside blockquote:before {
+    color: #666;
+    content: ">";
+    font-size: 2em;
+    line-height: 0.12em;
+    margin-right: 0.05em;
+    vertical-align: -0.1em;
+}
+
+blockquote .citation{
+    display: block;
+    text-align: right;
+}
+
+blockquote .citation:before{
+    color: #666;
+    content: "@";
+    font-size: 1em;
+    line-height: 0.1em;
+    margin-right: 0.1em;
+}
+
+blockquote:before {
+    color: #666;
+    content: ">";
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-right: 0.1em;
+    vertical-align: -0.3em;
+}
+
+.figure{
+    padding: 10px 30px;
+    border: 5px solid #aaa;
+    background-color: white;
+}
+
+.figure h1, .figure h2, .figure h3, .figure h4, .figure h5, .figure h6{
+    margin-top: 10px;
+    color: #222;
+}
+
+.figure img{
+    max-width: 100%;
+    border: 2px solid #222;
+    margin: auto;
+}
+
+table{
+
+}
+
+table tr:nth-child(odd) {
+    background-color: #ddd;
+}
+
+table th{
+    padding: 10px;
+}
+
+table td{
+    padding: 10px;
+}
+
+.example, iframe{
     width: 100%;
+    min-height: 300px;
+    background-color: white;
+    border-radius: 5px;
 }
+
+.measurement-example{
+    background-color: black;
+}
+
+.ohno{
+    margin-top: 200px;
+}
+
+
+
+

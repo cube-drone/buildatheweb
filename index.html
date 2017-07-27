@@ -31,6 +31,8 @@
     <!-- I wrote a whole essay in here about UTF-8. Did you read it? -->
     <meta charset="UTF-8"/>
 
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre:700" rel="stylesheet">
+
     <!-- The CSS stylesheet for the page is located at 'style.css' -->
     <link rel="stylesheet preload" type="text/css" media="(min-width: 1000px)" href="style.css">
     <link rel="stylesheet" type="text/css" media="(max-width: 1000px)" href="mobile.css" />
@@ -1836,7 +1838,7 @@ on `vagrantup.com` for more information on using Vagrant.
         </p>
     </aside>
 
-    <div class='hang-right-aside-arrow long-arrow' style="margin-top: 305px;"></div>
+    <div class='hang-right-aside-arrow long-arrow' style="margin-top: 283px;"></div>
     <aside class='hang-right-aside aside' style="margin-top: 240px;">
         <h4>1. Base Box</h4>
         <p>
@@ -1847,7 +1849,7 @@ on `vagrantup.com` for more information on using Vagrant.
         </p>
     </aside>
 
-    <div class='hang-left-aside-arrow short-arrow' style="margin-top: 505px;"></div>
+    <div class='hang-left-aside-arrow short-arrow' style="margin-top: 473px;"></div>
     <aside class='hang-left-aside aside' style="margin-top: 450px;">
         <h4>2. Port Forward</h4>
         <p>
@@ -1856,8 +1858,8 @@ on `vagrantup.com` for more information on using Vagrant.
         </p>
     </aside>
 
-    <div class='hang-right-aside-arrow' style="margin-top: 805px;"></div>
-    <aside class='hang-right-aside aside' style="margin-top: 750px;">
+    <div class='hang-right-aside-arrow' style="margin-top: 760px;"></div>
+    <aside class='hang-right-aside aside' style="margin-top: 700px;">
         <h4>3. Folder Sync</h4>
         <p>
             We are going to sync a folder on our outer computer to a folder on the
@@ -2505,8 +2507,8 @@ ubuntu@ubuntu-xenial:~$ sudo nano /etc/nginx/sites-available/default
         Here's the configuration file:
     </p>
 
-    <div class='hang-right-aside-arrow long-arrow' style="margin-top: 745px;"></div>
-    <aside class='hang-right-aside aside' style="margin-top: 700px;">
+    <div class='hang-right-aside-arrow long-arrow' style="margin-top: 702px;"></div>
+    <aside class='hang-right-aside aside' style="margin-top: 670px;">
         <h4>Here!</h4>
         <p>
             Here's the line we want to change.
@@ -6200,14 +6202,6 @@ h1 {
         <li>Line Length</li>
     </ul>
 
-    <p>
-        We already know to avoid <span style="font-family:Times New Roman">Times New Roman</span>,
-        <span style="font-family: Arial">Arial</span>, and <span style="font-family:Comic Sans MS, Comic Sans, sans-serif">Comic Sans</span>
-        if we want to be taken seriously &mdash; but the world of stuffy typography nerds has
-        <a href="http://practicaltypography.com/summary-of-key-rules.html">many rules</a>, most
-        of which can be converted directly into <abbr title="Cascading Stylesheets">CSS</abbr> rules.
-    </p>
-
     <h5>Font Choice &amp; The Web Safe Fonts</h5>
 
     <p>
@@ -6275,12 +6269,18 @@ h1 {
         </p>
     </aside>
 
+    <p>
+        It's best to include one of these at the end of every <code>font-family</code> declaration &mdash;
+        that way, even if our webpage is opened by a browser running on a toaster that doesn't have any
+        of the default fonts installed, it'll be able to render <em>something</em>.
+    </p>
+
     <h5>Using Strange Fonts</h5>
 
     <p>
         It's possible to embed fonts directly in to our webpages, allowing us to use
-        a typeface that our users don't have installed. This font &mdash; the one
-        that you're reading right now &mdash; is "Goudy Bookletter".
+        a typeface that our users don't have installed.
+        Right now, I'm using "Averia Serif Libre" for this page's headings.
     </p>
 
     <p>
@@ -6289,47 +6289,282 @@ h1 {
         wizard to help install and configure these fonts in our pages.
     </p>
 
+    <h5>Not Using Strange Fonts</h5>
+
     <p>
         It's important to note, though, that adding a large web font or two can significantly increase
         the size of a webpage.
     </p>
 
+    <p>
+        One of the major pitfalls of non-system web fonts is that they generally do not render well below about <code>12pt</code>.
+        System fonts like Arial or Georgia are designed in such a way that when they get very small,
+        they can be crammed into a tiny pixel grid to still remain readable.
+        Most web fonts are not designed with this in mind,
+        <a href="https://blog.codinghorror.com/font-rendering-respecting-the-pixel-grid/">
+            and the process of hammering them into tiny pixel containers can be pretty rough on the final product.
+        </a>
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <h4>Pixels Gone Wild</h4>
+        <img src="images/chapter4/pixel_smashing.png">
+    </aside>
+
+    <p>
+        For this reason, it's probably for the best only to use strange fonts for large display text, like headers.
+    </p>
+
+    <h5>When In Doubt, Just Use Georgia</h5>
+
+    <p style="font-family:Georgia;">
+        It's a good font. Look at it. Crisp. Readable. Neutral. Kind. Sassy. Georgia is
+        whatever we want it to be.
+    </p>
+
     <h5>Font Size</h5>
 
+    <p>
+        There are many ways to set font size in <abbr title="Cascading Stylesheets">CSS</abbr>;
+        they all depend on the <code>font-size</code> property.
+    </p>
+
+
     <pre>
         <code class="css">
-            p {
-                width: 90em;
+            .one {
+                font-size: large;
+            }
+            .two {
+                font-size: 10pt;
+            }
+            .three {
+                font-size: 15px;
+            }
+            .four {
+                font-size: 0.5in;
+            }
+            .five {
+                font-size: 120%;
+            }
+            .six {
+                font-size: 2em;
             }
         </code>
     </pre>
 
-    <h5>Line Height</h5>
+    <pre>
+        <code class="html">
+&lt;p class=&quot;one&quot;&gt;Hello world&lt;/p&gt;
+&lt;p class=&quot;two&quot;&gt;Hello world&lt;/p&gt;
+&lt;p class=&quot;three&quot;&gt;Hello world&lt;/p&gt;
+&lt;p class=&quot;four&quot;&gt;Hello world&lt;/p&gt;
+&lt;p class=&quot;five&quot;&gt;Hello world&lt;/p&gt;
+&lt;p class=&quot;six&quot;&gt;Hello world&lt;/p&gt;
+        </code>
+    </pre>
 
-    <h5>Line Width</h5>
+    <iframe class="example" src="examples/chapter4/ex12.html" style="height:400px"></iframe>
 
     <p>
-        Our typography guideline suggests that lines should be no more than 90 characters long.
+        These different ways of setting the font size are all examples of <strong>CSS Measurements</strong>,
+        which are important enough that they deserve a whole topic header to themselves.
+    </p>
+
+    <h6>CSS Measurements</h6>
+
+    <p>
+        There are many different ways to provide measurements in <abbr style="Cascading Stylesheets">CSS</abbr>.
+        <code>%</code>, <code>px</code>, <code>in</code>, <code>em</code>, there's twelve in total.
+        Good thing we have this table:
+    </p>
+
+
+    <table>
+        <tr>
+            <td>%</td>
+            <td>
+                A percentage relating to another value, typically the enclosing element &mdash;
+                for example <code>body{ width: 80% }</code> would set the <code>body</code>
+                to be 80% of the viewport width, whereas <code>p{ font-size: 120% }</code>
+                would just set the font-size to be 120% of the default font-size.</td>
+            <td>Relative</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div class="measurement-example" style="width: 80%;"><code>width: 80%;</code></div>
+            </td>
+        </tr>
+        <tr>
+            <td>px</td>
+            <td>
+                A measurement in screen pixels. While this used to mean 1/96th of an inch, thanks to variable
+                pixel density screens, <code>px</code> can mean different things based on the device that
+                it is displayed on.
+            </td>
+            <td>Absolute-ish</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div class="measurement-example" style="width: 500px;"><code>width: 500px;</code></div>
+            </td>
+        </tr>
+        <tr>
+            <td>em</td>
+            <td>
+                A measurement equal to the width of the <code>m</code> in the currently set font. If the font
+                changes, so does the <code>em</code>.
+            </td>
+            <td>Relative</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div class="measurement-example" style="width: 25em;"><code>width: 25em;</code></div>
+            </td>
+        </tr>
+         <tr>
+            <td>rem</td>
+            <td>
+                A measurement equal to the width of the <code>m</code> in the currently set font of the
+                page's <strong>root element</strong>.
+            </td>
+            <td>Relative</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div class="measurement-example" style="width: 25rem;"><code>width: 25rem;</code></div>
+            </td>
+        </tr>
+        <tr>
+            <td>vw</td>
+            <td>
+                1% of viewport width.
+            </td>
+            <td>Relative</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div class="measurement-example" style="width: 20vw;"><code>width: 20vw;</code></div>
+            </td>
+        </tr>
+        <tr>
+            <td>vh</td>
+            <td>
+                1% of viewport height.
+            </td>
+            <td>Relative</td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div class="measurement-example" style="width: 100%; height: 10vh;"><code>width: 100%; height: 10vh;</code></div>
+            </td>
+        </tr>
+        <tr>
+            <td>vmin</td>
+            <td>
+                Whichever is smaller of <code>vh</code> and <code>vw</code>
+            </td>
+            <td>Relative</td>
+        </tr>
+        <tr>
+            <td>vmax</td>
+            <td>
+                Whichever is larger of <code>vh</code> and <code>vw</code>
+            </td>
+            <td>Relative</td>
+        </tr>
+    </table>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <h4>Viewport</h4>
+        <p>
+            The viewport is the part of the browser window that we're looking at the page with.
+        </p>
+        <p>
+            <code>vh</code> and <code>vw</code> measurements are relatively new, and they
+            <em>seem</em> useful, but I'm not quite sure what to do with them, yet.
+        </p>
+    </aside>
+
+    <p>
+        Then there's also <code>in</code>, <code>cm</code>, <code>mm</code>, <code>pt</code>, and <code>pc</code>,
+        which are all based on real-life measurements, most of which are kind of meaningless when
+        applied to a computer monitor, so they're all quietly just mapped to various amounts of <code>px</code>.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <h4>Hedwig and the Angry Inch</h4>
+        <p>
+            <a href="https://css-tricks.com/the-lengths-of-css/">This article</a>
+            does a great job of laying out the CSS Measurements in more detail
+            than I have.
+        </p>
+    </aside>
+    <p>
+        The question then becomes <strong>but which measurements should I use?</strong>
+    </p>
+
+    <div class="figure">
+        <h5>But Which Measurements Should I Use?</h5>
+        <ul>
+            <li>Use <code>%</code> whenever we want to define something relative to something else.</li>
+            <li>Use <code>em</code> if we're working with fonts.</li>
+            <li>Use <code>px</code> if we know the exact pixel dimensions of the thing we're working with.</li>
+            <li>Use <code>rem</code> for everything else. </li>
+        </ul>
+
+    </div>
+
+    <h5>Line Height & Line Width</h5>
+
+    <p>
+        Lines should be between 45 and 90 characters long (including spaces),
+        and in order for lines to be readable,
+        they should be spaced comfortably far apart from one another.
     </p>
 
     <p>
-        We can set this using the <code>width</code> property.
+        We can set this using the <code>line-height</code> and <code>width</code> properties, respectively,
+        as well as the measurements that we just learned about.
+    </p>
+
+
+    <p>
+        Let's take this unstyled <abbr title="HyperText Markup Language">HTML</abbr>
+        content:
+    </p>
+
+    <iframe src="examples/chapter4/ex13.html" style="min-height: 200px; height: 200px;"></iframe>
+
+    <p>
+        and add our four <abbr title="Cascading Stylesheets">CSS</abbr> rules.
     </p>
 
     <pre>
         <code class="css">
-            p {
-                width: 90em;
+            body {
+                font-family: Georgia, serif; /* font choice */
+                font-size: 120%; /* font size */
+                line-height: 1.5em; /* line spacing */
+                width: 35em; /* line length */
             }
         </code>
     </pre>
 
-    <p>
-        An <code>em</code> measurement is a measurement that works based on the width of the size of the "m"
-        in the current font &mdash; so, even if we change our font, or the size of our font,
-        our <code>p</code> elements will change
-        size so that they are still <code>90em</code> wide.
-    </p>
+    <iframe src="examples/chapter4/ex14.html"></iframe>
+
+    <p>I like it! It's no mystery that this textbook uses <em>very similar settings.</em></p>
+
+    <h5>Dashes and Quotes</h5>
+
+    <h5>Bold and Italic</h5>
+
+    <h5>Styling Headers</h5>
+
+    <h5>Lists, Blockquotes, Embedded Code</h5>
 
     <h4>Hex Colors</h4>
 
