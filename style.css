@@ -150,14 +150,16 @@ aside h1, aside h2, aside h3, aside h4, aside h5, aside h6{
 }
 
 .right-aside-arrow{
-    width: 150px;
+    width: 170px;
     float: right;
     margin-top: -10px;
+    margin-right: -35px;
     border-bottom: 5px dashed CadetBlue;
 }
 
 .left-aside-arrow{
-    width: 150px;
+    width: 170px;
+    margin-left: -35px;
     border-bottom: 5px dashed CadetBlue;
 }
 

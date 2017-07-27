@@ -79,7 +79,6 @@
         <img src="images/classam.png">
     </aside>
 
-
     <p>
         The best kind of textbook about
         the web is made out of <abbr title="HyperText Markup Language">HTML</abbr>
@@ -95,19 +94,17 @@
     </p>
 
     <p>
-        This book is available for free, under the terms of the
-        <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU Affero General Public License v3.0 </a>, except
-        for the fonts, which are available under the
-        <a href="http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL">Open Font License</a>.
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+            <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+        <br />This work is licensed under a
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
     </p>
+
     <div class='right-aside-arrow'> </div>
     <aside class='right-aside aside'>
-        <h4>GPLv3</h4>
+        <h4>tl;dr</h4>
         <p>
-            While Richard Stallman may appear to be a bit of a dogmatic screwball,
-            the man's seemingly
-            <a href='http://www.osnews.com/story/25469/Richard_Stallman_Was_Right_All_Along'>
-            able to predict the future</a>.
+            You can share it, you can remix it, but you can't profit off of it.
         </p>
     </aside>
 
@@ -4805,9 +4802,120 @@ h1 {
 
     <p>I like it! It's no mystery that this textbook uses <em>very similar settings.</em></p>
 
-    <h5>Dashes and Quotes</h5>
+    <h5>Smart Quotes and Special Symbols</h5>
 
-    <h5>Bold and Italic</h5>
+    <p>
+        One pet peeve of Design Folks is when writers use the wrong characters for things.
+        It bothers them <a href="http://smartquotesforsmartpeople.com/">a lot</a>.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <p>
+            Another pet peeve of Design Folks is when they accidentally spill their macchiato
+            on their Macbook and it spills on to their copy of McSweeney's Quarterly Concern.
+        </p>
+    </aside>
+
+    <p>
+        For example, this badly written scenario:
+    </p>
+
+    <iframe class='example' src="examples/chapter3/ex15.html"></iframe>
+
+    <p>
+        The crimes are countless. Well, not countless. But there are definitely at least eight crimes!
+    </p>
+
+    <ul>
+        <li>The quote "I'm Spartacus" uses straight quotes instead of angled quotes.</li>
+        <li>And a straight apostrophe instead of an angled apostrophe.</li>
+        <li>That's a hyphen (-), not an em-dash &mdash; which is what we would expect to see, here.</li>
+        <li>45C instead of 45&deg;C? Blasphemy.</li>
+        <li>Three periods instead of an ellipsis character&hellip;</li>
+        <li>(C) is no substitute for &copy; </li>
+        <li>1/2 could easily read &frac12;</li>
+        <li>Some people might consider replacing the ?!?!? with a simple interrobang, &#8253;,
+            but actually both of these would be incorrect.
+            You get <em>one</em> punctuation mark, writers.</li>
+    </ul>
+
+    <p>
+        Let's update this <abbr title="Hypertext Markup Language">HTML</abbr> so that we aren't
+        embarrassed by the bad typography!
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <h3>Doesn't this belong in the HTML chapter?</h3>
+        <p>
+            Astute observation, reader, but this is about <em>style</em> and also
+            it fits really nicely in this segment about <em>web typography</em>,
+            okay?
+        </p>
+        <p><strong>okay?!?</strong></p>
+    </aside>
+
+    <pre>
+        <code class="html">
+&lt;p&gt;
+    &amp;ldquo;I&amp;rsquo;m Spartacus&amp;rdquo;.
+&lt;/p&gt;
+&lt;p&gt;
+    Well, that was all well and good &amp;mdash; but would he survive
+       &amp;hellip; temperatures of over 45&amp;deg;C?
+&lt;/p&gt;
+&lt;p&gt;
+    &amp;ldquo;I can definitely survive exactly 45 degrees of heat!&amp;rdquo;
+&lt;/p&gt;
+&lt;p&gt;
+    Darn! But would he survive&amp;hellip; &amp;frac12; of a degree of extra heat?
+&lt;/p&gt;
+&lt;p&gt;
+    &amp;copy; 2017 Bad Writing Inc.
+&lt;/p&gt;
+        </code>
+    </pre>
+
+    <iframe class='example' src="examples/chapter3/ex16.html"></iframe>
+
+    <p>
+        That's much better!  Well, the writing is still terrible. I don't think using &frac12; instead of "half"
+        in a sentence is even remotely valid.
+    </p>
+
+    <p>
+        That <abbr title="Hypertext Markup Language">HTML</abbr> is pretty ugly, though!
+    </p>
+
+    <p>
+        There are two potential solutions to this problem:
+    </p>
+
+    <ul>
+        <li>
+            If our <abbr title="Hypertext Markup Language">HTML</abbr> is encoded properly in UTF-8,
+            we can just include the special characters directly in the file. Many code editors still
+            won't automatically set our curly brace characters for us, though.
+        </li>
+        <li>
+            We can attach a JavaScript script to our site that
+            <a href="http://smartquotesjs.com/">intelligently converts quotes to smart quotes</a>.
+            This script works like magic and I highly recommend it.
+        </li>
+    </ul>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <img src="images/chapter3/this_is_dumb.png">
+        <p>
+            Actually in retrospect these people are dumb.
+        </p>
+
+        <p>
+            Typography has no shortage of <a href="http://wondermark.com/c/2008-08-15-434language.gif">stuffy, rule-following grammarians</a>.
+        </p>
+    </aside>
 
     <h5>Styling Headers</h5>
 
