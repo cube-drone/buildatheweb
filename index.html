@@ -4838,6 +4838,7 @@ h1 {
         <li>Some people might consider replacing the ?!?!? with a simple interrobang, &#8253;,
             but actually both of these would be incorrect.
             You get <em>one</em> punctuation mark, writers.</li>
+        <li>I'm not sure that Bad Writing ever incorporated into a full company.</li>
     </ul>
 
     <p>
@@ -4917,11 +4918,333 @@ h1 {
         </p>
     </aside>
 
+    <h5>Thin, Bold, Uppercase, Small-Caps, and Italics</h5>
+
+    <p>
+        I'm just going to show you some code and trust you to figure it out.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <h3>Font Weight</h3>
+        <p>
+            We wouldn't actually create a <code>.bold</code> or <code>.italic</code>
+            class, right? That's what the <code>em</code> and <code>strong</code>
+            elements are for. We might, however, mix these into
+            other classes we're working on.
+        </p>
+    </aside>
+
+    <pre>
+        <code class="css">
+        .bold{
+            font-weight: bold;
+        }
+        .uppercase{
+            text-transform: uppercase;
+        }
+        .caps{
+            text-transform: capitalize;
+        }
+        .lowercase{
+            text-transform: lowercase;
+        }
+        .smallcaps{
+            font-variant: small-caps;
+        }
+        .italic{
+            font-style: italic;
+        }
+        .mixed-bag{
+            font: bold italic 150% Georgia, serif;
+        }
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter3/ex17.html"></iframe>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <h3>Font Weight</h3>
+        <p>
+            Some special fonts include font weights beyond just <code>bold</code>.
+        </p>
+        <p>
+            In fact, there are font weights <code>100</code>, <code>200</code>, <code>300</code>,
+            <code>400</code>, <code>500</code>, <code>600</code>, and <code>700</code>, where
+            <code>100</code> is so thin that we can barely see the letters at all
+            and <code>700</code> is so chunky that we could put it on nachos.
+        </p>
+        <p>
+            Most of the time our fonts don't even <em>have</em> these weights, though,
+            so it's kind of a moot point.
+        </p>
+    </aside>
+
+    <h5>Colorful Text</h5>
+
+    <p>
+        Black is always in &mdash; it's trendy, and so slimming &mdash; but sometimes we want our
+        text to be a different color.
+        <a href="https://2tk0bt2f3p3q1klrea2630vz-wpengine.netdna-ssl.com/wp-content/uploads/2014/10/05-740-post/Chorizo-Pork-Sausage-Recipe-Homemade-Meat-Grinder_0224-705x479.jpg">Links</a>,
+        for example, default to a rather
+        hideous blue that we often want to change to match our color scheme.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <img src="images/chapter3/queen.jpg">
+        <p>
+            If you're British or Canadian, like me,
+            you might not be used to spelling colour this way,
+            without the u.
+        </p>
+        <p>
+            We'll have to put our patriotism aside, though &mdash; <code>colour</code> doesn't
+            work in <abbr title="Cascading Style Sheets">CSS</abbr>, only <code>color</code>.
+        </p>
+    </aside>
+
+    <p>
+        Let's imagine we wanted to make every link on our page red, instead of blue.
+        We could do that like so:
+    </p>
+
+    <pre>
+        <code class="css">
+            a {
+                color: red;
+            }
+        </code>
+    </pre>
+
+    <p>
+        Red is a named color. <abbr title="Cascading Style Sheets">CSS</abbr> supports
+        over <a href="https://www.w3schools.com/colors/colors_names.asp">140 different named colors</a>,
+        including <code>white</code>, <code>blue</code>, <code>aquamarine</code>, <code>snow</code>,
+        and <code>burlywood</code>.
+    </p>
+
+    <p>
+        140 is not really a lot of colors, though! Our monitors can display over 16 million different
+        colors, most of which don't have names.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <h3>Using AI To Name All The Colors</h3>
+        <img src="images/chapter3/stargoon.png">
+        <p>
+            Yet. Most of which don't have names yet.
+        </p>
+        <p>
+            Janelle Shane has turned a neural network on
+            the task of naming colors, and the results
+            are <a href="http://lewisandquark.tumblr.com/post/160776374467/new-paint-colors-invented-by-neural-network">mega hilarious</a>.
+        </p>
+    </aside>
+
+    <p>
+        To tell <abbr title="Cascading Style Sheets">CSS</abbr> about a color that isn't one of the 140 named
+        colors, we have to define that color another way.
+    </p>
+
+    <pre>
+        <code class="css">
+            a {
+                color: #FF0000;
+            }
+        </code>
+    </pre>
+
+    <h5>CSS Colors</h5>
+
+    <p>
+        Colors, as reproduced on a monitor, are represented by three lights &mdash; a red light, a green light, and a
+        blue light. When all of the lights are turned all the way up, we get a white pixel. When all of the lights
+        are turned all the way down, we get a black pixel. Blue is created by turning the blue lights all the way up,
+        and leaving the other two lights off. This is <a href="https://en.wikipedia.org/wiki/Additive_color">Additive Color</a>.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <h3>A Shout Out To The Colorblind</h3>
+        <img src="images/chapter3/colorblind.gif">
+        <p>
+            About one in ten men (and one in two-hundred women)
+            are some kind of color-blind. For this reason, it's good
+            to consider using more than just color to communicate
+            things visually.
+        </p>
+    </aside>
+
+    <p>
+        Each light has 256 different possible settings &mdash; 0 meaning "off" and 256 meaning "maximum power".
+    </p>
+
+    <p>
+        We can set colors by setting these numbers &mdash; here's how we would turn our links red using
+        an RGB code:
+    </p>
+
+    <pre>
+        <code class="css">
+            a {
+                color: rgb(255, 0, 0);
+            }
+        </code>
+    </pre>
+
+    <p>
+        This takes up a lot of space, though. The hex format is a handy format for relaying these values quickly &mdash;
+        we convert each number to its
+        <a href="https://en.wikipedia.org/wiki/Hexadecimal">hexadecimal</a> representation, mash them all together, and display them like this:
+    </p>
+
+    <pre>
+        <code class="css">
+            a {
+                color: #FF0000;
+            }
+        </code>
+    </pre>
+
+    <h6>A Quick Gray</h6>
+
+    <p>
+        One thing that's easy to remember is that shades of gray always have the same R, G, and B values.
+        So we can create very dark grays like <code>#222222</code> and very light grays like <code>#EEEEEE</code>
+        without having to think very hard.
+    </p>
+
+
+    <h6>Hex Color Tools</h6>
+
+    <p>
+        When we're looking to create colors that exist beyond the realm of grays, the relationship between
+        hex values and colors can start to get a bit muddy.
+    </p>
+
+    <img src="images/chapter3/colorpicker.png">
+
+    <p>
+        Fortunately, countless tools exist to help us with this problem, from simple
+        <a href="https://www.google.ca/search?q=color+picker">color pickers</a>
+        to full-on <a href="http://paletton.com/#uid=33j0u0kd5xS4bTj8tJdhQrSminc">palette generators</a>
+        and complex <a href="https://color.adobe.com/create/color-wheel/">color wheels</a>.
+    </p>
+
+    <h6>Hue, Saturation, and Lightness</h6>
+
+    <p>
+        One common criticism of <abbr title="Red, Green, Blue">RGB</abbr> is that it's very tied to the
+        actual raw implementation of color on a technical level &mdash; which produces a scheme
+        that doesn't map easily to our understanding of color.
+    </p>
+
+    <p>
+        In an attempt to produce a system that we can understand more easily, RGB can be mapped
+        to <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">Hue, Saturation, and Lightness</a>
+        or <a href="https://en.wikipedia.org/wiki/HSL_and_HSV">Hue, Saturation, and Value</a> &mdash;
+        schemes designed to be easier to manage because they more closely approximate how our
+        brains process color.
+    </p>
+
+    <p>
+        In the <abbr title="Hue, Saturation, Lightness">HSL</abbr> scheme:
+    </p>
+
+    <ul>
+        <li><strong>Hue</strong> is a number between 0 and 360 that selects the color from a wheel.</li>
+        <li><strong>Saturation</strong> is a percentage between 0 and 100 that determines how intense the color is,
+            with 0 being "just a shade of gray" and 100 being "dazzling full-color". </li>
+        <li><strong>Lightness</strong> is a percentage between 0 and 100 that determines how light or dark the color is,
+            with 0 being "black" and 100 being "white"</li>
+    </ul>
+
+    <p>
+        <abbr title="Cascading Stylesheets">CSS</abbr> supports these schemes, although they are not
+        commonly used, as they are a relatively new feature and most tooling still revolves around
+        the old hex-RGB based system.
+    </p>
+
+    <pre>
+        <code class="css">
+            a {
+                color: hsl(0, 100%, 50%);
+                /* 0 is "red",
+                   100% is "full red", and
+                   50% is "not any lighter or darker than standard red" */
+            }
+        </code>
+    </pre>
+
+    <h6>Opacity</h6>
+
+    <p>
+        One element of color that's not as frequently considered is the color's opacity.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <h3>More Like No-Pacity</h3>
+        <p>
+            Stacked opacity effects can be quite expensive to render,
+            so don't go overboard.
+        </p>
+    </aside>
+
+    <p>
+        This determines how transparent the color is. Opacity is the opposite of transparency &mdash;
+        so an object with 100% opacity is 0% transparent, and an object that is 100% transparent has 0% opacity.
+        If this seems opaque, your capacity for opacity is limited by your lack of perspicacity, but with
+        tenacity your incapacity can be overcome.
+    </p>
+
+    <p>
+        The term for opacity in color is "alpha" &mdash; so we can set the
+        <abbr title="Red, Green, Blue, Alpha">RGBA</abbr> value to <code>255, 0, 0, 0.9</code>
+        to create a color that's entirely red and 10% transparent.
+    </p>
+
+    <pre>
+        <code class="css">
+            a {
+                color: rgba( 255, 0, 0, 0.9 );
+            }
+        </code>
+    </pre>
+
+    <p>
+        This also works within <abbr title="Hue, Saturation, Value">HSL</abbr>:
+    </p>
+
+    <pre>
+        <code class="css">
+            a {
+                color: hsla( 0, 100%, 50%, 0.9 );
+            }
+        </code>
+    </pre>
+
+    <p>
+        We can also do this using the <code>opacity</code> property.
+    </p>
+
+    <pre>
+        <code class="css">
+            a {
+                color: red;
+                opacity: 0.9;
+            }
+        </code>
+    </pre>
+
+
+
     <h5>Styling Headers</h5>
 
     <h5>Lists, Blockquotes, Embedded Code</h5>
-
-    <h4>Hex Colors</h4>
 
     <h4>The Box Model</h4>
 
