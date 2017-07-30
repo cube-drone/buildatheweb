@@ -5240,6 +5240,12 @@ h1 {
         </code>
     </pre>
 
+    <h5>Web Typography Summary</h5>
+
+    <p>
+        Seriously, just use Georgia.
+    </p>
+
     <h4>The Box Model</h4>
 
     <p> 
@@ -5248,6 +5254,92 @@ h1 {
         with the box model.
     </p>
 
+    <p>
+        What is the box model, you ask?
+        In <abbr title="Cascading Stylesheets">CSS</abbr>, every element is
+        contained within an imaginary box, and the rules for adjusting the size, color,
+        and appearance of those boxes are the <em>box model</em>.
+    </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside aside'>
+        <img src="images/chapter3/box_models.jpg">
+        <p>
+            The people in this stock photo are box <em>models</em>,
+            which is a different thing entirely.
+        </p>
+    </aside>
+
+    <h5>Height & Width</h5>
+
+    <div class="figure">
+        <img src="images/chapter3/box_model_1.png">
+        <p>
+            First of all, every element (except for inline elements, which we'll talk about later)
+            has a <code>width</code> and a <code>height</code> associated with it.
+        </p>
+        <p>
+            To make these boxes easier to see, our examples are also going to use
+            <code>background-color</code>, which is a property that sets&hellip; well, the background
+            color.
+        </p>
+    </div>
+
+    <p>
+        We can set the <code>width</code> and <code>height</code> using any of the <a href="#css-measurements">CSS Measurements</a>
+        we talked about before &mdash; <code>em</code>, <code>px</code>, <code>%</code>;
+    </p>
+
+    <pre>
+        <code class="css">
+            .block-one {
+                background-color: taupe;
+                width: 300px;
+                height: 200px;
+            }
+            .block-two {
+                background-color: green;
+                width: 90%;
+                height: 5px;
+            }
+        </code>
+    </pre>
+
+    <p>
+        If we're not sure how big the content is going to be, we can set
+        <code>max-width</code>, <code>min-width</code>, <code>max-height</code>
+        and <code>min-height</code> instead &mdash;
+        they'll get bigger or smaller with their content, but they won't
+        get any bigger or smaller than the bounds we set.
+    </p>
+
+    <pre>
+        <code class="css">
+            .block-one {
+                background-color: taupe;
+                max-width: 300px;
+                max-height: 300px;
+                min-width: 30px;
+                min-height: 30px;
+                overflow: hidden;
+            }
+        </code>
+    </pre>
+
+    <h5>Overflow!</h5>
+
+    <div class="figure">
+        <img src="images/chapter3/box_model_2.png">
+        <img src="images/chapter3/box_model_3.png">
+        <img src="images/chapter3/box_model_4.png">
+        <img src="images/chapter3/box_model_5.png">
+    </div>
+
+    <div class="figure">
+        <img src="images/chapter3/margin_collapse.png">
+        /* note that aboslutely positioned or floating elements never collapse margins */
+    </div>
+
     <h5>Inline vs. Block Elements</h5>
 
     <h4>Floats</h4>
@@ -5255,6 +5347,8 @@ h1 {
     <h4>Position: Absolute</h4>
 
     <h4>Flexbox</h4>
+
+    <h3>CanIUse Cheeseburger?</h3>
 
     <h3>Special CSS For Mobile</h3>
 
