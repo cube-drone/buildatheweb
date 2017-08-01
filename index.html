@@ -5303,7 +5303,7 @@ h1 {
     <pre>
         <code class="css">
             .block-one {
-                background-color: taupe;
+                background-color: pink;
                 width: 300px;
                 height: 200px;
             }
@@ -5315,6 +5315,17 @@ h1 {
         </code>
     </pre>
 
+    <pre>
+        <code class="html">
+&lt;div class=&quot;block-one&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;block-two&quot;&gt;&lt;/div&gt;
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter3/ex18.html"></iframe>
+
+    <h6>Max Height & Max Width</h6>
+
     <p>
         If we're not sure how big the content is going to be, we can set
         <code>max-width</code>, <code>min-width</code>, <code>max-height</code>
@@ -5323,20 +5334,120 @@ h1 {
         get any bigger or smaller than the bounds we set.
     </p>
 
+    <div class="figure">
+        <p>
+            In order to help me illustrate this, let me introduce
+            this picture of me, which is exactly 371 pixels wide
+            and 455 pixels tall.
+        </p>
+
+        <img src="images/classam.png">
+
+        <p> Say hi, me picture! </p>
+
+        <p> Looks like he's being shy. </p>
+    </div>
+
+    <p>
+        Now, we're going to create a class with a maximum and minimum height,
+        and display it with and without content:
+    </p>
+
     <pre>
         <code class="css">
             .block-one {
-                background-color: taupe;
+                background-color: pink;
                 max-width: 300px;
                 max-height: 300px;
                 min-width: 30px;
                 min-height: 30px;
-                overflow: hidden;
             }
         </code>
     </pre>
 
-    <h5>Overflow!</h5>
+    <pre>
+        <code class="html">
+&lt;div class=&quot;block-one&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;block-one&quot;&gt;&lt;img src=&quot;images/classam.png&quot;&gt;&lt;/div&gt;
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter3/ex19.html" style="height: 550px;"></iframe>
+
+    <p>
+        What can we divine from this example?
+    </p>
+
+    <ul>
+        <li>
+            Elements want to be as wide as they can. The block with no content
+            has a <code>min-width</code> of <code>30px</code>
+            and a <code>max-width</code> of <code>300px</code>, and it's  <code>300px</code> wide.
+        </li>
+        <li>
+            Elements do not want to be tall. The block with no content
+            has a <code>min-width</code> of <code>30px</code>
+            and a <code>max-width</code> of <code>300px</code>, and it's <code>30px</code> tall.
+        </li>
+        <li>
+            Despite the fact that that image is greater than <code>300px</code> in size in both directions,
+            it's leaking out of its container and taking up all kinds of space.
+        </li>
+    </ul>
+
+    <p>
+        Wait, <em>what?</em>? How?
+        I don't understand how that picture is bigger than it's containing element. Is it <em>stretching</em> it?
+    </p>
+
+    <p>
+        We can understand this better by making that image partially transparent.
+    </p>
+
+    <pre>
+        <code class="css">
+            .block-one {
+                background-color: pink;
+                max-width: 300px;
+                max-height: 300px;
+                min-width: 30px;
+                min-height: 30px;
+            }
+            .block-one img{
+                opacity: 50%;
+            }
+        </code>
+    </pre>
+
+    <pre>
+        <code class="html">
+&lt;div class=&quot;block-one&quot;&gt;&lt;img src=&quot;images/classam.png&quot;&gt;&lt;/div&gt;
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter3/ex20.html" style="height: 550px;"></iframe>
+
+    <p>
+        The image isn't stretching its containing element &mdash; it just hits the edge and
+        keeps on going!
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <h3>CSS is Awesome</h3>
+        <img src="images/chapter3/css-is-awesome.jpg" >
+        <p>
+            This mug is a pretty old joke about how, in <abbr title="Cascading Stylesheets">CSS</abbr>,
+            sometimes the content keeps on going even after the containing element stops.
+        </p>
+        <p>
+            If you're interested in exploring this mug in spectacular detail,
+            <a href="https://css-tricks.com/css-is-awesome/">this blog post</a> really gets
+            into it.
+        </p>
+    </aside>
+
+    <h6>Overflow!</h6>
 
     <div class="figure">
         <img src="images/chapter3/box_model_2.png">
