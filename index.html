@@ -1867,7 +1867,27 @@ See also _laziness and impatience_.
         and an <abbr title="HyperText Markup Language">HTML</abbr> <strong>element</strong>.
     </p>
 
-    <h4> Doctype </h4>
+
+    <h4> Creating a HTML Page </h4>
+
+    <div class='left-aside-arrow short-arrow'></div>
+    <aside class='left-aside aside'>
+        <h4>Text Editor</h4>
+        <p>
+            I'm just going to assume that you have a programmer's text editor on your
+            computer that you like and are familiar with.
+        </p>
+        <p>
+            If you don't, go install <strong>Notepad++</strong> or <strong>SublimeText</strong>
+            or maybe <strong>Atom</strong>.
+        </p>
+    </aside>
+
+    <p>
+        To get started, we need a file to work on. Which is very easy. Just open a file, anywhere
+        on your system, with a text editor, and name it <code>sample.html</code>. Now we can
+        open this file with a browser and it's an empty webpage. Easy peasy.
+    </p>
 
     <div class='right-aside-arrow'> </div>
     <aside class='right-aside aside'>
@@ -1879,6 +1899,7 @@ See also _laziness and impatience_.
         </p>
     </aside>
 
+    <h4> Doctype </h4>
 
     <p>
         <abbr title="HyperText Markup Language">HTML</abbr>
@@ -3426,10 +3447,29 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
     </p>
 
     <ul>
-        <li>Learned what HyperText Markup Language is, and kinda how to make some of it. </li>
-        <li>Spent entirely too much time learning about Unicode and character encodings. </li>
+        <li>Spent entirely too much time learning about Unicode and <a href="#character-encoding">character encodings</a>. </li>
+        <li>Learned about <a href="#text-files-and-markup-languages">markup languages</a> in general, and <a href="#html">HyperText Markup Language</a> in specific.</li>
+        <li>Created an <abbr title="HyperText Markup Language">HTML</abbr> page, with a <ul>
+            <li><a href="#html-element">Root HTML Tag</a></li>
+            <li><a href="#head-and-body">Head & Body</a></li>
+            <li><a href="#charset">Charset</a></li>
+            <li><a href="#title">Title</a></li>
+            <li><a href="#favicon">Favicon</a></li>
+        </ul> </li>
         <li>Learned about a whole whack of <abbr title="HyperText Markup Language">HTML</abbr> tags, like
-        <code>image</code>, <code>a</code>, <code>div</code>, and <code>hotdog</code>.</li>
+        <ul>
+            <li><a href="#paragraphs">Paragraphs</a></li>
+            <li><a href="#headers">Headers</a></li>
+            <li><a href="#lists">Lists</a></li>
+            <li><a href="#tables">Tables</a></li>
+            <li><a href="#special-characters">Special Characters</a></li>
+            <li><a href="#emphasis-and-strong">Emphasis</a></li>
+            <li><a href="#links">Links</a></li>
+            <li><a href="#images">Images</a></li>
+            <li><a href="#audio-and-video">Audio & Video</a></li>
+            <li><a href="#iframes">iFrames</a></li>
+        </ul></li>
+        <li>Cracked open a page using developer tools</li>
     </ul>
 
     <h3> Chapter 2 Resources </h3>
@@ -5685,19 +5725,119 @@ h1 {
     <h5>Borders</h5>
     <div class="figure">
         <img src="images/chapter3/box_model_3.png">
+        <p>
+            Beyond the edge of the padding lives the border.
+        </p>
+        <p>
+            The border is an impenetrable wall between the <code>background-color</code>
+            and the rest of the page.
+        </p>
+        <p>
+            We must never go beyond the wall. It is cold there.
+        </p>
     </div>
+
+    <p>
+        By default, the border is invisible, but we can make it visible
+        with the awesome power of various <code>border</code> properties.
+    </p>
+
+    <pre>
+        <code class="css">
+    body{
+        background-color: white;
+    }
+    blockquote{
+        width: 250px;
+        background-color: #DDDDDD;
+        padding: 30px;
+        border-top: 2px solid #222222;
+        border-left: 5px solid blue;
+        border-right: 4px dashed black;
+        border-bottom: 10px dotted teal;
+    }
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter3/ex27.html" style="min-height:200px;"></iframe>
+
+    <p>
+        Each of those border properties came with a width
+        (in the <abbr title="Cascading Stylesheets">CSS</abbr> measurement of our choice),
+        a line-type, and a color.
+        The border needs all three to render properly.
+    </p>
+
+    <p>
+        Like with <code>padding</code>, if we know all four directions are going to be the same, we can
+        save ourselves some typing like so:
+    </p>
+
+    <pre>
+        <code class="css">
+    blockquote{
+        width: 250px;
+        background-color: #DDDDDD;
+        padding: 30px;
+        border: 2px solid black;
+    }
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter3/ex28.html" style="min-height:200px;"></iframe>
+
+    <h6>A Gentle Roundness About The Exterior</h6>
+
+    <p>We can also gently round off the corners of our border with <code>border-radius</code> </p>
+
+    <pre>
+        <code class="css">
+    blockquote{
+        width: 250px;
+        background-color: #DDDDDD;
+        padding: 30px;
+        border: 4px solid black;
+        border-radius: 10px;
+    }
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter3/ex29.html" style="min-height:200px;"></iframe>
+
+    <p>
+        The larger the measurement in the <code>border-radius</code>, the more rounded the edges
+        will be, until the element itself is totally round.
+    </p>
+
+    <pre>
+        <code class="css">
+    blockquote{
+        width: 75px;
+        height: 75px;
+        background-color: #DDDDDD;
+        padding: 30px;
+        border: 4px solid black;
+        border-radius: 200px;
+    }
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter3/ex30.html" style="min-height:200px;"></iframe>
+
+
 
     <h5>Margins</h5>
     <div class="figure">
         <img src="images/chapter3/box_model_5.png">
     </div>
 
-
     <h6>Margin Collapse</h6>
     <div class="figure">
         <img src="images/chapter3/margin_collapse.png">
         /* note that aboslutely positioned or floating elements never collapse margins */
     </div>
+
+    <h5>Divisions, Sections, & Asides (Again)</h5>
 
     <h5>Inline vs. Block Elements</h5>
 
@@ -6523,19 +6663,6 @@ on `vagrantup.com` for more information on using Vagrant.
     </p>
 
     <p>Now it's time to open up the Vagrantfile in a text editor. </p>
-
-    <div class='right-aside-arrow short-arrow'></div>
-    <aside class='right-aside aside'>
-        <h4>Text Editor</h4>
-        <p>
-            I'm just going to assume that you have a programmer's text editor on your
-            computer that you like and are familiar with.
-        </p>
-        <p>
-            If you don't, go install <strong>Notepad++</strong> or <strong>SublimeText</strong>
-            or maybe <strong>Atom</strong>.
-        </p>
-    </aside>
 
     <div class='hang-left-aside-arrow short-arrow' style="margin-top: 35px;"></div>
     <aside class='hang-left-aside aside' style="margin-top: 0px;">
