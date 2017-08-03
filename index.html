@@ -2490,24 +2490,6 @@ animated paper clip leaps out and cheerfully asks where you want to go today. An
 
     <p> Lists can either be numbered or simply bulleted, and they can also contain sub-lists. </p>
 
-    <div class='left-aside-arrow'> </div>
-    <aside class='left-aside aside'>
-        <h3>The Home Game</h3>
-        <p>
-            In our last chapter we built a web server with an
-            <abbr title="HyperText Markup Language">HTML</abbr>
-            file on it.
-        </p>
-        <p>
-            We can construct our own
-            <abbr title="HyperText Markup Language">HTML</abbr>
-            pages using that web
-            server, although it's also possible just to build
-            them in an arbitrary directory on our computer.
-        </p>
-    </aside>
-
-
     <pre>
     <code class='html'>
 &lt;!DOCTYPE html&gt;
@@ -5839,11 +5821,18 @@ h1 {
     <iframe class="example" src="examples/chapter3/ex30.html" style="min-height:200px;"></iframe>
 
 
-
     <h5>Margins</h5>
+
     <div class="figure">
         <img src="images/chapter3/box_model_5.png">
+        <p>
+            Beyond the padding and the border wall lie the margins.
+            The margins are for spacing &mdash; they define a no-man's
+            land between this element and other elements.
+        </p>
     </div>
+
+    <h6>margin: auto</h6>
 
     <h6>Margin Collapse</h6>
     <div class="figure">
