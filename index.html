@@ -5701,7 +5701,7 @@ h1 {
 
     <p> Of course in many situations, we want to set the same padding in all four directions.</p>
 
-    <p> For that, there's an even easier shortcut. </p>
+    <p> For that, there's an even easier shortcut: we just pass one measurement to the <code>padding</code> property.</p>
 
     <pre>
         <code class="css">
@@ -5878,7 +5878,66 @@ h1 {
         </code>
     </pre>
 
-    <h6>margin: auto</h6>
+    <h6>Centering Content With Auto Margins</h6>
+
+    <p>
+        If we know the width of an element, and we want to
+        horizontally center it, we can set the <code>margin-left</code> and <code>margin-right</code>
+        to <code>auto</code>, and the browser will automatically figure out how to set the margins
+        such that the element is horizontally centred.
+    </p>
+
+    <p>
+        I can't recommend this technique enough &mdash; one of the easiest website layouts
+        is simply a <strong>single column of readable text</strong>, and this trick gives it to us
+        easily. It's how this text stays in the center of the page.
+    </p>
+
+    <pre>
+        <code class="css">
+    .sassy{
+        width: 500px;
+        margin: auto;
+        background-color: #ccc;
+        border: 2px solid black;
+        padding: 20px;
+    }
+    blockquote{
+        width: 300px;
+        margin: 20px auto 20px auto;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+    }
+        </code>
+    </pre>
+
+    <pre>
+        <code class="html">
+&lt;div class=&quot;sassy&quot;&gt;
+    &lt;blockquote&gt;
+        &quot;The best programs are the ones written when
+        the programmer is supposed to be working on something else.&quot;
+        &amp;mdash; Melinda Varian
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+        &quot;One accurate measurement is worth a thousand expert opinions.&quot;
+        &amp;mdash; Grace Hopper
+    &lt;/blockquote&gt;
+&lt;/div&gt;
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter3/ex32.html" style="min-height:300px;"></iframe>
+
+    <p>
+        Remember when we talked about how <a href="#max-height-and-max-width">elements want to be as wide as they can
+            be horizontally, but they want to be as short as they can be vertically</a>?
+        That's why we can use <code>margin: auto;</code> to center an element
+        <a href="https://stackoverflow.com/questions/34552116/why-doesnt-margin-auto-center-an-element-vertically?rq=1">horizontally
+            but not vertically</a>.
+        Using <code>margin: auto;</code> vertically is the equivalent of setting <code>margin: 0;</code>.
+    </p>
 
     <h6>Margin Collapse</h6>
     <div class="figure">
