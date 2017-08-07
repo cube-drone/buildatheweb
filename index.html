@@ -5979,17 +5979,170 @@ h1 {
     <div class="figure">
         <h4>A Diagram Of That Thing I Just Said</h4>
         <img src="images/chapter3/margin_collapse.png">
-        <p> While "Margin Overlap" would be a good name for this, apparently it is called "Margin Collapse" instead. </p>
+        <p>
+            While "Margin Overlap" would be a good name for this, apparently it is called
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing">"Margin Collapse"</a> instead.
+        </p>
     </div>
 
-    <h6>Divisions, Sections, & Asides (Again)</h6>
+    <h5>Divisions, Sections, & Asides (Again)</h5>
 
     <p>
         The box model is a really powerful abstraction for putting boxes around things,
         which is, at least for now, our most powerful layout technique.
     </p>
 
+    <p>
+        Sometimes, though, we need to put a box around a group of HTML elements that
+        aren't grouped together naturally.
+    </p>
+
+    <p>
+        Fortunately, for cases like that, we have our old friend <code>div</code>,
+        an element that, like vodka or porridge, does not have
+        any flavor of its own, instead existing just so that we can add our own
+        flavors to it.
+    </p>
+
+    <pre>
+        <code class="html">
+&lt;div class=&quot;sassy&quot;&gt;
+    &lt;blockquote&gt;
+        &quot;That’s what’s cool about working with computers. They don’t argue,
+        they remember everything and they don’t drink all your beer.&quot; &amp;mdash; Paul Leary
+    &lt;/blockquote&gt;
+    &lt;blockquote&gt;
+        &quot;Think about it; and think about it carefully.
+        Nothing happens in our society without software. Nothing.&quot; &amp;mdash; Uncle Bob Martin
+    &lt;/blockquote&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+    &quot;As developers, we are often one of the last lines of
+    defense against potentially dangerous and unethical practices.&quot; &amp;mdash; Bill Sourour
+&lt;/blockquote&gt;
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter3/ex33.html" style="min-height:200px"></iframe>
+
+    <p>
+        At first glance, it may appear like that <code>div</code> has done nothing. And&hellip; it hasn't!
+    </p>
+
+    <p>
+        It won't do anything until we apply some style to it.
+    </p>
+
+    <pre>
+        <code class="css">
+    .sassy{
+        width: 350px;
+        font-family: Georgia, serif;
+        font-size: large;
+        margin: auto;
+    }
+        </code>
+    </pre>
+
+    <p>
+        So, <code>div</code> is great for grouping stuff together.
+    </p>
+
+    <iframe class="example" src="examples/chapter3/ex34.html" style="min-height:300px"></iframe>
+
+    <p>
+        There's also <code>section</code> and <code>aside</code>. They're&hellip; just other names
+        for <code>div</code>.
+    </p>
+
     <h5>Inline vs. Block Elements</h5>
+
+    <p>
+        In the <del>criminal justice</del> cascading style system, the <del>people</del> elements are
+        represented by two separate yet equally important groups. The <code>block</code> elements
+        which are stacked on top of one another, and the <code>inline</code> elements which are stacked
+        next to one another.
+    </p>
+
+    <div class='left-aside-arrow'> </div>
+    <aside class='left-aside aside'>
+        <p>
+            This is a reference to a television show that started airing in 1990 and was
+            cancelled seven years ago.
+        </p>
+    </aside>
+
+    <p>
+        Inline elements are things like links and emphasis &mdash; things that are expected to be within a paragraph.
+        Some properties, like <code>width</code>, don't work on inline elements.
+    </p>
+
+    <table>
+        <tr>
+            <th>Block Elements</th> <td><code>display: block;</code></td> <td><code>div</code>, <code>h1-h6</code>, <code>p</code>, <code>ul</code>, <code>ol</code>, <code>li</code>, <code>dl</code>, <code>table</code>, <code>blockquote</code>, <code>form</code>, <code>pre</code></td>
+        </tr>
+        <tr>
+            <th>Inline Elements</th> <td><code>display: inline; </code></td> </code></td> <td><code>a</code>, <code>strong</code>, <code>em</code>, <code>img</code>, <code>br</code>, <code>input</code>, <code>code</code>, <code>span</code></td>
+        </tr>
+        <tr>
+            <th>Invisible Elements</th> <td><code>display: none;</code></td> <td><code>style</code>, <code>link</code>, <code>meta</code></td>
+        </tr>
+    </table>
+
+    <p>
+        If we have an inline element that we want to make into a block element, we can use <code>display: block</code>.
+    </p>
+
+    <p>
+        If we have a block element that we want to make into an inline element, we can use <code>display: inline</code>.
+    </p>
+
+    <p>
+        <code>span</code> is to inline elements what <code>div</code> is to block elements &mdash; a featureless
+        element to apply our own styles to.
+    </p>
+
+    <p>
+        Let's use <code>display:block</code> and the box model to turn an <code>a</code> link into a button!
+    </p>
+
+    <pre>
+        <code class="css">
+    a{
+        display: block;
+        width: 200px;
+        font-family: Georgia, serif;
+        font-size: large;
+        font-weight: bold;
+        padding: 20px 50px 20px 50px;
+        border: 2px solid #333;
+        border-radius: 50px;
+        color: #333;
+        text-decoration: none;
+        text-align: center;
+    }
+    a:hover{
+        border: 2px solid darkblue;
+        color: darkblue;
+    }
+        </code>
+    </pre>
+
+    <pre>
+        <code class="html">
+    &lt;a href=&quot;https://twitter.com/classam&quot;&gt;@classam&lt;/a&gt;
+        </code>
+    </pre>
+
+    <iframe class="example" src="examples/chapter3/ex35.html" style="min-height:200px"></iframe>
+
+    <p>
+        Let's look at that again, but without <code>display:block</code>.
+    </p>
+
+    <iframe class="example" src="examples/chapter3/ex36.html" style="min-height:200px"></iframe>
+
 
     <h3>CSS Comments</h3>
 
