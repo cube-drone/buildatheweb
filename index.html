@@ -6045,16 +6045,23 @@ h1 {
         </code>
     </pre>
 
+    <iframe class="example" src="examples/chapter3/ex34.html" style="min-height:300px"></iframe>
+
     <p>
         So, <code>div</code> is great for grouping stuff together.
     </p>
-
-    <iframe class="example" src="examples/chapter3/ex34.html" style="min-height:300px"></iframe>
 
     <p>
         There's also <code>section</code> and <code>aside</code>. They're&hellip; just other names
         for <code>div</code>.
     </p>
+
+    <div class='right-aside-arrow'> </div>
+    <aside class='right-aside small-aside'>
+        <p>
+            This is an aside. So I used the <code>aside</code> element for it.
+        </p>
+    </aside>
 
     <h5>Inline vs. Block Elements</h5>
 
@@ -6143,12 +6150,53 @@ h1 {
 
     <iframe class="example" src="examples/chapter3/ex36.html" style="min-height:200px"></iframe>
 
+    <h5>Floats</h5>
+
+    <p>
+        Sometimes in a layout, we want an element to have text flow around it.
+    </p>
 
     <h3>CSS Comments</h3>
 
-    <h3>Monkeying Around With The CSS Live</h3>
+    <p> Sometimes we want to comment out large blocks of CSS code, or add comments to our CSS. </p>
 
-    <h3>A Single Column Layout</h3>
+    <p> The only way to comment in CSS is <code>/* like this */ </code></p>
+
+    <pre>
+        <code class="css">
+    /*
+    a{
+        display: block;
+        width: 200px;
+        font-family: Georgia, serif;
+        font-size: large;
+        font-weight: bold;
+        padding: 20px 50px 20px 50px;
+        border: 2px solid #333;
+        border-radius: 50px;
+        color: #333;
+        text-decoration: none;
+        text-align: center;
+    }
+    */
+    a:hover{
+        border: 2px solid darkblue; /* this is a comment */
+        color: darkblue;
+    }
+        </code>
+    </pre>
+
+    <h3>A Simple Single Column Layout</h3>
+
+    <p>
+        Let's take all of the things we've learned and try to class up
+        Dr. Frampton Q. Fakenamington's CV a little bit.
+    </p>
+
+    <iframe class="example" src="examples/chapter3/ex37.html" style="height: 1411px;"></iframe>
+
+
+    <h4>Monkeying Around With The CSS Live</h4>
 
     <h3>Chapter 3 Summary</h3>
 
