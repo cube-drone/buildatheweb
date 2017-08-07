@@ -5960,12 +5960,34 @@ h1 {
     </aside>
 
     <h6>Margin Collapse</h6>
+
+    <p>One of the tricky things about margins is that they can <em>overlap</em> with one another.
+    </p>
+
+    <p>
+        Let's imagine that we have two elements, one after the other, one with
+        <code>margin: 25px</code> and one with <code>margin: 35px</code>. How much space would
+        we guess is between them?
+    </p>
+
+    <p>
+        The first answer that would come to mind is <code>60px</code> &mdash; the sum of
+        the two, but this would be incorrect, because they <em>overlap</em>. In fact, the
+        elements would only be <code>35px</code> apart.
+    </p>
+
     <div class="figure">
+        <h4>A Diagram Of That Thing I Just Said</h4>
         <img src="images/chapter3/margin_collapse.png">
-        /* note that aboslutely positioned or floating elements never collapse margins */
+        <p> While "Margin Overlap" would be a good name for this, apparently it is called "Margin Collapse" instead. </p>
     </div>
 
-    <h5>Divisions, Sections, & Asides (Again)</h5>
+    <h6>Divisions, Sections, & Asides (Again)</h6>
+
+    <p>
+        The box model is a really powerful abstraction for putting boxes around things,
+        which is, at least for now, our most powerful layout technique.
+    </p>
 
     <h5>Inline vs. Block Elements</h5>
 
