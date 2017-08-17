@@ -89,7 +89,7 @@
     </p>
 
     <p>
-        This book was last updated <strong class='book_last_update'>August 7, 2017</strong>.
+        This book was last updated <strong class='book_last_update'>August 16, 2017</strong>.
         If that's a <em>long time ago</em>, I might have died. Avenge me!
     </p>
 
@@ -6153,10 +6153,46 @@ h1 {
     <h5>Floats</h5>
 
     <p>
-        Sometimes in a layout, we want an element to have text flow around it.
+        Boxes in <abbr title="Cascading Style Sheets">CSS</abbr> &mdash; <code>div</code>, <code>p</code> &mdash;
+        usually stack on top of one another.
+    </p>
+
+    <img src="images/chapter3/float.jpg" style="float: right; padding: 20px;" title="This is a parade float that is also floated to the right">
+
+    <p>
+        Sometimes, though, we want to have an element sit to the left or to the right of other elements.
+    </p>
+
+    <p>
+        This image, for example, is a parade float that has been floated to the right, with <code>float: right;</code>
+    </p>
+
+    <img src="images/chapter3/float.jpg" style="float: left; padding: 20px;" title="This is a parade float that is also floated to the right">
+
+    <p>
+        We can also float this image to the left, with <code>float: left;</code>
     </p>
 
     <h3>CSS Comments</h3>
+
+    <p>
+        Wait wait wait! Hold the presses! We didn't want the element that we floated to the left to push that
+        section header! We wanted it to push the <code>p</code> text, but not the <code>h2</code> of the
+        section header.
+    </p>
+
+    <p>
+        In order to stop floated elements from pushing elements around, we can use <code>clear: both</code>
+        on the element that we want to be un-pushable.
+    </p>
+
+    <img src="images/chapter3/float.jpg" style="float: left; padding: 20px;" title="This is a parade float that is also floated to the right">
+
+    <p> Let's try this again, but this time we'll set <code>clear:both</code> on the <code>h2</code> header for CSS Comments. </p>
+
+    <h3 style="clear: both">CSS Comments Again</h3>
+
+    <p> Are we safe? Can we talk about comments, now? Yeah? Okay, let's continue. </p>
 
     <p> Sometimes we want to comment out large blocks of CSS code, or add comments to our CSS. </p>
 
@@ -6193,7 +6229,7 @@ h1 {
         Dr. Frampton Q. Fakenamington's CV a little bit.
     </p>
 
-    <iframe class="example" src="examples/chapter3/ex37.html" style="height: 1411px;"></iframe>
+    <iframe class="example" src="examples/chapter3/exFrampton.html" style="height: 1411px;"></iframe>
 
 
     <h4>Monkeying Around With The CSS Live</h4>
